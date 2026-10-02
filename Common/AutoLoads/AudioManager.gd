@@ -16,11 +16,11 @@ var loop_playlist: bool = false
 
 func _ready() -> void:
     _player1 = AudioStreamPlayer.new()
-    _player1.bus = Constants.AudioBus_DefaultMusic
+    _player1.bus = Constants.AudioBusNames.DefaultMusic
     in_use_player = _player1
 
     _player2 = AudioStreamPlayer.new()
-    _player2.bus = Constants.AudioBus_DefaultMusic
+    _player2.bus = Constants.AudioBusNames.DefaultMusic
 
     SignalBus.OptionsChanged_MusicDB.connect(_on_options_music_db_changed)
     SignalBus.OptionsChanged_SFXDB.connect(_on_options_sfx_db_changed)
@@ -133,9 +133,9 @@ func _on_track_finished() -> void:
 
 
 func _on_options_music_db_changed(linear: float) -> void:
-    AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(Constants.AudioBus_DefaultMusic), linear)
+    AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(Constants.AudioBusNames.DefaultMusic), linear)
 
 
 
 func _on_options_sfx_db_changed(linear: float) -> void:
-    AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(Constants.AudioBus_DefaultSFX), linear)
+    AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(Constants.AudioBusNames.DefaultSFX), linear)
