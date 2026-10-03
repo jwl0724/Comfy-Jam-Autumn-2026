@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://qsqbt3jet3xi"]
+
+[ext_resource type="Script" uid="uid://jm2xbcjckc8c" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
+[ext_resource type="PackedScene" uid="uid://clq0uv61mj32a" path="res://Levels/Testing/Controls/MovementTest.tscn" id="2_q7v2m"]
+[ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
+
+[node name="GameController" type="Node" unique_id=1964676766]
+script = ExtResource("1_yl5u5")
+enable_debug = true
+debug_scene = ExtResource("2_q7v2m")
+launch_scene = ExtResource("3_iq1bj")
+
+[node name="Systems" type="Node" parent="." unique_id=76997881]
+
+[node name="Running" type="Node3D" parent="." unique_id=1603502973]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1378960028]
+layer = 10
+
+[node name="Root" type="Control" parent="GUI" unique_id=671215437]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause" type="CanvasLayer" parent="." unique_id=320212798]
+process_mode = 2
+layer = 20
+
+[node name="Root" type="Control" parent="Pause" unique_id=1688767101]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=561777814]
+process_mode = 3
+layer = 30
+
+[node name="Root" type="Control" parent="Transition" unique_id=1609158582]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Debug" type="CanvasLayer" parent="." unique_id=409890986]
+process_mode = 3
+layer = 40
+
+[node name="Root" type="Control" parent="Debug" unique_id=1415333382]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

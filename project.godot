@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ComfyJam-Autumn-2026"
-run/main_scene="uid://clq0uv61mj32a"
+run/main_scene="uid://qsqbt3jet3xi"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [audio]
