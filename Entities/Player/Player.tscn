@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqnsqbsm06a4i"]
 
 [ext_resource type="Script" uid="uid://b2un8a8506dkk" path="res://Entities/Player/player.gd" id="1_e5kic"]
-[ext_resource type="Script" uid="uid://fpv6kypga8j8" path="res://Entities/Player/Systems/view_controller.gd" id="2_ww0jn"]
+[ext_resource type="PackedScene" uid="uid://bky3hsdeg61tm" path="res://Entities/Player/Components/ViewPivot.tscn" id="3_1des2"]
 [ext_resource type="Script" uid="uid://dfdv7amsu6564" path="res://Entities/Player/Systems/movement_controller.gd" id="3_vweq0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u36tg"]
@@ -14,22 +14,15 @@ floor_snap_length = 0.2
 script = ExtResource("1_e5kic")
 move_speed = 10.0
 
+[node name="Systems" type="Node" parent="." unique_id=1047118889]
+
+[node name="Movement" type="Node" parent="Systems" unique_id=914594847]
+script = ExtResource("3_vweq0")
+
 [node name="Components" type="Node3D" parent="." unique_id=1369609793]
 
-[node name="Pivot" type="Node3D" parent="Components" unique_id=1131640310]
+[node name="Pivot" parent="Components" unique_id=885972578 instance=ExtResource("3_1des2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42915964, 0)
-script = ExtResource("2_ww0jn")
-
-[node name="Camera" type="Camera3D" parent="Components/Pivot" unique_id=1660589472]
-
-[node name="InteractRay" type="RayCast3D" parent="Components/Pivot" unique_id=962793827]
-target_position = Vector3(0, 0, -2)
-collision_mask = 4
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="Movement" type="Node3D" parent="Components" unique_id=869862126]
-script = ExtResource("3_vweq0")
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=911861287]
 shape = SubResource("CapsuleShape3D_u36tg")

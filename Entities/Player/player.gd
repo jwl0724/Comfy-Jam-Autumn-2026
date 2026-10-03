@@ -7,8 +7,8 @@ class_name Player
 @export var mouse_sensitivity: float = 0.005
 @export var max_up_view_angle: float = 89
 
-@onready var view_controller: PlayerCameraController = $Components/Pivot
-@onready var move_controller: PlayerMovementController = $Components/Movement
+@onready var view_controller: ViewPivot = $Components/Pivot
+@onready var move_controller: PlayerMovementController = $Systems/Movement
 
 
 
