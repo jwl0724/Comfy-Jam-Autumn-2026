@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bf43lbuhvu8xa"]
+
+[ext_resource type="Script" uid="uid://n4qen5sq57fi" path="res://Entities/Dog/dog.gd" id="1_477lp"]
+[ext_resource type="PackedScene" uid="uid://dh41t0j7iqhli" path="res://Entities/Dog/Components/DogModel.tscn" id="2_235xh"]
+[ext_resource type="Script" uid="uid://rhv41vki2yt6" path="res://Entities/Dog/Systems/pathing.gd" id="2_xwa67"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_477lp"]
+height = 1.0
+
+[node name="Dog" type="CharacterBody3D" unique_id=795914483]
+script = ExtResource("1_477lp")
+
+[node name="Systems" type="Node" parent="." unique_id=664369421]
+
+[node name="Pathing" type="Node" parent="Systems" unique_id=172056710]
+script = ExtResource("2_xwa67")
+
+[node name="Components" type="Node3D" parent="." unique_id=1900673890]
+
+[node name="DogModel" parent="Components" unique_id=423734605 instance=ExtResource("2_235xh")]
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1572817533]
+shape = SubResource("CapsuleShape3D_477lp")
