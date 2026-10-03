@@ -2,6 +2,7 @@ extends Node3D
 class_name PlayerCameraController
 
 signal interacted(interactable: InteractHandler)
+signal notify_interact_look(is_looking: bool)
 signal aimed() ## Pulling out the camera to get ready to take picture
 signal shot() ## Picture taken while camera is out
 
@@ -15,8 +16,12 @@ var interact_target: InteractHandler = null
 
 
 func _physics_process(_delta):
-    if !interact_ray.is_colliding() || interact_ray.get_collider() is not InteractHandler: interact_target = null
-    else: interact_target = interact_ray.get_collider() as InteractHandler
+    if !interact_ray.is_colliding() || interact_ray.get_collider() is not InteractHandler:
+        if interact_target != null: notify_interact_look.emit(false)
+        interact_target = null
+    else:
+        if interact_target == null: notify_interact_look.emit(true)
+        interact_target = interact_ray.get_collider() as InteractHandler
 
 
 

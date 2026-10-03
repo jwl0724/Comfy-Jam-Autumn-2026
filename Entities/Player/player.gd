@@ -7,11 +7,14 @@ class_name Player
 @export var mouse_sensitivity: float = 0.005
 @export var max_up_view_angle: float = 89
 
+@onready var view_controller: PlayerCameraController = $Components/Pivot
+@onready var move_controller: PlayerMovementController = $Components/Movement
+
 
 
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+    view_controller.notify_interact_look.connect(_on_look_notify)
 
 
 func _input(event: InputEvent):
@@ -21,3 +24,8 @@ func _input(event: InputEvent):
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE # Temp until pause menu done
     if event.is_action_pressed(Constants.InputNames.Book):
         print("TODO: Book pressed, need to add a UI element that opens a book to review taken photos, and also pauses the game timer when it is open")
+
+
+
+func _on_look_notify(is_looking: bool):
+    SignalBus.hud_visible_interactPrompt.emit(is_looking)
