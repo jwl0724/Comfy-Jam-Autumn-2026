@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://jm2xbcjckc8c" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
 [ext_resource type="PackedScene" uid="uid://cmsd7s2lnvmjm" path="res://Levels/Testing/Controls/InteractableTest.tscn" id="2_q7v2m"]
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
+[ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="4_iq1bj"]
 
 [node name="GameController" type="Node" unique_id=1964676766]
 script = ExtResource("1_yl5u5")
+launch_scene = ExtResource("3_iq1bj")
 enable_debug = true
 debug_scene = ExtResource("2_q7v2m")
-launch_scene = ExtResource("3_iq1bj")
+debug_gui = ExtResource("4_iq1bj")
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]
 

@@ -2,11 +2,13 @@ extends Node
 class_name GameController
 
 static var debug_mode: bool = false
-@export var enable_debug: bool = false
 
-@export_group("Scene Data")
-@export var debug_scene: PackedScene = null
 @export var launch_scene: PackedScene = null
+
+@export_group("Dev Tools")
+@export var enable_debug: bool = false
+@export var debug_scene: PackedScene = null
+@export var debug_gui: PackedScene = null
 
 @onready var gui_layer: Control = $GUI/Root
 @onready var pause_layer: Control = $Pause/Root
@@ -18,9 +20,14 @@ static var debug_mode: bool = false
 
 
 func _ready():
+    if !enable_debug:
+        change_scenes(launch_scene)
+        return
+
     debug_mode = enable_debug
-    if debug_mode && debug_scene: change_scenes(debug_scene)
+    if debug_scene: change_scenes(debug_scene)
     else: change_scenes(launch_scene)
+    if debug_gui: debug_layer.add_child(debug_gui.instantiate())
 
 
 
