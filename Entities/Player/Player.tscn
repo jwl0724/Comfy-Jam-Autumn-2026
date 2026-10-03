@@ -13,13 +13,18 @@ floor_snap_length = 0.2
 script = ExtResource("1_e5kic")
 move_speed = 10.0
 
-[node name="Controllers" type="Node3D" parent="." unique_id=1369609793]
+[node name="Components" type="Node3D" parent="." unique_id=1369609793]
 
-[node name="Camera" type="Camera3D" parent="Controllers" unique_id=1660589472]
+[node name="Pivot" type="Node3D" parent="Components" unique_id=1131640310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42915964, 0)
 script = ExtResource("2_ww0jn")
 
-[node name="Movement" type="Node3D" parent="Controllers" unique_id=869862126]
+[node name="Camera" type="Camera3D" parent="Components/Pivot" unique_id=1660589472]
+
+[node name="InteractRay" type="RayCast3D" parent="Components/Pivot" unique_id=962793827]
+target_position = Vector3(0, 0, -2)
+
+[node name="Movement" type="Node3D" parent="Components" unique_id=869862126]
 script = ExtResource("3_vweq0")
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=911861287]

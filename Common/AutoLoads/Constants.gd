@@ -10,6 +10,7 @@ class InputNames:
     const Shoot: String = "Shoot"
     const Aim: String = "Aim"
     const Book: String = "Book"
+    const Pause: String = "Pause"
 
 # Audio Bus Names
 class AudioBusNames:
