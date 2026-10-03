@@ -23,7 +23,7 @@ func _ready():
     # Set physics properties
     monitorable = true
     monitoring = false
-    collision_layer = Constants.PhysLayers.Interactable
+    collision_layer = Constants.PhysLayers.InteractablePhys
 
 
 
@@ -36,4 +36,4 @@ func interact(player: Player):
 
 
 func _on_timeout():
-    collision_layer = Constants.PhysLayers.Interactable
+    collision_layer = Constants.PhysLayers.InteractablePhys
