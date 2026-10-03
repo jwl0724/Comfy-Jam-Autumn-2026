@@ -1,5 +1,12 @@
 extends Node
 
+# Physics Layers
+class PhysLayers:
+    const Terrain: int = 1 # Layer for environment
+    const PlayerPhys: int = 2 # Layer for specifically player
+    const Interactable: int = 4 # Layer for anything that can be interacted with
+    const Objective: int = 8 # Layer for objects that are photo requirements
+
 # Input Map Names
 class InputNames:
     const Forward: String = "Forward"
