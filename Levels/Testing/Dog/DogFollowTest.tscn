@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6wogsncvmcwd"]
 
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_6q85k"]
+[ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="2_ehmyh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
 albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
@@ -27,3 +28,7 @@ shape = SubResource("ConvexPolygonShape3D_6cm2t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=375246522]
 transform = Transform3D(1, 0, 0, 0, 0.028078636, 0.9996057, 0, -0.9996057, 0.028078636, 0, 9.56009, 0)
+
+[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("2_ehmyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7303501, 0.6313883, 3.638915)
+player_node = NodePath("../Player")

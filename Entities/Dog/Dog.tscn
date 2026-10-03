@@ -3,21 +3,43 @@
 [ext_resource type="Script" uid="uid://n4qen5sq57fi" path="res://Entities/Dog/dog.gd" id="1_477lp"]
 [ext_resource type="PackedScene" uid="uid://dh41t0j7iqhli" path="res://Entities/Dog/Components/DogModel.tscn" id="2_235xh"]
 [ext_resource type="Script" uid="uid://rhv41vki2yt6" path="res://Entities/Dog/Systems/pathing.gd" id="2_xwa67"]
+[ext_resource type="PackedScene" uid="uid://bx3da7gk78d44" path="res://Entities/Interactable/Components/interact_handler.tscn" id="3_xwa67"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_235xh"]
+radius = 6.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cy0vn"]
+radius = 1.1
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_477lp"]
-height = 1.0
+radius = 0.2
+height = 0.4
 
 [node name="Dog" type="CharacterBody3D" unique_id=795914483]
+collision_layer = 16
 script = ExtResource("1_477lp")
 
 [node name="Systems" type="Node" parent="." unique_id=664369421]
 
-[node name="Pathing" type="Node" parent="Systems" unique_id=172056710]
+[node name="Pathing" type="Node" parent="Systems" unique_id=172056710 node_paths=PackedStringArray("follow_threshold")]
 script = ExtResource("2_xwa67")
+follow_threshold = NodePath("../../Components/FollowThreshold")
 
 [node name="Components" type="Node3D" parent="." unique_id=1900673890]
 
-[node name="DogModel" parent="Components" unique_id=423734605 instance=ExtResource("2_235xh")]
+[node name="FollowThreshold" type="Area3D" parent="Components" unique_id=1221525727]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/FollowThreshold" unique_id=1345473747]
+shape = SubResource("SphereShape3D_235xh")
+
+[node name="InteractHandler" parent="Components" unique_id=863416172 instance=ExtResource("3_xwa67")]
+interact_hitbox_shape = SubResource("SphereShape3D_cy0vn")
+interact_limit = -1
+
+[node name="DogModel" parent="." unique_id=423734605 instance=ExtResource("2_235xh")]
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1572817533]
 shape = SubResource("CapsuleShape3D_477lp")
