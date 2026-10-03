@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qsqbt3jet3xi"]
 
 [ext_resource type="Script" uid="uid://jm2xbcjckc8c" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
-[ext_resource type="PackedScene" uid="uid://clq0uv61mj32a" path="res://Levels/Testing/Controls/MovementTest.tscn" id="2_q7v2m"]
+[ext_resource type="PackedScene" uid="uid://cmsd7s2lnvmjm" path="res://Levels/Testing/Controls/InteractableTest.tscn" id="2_q7v2m"]
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
 
 [node name="GameController" type="Node" unique_id=1964676766]

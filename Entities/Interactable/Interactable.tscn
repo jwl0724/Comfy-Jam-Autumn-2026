@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bg6k067tinkw5"]
+
+[ext_resource type="Script" uid="uid://tqxom1l1apjd" path="res://Entities/Interactable/Components/interact_handler.gd" id="1_knw1g"]
+[ext_resource type="Script" uid="uid://cw32vnjsvrcw" path="res://Entities/Interactable/interactable.gd" id="1_tv326"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gugky"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_knw1g"]
+
+[node name="Interactable" type="Node3D" unique_id=1047831836]
+script = ExtResource("1_tv326")
+
+[node name="InteractHandler" type="Area3D" parent="." unique_id=149415312]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_knw1g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractHandler" unique_id=618454513]
+shape = SubResource("SphereShape3D_gugky")
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=333253510]
+mesh = SubResource("SphereMesh_knw1g")
