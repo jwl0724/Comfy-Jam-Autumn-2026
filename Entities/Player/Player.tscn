@@ -9,7 +9,9 @@ radius = 0.4
 height = 1.5
 
 [node name="Player" type="CharacterBody3D" unique_id=893108555]
+floor_snap_length = 0.2
 script = ExtResource("1_e5kic")
+move_speed = 10.0
 
 [node name="Controllers" type="Node3D" parent="." unique_id=1369609793]
 

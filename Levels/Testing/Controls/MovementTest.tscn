@@ -2,11 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_jbb1d"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
+albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_ylc1o"]
+material = SubResource("StandardMaterial3D_jbb1d")
 size = Vector2(100, 100)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jbb1d"]
 points = PackedVector3Array(50.78371, 0.7934955, 50.78371, -50.78371, -0.7934955, -50.78371, -50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, -50.78371, -50.78371, -0.7934955, 50.78371, -50.78371, 0.7934955, 50.78371, 50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, 50.78371)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isef3"]
+albedo_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jbb1d"]
+material = SubResource("StandardMaterial3D_isef3")
+size = Vector2(2, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_isef3"]
+points = PackedVector3Array(-1.0396825, -0.039667007, -2.5386884, 1.0238096, 0.039667007, 2.5386884, 1.0238096, -0.039667007, 2.5386884, 1.0238096, 0.039667007, -2.5386884, -1.0396825, 0.039667007, 2.5386884, -1.0396825, -0.039667007, 2.5386884, 1.0238096, -0.039667007, -2.5386884, -1.0396825, 0.039667007, -2.5386884)
 
 [node name="MovementTest" type="Node3D" unique_id=989186314]
 
@@ -23,3 +37,12 @@ shape = SubResource("ConvexPolygonShape3D_jbb1d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=215076858]
 transform = Transform3D(1, 0, 0, 0, 0.028078636, 0.9996057, 0, -0.9996057, 0.028078636, 0, 9.56009, 0)
+
+[node name="Slope" type="MeshInstance3D" parent="." unique_id=257504898]
+transform = Transform3D(1, 0, 0, 0, 0.7129446, -0.7012204, 0, 0.7012204, 0.7129446, 0, 1.6048826, -2.2406287)
+mesh = SubResource("PlaneMesh_jbb1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Slope" unique_id=1535585709]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slope/StaticBody3D" unique_id=1174898895]
+shape = SubResource("ConvexPolygonShape3D_isef3")
