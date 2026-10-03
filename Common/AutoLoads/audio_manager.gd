@@ -22,8 +22,8 @@ func _ready() -> void:
     _player2 = AudioStreamPlayer.new()
     _player2.bus = Constants.AudioBusNames.DefaultMusic
 
-    SignalBus.OptionsChanged_MusicDB.connect(_on_options_music_db_changed)
-    SignalBus.OptionsChanged_SFXDB.connect(_on_options_sfx_db_changed)
+    SignalBus.options_changed_musicDB.connect(_on_options_music_db_changed)
+    SignalBus.options_changed_sfxDB.connect(_on_options_sfx_db_changed)
 
 
 
