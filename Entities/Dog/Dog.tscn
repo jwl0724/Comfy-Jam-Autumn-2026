@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://n4qen5sq57fi" path="res://Entities/Dog/dog.gd" id="1_477lp"]
 [ext_resource type="PackedScene" uid="uid://dh41t0j7iqhli" path="res://Entities/Dog/Components/DogModel.tscn" id="2_235xh"]
 [ext_resource type="Script" uid="uid://rhv41vki2yt6" path="res://Entities/Dog/Systems/pathing.gd" id="2_xwa67"]
+[ext_resource type="Script" uid="uid://cfjmv8lsyip1n" path="res://Entities/Dog/target_locating.gd" id="3_cy0vn"]
 [ext_resource type="PackedScene" uid="uid://bx3da7gk78d44" path="res://Entities/Interactable/Components/interact_handler.tscn" id="3_xwa67"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_235xh"]
@@ -25,6 +26,9 @@ script = ExtResource("1_477lp")
 script = ExtResource("2_xwa67")
 follow_threshold = NodePath("../../Components/FollowThreshold")
 
+[node name="TargetLocating" type="Node" parent="Systems" unique_id=759691129]
+script = ExtResource("3_cy0vn")
+
 [node name="Components" type="Node3D" parent="." unique_id=1900673890]
 
 [node name="FollowThreshold" type="Area3D" parent="Components" unique_id=1221525727]
@@ -38,6 +42,7 @@ shape = SubResource("SphereShape3D_235xh")
 [node name="InteractHandler" parent="Components" unique_id=863416172 instance=ExtResource("3_xwa67")]
 interact_hitbox_shape = SubResource("SphereShape3D_cy0vn")
 interact_limit = -1
+interact_time_gap = 2.0
 
 [node name="DogModel" parent="." unique_id=423734605 instance=ExtResource("2_235xh")]
 

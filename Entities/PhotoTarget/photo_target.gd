@@ -39,7 +39,8 @@ func _ready():
     load_data(data)
     visible_notifier.screen_entered.connect(_on_screen_entered)
     visible_notifier.screen_exited.connect(_on_screen_exited)
-    SignalBus.level_query_targets.connect(_on_query_request)
+    SignalBus.level_query_targetView.connect(_on_query_view_request)
+    SignalBus.level_query_targetLocations.connect(_on_query_location_request)
 
 
 
@@ -57,7 +58,7 @@ func _physics_process(_delta):
 
 
 
-func _on_query_request():
+func _on_query_view_request():
     if !in_screen || global_position.distance_to(get_viewport().get_camera_3d().global_position) > 20: return
     if in_view:
         SignalBus.level_notify_targetView.emit(self)
@@ -66,6 +67,11 @@ func _on_query_request():
     var query := PhysicsRayQueryParameters3D.create(global_position, get_viewport().get_camera_3d().global_position, Constants.PhysLayers.Terrain)
     var collision := get_world_3d().direct_space_state.intersect_ray(query)
     if !collision: SignalBus.level_notify_targetView.emit(self)
+
+
+
+func _on_query_location_request():
+    SignalBus.level_notify_targetLocation.emit(self)
 
 
 

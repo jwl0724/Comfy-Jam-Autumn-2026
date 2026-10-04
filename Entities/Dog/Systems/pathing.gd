@@ -1,4 +1,5 @@
 extends Node
+class_name DogPathing
 
 @export var follow_threshold: Area3D = null
 
@@ -6,6 +7,12 @@ extends Node
 @onready var pathing_target: Node3D = dog.player_node
 
 var do_pathing: bool = true
+var pathing_enabled: bool = true
+
+
+
+func enable_pathing(enable: bool):
+    pathing_enabled = enable
 
 
 # TODO: Might need to switch to PathAgent3D later after the map is created, will need to see later
@@ -20,7 +27,7 @@ func _physics_process(delta):
     if dog.is_on_floor(): dog.velocity.y -= dog.fall_speed * delta
     else: dog.velocity.y = 0
 
-    if !pathing_target:
+    if !pathing_target || !pathing_enabled:
         dog.move_and_slide()
         return
 

@@ -22,7 +22,7 @@ func _ready():
 
 
 func check_targets():
-    SignalBus.level_query_targets.emit()
+    SignalBus.level_query_targetView.emit()
 
 
 
@@ -32,7 +32,7 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
     if !to_visible: return
     preview.texture = photo
     requirement_title.text = no_target_text
-    SignalBus.level_query_targets.emit()
+    SignalBus.level_query_targetView.emit()
 
 
 

@@ -5,8 +5,10 @@ extends Node
 signal game_layers_visible(visible: bool)
 
 # Level Signals
-signal level_query_targets()
+signal level_query_targetView()
 signal level_notify_targetView(target: PhotoTarget)
+signal level_query_targetLocations()
+signal level_notify_targetLocation(target: PhotoTarget)
 
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)

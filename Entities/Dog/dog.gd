@@ -10,13 +10,21 @@ class_name Dog
 
 @onready var interact_handler: InteractHandler = $Components/InteractHandler
 @onready var follow_threshold: Area3D = $Components/FollowThreshold
+@onready var target_locator: TargetLocating = $Systems/TargetLocating
+@onready var pathing_handler: DogPathing = $Systems/Pathing
 
 
 
 func _ready():
+    target_locator.locating.connect(_on_locating_notify)
     interact_handler.interacted.connect(_on_interact)
 
 
 
 func _on_interact(_player: Player):
-    print("You pet the good boy")
+    target_locator.hint_at_target()
+
+
+
+func _on_locating_notify(is_locating: bool):
+    pathing_handler.enable_pathing(!is_locating)
