@@ -14,6 +14,15 @@ size = Vector2(100, 100)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_afwpu"]
 points = PackedVector3Array(50.78371, 0.7934955, 50.78371, -50.78371, -0.7934955, -50.78371, -50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, -50.78371, -50.78371, -0.7934955, 50.78371, -50.78371, 0.7934955, 50.78371, 50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, 50.78371)
 
+[sub_resource type="BoxMesh" id="BoxMesh_anav2"]
+size = Vector3(10, 10, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_anav2"]
+points = PackedVector3Array(-5.078371, -5.077377, -0.57936513, 4.7881784, 4.787241, 0.5, 4.7881784, -4.787241, 0.5, 5.078371, 5.077377, -0.57936513, -4.7881784, 4.787241, 0.5, 5.078371, -5.077377, -0.57936513, -5.078371, 5.077377, -0.57936513, -4.7881784, -4.787241, 0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_anav2"]
+size = Vector3(10, 10, 1)
+
 [node name="RequirementCheckTest" type="Node3D" unique_id=348594862]
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("1_k8nqr")]
@@ -30,9 +39,35 @@ shape = SubResource("ConvexPolygonShape3D_afwpu")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=802146507]
 transform = Transform3D(1, 0, 0, 0, 0.028078636, 0.9996057, 0, -0.9996057, 0.028078636, 0, 9.56009, 0)
 
-[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("2_anav2")]
+[node name="Dog" parent="." unique_id=795914483 instance=ExtResource("2_anav2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7303501, 0.6313883, 3.638915)
-player_node = NodePath("")
 
-[node name="PhotoTarget" parent="." unique_id=133321002 instance=ExtResource("3_anav2")]
+[node name="PhotoTarget" parent="." unique_id=133321002 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_anav2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0716114, 2.0534527, -7.821182)
+teleport_points = [NodePath("../TeleportPoints/Node3D"), NodePath("../TeleportPoints/Node3D2"), NodePath("../TeleportPoints/Node3D3"), NodePath("../TeleportPoints/Node3D4")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1715900534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027897835, 1.6985233, -3.4478767)
+mesh = SubResource("BoxMesh_anav2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=257389447]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1441843376]
+shape = SubResource("ConvexPolygonShape3D_anav2")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="MeshInstance3D" unique_id=1738757334]
+occluder = SubResource("BoxOccluder3D_anav2")
+
+[node name="TeleportPoints" type="Node3D" parent="." unique_id=2060656849]
+
+[node name="Node3D" type="Node3D" parent="TeleportPoints" unique_id=705878268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.547016, 0, -23.101063)
+
+[node name="Node3D2" type="Node3D" parent="TeleportPoints" unique_id=2127789818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6514645, 0, 24.534191)
+
+[node name="Node3D3" type="Node3D" parent="TeleportPoints" unique_id=1506171480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.789734, 0, -23.101063)
+
+[node name="Node3D4" type="Node3D" parent="TeleportPoints" unique_id=1952156413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.561096, 0, 23.191586)
