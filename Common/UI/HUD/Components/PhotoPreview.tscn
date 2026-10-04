@@ -32,10 +32,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 60
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 68
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 68
 
 [node name="Photo" type="TextureRect" parent="Container" unique_id=466446879]
 layout_mode = 2

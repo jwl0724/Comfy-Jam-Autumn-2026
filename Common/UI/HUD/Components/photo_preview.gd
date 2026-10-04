@@ -2,6 +2,7 @@ extends Control
 class_name PhotoPreview
 
 # TODO: Need to pause the game timer when the preview is open
+# TODO: Probably add a new button to replace a picture in the scrapbook if player takes a better picture
 
 const no_target_text: String = "No Target Detected"
 const target_found_text: String = "Picture of a %s"
