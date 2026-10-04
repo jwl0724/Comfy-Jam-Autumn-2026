@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_k8nqr"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="2_anav2"]
 [ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="3_anav2"]
+[ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/mushroom.tres" id="4_m1ypo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
 albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
@@ -45,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7303501, 0.6313883, 3.63891
 [node name="PhotoTarget" parent="." unique_id=133321002 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_anav2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0716114, 2.0534527, -7.821182)
 teleport_points = [NodePath("../TeleportPoints/Node3D"), NodePath("../TeleportPoints/Node3D2"), NodePath("../TeleportPoints/Node3D3"), NodePath("../TeleportPoints/Node3D4")]
+data = ExtResource("4_m1ypo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1715900534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027897835, 1.6985233, -3.4478767)

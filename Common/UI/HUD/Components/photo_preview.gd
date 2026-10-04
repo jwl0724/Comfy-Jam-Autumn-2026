@@ -1,10 +1,10 @@
 extends Control
 class_name PhotoPreview
 
-# TODO: Need to change requirement title based on if a requirement was met
 # TODO: Need to pause the game timer when the preview is open
 
 const no_target_text: String = "No Target Detected"
+const target_found_text: String = "Picture of a %s"
 
 @onready var requirement_title: Label = $RequirementTitle
 @onready var preview: TextureRect = $Container/Photo
@@ -12,16 +12,16 @@ const no_target_text: String = "No Target Detected"
 
 
 
-
 func _ready():
     visible = false
     close_button.pressed.connect(_on_close)
     SignalBus.hud_photoPreview_visible.connect(_on_preview_visible_request)
+    SignalBus.level_notify_targetView.connect(_on_target_found)
 
 
 
-func _check_requirement(): # TODO: Need to find a criterion on how to check if a photo contains an objective or not, wait until requirements are actually implemented
-    return true
+func check_targets():
+    SignalBus.level_query_targets.emit()
 
 
 
@@ -30,12 +30,14 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED
     if !to_visible: return
     preview.texture = photo
+    requirement_title.text = no_target_text
+    SignalBus.level_query_targets.emit()
 
-    if _check_requirement():
-        requirement_title.text = "Temp text here, congrats you filled the criteria"
-        SignalBus.menu_scrapbook_addPhoto.emit(photo)
-    else:
-        requirement_title.text = no_target_text
+
+
+func _on_target_found(target: PhotoTarget):
+    requirement_title.text = target_found_text % target.target_name
+    SignalBus.menu_scrapbook_addPhoto.emit(preview.texture)
 
 
 

@@ -52,7 +52,6 @@ offset_top = 18.0
 offset_right = 29.0
 offset_bottom = 41.0
 grow_horizontal = 2
-text = "No Target Detected"
 
 [node name="Close" type="Button" parent="." unique_id=325137433]
 layout_mode = 1

@@ -4,6 +4,10 @@ extends Node
 # Game Controller Signals
 signal game_layers_visible(visible: bool)
 
+# Level Signals
+signal level_query_targets()
+signal level_notify_targetView(target: PhotoTarget)
+
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)
 signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
