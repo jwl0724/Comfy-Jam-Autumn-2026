@@ -24,7 +24,7 @@ func _ready():
 
 
 func _input(event: InputEvent):
-    if event is InputEventMouseMotion: return
+    if event is InputEventMouseMotion || Input.mouse_mode == Input.MOUSE_MODE_VISIBLE: return
     if event.is_action_pressed(Constants.InputNames.Pause):
         print("TODO: Create a pause menu that lets you change options and go back to main menu")
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE # Temp until pause menu done

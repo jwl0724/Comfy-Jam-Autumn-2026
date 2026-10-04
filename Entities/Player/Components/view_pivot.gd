@@ -46,6 +46,8 @@ func _physics_process(delta):
 
 
 func _input(event: InputEvent):
+    if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE: return
+
     # Handle camera movements
     if event is InputEventMouseMotion && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
         var move = event as InputEventMouseMotion
