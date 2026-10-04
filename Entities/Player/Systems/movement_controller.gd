@@ -1,9 +1,11 @@
 extends Node
 class_name PlayerMovementController
 
-signal moved(move_direction: Vector3)
+signal notify_move(is_move: bool)
 
 @onready var player: Player = owner
+
+var is_moving: bool = false
 
 
 
@@ -20,8 +22,13 @@ func _physics_process(delta):
 	if direction:
 		player.velocity.x = direction.x * player.move_speed
 		player.velocity.z = direction.z * player.move_speed
-		moved.emit(direction)
+		if !is_moving:
+			notify_move.emit(true)
+			is_moving = true
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.move_speed / 2)
 		player.velocity.z = move_toward(player.velocity.z, 0, player.move_speed / 2)
+		if is_moving:
+			notify_move.emit(false)
+			is_moving = false
 	player.move_and_slide()

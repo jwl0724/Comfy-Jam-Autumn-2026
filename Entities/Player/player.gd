@@ -4,6 +4,8 @@ class_name Player
 # Stats
 @export var move_speed: float = 50
 @export var fall_speed: float = 10
+
+@export var camera_bob_strength: float = 0.5
 @export var mouse_sensitivity: float = 0.005
 @export var max_up_view_angle: float = 89
 
@@ -14,6 +16,7 @@ class_name Player
 
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+    move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
 
 
@@ -29,3 +32,8 @@ func _input(event: InputEvent):
 
 func _on_look_notify(is_looking: bool):
     SignalBus.hud_visible_interactPrompt.emit(is_looking)
+
+
+
+func _on_move_notify(is_moving: bool):
+    view_controller.toggle_camera_bob(is_moving)

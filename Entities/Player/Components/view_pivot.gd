@@ -12,10 +12,30 @@ signal shot() ## Picture taken while camera is out
 
 var is_aiming: bool = false
 var interact_target: InteractHandler = null
+var do_camera_bob: bool = false
+
+var bob_theta: float = 0
 
 
 
-func _physics_process(_delta):
+func toggle_camera_bob(do_bob: bool):
+    do_camera_bob = do_bob
+
+
+
+func _physics_process(delta):
+    # Handle camera bob
+    if do_camera_bob:
+        camera.rotation.x = deg_to_rad(player.camera_bob_strength * sin(bob_theta))
+        camera.rotation.y = deg_to_rad(player.camera_bob_strength / 2 * cos(bob_theta / 2))
+        bob_theta += delta * player.move_speed
+        bob_theta = fposmod(bob_theta, 4 * PI)
+    else:
+        bob_theta = 0
+        camera.rotation.x = move_toward(camera.rotation.x, 0, delta * player.move_speed)
+        camera.rotation.y = move_toward(camera.rotation.y, 0, delta * player.move_speed)
+
+    # Handle interact ray
     if !interact_ray.is_colliding() || interact_ray.get_collider() is not InteractHandler:
         if interact_target != null: notify_interact_look.emit(false)
         interact_target = null
