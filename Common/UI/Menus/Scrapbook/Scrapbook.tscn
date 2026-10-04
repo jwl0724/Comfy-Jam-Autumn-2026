@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://dyqfoagllaj7u"]
+
+[ext_resource type="Script" uid="uid://clnja5s6plpf0" path="res://Common/UI/Menus/Scrapbook/scrapbook.gd" id="1_kppxn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s2omm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_385so"]
+noise = SubResource("FastNoiseLite_s2omm")
+
+[node name="Scrapbook" type="Control" unique_id=23996365]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kppxn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1308459696]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.36862746)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1136391749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Paper" type="ColorRect" parent="MarginContainer" unique_id=220023261]
+layout_mode = 2
+color = Color(0.728822, 0.728822, 0.728822, 1)
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=332184268]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 6
+
+[node name="Req1" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=631481705]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req2" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=258338155]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req3" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1470207965]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req4" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=92199831]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req5" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1011753454]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req6" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=924944029]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req7" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=906884776]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req8" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=333807945]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req9" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1196639565]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req10" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1815814813]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req11" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1977373607]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req12" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=627268706]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req13" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=533248576]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req14" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1355568468]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req15" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=788348049]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req16" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1945867187]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req17" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1197590241]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Req18" type="TextureRect" parent="MarginContainer/GridContainer" unique_id=1286300313]
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_385so")
+expand_mode = 2
+
+[node name="Close" type="Button" parent="." unique_id=1140852592]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -28.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "X"

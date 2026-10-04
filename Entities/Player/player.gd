@@ -26,12 +26,13 @@ func _input(event: InputEvent):
         print("TODO: Create a pause menu that lets you change options and go back to main menu")
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE # Temp until pause menu done
     if event.is_action_pressed(Constants.InputNames.Book):
-        print("TODO: Book pressed, need to add a UI element that opens a book to review taken photos, and also pauses the game timer when it is open")
+        SignalBus.menu_scrapbook_visible.emit(true)
+        print("TODO: Book pressed, also pauses the game timer when it is open")
 
 
 
 func _on_look_notify(is_looking: bool):
-    SignalBus.hud_visible_interactPrompt.emit(is_looking)
+    SignalBus.hud_interactPrompt_visible.emit(is_looking)
 
 
 
