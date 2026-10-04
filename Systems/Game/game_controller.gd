@@ -8,7 +8,7 @@ static var debug_mode: bool = false
 @export_group("Dev Tools")
 @export var enable_debug: bool = false
 @export var debug_scene: PackedScene = null
-@export var debug_gui: PackedScene = null
+@export var debug_guis: Array[PackedScene] = []
 
 @onready var gui_layer: Control = $GUI/Root
 @onready var pause_layer: Control = $Pause/Root
@@ -27,7 +27,8 @@ func _ready():
     debug_mode = enable_debug
     if debug_scene: change_scenes(debug_scene)
     else: change_scenes(launch_scene)
-    if debug_gui: debug_layer.add_child(debug_gui.instantiate())
+    if debug_guis:
+        for gui in debug_guis: debug_layer.add_child(gui.instantiate())
 
 
 

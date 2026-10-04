@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://svy10h66sr7c"]
+
+[ext_resource type="Script" uid="uid://d0lq0nsdjmqrl" path="res://Common/UI/HUD/Components/photo_preview.gd" id="1_oomk3"]
+
+[sub_resource type="Gradient" id="Gradient_wjymp"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oomk3"]
+gradient = SubResource("Gradient_wjymp")
+
+[node name="PhotoPreview" type="Control" unique_id=1688282761]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oomk3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1978314419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="Container" type="MarginContainer" parent="." unique_id=82268555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="Photo" type="TextureRect" parent="Container" unique_id=466446879]
+layout_mode = 2
+texture = SubResource("GradientTexture1D_oomk3")
+expand_mode = 2
+
+[node name="RequirementTitle" type="Label" parent="." unique_id=176429407]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 18.0
+offset_right = 29.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "No Target Detected"
+
+[node name="Close" type="Button" parent="." unique_id=325137433]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -45.0
+offset_right = 25.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Close"

@@ -3,6 +3,7 @@ extends Node
 
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)
+signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
 
 # Menu Signals
 signal menu_scrapbook_visible(visible: bool)

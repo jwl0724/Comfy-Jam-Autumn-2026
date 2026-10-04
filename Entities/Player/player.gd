@@ -40,8 +40,7 @@ func _on_aim_down():
 
 
 func _on_photo_shoot():
-    # TODO: For now just put the texture directly into scrapbook, for later need to have a confirm menu for screenshot before sending it to scrapbook
-    SignalBus.menu_scrapbook_addPhoto.emit(await screenshot_handler.get_screenshot_texture())
+    SignalBus.hud_photoPreview_visible.emit(true, await screenshot_handler.get_screenshot_texture())
     print("TODO: Do a camera snap effect")
 
 

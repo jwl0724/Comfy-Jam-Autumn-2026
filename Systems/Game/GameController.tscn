@@ -4,13 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
 [ext_resource type="PackedScene" uid="uid://c6wogsncvmcwd" path="res://Levels/Testing/Dog/DogFollowTest.tscn" id="3_j0ier"]
 [ext_resource type="PackedScene" uid="uid://dyqfoagllaj7u" path="res://Common/UI/Menus/Scrapbook/Scrapbook.tscn" id="4_iq1bj"]
+[ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="5_j0ier"]
 
 [node name="GameController" type="Node" unique_id=1964676766]
 script = ExtResource("1_yl5u5")
 launch_scene = ExtResource("3_iq1bj")
 enable_debug = true
 debug_scene = ExtResource("3_j0ier")
-debug_gui = ExtResource("4_iq1bj")
+debug_guis = Array[PackedScene]([ExtResource("5_j0ier"), ExtResource("4_iq1bj")])
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]
 

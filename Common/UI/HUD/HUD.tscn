@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxes41vpkkplv"]
 
-[ext_resource type="Script" uid="uid://clhtpmxnbem35" path="res://Common/UI/HUD/Components/interact_prompt.gd" id="1_uyl2v"]
+[ext_resource type="Script" uid="uid://di0tx0ul76l3a" path="res://Common/UI/HUD/hud.gd" id="1_uyl2v"]
+[ext_resource type="PackedScene" uid="uid://svy10h66sr7c" path="res://Common/UI/HUD/Components/PhotoPreview.tscn" id="2_3lme5"]
 
 [node name="Hud" type="Control" unique_id=1395693383]
 layout_mode = 3
@@ -9,8 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_uyl2v")
 
-[node name="Label" type="Label" parent="." unique_id=109536656]
+[node name="InteractPrompt" type="Label" parent="." unique_id=109536656]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -24,4 +27,6 @@ offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Press E to Interact"
-script = ExtResource("1_uyl2v")
+
+[node name="PhotoPreview" parent="." unique_id=1688282761 instance=ExtResource("2_3lme5")]
+layout_mode = 1
