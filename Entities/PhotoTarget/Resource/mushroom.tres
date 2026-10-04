@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://cchnbe283kq6o"]
+
+[ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_vbthi"]
+
+[resource]
+script = ExtResource("1_vbthi")
+target_name = "Mushroom"
+metadata/_custom_type_script = "uid://bu2110irdeg6r"

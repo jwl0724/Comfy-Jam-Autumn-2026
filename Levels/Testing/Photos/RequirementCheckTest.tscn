@@ -1,3 +1,38 @@
 [gd_scene format=3 uid="uid://c5hfvhvb5d106"]
 
+[ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_k8nqr"]
+[ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="2_anav2"]
+[ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="3_anav2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
+albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m1ypo"]
+material = SubResource("StandardMaterial3D_jbb1d")
+size = Vector2(100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_afwpu"]
+points = PackedVector3Array(50.78371, 0.7934955, 50.78371, -50.78371, -0.7934955, -50.78371, -50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, -50.78371, -50.78371, -0.7934955, 50.78371, -50.78371, 0.7934955, 50.78371, 50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, 50.78371)
+
 [node name="RequirementCheckTest" type="Node3D" unique_id=348594862]
+
+[node name="Player" parent="." unique_id=893108555 instance=ExtResource("1_k8nqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7913985, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1668739097]
+mesh = SubResource("PlaneMesh_m1ypo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1910446368]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=518366800]
+shape = SubResource("ConvexPolygonShape3D_afwpu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=802146507]
+transform = Transform3D(1, 0, 0, 0, 0.028078636, 0.9996057, 0, -0.9996057, 0.028078636, 0, 9.56009, 0)
+
+[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("2_anav2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7303501, 0.6313883, 3.638915)
+player_node = NodePath("")
+
+[node name="PhotoTarget" parent="." unique_id=133321002 instance=ExtResource("3_anav2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0716114, 2.0534527, -7.821182)

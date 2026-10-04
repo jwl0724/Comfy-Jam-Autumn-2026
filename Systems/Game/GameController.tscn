@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jm2xbcjckc8c" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
-[ext_resource type="PackedScene" uid="uid://c6wogsncvmcwd" path="res://Levels/Testing/Dog/DogFollowTest.tscn" id="3_j0ier"]
+[ext_resource type="PackedScene" uid="uid://c5hfvhvb5d106" path="res://Levels/Testing/Photos/RequirementCheckTest.tscn" id="3_j0ier"]
 [ext_resource type="PackedScene" uid="uid://dyqfoagllaj7u" path="res://Common/UI/Menus/Scrapbook/Scrapbook.tscn" id="4_iq1bj"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="5_j0ier"]
 
