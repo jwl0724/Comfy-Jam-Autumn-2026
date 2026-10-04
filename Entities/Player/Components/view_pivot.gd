@@ -62,7 +62,6 @@ func _input(event: InputEvent):
 
     # Handle button presses that involve the camera
     if event.is_action_pressed(Constants.InputNames.Aim):
-        print("TODO: Zoom in the camera and have a camera going up to screen animation")
         is_aiming = true
         camera.fov = 55
         aimed.emit()
@@ -72,5 +71,4 @@ func _input(event: InputEvent):
         camera.fov = 75
 
     if event.is_action_pressed(Constants.InputNames.Shoot) && is_aiming:
-        print("TODO: Take a screenshot of whatever is on screen and do a camera snap effect")
         shot.emit()

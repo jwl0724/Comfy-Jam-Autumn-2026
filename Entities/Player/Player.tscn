@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2un8a8506dkk" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="PackedScene" uid="uid://bky3hsdeg61tm" path="res://Entities/Player/Components/ViewPivot.tscn" id="3_1des2"]
+[ext_resource type="Script" uid="uid://d3038jbkvo8wj" path="res://Entities/Player/Systems/screenshot_handler.gd" id="3_an6q6"]
 [ext_resource type="Script" uid="uid://dfdv7amsu6564" path="res://Entities/Player/Systems/movement_controller.gd" id="3_vweq0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u36tg"]
@@ -18,6 +19,9 @@ move_speed = 10.0
 
 [node name="Movement" type="Node" parent="Systems" unique_id=914594847]
 script = ExtResource("3_vweq0")
+
+[node name="Screenshot" type="Node" parent="Systems" unique_id=1319669622]
+script = ExtResource("3_an6q6")
 
 [node name="Components" type="Node3D" parent="." unique_id=1369609793]
 

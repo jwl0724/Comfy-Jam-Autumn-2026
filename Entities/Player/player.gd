@@ -11,6 +11,7 @@ class_name Player
 
 @onready var view_controller: ViewPivot = $Components/Pivot
 @onready var move_controller: PlayerMovementController = $Systems/Movement
+@onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
 
 
 
@@ -18,6 +19,8 @@ func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
     move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
+    view_controller.aimed.connect(_on_aim_down)
+    view_controller.shot.connect(_on_photo_shoot)
 
 
 func _input(event: InputEvent):
@@ -28,6 +31,19 @@ func _input(event: InputEvent):
     if event.is_action_pressed(Constants.InputNames.Book):
         SignalBus.menu_scrapbook_visible.emit(true)
         print("TODO: Book pressed, also pauses the game timer when it is open")
+
+
+
+func _on_aim_down():
+    print("TODO: Have a camera going up to screen animation then apply a camera display filter on it")
+
+
+
+func _on_photo_shoot():
+    # TODO: For now just put the texture directly into scrapbook, for later need to have a confirm menu for screenshot before sending it to scrapbook
+    SignalBus.menu_scrapbook_addPhoto.emit(await screenshot_handler.get_screenshot_texture())
+    print("TODO: Do a camera snap effect")
+
 
 
 

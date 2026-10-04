@@ -6,6 +6,7 @@ signal hud_interactPrompt_visible(visible: bool)
 
 # Menu Signals
 signal menu_scrapbook_visible(visible: bool)
+signal menu_scrapbook_addPhoto(photo: Texture2D)
 
 # Options Signals
 signal options_changed_musicDB(linear: float)
