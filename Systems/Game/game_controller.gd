@@ -20,6 +20,8 @@ static var debug_mode: bool = false
 
 
 func _ready():
+    SignalBus.game_layers_visible.connect(_on_canvas_layer_visible_request)
+
     if !enable_debug:
         change_scenes(launch_scene)
         return
@@ -38,3 +40,11 @@ func change_scenes(new_scene: PackedScene) -> void:
         return
     if running_node.get_child_count() == 1: running_node.get_child(0).queue_free()
     running_node.add_child(new_scene.instantiate())
+
+
+
+func _on_canvas_layer_visible_request(to_visible: bool):
+    gui_layer.visible = to_visible
+    pause_layer.visible = to_visible
+    transition_layer.visible = to_visible
+    debug_layer.visible = to_visible

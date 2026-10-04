@@ -1,6 +1,9 @@
 extends Node
 @warning_ignore_start("unused_signal")
 
+# Game Controller Signals
+signal game_layers_visible(visible: bool)
+
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)
 signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
