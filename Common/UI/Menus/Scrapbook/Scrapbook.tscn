@@ -3,6 +3,16 @@
 [ext_resource type="Script" uid="uid://clnja5s6plpf0" path="res://Common/UI/Menus/Scrapbook/scrapbook.gd" id="1_kppxn"]
 [ext_resource type="PackedScene" uid="uid://mttfw02skoyc" path="res://Common/UI/Menus/Scrapbook/Components/ScrapbookEntry.tscn" id="2_s2omm"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2omm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_385so"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na5j0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5r6o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lljhy"]
+
 [node name="Scrapbook" type="Control" unique_id=23996365]
 layout_mode = 3
 anchors_preset = 15
@@ -80,6 +90,28 @@ entry_name = "Squirrel"
 visible = false
 layout_mode = 2
 entry_name = "Woodpecker"
+
+[node name="PageLeft" type="Button" parent="Container" unique_id=1478157441]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s2omm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_385so")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_na5j0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w5r6o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lljhy")
+
+[node name="PageRight" type="Button" parent="Container" unique_id=1973458046]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s2omm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_385so")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_na5j0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w5r6o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lljhy")
 
 [node name="Close" type="Button" parent="." unique_id=1140852592]
 layout_mode = 1
