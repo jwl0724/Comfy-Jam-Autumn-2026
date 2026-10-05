@@ -38,7 +38,7 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
 
 func _on_target_found(target: PhotoTarget):
     requirement_title.text = target_found_text % target.target_name
-    SignalBus.menu_scrapbook_addPhoto.emit(preview.texture)
+    SignalBus.menu_scrapbook_addPhoto.emit(preview.texture, target.target_name)
 
 
 

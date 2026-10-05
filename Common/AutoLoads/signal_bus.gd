@@ -16,7 +16,7 @@ signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
 
 # Menu Signals
 signal menu_scrapbook_visible(visible: bool)
-signal menu_scrapbook_addPhoto(photo: Texture2D)
+signal menu_scrapbook_addPhoto(photo: Texture2D, target_name: String)
 
 # Options Signals
 signal options_changed_musicDB(linear: float)

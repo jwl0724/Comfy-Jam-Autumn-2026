@@ -8,5 +8,10 @@ class_name ScrapbookEntry
 
 
 
+func _ready():
+    photo_label.text = entry_name
+
+
+
 func set_photo(photo_texture: Texture2D):
     photo_rect.texture = photo_texture
