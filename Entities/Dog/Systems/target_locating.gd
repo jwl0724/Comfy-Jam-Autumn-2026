@@ -6,11 +6,12 @@ signal locating(is_locating: bool)
 @onready var dog: Dog = owner
 
 var location_key: Dictionary[String, Vector3] = {}
-var finished_list: Array[String] = [] # TODO: Need to update scrapbook to allow passing of key, then connect it to the addPhoto signal to know when something is finished so to remove it from location key and add it to finished list
+var finished_list: Array[String] = []
 
 
 
 func _ready():
+    SignalBus.menu_scrapbook_addPhoto.connect(_on_photo_added)
     SignalBus.level_notify_targetLocation.connect(_on_notify_target_location)
 
 
@@ -21,6 +22,7 @@ func hint_at_target():
     SignalBus.level_query_targetLocations.emit()
 
     # Find closest target
+    if location_key.size() == 0: return # TODO: Probably some bark sound effect or something here
     var closest := Vector3.INF
     for location in location_key.values():
         if dog.global_position.distance_squared_to(location) < dog.global_position.distance_squared_to(closest):
@@ -29,9 +31,16 @@ func hint_at_target():
 
 
 
+func _on_photo_added(_photo: Texture2D, target_name: String):
+    finished_list.append(target_name)
+    location_key.erase(target_name)
+    print(location_key.keys())
+
+
+
 func _on_notify_target_location(target: PhotoTarget):
     if finished_list.has(target.target_name): return
-    location_key[target.name] = target.global_position
+    location_key[target.target_name] = target.global_position
 
 
 
