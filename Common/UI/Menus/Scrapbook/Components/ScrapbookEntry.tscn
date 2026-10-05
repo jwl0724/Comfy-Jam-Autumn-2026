@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://mttfw02skoyc"]
+
+[ext_resource type="Script" uid="uid://tx4in1nwetoq" path="res://Common/UI/Menus/Scrapbook/Components/scrapbook_entry.gd" id="1_0mvwx"]
+
+[sub_resource type="Gradient" id="Gradient_lnu3d"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.8834968, 0.83511525, 0.73068494, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0mvwx"]
+gradient = SubResource("Gradient_lnu3d")
+
+[node name="ScrapbookEntry" type="Control" unique_id=99451584]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+script = ExtResource("1_0mvwx")
+
+[node name="Photo" type="TextureRect" parent="." unique_id=1300188314]
+custom_minimum_size = Vector2(214, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -66.0
+offset_right = 107.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_0mvwx")
+expand_mode = 2
+
+[node name="PhotoLabel" type="Label" parent="." unique_id=33361300]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mushroom"
+horizontal_alignment = 1
+vertical_alignment = 1

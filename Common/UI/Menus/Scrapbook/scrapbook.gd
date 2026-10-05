@@ -6,6 +6,8 @@ extends Control
 @onready var close_button: Button = $Close
 
 
+# TODO: Determine requirements and find associated models for them
+
 
 func _ready():
     visible = false

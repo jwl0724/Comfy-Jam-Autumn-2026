@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_k8nqr"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="2_anav2"]
 [ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="3_anav2"]
-[ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/mushroom.tres" id="4_m1ypo"]
+[ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/red_toadstool.tres" id="4_m1ypo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
 albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
