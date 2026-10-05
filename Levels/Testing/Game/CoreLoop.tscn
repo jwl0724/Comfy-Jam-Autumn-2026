@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmgjpuq61d5gn"]
 
-[ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_handler.gd" id="1_6t3oa"]
+[ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="1_6t3oa"]
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_7s530"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="2_6t3oa"]
 [ext_resource type="Resource" uid="uid://dek12rt3cg2f1" path="res://Entities/PhotoTarget/Resource/oyster_mushroom.tres" id="3_g3bex"]
@@ -33,7 +33,12 @@ points = PackedVector3Array(-5.078371, -5.077377, -0.57936513, 4.7881784, 4.7872
 size = Vector3(10, 10, 1)
 
 [node name="CoreLoop" type="Node3D" unique_id=1877594263]
+
+[node name="Systems" type="Node" parent="." unique_id=1655704057]
+
+[node name="LevelState" type="Node" parent="Systems" unique_id=308500051 node_paths=PackedStringArray("photo_target_node")]
 script = ExtResource("1_6t3oa")
+photo_target_node = NodePath("../../PhotoTargets")
 
 [node name="TeleportPoints" type="Node" parent="." unique_id=457785661]
 
@@ -155,5 +160,6 @@ occluder = SubResource("BoxOccluder3D_twywq")
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("1_7s530")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7913985, 0)
 
-[node name="Dog" parent="." unique_id=795914483 instance=ExtResource("2_6t3oa")]
+[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("2_6t3oa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7303501, 0.6313883, 3.638915)
+player_node = NodePath("../Player")

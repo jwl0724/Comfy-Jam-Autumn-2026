@@ -34,7 +34,6 @@ func hint_at_target():
 func _on_photo_added(_photo: Texture2D, target_name: String):
     finished_list.append(target_name)
     location_key.erase(target_name)
-    print(location_key.keys())
 
 
 

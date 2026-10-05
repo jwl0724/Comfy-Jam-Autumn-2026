@@ -1,3 +1,17 @@
 [gd_scene format=3 uid="uid://dkkjyj17iujcm"]
 
+[ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="1_bd0nb"]
+
 [node name="Forest" type="Node3D" unique_id=1823147826]
+
+[node name="Systems" type="Node" parent="." unique_id=1585029600]
+
+[node name="LevelState" type="Node" parent="Systems" unique_id=411558482 node_paths=PackedStringArray("photo_target_node")]
+script = ExtResource("1_bd0nb")
+photo_target_node = NodePath("../../PhotoTargets")
+
+[node name="TeleportPoints" type="Node" parent="." unique_id=186562654]
+
+[node name="PhotoTargets" type="Node" parent="." unique_id=1653841262]
+
+[node name="Environment" type="Node" parent="." unique_id=770317155]

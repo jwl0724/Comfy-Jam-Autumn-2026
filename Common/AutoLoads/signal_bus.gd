@@ -9,6 +9,7 @@ signal level_query_targetView()
 signal level_notify_targetView(target: PhotoTarget)
 signal level_query_targetLocations()
 signal level_notify_targetLocation(target: PhotoTarget)
+signal level_state_finished()
 
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)
