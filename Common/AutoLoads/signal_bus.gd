@@ -7,6 +7,10 @@ signal game_layers_clearAll()
 signal game_layers_addGUI(layer: GameController.ControlLayers, scenes: Array[PackedScene])
 signal game_layers_clearGUI(layer: GameController.ControlLayers)
 
+# Transition Signals
+signal game_transition_fadeShow(color: Color, time: float) ## A fade transition to show screen
+signal game_transition_fadeHide(color: Color, time: float) ## A fade transition to hide screen
+
 # Game Controller Signals
 signal game_pause(do_pause: bool)
 signal game_navigate_mainMenu()

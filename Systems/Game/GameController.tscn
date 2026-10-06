@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
 [ext_resource type="PackedScene" uid="uid://bmgjpuq61d5gn" path="res://Levels/Testing/Game/CoreLoop.tscn" id="3_j0ier"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="5_j0ier"]
+[ext_resource type="PackedScene" uid="uid://bylnirxgwoeag" path="res://Common/UI/Transitions/Fade.tscn" id="5_j6267"]
 
 [node name="GameController" type="Node" unique_id=1964676766]
 script = ExtResource("1_yl5u5")
@@ -50,6 +51,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fade" parent="Transition/Root" unique_id=1292248484 instance=ExtResource("5_j6267")]
+layout_mode = 1
 
 [node name="Debug" type="CanvasLayer" parent="." unique_id=409890986]
 process_mode = 3

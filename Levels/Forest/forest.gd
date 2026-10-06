@@ -10,8 +10,7 @@ func _ready():
     sequence_handler.start_sequence_finished.connect(_on_start_sequence_finished)
     sequence_handler.end_sequence_finished.connect(_on_end_sequence_finished)
 
-    # TODO: Below depends on if wanted scripted sequence, determine if scripted sequence is wanted
-    # SignalBus.level_player_enableControls.emit(false)
+    SignalBus.level_player_enableControls.emit(false)
     sequence_handler.call_deferred("play_start_sequence")
 
 
@@ -21,8 +20,7 @@ func _on_level_end(win: bool):
     else: sequence_handler.play_lose_sequence()
 
 
-
-# TODO: The start/end sequences might not need a signal? for now will just have just in case needed in the future to be determined
+# TODO: Below depends on if wanted scripted sequence, determine if scripted sequence is wanted
 func _on_start_sequence_finished():
     SignalBus.level_player_enableControls.emit(true)
 

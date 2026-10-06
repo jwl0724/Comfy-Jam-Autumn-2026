@@ -5,6 +5,7 @@ signal start_sequence_finished()
 signal end_sequence_finished()
 
 const seconds_per_line: float = 3
+const seconds_per_fade: float = 2
 
 const start_dialogue: Array[String] = [
     "Come on Gou, today's our last day here before we move to the city.",
@@ -27,10 +28,17 @@ const lose_dialogue: Array[String] = [
 
 
 func play_start_sequence():
-    SignalBus.hud_dialogue_play.emit(start_dialogue, seconds_per_line)
+    # TODO: Probably add some scripted actions here?
+    var t = create_tween()
 
-    var t = create_tween() # TODO: Probably add some scripted actions here?
+    t.tween_callback(func(): SignalBus.game_transition_fadeShow.emit(Color.BLACK, seconds_per_fade))
+    t.tween_interval(seconds_per_fade)
+
+    t.tween_callback(func():
+        SignalBus.level_player_enableControls.emit(true)
+        SignalBus.hud_dialogue_play.emit(start_dialogue, seconds_per_line))
     t.tween_interval(seconds_per_line * start_dialogue.size())
+
     t.tween_callback(func(): start_sequence_finished.emit())
     t.play()
 
