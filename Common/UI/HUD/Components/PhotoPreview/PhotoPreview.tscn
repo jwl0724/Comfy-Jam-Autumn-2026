@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://svy10h66sr7c"]
 
-[ext_resource type="Script" uid="uid://d0lq0nsdjmqrl" path="res://Common/UI/HUD/Components/photo_preview.gd" id="1_oomk3"]
+[ext_resource type="Script" uid="uid://d0lq0nsdjmqrl" path="res://Common/UI/HUD/Components/PhotoPreview/photo_preview.gd" id="1_oomk3"]
 
 [sub_resource type="Gradient" id="Gradient_wjymp"]
 

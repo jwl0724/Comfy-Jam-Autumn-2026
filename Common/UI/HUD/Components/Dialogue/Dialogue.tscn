@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cw6o2ta1pii8a"]
 
-[ext_resource type="Script" uid="uid://c7rjouu1xc240" path="res://Common/UI/HUD/Components/dialogue.gd" id="1_xewkj"]
+[ext_resource type="Script" uid="uid://c7rjouu1xc240" path="res://Common/UI/HUD/Components/Dialogue/dialogue.gd" id="1_xewkj"]
 
 [node name="Dialogue" type="Label" unique_id=1657509195]
 anchors_preset = 12
