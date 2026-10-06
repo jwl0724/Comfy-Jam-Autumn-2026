@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="1_6t3oa"]
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="1_7s530"]
+[ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_twywq"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="2_6t3oa"]
+[ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_8u5jq"]
 [ext_resource type="Resource" uid="uid://dek12rt3cg2f1" path="res://Entities/PhotoTarget/Resource/oyster_mushroom.tres" id="3_g3bex"]
 [ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="3_s3k57"]
 [ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/red_toadstool.tres" id="4_b5ksk"]
@@ -33,12 +35,16 @@ points = PackedVector3Array(-5.078371, -5.077377, -0.57936513, 4.7881784, 4.7872
 size = Vector3(10, 10, 1)
 
 [node name="CoreLoop" type="Node3D" unique_id=1877594263]
+script = ExtResource("1_twywq")
 
 [node name="Systems" type="Node" parent="." unique_id=1655704057]
 
 [node name="LevelState" type="Node" parent="Systems" unique_id=308500051 node_paths=PackedStringArray("photo_target_node")]
 script = ExtResource("1_6t3oa")
 photo_target_node = NodePath("../../PhotoTargets")
+
+[node name="SequenceHandler" type="Node" parent="Systems" unique_id=675271532]
+script = ExtResource("3_8u5jq")
 
 [node name="TeleportPoints" type="Node" parent="." unique_id=457785661]
 

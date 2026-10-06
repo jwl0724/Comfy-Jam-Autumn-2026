@@ -4,13 +4,14 @@ extends Node
 # Game Controller Signals
 signal game_layers_visible(visible: bool)
 signal game_pause(do_pause: bool)
+signal game_navigate_mainMenu()
+signal game_navigate_ingame()
 
-# Level Signals
+# Level Signals for PhotoTarget
 signal level_query_targetView()
 signal level_notify_targetView(target: PhotoTarget)
 signal level_query_targetLocations()
 signal level_notify_targetLocation(target: PhotoTarget)
-signal level_state_finished(win: bool)
 
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)
