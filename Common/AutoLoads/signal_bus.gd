@@ -3,6 +3,7 @@ extends Node
 
 # Game Controller Signals
 signal game_layers_visible(visible: bool)
+signal game_pause(do_pause: bool)
 
 # Level Signals
 signal level_query_targetView()
@@ -14,6 +15,7 @@ signal level_state_finished(win: bool)
 # HUD Signals
 signal hud_interactPrompt_visible(visible: bool)
 signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
+signal hud_dialogue_play(dialogue_sequence: Array[String], time_per_line: float)
 
 # Menu Signals
 signal menu_scrapbook_visible(visible: bool)

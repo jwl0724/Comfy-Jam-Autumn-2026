@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di0tx0ul76l3a" path="res://Common/UI/HUD/hud.gd" id="1_uyl2v"]
 [ext_resource type="PackedScene" uid="uid://svy10h66sr7c" path="res://Common/UI/HUD/Components/PhotoPreview.tscn" id="2_3lme5"]
+[ext_resource type="PackedScene" uid="uid://cw6o2ta1pii8a" path="res://Common/UI/HUD/Components/Dialogue.tscn" id="3_gryef"]
 
 [node name="Hud" type="Control" unique_id=1395693383]
 layout_mode = 3
@@ -30,3 +31,8 @@ text = "Press E to Interact"
 
 [node name="PhotoPreview" parent="." unique_id=1688282761 instance=ExtResource("2_3lme5")]
 layout_mode = 1
+
+[node name="Dialogue" parent="." unique_id=1657509195 instance=ExtResource("3_gryef")]
+layout_mode = 1
+offset_top = -54.0
+offset_bottom = -31.0
