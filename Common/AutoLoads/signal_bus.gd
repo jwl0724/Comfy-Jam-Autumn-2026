@@ -1,8 +1,13 @@
 extends Node
 @warning_ignore_start("unused_signal")
 
-# Game Controller Signals
+# Layers Signals
 signal game_layers_visible(visible: bool)
+signal game_layers_clearAll()
+signal game_layers_addGUI(layer: GameController.ControlLayers, scenes: Array[PackedScene])
+signal game_layers_clearGUI(layer: GameController.ControlLayers)
+
+# Game Controller Signals
 signal game_pause(do_pause: bool)
 signal game_navigate_mainMenu()
 signal game_navigate_ingame()

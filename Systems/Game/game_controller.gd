@@ -3,6 +3,8 @@ class_name GameController
 
 static var debug_mode: bool = false
 
+enum ControlLayers { GUI, PAUSE, TRANSITION, DEBUG }
+
 @export var launch_scene: PackedScene = null
 
 @export_group("Dev Tools")
@@ -21,6 +23,9 @@ static var debug_mode: bool = false
 
 func _ready():
     SignalBus.game_layers_visible.connect(_on_canvas_layer_visible_request)
+    SignalBus.game_layers_clearAll.connect(_on_clear_layers)
+    SignalBus.game_layers_addGUI.connect(_on_addGUI)
+    SignalBus.game_layers_clearGUI.connect(_on_clearGUI)
 
     if !enable_debug:
         change_scenes(launch_scene)
@@ -48,3 +53,31 @@ func _on_canvas_layer_visible_request(to_visible: bool):
     pause_layer.visible = to_visible
     transition_layer.visible = to_visible
     debug_layer.visible = to_visible
+
+
+
+func _on_clear_layers():
+    NodeUtils.clear_children(gui_layer)
+    NodeUtils.clear_children(pause_layer)
+    NodeUtils.clear_children(transition_layer)
+    NodeUtils.clear_children(debug_layer)
+
+
+
+func _on_addGUI(layer: ControlLayers, scenes: Array[PackedScene]):
+    var selected: Control = null
+    if layer == ControlLayers.GUI: selected = gui_layer
+    elif layer == ControlLayers.PAUSE: selected = pause_layer
+    elif layer == ControlLayers.TRANSITION: selected = transition_layer
+    elif layer == ControlLayers.DEBUG: selected = debug_layer
+
+    for scene in scenes:
+        selected.add_child(scene.instantiate())
+
+
+
+func _on_clearGUI(layer: ControlLayers):
+    if layer == ControlLayers.GUI: NodeUtils.clear_children(gui_layer)
+    elif layer == ControlLayers.PAUSE: NodeUtils.clear_children(pause_layer)
+    elif layer == ControlLayers.TRANSITION: NodeUtils.clear_children(transition_layer)
+    elif layer == ControlLayers.DEBUG: NodeUtils.clear_children(debug_layer)
