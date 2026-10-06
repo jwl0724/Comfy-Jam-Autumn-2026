@@ -21,8 +21,8 @@ func _on_play_dialogue(sequence: Array[String], time_per_line: float):
         running_dialogue_tween.tween_callback(func():
             visible_ratio = 0
             text = line)
-        running_dialogue_tween.tween_property(self, "visible_ratio", 1, time_per_line * 0.5)
-        running_dialogue_tween.tween_interval(time_per_line * 0.5) # Leave a little time for reading
+        running_dialogue_tween.tween_property(self, "visible_ratio", 1, time_per_line * 0.3)
+        running_dialogue_tween.tween_interval(time_per_line * 0.7) # Leave a little time for reading
 
     running_dialogue_tween.tween_callback(func(): visible = false)
     running_dialogue_tween.play()
