@@ -28,7 +28,9 @@ func check_targets():
 
 func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
     visible = to_visible
+    SignalBus.level_player_enableControls.emit(!to_visible)
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED
+
     if !to_visible: return
     preview.texture = photo
     requirement_title.text = no_target_text

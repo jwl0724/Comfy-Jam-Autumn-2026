@@ -59,6 +59,7 @@ func _on_photo_add_request(photo: Texture2D, target_name: String):
 
 func _on_scrapbook_request(to_visible: bool):
     visible = to_visible
+    SignalBus.level_player_enableControls.emit(!to_visible)
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED
 
 

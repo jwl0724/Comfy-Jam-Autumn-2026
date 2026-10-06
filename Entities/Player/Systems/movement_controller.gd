@@ -16,6 +16,7 @@ func _physics_process(delta):
 
 	# Get input direction
 	var input_vector := Input.get_vector(Constants.InputNames.Left, Constants.InputNames.Right, Constants.InputNames.Forward, Constants.InputNames.Backward)
+	if !player.controls_enabled: input_vector = Vector2.ZERO # Null input so physics will still run, just with no input
 	var direction := player.transform.basis * Vector3(input_vector.x, 0, input_vector.y)
 
 	# Move player

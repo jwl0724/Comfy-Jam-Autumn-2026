@@ -13,6 +13,8 @@ class_name Player
 @onready var move_controller: PlayerMovementController = $Systems/Movement
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
 
+var controls_enabled: bool = true
+
 
 
 func _ready():
@@ -21,16 +23,18 @@ func _ready():
     view_controller.notify_interact_look.connect(_on_look_notify)
     view_controller.aimed.connect(_on_aim_down)
     view_controller.shot.connect(_on_photo_shoot)
+    SignalBus.level_player_enableControls.connect(func(enable: bool): controls_enabled = enable)
+
 
 
 func _input(event: InputEvent):
-    if event is InputEventMouseMotion || Input.mouse_mode == Input.MOUSE_MODE_VISIBLE: return
-    if event.is_action_pressed(Constants.InputNames.Pause):
+    if event.is_action_pressed(Constants.InputNames.Pause): # Allows pausing when other UI elements are over it
         print("TODO: Create a pause menu that lets you change options and go back to main menu")
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE # Temp until pause menu done
+
+    if event is InputEventMouseMotion || !controls_enabled: return
     if event.is_action_pressed(Constants.InputNames.Book):
         SignalBus.menu_scrapbook_visible.emit(true)
-        print("TODO: Book pressed, also pauses the game timer when it is open")
 
 
 
@@ -44,7 +48,6 @@ func _on_photo_shoot():
     SignalBus.hud_photoPreview_visible.emit(true, await screenshot_handler.get_screenshot_texture())
     SignalBus.game_layers_visible.emit(true)
     print("TODO: Do a camera snap effect")
-
 
 
 
