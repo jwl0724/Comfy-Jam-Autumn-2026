@@ -1,7 +1,6 @@
 extends Control
 class_name PhotoPreview
 
-# TODO: Need to pause the game timer when the preview is open
 # TODO: Probably add a new button to replace a picture in the scrapbook if player takes a better picture
 
 const no_target_text: String = "No Target Detected"
@@ -10,6 +9,8 @@ const target_found_text: String = "Picture of a %s"
 @onready var requirement_title: Label = $RequirementTitle
 @onready var preview: TextureRect = $Container/Photo
 @onready var close_button: Button = $Close
+
+var current_target: PhotoTarget = null
 
 
 
@@ -27,6 +28,8 @@ func check_targets():
 
 
 func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
+    current_target = null # Default to if there is no target in image
+
     visible = to_visible
     SignalBus.level_player_enableControls.emit(!to_visible)
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED
@@ -40,9 +43,13 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
 
 func _on_target_found(target: PhotoTarget):
     requirement_title.text = target_found_text % target.target_name
-    SignalBus.menu_scrapbook_addPhoto.emit(preview.texture, target.target_name)
+    current_target = target
 
 
 
 func _on_close():
+    if current_target != null: SignalBus.menu_scrapbook_addPhoto.emit(preview.texture, current_target.target_name)
+    current_target = null
+
+    # Close preview
     SignalBus.hud_photoPreview_visible.emit(false, null)
