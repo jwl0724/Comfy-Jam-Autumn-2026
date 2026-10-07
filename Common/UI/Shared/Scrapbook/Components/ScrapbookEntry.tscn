@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mttfw02skoyc"]
 
-[ext_resource type="Script" uid="uid://tx4in1nwetoq" path="res://Common/UI/HUD/Components/Scrapbook/Components/scrapbook_entry.gd" id="1_0mvwx"]
+[ext_resource type="Script" uid="uid://tx4in1nwetoq" path="res://Common/UI/Shared/Scrapbook/Components/scrapbook_entry.gd" id="1_0mvwx"]
 
 [sub_resource type="Gradient" id="Gradient_lnu3d"]
 offsets = PackedFloat32Array(1)
