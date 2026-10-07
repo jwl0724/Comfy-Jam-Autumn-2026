@@ -73,4 +73,6 @@ func _input(event: InputEvent):
         camera.fov = 75
 
     if event.is_action_pressed(Constants.InputNames.Shoot) && is_aiming:
+        is_aiming = false
+        camera.fov = 55
         shot.emit()
