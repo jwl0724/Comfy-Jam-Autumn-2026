@@ -14,21 +14,24 @@ class_name Player
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
 
 var controls_enabled: bool = true
+var can_pause: bool = false
 
 
 
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
     move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
     view_controller.aimed.connect(_on_aim_down)
     view_controller.shot.connect(_on_photo_shoot)
-    SignalBus.level_player_enableControls.connect(func(enable: bool): controls_enabled = enable)
+
+    SignalBus.level_player_enableControls.connect(_on_enable_controls)
 
 
 
 func _input(event: InputEvent):
-    if event.is_action_pressed(Constants.InputNames.Pause): # Allows pausing when other UI elements are over it
+    if event.is_action_pressed(Constants.InputNames.Pause) && can_pause: # Allows pausing when other UI elements are over it
         SignalBus.game_pause.emit(true)
 
     if event is InputEventMouseMotion || !controls_enabled: return
@@ -57,3 +60,9 @@ func _on_look_notify(is_looking: bool):
 
 func _on_move_notify(is_moving: bool):
     view_controller.toggle_camera_bob(is_moving)
+
+
+
+func _on_enable_controls(enable: bool):
+    if enable: can_pause = true # Stops pausing before first time control is given
+    controls_enabled = enable
