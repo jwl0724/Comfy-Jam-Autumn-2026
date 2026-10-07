@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="1_bd0nb"]
 [ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_cmbib"]
+[ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_scdmf"]
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_scdmf"]
 
 [node name="Forest" type="Node3D" unique_id=1823147826]
 script = ExtResource("1_cmbib")
+gui_layer = Array[PackedScene]([ExtResource("2_scdmf")])
 
 [node name="Systems" type="Node" parent="." unique_id=1585029600]
 
