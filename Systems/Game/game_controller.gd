@@ -16,11 +16,12 @@ enum ControlLayers { GUI, PAUSE, TRANSITION, DEBUG }
 @export var debug_guis: Array[PackedScene] = []
 
 @onready var gui_layer: Control = $GUI/Root
-@onready var pause_layer: PauseMenu = $Pause/Pause
+@onready var pause_layer: Control = $Pause/Root
 @onready var transition_layer: Control = $Transition/Root
 @onready var debug_layer: Control = $Debug/Root
 
 @onready var running_node: Node3D = $Running
+@onready var pause_menu: PauseMenu = $Pause/Root/Pause
 
 
 
@@ -61,7 +62,7 @@ func _on_back_to_menu():
 
 func _on_pause_request(do_pause: bool):
     get_tree().paused = do_pause
-    pause_layer.enable_menu(do_pause)
+    pause_menu.enable_menu(do_pause)
 
 
 

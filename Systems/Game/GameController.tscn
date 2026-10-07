@@ -35,7 +35,17 @@ mouse_filter = 2
 process_mode = 2
 layer = 20
 
-[node name="Pause" parent="Pause" unique_id=1291881355 instance=ExtResource("4_j0ier")]
+[node name="Root" type="Control" parent="Pause" unique_id=1001044384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Pause" parent="Pause/Root" unique_id=1291881355 instance=ExtResource("4_j0ier")]
+layout_mode = 1
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=561777814]
 process_mode = 3
@@ -51,6 +61,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Fade" parent="Transition/Root" unique_id=1292248484 instance=ExtResource("5_j6267")]
+visible = false
 layout_mode = 1
 
 [node name="Debug" type="CanvasLayer" parent="." unique_id=409890986]
