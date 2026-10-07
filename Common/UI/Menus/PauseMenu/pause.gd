@@ -25,6 +25,7 @@ func _ready():
 func _input(event: InputEvent):
     if event is InputEventMouseMotion: return
     if event.is_action_pressed(Constants.InputNames.Pause) && visible:
+        get_viewport().set_input_as_handled() # Prevents immediate un-pausing
         _on_resume_pressed()
 
 
