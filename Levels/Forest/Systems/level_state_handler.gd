@@ -26,7 +26,13 @@ func _ready():
     SignalBus.menu_scrapbook_addPhoto.connect(_on_photo_added)
 
 
-# TODO: Maybe have a UI element to show the remaining time and display it
+
+func _process(_delta):
+    if level_timer.is_stopped(): return
+    SignalBus.hud_timer_update.emit(level_timer.time_left, level_timer.wait_time)
+
+
+
 func start_level_timer():
     level_timer.start()
 

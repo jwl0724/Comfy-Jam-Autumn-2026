@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cw6o2ta1pii8a" path="res://Common/UI/HUD/Components/Dialogue/Dialogue.tscn" id="3_gryef"]
 [ext_resource type="PackedScene" uid="uid://dboovtohf5esk" path="res://Common/UI/HUD/Components/Tutorial/TutorialText.tscn" id="4_37ke4"]
 [ext_resource type="PackedScene" uid="uid://dyqfoagllaj7u" path="res://Common/UI/Shared/Scrapbook/Scrapbook.tscn" id="4_mc25i"]
+[ext_resource type="PackedScene" uid="uid://dodpraxvnbs0q" path="res://Common/UI/HUD/Components/TimerDisplay/TimerDisplay.tscn" id="6_hgg0d"]
 
 [node name="Hud" type="Control" unique_id=1395693383]
 layout_mode = 3
@@ -15,6 +16,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_uyl2v")
+
+[node name="TimerDisplay" parent="." unique_id=1687648138 instance=ExtResource("6_hgg0d")]
+layout_mode = 1
+offset_bottom = 30.0
 
 [node name="InteractPrompt" type="Label" parent="." unique_id=109536656]
 layout_mode = 1

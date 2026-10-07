@@ -24,6 +24,7 @@ signal level_query_targetLocations()
 signal level_notify_targetLocation(target: PhotoTarget)
 
 # HUD Signals
+signal hud_timer_update(time_left: float, wait_time: float)
 signal hud_interactPrompt_visible(visible: bool)
 signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
 signal hud_dialogue_play(dialogue_sequence: Array[String], time_per_line: float)
