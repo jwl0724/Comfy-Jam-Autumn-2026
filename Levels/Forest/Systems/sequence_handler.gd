@@ -14,7 +14,7 @@ const start_dialogue: Array[String] = [
 ]
 
 const win_dialogue: Array[String] = [
-    "That was the last picture.",
+    "I think that was the last picture.",
     "We did it Gou! I knew I could always count on you.",
     "Let's go home and show mom and dad, they're gonna be so proud of us!"
 ]
@@ -43,21 +43,33 @@ func play_start_sequence():
     t.play()
 
 
-
+# Add fade sequence here, and then open the scrapbook UI here
 func play_win_sequence():
-    SignalBus.hud_dialogue_play.emit(win_dialogue, seconds_per_line)
-
     var t = create_tween()
+
+    t.tween_callback(func(): SignalBus.hud_dialogue_play.emit(win_dialogue, seconds_per_line))
     t.tween_interval(seconds_per_line * win_dialogue.size())
+
+    t.tween_callback(func():
+        SignalBus.level_player_enableControls.emit(false)
+        SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
+    t.tween_interval(seconds_per_fade)
+
     t.tween_callback(func(): end_sequence_finished.emit())
     t.play()
 
 
-
+# Add fade sequence here, and then open the scrapbook UI here
 func play_lose_sequence():
-    SignalBus.hud_dialogue_play.emit(lose_dialogue, seconds_per_line)
-
     var t = create_tween()
+
+    t.tween_callback(func(): SignalBus.hud_dialogue_play.emit(lose_dialogue, seconds_per_line))
     t.tween_interval(seconds_per_line * lose_dialogue.size())
+
+    t.tween_callback(func():
+        SignalBus.level_player_enableControls.emit(false)
+        SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
+    t.tween_interval(seconds_per_fade)
+
     t.tween_callback(func(): end_sequence_finished.emit())
     t.play()

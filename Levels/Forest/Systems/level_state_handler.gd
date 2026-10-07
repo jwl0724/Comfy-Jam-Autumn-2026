@@ -21,10 +21,14 @@ func _ready():
     level_timer.wait_time = time_limit_seconds
     level_timer.one_shot = true
     level_timer.timeout.connect(_on_timeout)
-    level_timer.start()
 
     total_targets = photo_target_node.get_child_count()
     SignalBus.menu_scrapbook_addPhoto.connect(_on_photo_added)
+
+
+# TODO: Maybe have a UI element to show the remaining time and display it
+func start_level_timer():
+    level_timer.start()
 
 
 
