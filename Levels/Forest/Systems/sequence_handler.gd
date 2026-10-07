@@ -39,6 +39,9 @@ func play_start_sequence():
         SignalBus.hud_dialogue_play.emit(start_dialogue, seconds_per_line))
     t.tween_interval(seconds_per_line * start_dialogue.size())
 
+    t.tween_interval(seconds_per_line / 3) # Have a little delay before displaying tutorial messages
+    t.tween_callback(func(): SignalBus.hud_tutorial_play.emit())
+
     t.tween_callback(func(): start_sequence_finished.emit())
     t.play()
 

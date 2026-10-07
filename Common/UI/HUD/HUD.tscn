@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://di0tx0ul76l3a" path="res://Common/UI/HUD/hud.gd" id="1_uyl2v"]
 [ext_resource type="PackedScene" uid="uid://svy10h66sr7c" path="res://Common/UI/HUD/Components/PhotoPreview/PhotoPreview.tscn" id="2_3lme5"]
 [ext_resource type="PackedScene" uid="uid://cw6o2ta1pii8a" path="res://Common/UI/HUD/Components/Dialogue/Dialogue.tscn" id="3_gryef"]
+[ext_resource type="PackedScene" uid="uid://dboovtohf5esk" path="res://Common/UI/HUD/Components/Tutorial/TutorialText.tscn" id="4_37ke4"]
 [ext_resource type="PackedScene" uid="uid://dyqfoagllaj7u" path="res://Common/UI/Shared/Scrapbook/Scrapbook.tscn" id="4_mc25i"]
 
 [node name="Hud" type="Control" unique_id=1395693383]
@@ -23,20 +24,36 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -70.5
-offset_top = -74.0
+offset_top = -85.0
 offset_right = 70.5
-offset_bottom = -51.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Press E to Interact"
 
 [node name="PhotoPreview" parent="." unique_id=1688282761 instance=ExtResource("2_3lme5")]
+visible = false
 layout_mode = 1
 
 [node name="Dialogue" parent="." unique_id=1657509195 instance=ExtResource("3_gryef")]
+visible = false
 layout_mode = 1
 offset_top = -54.0
 offset_bottom = -31.0
 
 [node name="Scrapbook" parent="." unique_id=23996365 instance=ExtResource("4_mc25i")]
+visible = false
 layout_mode = 1
+
+[node name="Tutorial" parent="." unique_id=1880504937 instance=ExtResource("4_37ke4")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 306.0
+offset_right = 640.0
+offset_bottom = 329.0
+grow_horizontal = 1
+grow_vertical = 1

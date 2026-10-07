@@ -27,6 +27,7 @@ signal level_notify_targetLocation(target: PhotoTarget)
 signal hud_interactPrompt_visible(visible: bool)
 signal hud_photoPreview_visible(visible: bool, photo_preview: Texture2D)
 signal hud_dialogue_play(dialogue_sequence: Array[String], time_per_line: float)
+signal hud_tutorial_play()
 
 # Menu Signals
 signal menu_scrapbook_visible(visible: bool)
