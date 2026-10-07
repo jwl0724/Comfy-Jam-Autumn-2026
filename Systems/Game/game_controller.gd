@@ -5,7 +5,10 @@ static var debug_mode: bool = false
 
 enum ControlLayers { GUI, PAUSE, TRANSITION, DEBUG }
 
-@export var launch_scene: PackedScene = null
+@export_group("Required Scenes")
+@export var launch_scene: PackedScene = null # TODO: Replace this with some splash screen later
+@export var main_menu_scene: PackedScene = null
+@export var ingame_scene: PackedScene = null
 
 @export_group("Dev Tools")
 @export var enable_debug: bool = false
@@ -13,7 +16,7 @@ enum ControlLayers { GUI, PAUSE, TRANSITION, DEBUG }
 @export var debug_guis: Array[PackedScene] = []
 
 @onready var gui_layer: Control = $GUI/Root
-@onready var pause_layer: Control = $Pause/Root
+@onready var pause_layer: PauseMenu = $Pause/Pause
 @onready var transition_layer: Control = $Transition/Root
 @onready var debug_layer: Control = $Debug/Root
 
@@ -26,6 +29,8 @@ func _ready():
     SignalBus.game_layers_clearAll.connect(_on_clear_layers)
     SignalBus.game_layers_addGUI.connect(_on_addGUI)
     SignalBus.game_layers_clearGUI.connect(_on_clearGUI)
+    SignalBus.game_pause.connect(_on_pause_request)
+    SignalBus.game_navigate_mainMenu.connect(_on_back_to_menu)
 
     if !enable_debug:
         change_scenes(launch_scene)
@@ -45,6 +50,18 @@ func change_scenes(new_scene: PackedScene) -> void:
         return
     if running_node.get_child_count() == 1: running_node.get_child(0).queue_free()
     running_node.add_child(new_scene.instantiate())
+
+
+
+func _on_back_to_menu():
+    _on_clearGUI(ControlLayers.GUI)
+    change_scenes(main_menu_scene)
+
+
+
+func _on_pause_request(do_pause: bool):
+    get_tree().paused = do_pause
+    pause_layer.enable_menu(do_pause)
 
 
 

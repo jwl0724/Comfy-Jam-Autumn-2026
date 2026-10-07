@@ -29,8 +29,7 @@ func _ready():
 
 func _input(event: InputEvent):
     if event.is_action_pressed(Constants.InputNames.Pause): # Allows pausing when other UI elements are over it
-        print("TODO: Create a pause menu that lets you change options and go back to main menu")
-        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE # Temp until pause menu done
+        SignalBus.game_pause.emit(true)
 
     if event is InputEventMouseMotion || !controls_enabled: return
     if event.is_action_pressed(Constants.InputNames.Book):

@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://jm2xbcjckc8c" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
 [ext_resource type="PackedScene" uid="uid://bmgjpuq61d5gn" path="res://Levels/Testing/Game/CoreLoop.tscn" id="3_j0ier"]
+[ext_resource type="PackedScene" uid="uid://dkkjyj17iujcm" path="res://Levels/Forest/Forest.tscn" id="3_j6267"]
+[ext_resource type="PackedScene" uid="uid://c2l4386pikp20" path="res://Common/UI/Menus/PauseMenu/Pause.tscn" id="4_j0ier"]
 [ext_resource type="PackedScene" uid="uid://bylnirxgwoeag" path="res://Common/UI/Transitions/Fade.tscn" id="5_j6267"]
 
 [node name="GameController" type="Node" unique_id=1964676766]
 script = ExtResource("1_yl5u5")
 launch_scene = ExtResource("3_iq1bj")
+main_menu_scene = ExtResource("3_iq1bj")
+ingame_scene = ExtResource("3_j6267")
 enable_debug = true
 debug_scene = ExtResource("3_j0ier")
 
@@ -25,19 +29,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=320212798]
 process_mode = 2
 layer = 20
 
-[node name="Root" type="Control" parent="Pause" unique_id=1688767101]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="Pause" parent="Pause" unique_id=1291881355 instance=ExtResource("4_j0ier")]
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=561777814]
 process_mode = 3
