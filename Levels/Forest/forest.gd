@@ -13,6 +13,7 @@ func _ready():
     sequence_handler.start_sequence_finished.connect(_on_start_sequence_finished)
     sequence_handler.end_sequence_finished.connect(_on_end_sequence_finished)
 
+    SignalBus.level_player_enablePause.emit(false)
     SignalBus.level_player_enableControls.emit(false)
     SignalBus.game_layers_addGUI.emit(GameController.ControlLayers.GUI, gui_layer)
     sequence_handler.call_deferred("play_start_sequence")

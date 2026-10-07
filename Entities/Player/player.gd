@@ -14,7 +14,7 @@ class_name Player
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
 
 var controls_enabled: bool = true
-var can_pause: bool = false
+var can_pause: bool = true
 
 
 
@@ -27,6 +27,7 @@ func _ready():
     view_controller.shot.connect(_on_photo_shoot)
 
     SignalBus.level_player_enableControls.connect(_on_enable_controls)
+    SignalBus.level_player_enablePause.connect(_on_enable_pause)
 
 
 
@@ -64,5 +65,9 @@ func _on_move_notify(is_moving: bool):
 
 
 func _on_enable_controls(enable: bool):
-    if enable: can_pause = true # Stops pausing before first time control is given
     controls_enabled = enable
+
+
+
+func _on_enable_pause(enable: bool):
+    can_pause = enable

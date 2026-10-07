@@ -17,6 +17,7 @@ signal game_navigate_mainMenu()
 signal game_navigate_ingame()
 
 # Level Signals for PhotoTarget
+signal level_player_enablePause(enable: bool)
 signal level_player_enableControls(enable: bool)
 signal level_query_targetView()
 signal level_notify_targetView(target: PhotoTarget)

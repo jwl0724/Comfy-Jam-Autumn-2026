@@ -36,6 +36,7 @@ func play_start_sequence():
 
     t.tween_callback(func():
         SignalBus.level_player_enableControls.emit(true)
+        SignalBus.level_player_enablePause.emit(true)
         SignalBus.hud_dialogue_play.emit(start_dialogue, seconds_per_line))
     t.tween_interval(seconds_per_line * start_dialogue.size())
 
@@ -55,6 +56,7 @@ func play_win_sequence():
 
     t.tween_callback(func():
         SignalBus.level_player_enableControls.emit(false)
+        SignalBus.level_player_enablePause.emit(false)
         SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
     t.tween_interval(seconds_per_fade)
 
@@ -71,6 +73,7 @@ func play_lose_sequence():
 
     t.tween_callback(func():
         SignalBus.level_player_enableControls.emit(false)
+        SignalBus.level_player_enablePause.emit(false)
         SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
     t.tween_interval(seconds_per_fade)
 
