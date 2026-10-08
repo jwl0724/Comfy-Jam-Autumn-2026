@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://bbdsifkrdpnt8"]
-
-[ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_ebvvu"]
-
-[resource]
-script = ExtResource("1_ebvvu")
-target_name = "Sunflower"
-metadata/_custom_type_script = "uid://bu2110irdeg6r"

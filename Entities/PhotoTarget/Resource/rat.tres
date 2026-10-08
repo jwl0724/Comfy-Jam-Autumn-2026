@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://7ksw5s0ql04y"]
+
+[ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_p7i4e"]
+
+[resource]
+script = ExtResource("1_p7i4e")
+target_name = "Rat"
+metadata/_custom_type_script = "uid://bu2110irdeg6r"

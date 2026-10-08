@@ -39,4 +39,12 @@
 
 
 ## Credits
+### Libraries
+https://godotassetlibrary.com/asset/n1tXOr/terrabrush
+
+### Models
+https://opengameart.org/content/animated-fish
+https://opengameart.org/content/rat-pack
+https://opengameart.org/content/deer-low-poly-rigged
 https://opengameart.org/content/lowpoly-animated-farm-animal-pack
+https://opengameart.org/content/lowpoly-crops-pack
