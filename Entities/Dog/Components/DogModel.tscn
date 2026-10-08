@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dh41t0j7iqhli"]
 
 [ext_resource type="PackedScene" uid="uid://c2svai8hgfm3j" path="res://Entities/Dog/Imports/Pug.fbx" id="1_q0jjo"]
+[ext_resource type="Script" uid="uid://f0rvyoovicvx" path="res://Entities/Dog/Components/dog_model.gd" id="1_th3jv"]
 
 [node name="DogModel" type="Node3D" unique_id=423734605]
+script = ExtResource("1_th3jv")
 
 [node name="Pug" parent="." unique_id=1648031567 instance=ExtResource("1_q0jjo")]
