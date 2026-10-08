@@ -24,7 +24,7 @@ func _ready():
 
 func _physics_process(delta):
     # Handle vertical velocity
-    if dog.is_on_floor(): dog.velocity.y -= dog.fall_speed * delta
+    if !dog.is_on_floor(): dog.velocity.y -= dog.fall_speed * delta
     else: dog.velocity.y = 0
 
     if !pathing_target || !pathing_enabled:

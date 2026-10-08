@@ -36,3 +36,7 @@
 - Total 10 minutes to find everything (Adjustable)
 - Perhaps tween the color of the skybox to simulate passing of time
 - Envisioning a dense forest with lots of orange leaves on the ground and a river within that has an ongoing salmon run
+
+
+## Credits
+https://opengameart.org/content/lowpoly-animated-farm-animal-pack
