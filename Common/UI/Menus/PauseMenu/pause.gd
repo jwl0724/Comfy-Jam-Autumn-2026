@@ -9,6 +9,9 @@ class_name PauseMenu
 @onready var cancel_button: Button = %Cancel
 @onready var menu_button: Button = %MenuButton
 
+var mouse_state_on_pause: Input.MouseMode = Input.MOUSE_MODE_VISIBLE
+
+
 
 func _ready():
     visible = false
@@ -32,7 +35,10 @@ func _input(event: InputEvent):
 
 func enable_menu(enable: bool):
     visible = enable
-    Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if enable else Input.MOUSE_MODE_CAPTURED
+    if enable:
+        mouse_state_on_pause = Input.mouse_mode
+        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+    else: Input.mouse_mode = mouse_state_on_pause
 
 
 
