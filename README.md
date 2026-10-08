@@ -48,3 +48,6 @@ https://opengameart.org/content/rat-pack
 https://opengameart.org/content/deer-low-poly-rigged
 https://opengameart.org/content/lowpoly-animated-farm-animal-pack
 https://opengameart.org/content/lowpoly-crops-pack
+
+https://opengameart.org/content/lowpoly-textured-trees
+https://opengameart.org/content/lowpoly-nature-pack
