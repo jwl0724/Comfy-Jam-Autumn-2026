@@ -32,6 +32,18 @@ text = "You didn't take any photos to show here :("
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Time" type="Label" parent="." unique_id=758448630]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -31.0
+offset_right = 135.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "Time Spent: 8:00"
+
 [node name="Container" type="MarginContainer" parent="." unique_id=307237423]
 layout_mode = 1
 anchors_preset = 15

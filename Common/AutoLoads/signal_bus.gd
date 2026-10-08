@@ -17,9 +17,13 @@ signal game_navigate_mainMenu()
 signal game_navigate_ingame()
 signal game_navigate_postgame()
 
-# Level Signals for PhotoTarget
+# Level Signals for general cases
+signal level_time_requestData()
+signal level_time_sendData(time_left: float, wait_time: float)
 signal level_player_enablePause(enable: bool)
 signal level_player_enableControls(enable: bool)
+
+# Level Signals for PhotoTarget
 signal level_query_targetView()
 signal level_notify_targetView(target: PhotoTarget)
 signal level_query_targetLocations()

@@ -1,7 +1,9 @@
 extends Control
 class_name PostGame
 
+
 @onready var title: Label = $Title
+@onready var time_taken: Label = $Time
 @onready var photo_rect: TextureRect = $Container/Photo
 @onready var previous_button: Button = $Previous
 @onready var next_button: Button = $Next
@@ -30,6 +32,16 @@ func populate_data(data: Dictionary[String, Texture2D]):
     photo_rect.visible = data_set.size() > 0
     set_photo()
     _update_nav_buttons()
+
+
+
+func populate_time_spent(time_left: float, wait_time: float):
+    var elapsed_time = wait_time - time_left
+
+    @warning_ignore("integer_division")
+    var minutes: int = int(elapsed_time) / 60
+    var seconds: int = int(elapsed_time) % 60
+    time_taken.text = "Time Spent: %d:%02d" % [minutes, seconds]
 
 
 

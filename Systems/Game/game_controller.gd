@@ -59,10 +59,22 @@ func change_scenes(new_scene: PackedScene) -> void:
 
 func _on_to_post_game():
     change_scenes(post_game_scene)
+
+    if !SignalBus.level_time_sendData.is_connected(_populate_post_menu_time):
+        SignalBus.level_time_sendData.connect(_populate_post_menu_time)
+    SignalBus.level_time_requestData.emit()
+
     if !SignalBus.menu_scrapbook_sendData.is_connected(_populate_post_menu_screen):
         SignalBus.menu_scrapbook_sendData.connect(_populate_post_menu_screen, CONNECT_ONE_SHOT)
     SignalBus.menu_scrapbook_requestData.emit()
+
     _on_clearGUI(ControlLayers.GUI)
+
+
+
+func _populate_post_menu_time(time_left: float, wait_time: float):
+    var post_game_node: Node = NodeUtils.get_first_valid(running_node) as PostGame
+    post_game_node.populate_time_spent(time_left, wait_time)
 
 
 
