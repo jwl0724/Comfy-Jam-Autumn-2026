@@ -36,7 +36,7 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
 
     visible = to_visible
     keep_button.visible = false
-    discard_button.visible = true
+    discard_button.visible = true # This is slightly buggy when targets are in the same photo, when placing objectives in map, keep them far apart
 
     SignalBus.level_player_enableControls.emit(!to_visible)
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED

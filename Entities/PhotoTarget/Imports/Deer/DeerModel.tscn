@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://wdqehpxfcymn"]
+
+[ext_resource type="ArrayMesh" uid="uid://dgbpsdx306wuo" path="res://Entities/PhotoTarget/Imports/Deer/Deer.obj" id="1_fvq3m"]
+
+[node name="DeerScene" type="Node3D" unique_id=114666912]
+
+[node name="Deer" type="MeshInstance3D" parent="." unique_id=1940735752]
+mesh = ExtResource("1_fvq3m")

@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://dcltjtl27oq8g"]
 
 [ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_pgjhl"]
+[ext_resource type="PackedScene" uid="uid://dkw5u5vhh4tmv" path="res://Entities/PhotoTarget/Imports/Pumpkin/Pumpkin_4.fbx" id="1_vqeqm"]
 
 [resource]
 script = ExtResource("1_pgjhl")
+model = ExtResource("1_vqeqm")
 target_name = "Pumpkin"
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

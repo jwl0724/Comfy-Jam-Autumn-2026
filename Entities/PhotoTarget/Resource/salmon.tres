@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://b7uspqvtrs6sh"]
 
+[ext_resource type="PackedScene" uid="uid://de6pffog8w3wo" path="res://Entities/PhotoTarget/Imports/Salmon/Fish1.fbx" id="1_6lvda"]
 [ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_r351j"]
 
 [resource]
 script = ExtResource("1_r351j")
+model = ExtResource("1_6lvda")
 target_name = "Salmon"
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

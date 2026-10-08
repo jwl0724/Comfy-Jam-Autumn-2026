@@ -55,41 +55,41 @@ theme_override_constants/h_separation = 43
 theme_override_constants/v_separation = -2
 columns = 2
 
-[node name="OysterMushroom" parent="Container/Grid" unique_id=99451584 instance=ExtResource("2_s2omm")]
+[node name="Beetroot" parent="Container/Grid" unique_id=99451584 instance=ExtResource("2_s2omm")]
 layout_mode = 2
-entry_name = "Oyster Mushroom"
+entry_name = "Beetroot"
 
 [node name="Toadstool" parent="Container/Grid" unique_id=1274883298 instance=ExtResource("2_s2omm")]
 layout_mode = 2
 entry_name = "Red Toadstool"
 
-[node name="Squash" parent="Container/Grid" unique_id=1513079662 instance=ExtResource("2_s2omm")]
+[node name="Watermelon" parent="Container/Grid" unique_id=1513079662 instance=ExtResource("2_s2omm")]
 layout_mode = 2
-entry_name = "Squash"
-
-[node name="Sunflower" parent="Container/Grid" unique_id=123558794 instance=ExtResource("2_s2omm")]
-layout_mode = 2
-entry_name = "Sunflower"
+entry_name = "Watermelon"
 
 [node name="Pumpkin" parent="Container/Grid" unique_id=2122279218 instance=ExtResource("2_s2omm")]
-visible = false
 layout_mode = 2
 entry_name = "Pumpkin"
+
+[node name="Corn" parent="Container/Grid" unique_id=362808099 instance=ExtResource("2_s2omm")]
+visible = false
+layout_mode = 2
+entry_name = "Corn"
+
+[node name="Rat" parent="Container/Grid" unique_id=123558794 instance=ExtResource("2_s2omm")]
+visible = false
+layout_mode = 2
+entry_name = "Rat"
 
 [node name="Salmon" parent="Container/Grid" unique_id=1890521779 instance=ExtResource("2_s2omm")]
 visible = false
 layout_mode = 2
 entry_name = "Salmon"
 
-[node name="Squirrel" parent="Container/Grid" unique_id=362808099 instance=ExtResource("2_s2omm")]
+[node name="Deer" parent="Container/Grid" unique_id=1956181406 instance=ExtResource("2_s2omm")]
 visible = false
 layout_mode = 2
-entry_name = "Squirrel"
-
-[node name="Woodpecker" parent="Container/Grid" unique_id=1956181406 instance=ExtResource("2_s2omm")]
-visible = false
-layout_mode = 2
-entry_name = "Woodpecker"
+entry_name = "Deer"
 
 [node name="PageLeft" type="Button" parent="Container" unique_id=1478157441]
 custom_minimum_size = Vector2(40, 40)

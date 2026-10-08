@@ -6,7 +6,7 @@ class_name PhotoTarget
 
 @onready var visible_notifier = $VisibleNotifier # TODO: Need to have an export on the resource that allows adjusting this value
 
-var model: MeshInstance3D = null
+var model: Node3D = null
 var target_name: String = ""
 var behavior_script: GDScript = null # TODO: Might not need this? Assume this is for when implementing moving animals maybe
 
@@ -20,9 +20,8 @@ var in_view: bool = false # If target is still within view
 func load_data(target_data: PhotoTargetData):
     target_name = target_data.target_name
     behavior_script = target_data.behavior_script
-    if target_data.model != null: # TODO: Remove later since all data points should have models, for now keep since no models to use right now
-        model = target_data.model.instantiate()
-        add_child(model)
+    model = target_data.model.instantiate()
+    add_child(model)
 
 
 

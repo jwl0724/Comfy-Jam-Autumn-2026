@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4nvhyitkqcf6" path="res://Entities/PhotoTarget/photo_target.gd" id="1_c5g32"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_c5g32"]
-
 [node name="PhotoTarget" type="Node3D" unique_id=133321002]
 script = ExtResource("1_c5g32")
-
-[node name="Model" type="MeshInstance3D" parent="." unique_id=969166943]
-mesh = SubResource("CapsuleMesh_c5g32")
 
 [node name="VisibleNotifier" type="VisibleOnScreenNotifier3D" parent="." unique_id=396744375]

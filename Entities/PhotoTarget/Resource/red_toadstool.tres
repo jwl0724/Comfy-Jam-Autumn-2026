@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://cchnbe283kq6o"]
 
+[ext_resource type="PackedScene" uid="uid://c6ia3t0av8ofe" path="res://Entities/PhotoTarget/Imports/Toadstool/Mushroom_4.fbx" id="1_7jg7h"]
 [ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_vbthi"]
 
 [resource]
 script = ExtResource("1_vbthi")
+model = ExtResource("1_7jg7h")
 target_name = "Red Toadstool"
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

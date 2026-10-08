@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://wgxjk3syqfc2"]
 
+[ext_resource type="PackedScene" uid="uid://c5dsfu384d1ki" path="res://Entities/PhotoTarget/Imports/Melon/Watermelon_4.fbx" id="1_1dgee"]
 [ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_huwj1"]
 
 [resource]
 script = ExtResource("1_huwj1")
+model = ExtResource("1_1dgee")
 target_name = "Watermelon"
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

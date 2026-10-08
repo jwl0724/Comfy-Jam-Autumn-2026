@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="PhotoTargetData" format=3 uid="uid://dek12rt3cg2f1"]
 
+[ext_resource type="PackedScene" uid="uid://cnoyqdnqay8i" path="res://Entities/PhotoTarget/Imports/Beetroot/Beet_4.fbx" id="1_fuv7i"]
 [ext_resource type="Script" uid="uid://bu2110irdeg6r" path="res://Entities/PhotoTarget/photo_target_data.gd" id="1_n4y20"]
 
 [resource]
 script = ExtResource("1_n4y20")
+model = ExtResource("1_fuv7i")
 target_name = "Beetroot"
 metadata/_custom_type_script = "uid://bu2110irdeg6r"
