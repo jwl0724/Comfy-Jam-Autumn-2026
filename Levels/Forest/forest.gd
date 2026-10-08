@@ -27,7 +27,6 @@ func _on_level_end(win: bool):
 
 # TODO: Below depends on if wanted scripted sequence, determine if scripted sequence is wanted
 func _on_start_sequence_finished():
-    SignalBus.level_player_enableControls.emit(true)
     level_state_handler.start_level_timer()
 
 

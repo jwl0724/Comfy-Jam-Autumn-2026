@@ -51,13 +51,15 @@ func play_start_sequence():
 func play_win_sequence():
     var t = create_tween()
 
-    t.tween_callback(func(): SignalBus.hud_dialogue_play.emit(win_dialogue, seconds_per_line))
+    t.tween_callback(func(): # Stop player from moving and close all menus
+        SignalBus.hud_photoPreview_visible.emit(false, null)
+        SignalBus.menu_scrapbook_visible.emit(false)
+        SignalBus.level_player_enablePause.emit(false)
+        SignalBus.level_player_enableControls.emit(false)
+        SignalBus.hud_dialogue_play.emit(win_dialogue, seconds_per_line))
     t.tween_interval(seconds_per_line * win_dialogue.size())
 
-    t.tween_callback(func():
-        SignalBus.level_player_enableControls.emit(false)
-        SignalBus.level_player_enablePause.emit(false)
-        SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
+    t.tween_callback(func(): SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
     t.tween_interval(seconds_per_fade)
 
     t.tween_callback(func(): end_sequence_finished.emit())
@@ -68,13 +70,15 @@ func play_win_sequence():
 func play_lose_sequence():
     var t = create_tween()
 
-    t.tween_callback(func(): SignalBus.hud_dialogue_play.emit(lose_dialogue, seconds_per_line))
-    t.tween_interval(seconds_per_line * lose_dialogue.size())
-
-    t.tween_callback(func():
+    t.tween_callback(func(): # Stop player from moving and close all menus
+        SignalBus.hud_photoPreview_visible.emit(false, null)
+        SignalBus.menu_scrapbook_visible.emit(false)
         SignalBus.level_player_enableControls.emit(false)
         SignalBus.level_player_enablePause.emit(false)
-        SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
+        SignalBus.hud_dialogue_play.emit(lose_dialogue, seconds_per_line))
+    t.tween_interval(seconds_per_line * lose_dialogue.size())
+
+    t.tween_callback(func(): SignalBus.game_transition_fadeHide.emit(Color.BLACK, seconds_per_fade))
     t.tween_interval(seconds_per_fade)
 
     t.tween_callback(func(): end_sequence_finished.emit())
