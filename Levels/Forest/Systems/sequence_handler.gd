@@ -4,8 +4,8 @@ class_name SequenceHandler
 signal start_sequence_finished()
 signal end_sequence_finished()
 
-const seconds_per_line: float = 3
-const seconds_per_fade: float = 2
+@export var seconds_per_line: float = 3
+@export var seconds_per_fade: float = 2
 
 const start_dialogue: Array[String] = [
     "Come on Gou, today's our last day here before we move to the city.",
