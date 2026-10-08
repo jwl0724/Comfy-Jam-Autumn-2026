@@ -33,4 +33,4 @@ func _on_start_sequence_finished():
 
 
 func _on_end_sequence_finished():
-    SignalBus.level_player_enableControls.emit(false)
+    SignalBus.game_navigate_postgame.emit()

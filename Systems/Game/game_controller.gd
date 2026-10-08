@@ -9,6 +9,7 @@ enum ControlLayers { GUI, PAUSE, TRANSITION, DEBUG }
 @export var launch_scene: PackedScene = null # TODO: Replace this with some splash screen later
 @export var main_menu_scene: PackedScene = null
 @export var ingame_scene: PackedScene = null
+@export var post_game_scene: PackedScene = null
 
 @export_group("Dev Tools")
 @export var enable_debug: bool = false
@@ -30,8 +31,10 @@ func _ready():
     SignalBus.game_layers_clearAll.connect(_on_clear_layers)
     SignalBus.game_layers_addGUI.connect(_on_addGUI)
     SignalBus.game_layers_clearGUI.connect(_on_clearGUI)
+
     SignalBus.game_pause.connect(_on_pause_request)
     SignalBus.game_navigate_mainMenu.connect(_on_back_to_menu)
+    SignalBus.game_navigate_postgame.connect(_on_to_post_game)
 
     if !enable_debug:
         change_scenes(launch_scene)
@@ -51,6 +54,21 @@ func change_scenes(new_scene: PackedScene) -> void:
         return
     if running_node.get_child_count() == 1: running_node.get_child(0).queue_free()
     running_node.add_child(new_scene.instantiate())
+
+
+
+func _on_to_post_game():
+    change_scenes(post_game_scene)
+    if !SignalBus.menu_scrapbook_sendData.is_connected(_populate_post_menu_screen):
+        SignalBus.menu_scrapbook_sendData.connect(_populate_post_menu_screen, CONNECT_ONE_SHOT)
+    SignalBus.menu_scrapbook_requestData.emit()
+    _on_clearGUI(ControlLayers.GUI)
+
+
+
+func _populate_post_menu_screen(data: Dictionary[String, Texture2D]):
+    var post_game_node: Node = NodeUtils.get_first_valid(running_node) as PostGame
+    post_game_node.populate_data(data)
 
 
 

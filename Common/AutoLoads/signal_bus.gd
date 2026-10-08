@@ -15,6 +15,7 @@ signal game_transition_fadeHide(color: Color, time: float) ## A fade transition 
 signal game_pause(do_pause: bool)
 signal game_navigate_mainMenu()
 signal game_navigate_ingame()
+signal game_navigate_postgame()
 
 # Level Signals for PhotoTarget
 signal level_player_enablePause(enable: bool)
@@ -34,6 +35,8 @@ signal hud_tutorial_play()
 # Menu Signals
 signal menu_scrapbook_visible(visible: bool)
 signal menu_scrapbook_addPhoto(photo: Texture2D, target_name: String)
+signal menu_scrapbook_requestData()
+signal menu_scrapbook_sendData(photo_key: Dictionary[String, Texture2D])
 
 # Options Signals
 signal options_changed_musicDB(linear: float)

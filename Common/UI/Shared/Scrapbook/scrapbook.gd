@@ -13,6 +13,8 @@ var entry_key: Dictionary[String, ScrapbookEntry] = {}
 var current_page: int = 0
 var max_pages: int = 0
 
+var filler_texture: Texture2D = null
+
 
 
 func _ready():
@@ -20,7 +22,9 @@ func _ready():
     max_pages = ceili(entry_container.get_child_count() / float(entries_per_page))
     for entry: ScrapbookEntry in entry_container.get_children():
         entry_key[entry.entry_name] = entry
+    filler_texture = entry_key[entry_key.keys()[0]].photo_rect.texture
 
+    SignalBus.menu_scrapbook_requestData.connect(_on_data_request)
     SignalBus.menu_scrapbook_visible.connect(_on_scrapbook_request)
     SignalBus.menu_scrapbook_addPhoto.connect(_on_photo_add_request)
 
@@ -52,6 +56,15 @@ func _on_page_flip_pressed(to_right: bool):
 
 
 
+func _on_data_request():
+    var data: Dictionary[String, Texture2D] = {}
+    for key in entry_key.keys():
+        if entry_key[key].photo_rect.texture == filler_texture: continue
+        data[key] = entry_key[key].photo_rect.texture
+    SignalBus.menu_scrapbook_sendData.emit(data)
+
+
+
 func _on_photo_add_request(photo: Texture2D, target_name: String):
     entry_key[target_name].set_photo(photo)
 
@@ -65,4 +78,4 @@ func _on_scrapbook_request(to_visible: bool):
 
 
 func _on_close_pressed():
-    SignalBus.menu_scrapbook_visible.emit(false) # In case other objects require this signalto continue operations
+    SignalBus.menu_scrapbook_visible.emit(false) # In case other objects require this signal to continue operations
