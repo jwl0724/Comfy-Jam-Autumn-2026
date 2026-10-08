@@ -27,7 +27,7 @@ func _ready():
 
 func populate_data(data: Dictionary[String, Texture2D]):
     data_set = data
-    photo_rect.visible = true
+    photo_rect.visible = data_set.size() > 0
     set_photo()
     _update_nav_buttons()
 
@@ -52,15 +52,15 @@ func _update_nav_buttons():
 
 
 func _on_next_pressed():
-    set_photo()
     current_index += 1
+    set_photo()
     _update_nav_buttons()
 
 
 
 func _on_previous_pressed():
-    set_photo()
     current_index -= 1
+    set_photo()
     _update_nav_buttons()
 
 
