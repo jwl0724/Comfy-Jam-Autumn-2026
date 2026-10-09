@@ -42,12 +42,19 @@
 ### Libraries
 https://godotassetlibrary.com/asset/n1tXOr/terrabrush
 
+### Textures
+https://freestylized.com/material/ground_08/
+https://freestylized.com/material/grass_01/
+https://freestylized.com/material/cliff_rocks_07/
+https://freestylized.com/material/ground_with_roots_01/
+https://freestylized.com/material/sand_04/
+
+
 ### Models
 https://opengameart.org/content/animated-fish
 https://opengameart.org/content/rat-pack
 https://opengameart.org/content/deer-low-poly-rigged
 https://opengameart.org/content/lowpoly-animated-farm-animal-pack
 https://opengameart.org/content/lowpoly-crops-pack
-
 https://opengameart.org/content/lowpoly-textured-trees
 https://opengameart.org/content/lowpoly-nature-pack
