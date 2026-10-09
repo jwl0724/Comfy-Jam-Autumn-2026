@@ -43,6 +43,7 @@
 https://godotassetlibrary.com/asset/n1tXOr/terrabrush
 
 ### Textures
+https://kenney.nl/assets/foliage-sprites
 https://freestylized.com/material/ground_08/
 https://freestylized.com/material/grass_01/
 https://freestylized.com/material/cliff_rocks_05/

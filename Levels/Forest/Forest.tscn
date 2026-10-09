@@ -28,9 +28,22 @@
 [ext_resource type="Texture2D" uid="uid://basaw5dg3yahd" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_roughness_1k.png" id="19_5k7u4"]
 [ext_resource type="Texture2D" uid="uid://b62dwbfjwa8f4" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_height_1k.png" id="22_irkax"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
-[ext_resource type="Texture2D" uid="uid://cmqvcoah476w1" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_Color.png" id="25_5k7u4"]
 [ext_resource type="Texture2D" uid="uid://didow68xflf63" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_NormalGL.png" id="26_qrtwu"]
 [ext_resource type="Texture2D" uid="uid://bwd0j28mj1ik" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_Roughness.png" id="27_irkax"]
+[ext_resource type="Texture2D" uid="uid://d18j8koogcco7" path="res://Levels/Forest/Imports/FoliagePack/sprite_0054.png" id="27_texq4"]
+[ext_resource type="Texture2D" uid="uid://bqv23g7v5a2cm" path="res://Levels/Forest/Imports/FoliagePack/sprite_0053.png" id="28_3vpcb"]
+[ext_resource type="Texture2D" uid="uid://dk3lftadf0w1t" path="res://Levels/Forest/Imports/FoliagePack/sprite_0056.png" id="29_br85p"]
+[ext_resource type="Image" uid="uid://dfql6ddq7lvye" path="res://Levels/Forest/Forest/Foliage_0_0_0.res" id="30_gbd7g"]
+[ext_resource type="PackedScene" uid="uid://c5x18qs20r1p1" path="res://Levels/Forest/Imports/StylizedTrees/Birch_1.fbx" id="30_uw8yt"]
+[ext_resource type="PackedScene" uid="uid://dwoxk84nmpqe3" path="res://Levels/Forest/Imports/StylizedTrees/Birch_2.fbx" id="31_upugh"]
+[ext_resource type="PackedScene" uid="uid://bn7ihrbnnjnbo" path="res://Levels/Forest/Imports/StylizedTrees/Birch_3.fbx" id="32_dpdwj"]
+[ext_resource type="PackedScene" uid="uid://b4qu8ktumeti6" path="res://Levels/Forest/Imports/StylizedTrees/Birch_4.fbx" id="33_eg17w"]
+[ext_resource type="PackedScene" uid="uid://doeggc61cbj66" path="res://Levels/Forest/Imports/StylizedTrees/Birch_5.fbx" id="34_65adc"]
+[ext_resource type="PackedScene" uid="uid://b0r0eluuu4el7" path="res://Levels/Forest/Imports/StylizedTrees/Birch_6.fbx" id="35_rkdqx"]
+[ext_resource type="PackedScene" uid="uid://dgiljmvpk625a" path="res://Levels/Forest/Imports/StylizedTrees/Birch_7.fbx" id="36_uxwyx"]
+[ext_resource type="PackedScene" uid="uid://gq8if8jo1nxd" path="res://Levels/Forest/Imports/StylizedTrees/Birch_8.fbx" id="37_jeli1"]
+[ext_resource type="PackedScene" uid="uid://bjejo5yidgsb0" path="res://Levels/Forest/Imports/StylizedTrees/Birch_9.fbx" id="38_x2gkl"]
+[ext_resource type="PackedScene" uid="uid://chn6s4paq2hu8" path="res://Levels/Forest/Imports/StylizedTrees/Birch_10.fbx" id="39_gte7o"]
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_3qi4o"]
 name = "Soil"
@@ -67,18 +80,63 @@ normalTexture = ExtResource("18_bq2g6")
 roughnessTexture = ExtResource("19_5k7u4")
 heightTexture = ExtResource("22_irkax")
 
+[sub_resource type="Gradient" id="Gradient_bq2g6"]
+offsets = PackedFloat32Array(0.015384615)
+colors = PackedColorArray(0.6509804, 0.32156864, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5k7u4"]
+gradient = SubResource("Gradient_bq2g6")
+width = 1024
+height = 1024
+
 [sub_resource type="TextureSetResource" id="TextureSetResource_gbd7g"]
 name = "Leaves"
-albedoTexture = ExtResource("25_5k7u4")
+albedoTexture = SubResource("GradientTexture2D_5k7u4")
 normalTexture = ExtResource("26_qrtwu")
 roughnessTexture = ExtResource("27_irkax")
 
 [sub_resource type="TextureSetsResource" id="TextureSetsResource_wmf4w"]
 textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_3qi4o"), SubResource("TextureSetResource_irkax"), SubResource("TextureSetResource_texq4"), SubResource("TextureSetResource_3vpcb"), SubResource("TextureSetResource_br85p"), SubResource("TextureSetResource_gbd7g")])
 
+[sub_resource type="QuadMesh" id="QuadMesh_jgk3e"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hby40"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aspdx"]
+noise = SubResource("FastNoiseLite_hby40")
+
+[sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_04cxx"]
+mesh = SubResource("QuadMesh_jgk3e")
+meshScale = Vector3(2.5, 2.5, 2.5)
+windStrength = 0.5
+albedoTextures = Array[Texture2D]([ExtResource("27_texq4"), ExtResource("28_3vpcb"), ExtResource("29_br85p")])
+useGroundColor = true
+scaleNoiseTexture = SubResource("NoiseTexture2D_aspdx")
+
+[sub_resource type="FoliageResource" id="FoliageResource_uhetx"]
+definition = SubResource("FoliageDefinitionResource_04cxx")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5rjx4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jfa63"]
+noise = SubResource("FastNoiseLite_5rjx4")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_cbe2c"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_jfa63")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("30_uw8yt"), ExtResource("31_upugh"), ExtResource("32_dpdwj"), ExtResource("33_eg17w"), ExtResource("34_65adc"), ExtResource("35_rkdqx"), ExtResource("36_uxwyx"), ExtResource("37_jeli1"), ExtResource("38_x2gkl"), ExtResource("39_gte7o")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_twvge"]
+definition = SubResource("ObjectDefinitionResource_cbe2c")
+
 [sub_resource type="ZoneResource" id="ZoneResource_8yk7o"]
 heightMapImage = ExtResource("5_niy7m")
 splatmapsImage = Array[Image]([ExtResource("6_e0n30"), ExtResource("22_qrtwu")])
+foliagesImage = Array[Image]([ExtResource("30_gbd7g")])
 
 [sub_resource type="ZonesResource" id="ZonesResource_niy7m"]
 zones = Array[ZoneResource]([SubResource("ZoneResource_8yk7o")])
@@ -108,6 +166,8 @@ zonesSize = 512
 textureSets = SubResource("TextureSetsResource_wmf4w")
 textureDetail = 50
 useAntiTile = false
+foliages = Array[FoliageResource]([SubResource("FoliageResource_uhetx")])
+objects = Array[ObjectResource]([SubResource("ObjectResource_twvge")])
 terrainZones = SubResource("ZonesResource_niy7m")
 physics_interpolation_mode = 2
 metadata/_edit_lock_ = true
