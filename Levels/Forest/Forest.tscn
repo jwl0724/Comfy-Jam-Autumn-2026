@@ -28,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://basaw5dg3yahd" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_roughness_1k.png" id="19_5k7u4"]
 [ext_resource type="Texture2D" uid="uid://b62dwbfjwa8f4" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_height_1k.png" id="22_irkax"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
+[ext_resource type="Texture2D" uid="uid://cmqvcoah476w1" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_Color.png" id="25_5k7u4"]
+[ext_resource type="Texture2D" uid="uid://didow68xflf63" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_NormalGL.png" id="26_qrtwu"]
+[ext_resource type="Texture2D" uid="uid://bwd0j28mj1ik" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_Roughness.png" id="27_irkax"]
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_3qi4o"]
 name = "Soil"
@@ -64,8 +67,14 @@ normalTexture = ExtResource("18_bq2g6")
 roughnessTexture = ExtResource("19_5k7u4")
 heightTexture = ExtResource("22_irkax")
 
+[sub_resource type="TextureSetResource" id="TextureSetResource_gbd7g"]
+name = "Leaves"
+albedoTexture = ExtResource("25_5k7u4")
+normalTexture = ExtResource("26_qrtwu")
+roughnessTexture = ExtResource("27_irkax")
+
 [sub_resource type="TextureSetsResource" id="TextureSetsResource_wmf4w"]
-textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_3qi4o"), SubResource("TextureSetResource_irkax"), SubResource("TextureSetResource_texq4"), SubResource("TextureSetResource_3vpcb"), SubResource("TextureSetResource_br85p")])
+textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_3qi4o"), SubResource("TextureSetResource_irkax"), SubResource("TextureSetResource_texq4"), SubResource("TextureSetResource_3vpcb"), SubResource("TextureSetResource_br85p"), SubResource("TextureSetResource_gbd7g")])
 
 [sub_resource type="ZoneResource" id="ZoneResource_8yk7o"]
 heightMapImage = ExtResource("5_niy7m")
