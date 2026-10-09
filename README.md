@@ -45,7 +45,8 @@ https://godotassetlibrary.com/asset/n1tXOr/terrabrush
 ### Textures
 https://freestylized.com/material/ground_08/
 https://freestylized.com/material/grass_01/
-https://freestylized.com/material/cliff_rocks_07/
+https://freestylized.com/material/cliff_rocks_05/
+https://freestylized.com/material/cliff_rocks_02/
 https://freestylized.com/material/ground_with_roots_01/
 https://freestylized.com/material/sand_04/
 

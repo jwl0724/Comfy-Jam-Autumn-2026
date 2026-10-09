@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2eha8plqxc74"
-path="res://.godot/imported/cliff_rocks_07_height_1k.png-89419f6d73c423dbaa04df30662dae24.ctex"
+uid="uid://18dbcbucvxgm"
+path="res://.godot/imported/cliff_rocks_05_height_1k.png-c8e138d87a4f886c4dfad015dbe2b99a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_07_height_1k.png"
-dest_files=["res://.godot/imported/cliff_rocks_07_height_1k.png-89419f6d73c423dbaa04df30662dae24.ctex"]
+source_file="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_height_1k.png"
+dest_files=["res://.godot/imported/cliff_rocks_05_height_1k.png-c8e138d87a4f886c4dfad015dbe2b99a.ctex"]
 
 [params]
 

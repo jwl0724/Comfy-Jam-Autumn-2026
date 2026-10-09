@@ -4,21 +4,21 @@
 [ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_cmbib"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_scdmf"]
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_scdmf"]
-[ext_resource type="Texture2D" uid="uid://bmpg7q8oxfphw" path="res://Levels/Forest/Imports/Textures/Soil/ground_08_basecolor_1k.png" id="5_ewhgy"]
+[ext_resource type="Texture2D" uid="uid://bd5d7itih4b7n" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_color_1k.png" id="5_c751c"]
 [ext_resource type="Image" uid="uid://eegbwwepgh2n" path="res://Levels/Forest/Forest/Heightmap_0_0.res" id="5_niy7m"]
-[ext_resource type="Texture2D" uid="uid://4uqi4vovu8r8" path="res://Levels/Forest/Imports/Textures/Soil/ground_08_height_1k.png" id="6_c751c"]
 [ext_resource type="Image" uid="uid://bwaidkkn4rsyj" path="res://Levels/Forest/Forest/Splatmap_0_0_0.res" id="6_e0n30"]
-[ext_resource type="Texture2D" uid="uid://bparudnhjlbys" path="res://Levels/Forest/Imports/Textures/Soil/ground_08_normal_gl_1k.png" id="6_eanb0"]
+[ext_resource type="Texture2D" uid="uid://dkbffbt5jcyvn" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_height_1k.png" id="6_il20w"]
+[ext_resource type="Texture2D" uid="uid://bjq6vwwri5a6f" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_normal_gl_1k.png" id="7_bq2g6"]
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="7_dontm"]
-[ext_resource type="Texture2D" uid="uid://0mfvy1qk1c7b" path="res://Levels/Forest/Imports/Textures/Soil/ground_08_roughness_1k.png" id="7_yi4jh"]
+[ext_resource type="Texture2D" uid="uid://80oyqs48ehst" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_roughness_1k.png" id="8_5k7u4"]
 [ext_resource type="Texture2D" uid="uid://b8y5ajd8wflfy" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_color_1k.png" id="8_aaqca"]
-[ext_resource type="Texture2D" uid="uid://cq2sxgp0r5nsk" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_07_basecolor_1k.png" id="8_ugqh7"]
-[ext_resource type="Texture2D" uid="uid://doqayv2lkc88r" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_07_normal_gl_1k.png" id="9_qfqd1"]
+[ext_resource type="Texture2D" uid="uid://5c0njdqfpsqn" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_basecolor_1k.png" id="9_c751c"]
 [ext_resource type="Texture2D" uid="uid://ok7l8do6s1hf" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_normal_gl_1k.png" id="9_sgvxc"]
 [ext_resource type="Texture2D" uid="uid://peun5lwwil6j" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_roughness_1k.png" id="10_7j4w3"]
-[ext_resource type="Texture2D" uid="uid://c2eha8plqxc74" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_07_height_1k.png" id="10_il20w"]
-[ext_resource type="Texture2D" uid="uid://xtf711uwtm6t" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_07_roughness_1k.png" id="10_tqphj"]
+[ext_resource type="Texture2D" uid="uid://18dbcbucvxgm" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_height_1k.png" id="10_il20w"]
+[ext_resource type="Texture2D" uid="uid://yfu65wahb2y8" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_normal_gl_1k.png" id="11_bq2g6"]
 [ext_resource type="Texture2D" uid="uid://eoqyu0khbdi1" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_color_1k.png" id="11_elyv4"]
+[ext_resource type="Texture2D" uid="uid://c12tr6f6etdcd" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_02_roughness_1k.png" id="12_5k7u4"]
 [ext_resource type="Texture2D" uid="uid://c0kwbme3ym5r6" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_normal_gl_1k.png" id="12_aisnn"]
 [ext_resource type="Texture2D" uid="uid://d20wxv0nuygh3" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_height_1k.png" id="12_qfqd1"]
 [ext_resource type="Texture2D" uid="uid://r3ypd7a5qkj6" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_roughness_1k.png" id="13_c751c"]
@@ -31,16 +31,16 @@
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_3qi4o"]
 name = "Soil"
-albedoTexture = ExtResource("5_ewhgy")
-normalTexture = ExtResource("6_eanb0")
-roughnessTexture = ExtResource("7_yi4jh")
-heightTexture = ExtResource("6_c751c")
+albedoTexture = ExtResource("5_c751c")
+normalTexture = ExtResource("7_bq2g6")
+roughnessTexture = ExtResource("8_5k7u4")
+heightTexture = ExtResource("6_il20w")
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_irkax"]
 name = "Stone"
-albedoTexture = ExtResource("8_ugqh7")
-normalTexture = ExtResource("9_qfqd1")
-roughnessTexture = ExtResource("10_tqphj")
+albedoTexture = ExtResource("9_c751c")
+normalTexture = ExtResource("11_bq2g6")
+roughnessTexture = ExtResource("12_5k7u4")
 heightTexture = ExtResource("10_il20w")
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_texq4"]
