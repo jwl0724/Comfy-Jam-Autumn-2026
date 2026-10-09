@@ -34,16 +34,49 @@
 [ext_resource type="Texture2D" uid="uid://bqv23g7v5a2cm" path="res://Levels/Forest/Imports/FoliagePack/sprite_0053.png" id="28_3vpcb"]
 [ext_resource type="Texture2D" uid="uid://dk3lftadf0w1t" path="res://Levels/Forest/Imports/FoliagePack/sprite_0056.png" id="29_br85p"]
 [ext_resource type="Image" uid="uid://dfql6ddq7lvye" path="res://Levels/Forest/Forest/Foliage_0_0_0.res" id="30_gbd7g"]
-[ext_resource type="PackedScene" uid="uid://c5x18qs20r1p1" path="res://Levels/Forest/Imports/StylizedTrees/Birch_1.fbx" id="30_uw8yt"]
-[ext_resource type="PackedScene" uid="uid://dwoxk84nmpqe3" path="res://Levels/Forest/Imports/StylizedTrees/Birch_2.fbx" id="31_upugh"]
-[ext_resource type="PackedScene" uid="uid://bn7ihrbnnjnbo" path="res://Levels/Forest/Imports/StylizedTrees/Birch_3.fbx" id="32_dpdwj"]
-[ext_resource type="PackedScene" uid="uid://b4qu8ktumeti6" path="res://Levels/Forest/Imports/StylizedTrees/Birch_4.fbx" id="33_eg17w"]
-[ext_resource type="PackedScene" uid="uid://doeggc61cbj66" path="res://Levels/Forest/Imports/StylizedTrees/Birch_5.fbx" id="34_65adc"]
-[ext_resource type="PackedScene" uid="uid://b0r0eluuu4el7" path="res://Levels/Forest/Imports/StylizedTrees/Birch_6.fbx" id="35_rkdqx"]
-[ext_resource type="PackedScene" uid="uid://dgiljmvpk625a" path="res://Levels/Forest/Imports/StylizedTrees/Birch_7.fbx" id="36_uxwyx"]
-[ext_resource type="PackedScene" uid="uid://gq8if8jo1nxd" path="res://Levels/Forest/Imports/StylizedTrees/Birch_8.fbx" id="37_jeli1"]
-[ext_resource type="PackedScene" uid="uid://bjejo5yidgsb0" path="res://Levels/Forest/Imports/StylizedTrees/Birch_9.fbx" id="38_x2gkl"]
-[ext_resource type="PackedScene" uid="uid://chn6s4paq2hu8" path="res://Levels/Forest/Imports/StylizedTrees/Birch_10.fbx" id="39_gte7o"]
+[ext_resource type="PackedScene" uid="uid://cfg8vfisqewrq" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_1.fbx" id="30_wsdtw"]
+[ext_resource type="PackedScene" uid="uid://ou3t3h8my3n" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_2.fbx" id="31_evgx5"]
+[ext_resource type="Image" uid="uid://gi6kblo1nuny" path="res://Levels/Forest/Forest/Object_0_0_0.res" id="32_3vpcb"]
+[ext_resource type="PackedScene" uid="uid://b6ul83ty46luv" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_3.fbx" id="32_ppxf6"]
+[ext_resource type="PackedScene" uid="uid://himn4k6cgus7" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_4.fbx" id="33_vr57s"]
+[ext_resource type="PackedScene" uid="uid://gwpyuysuax6e" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_5.fbx" id="34_5hs60"]
+[ext_resource type="PackedScene" uid="uid://bbv7ula4yal4c" path="res://Levels/Forest/Imports/NatureMegaPack/Bush_Common.fbx" id="35_gff66"]
+[ext_resource type="PackedScene" uid="uid://cucnpmmy7fvf4" path="res://Levels/Forest/Imports/NatureMegaPack/Bush_Common_Flowers.fbx" id="36_i0exd"]
+[ext_resource type="PackedScene" uid="uid://3n1podevb63m" path="res://Levels/Forest/Imports/NatureMegaPack/Fern_1.fbx" id="37_wfney"]
+[ext_resource type="PackedScene" uid="uid://c247th6sn04eg" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_3_Group.fbx" id="38_0kgp7"]
+[ext_resource type="PackedScene" uid="uid://cqxdwr5hyyj1p" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_3_Single.fbx" id="39_gmta6"]
+[ext_resource type="PackedScene" uid="uid://htqneb8jbnwn" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_4_Group.fbx" id="40_8n8ic"]
+[ext_resource type="PackedScene" uid="uid://bdj0nb0smb21o" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_4_Single.fbx" id="41_qjnsg"]
+[ext_resource type="PackedScene" uid="uid://bf3dhbo5arbtk" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_1.fbx" id="42_hjqus"]
+[ext_resource type="PackedScene" uid="uid://cotdr7ax48ik0" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_2.fbx" id="43_7sg3j"]
+[ext_resource type="PackedScene" uid="uid://chf8r1weqyj1v" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_3.fbx" id="44_0yasj"]
+[ext_resource type="PackedScene" uid="uid://cwfg2ul1s0kwt" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_4.fbx" id="45_dneal"]
+[ext_resource type="PackedScene" uid="uid://dq733dhqav7u0" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_5.fbx" id="46_nctp4"]
+[ext_resource type="PackedScene" uid="uid://b3e51qar2l2ul" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_1.fbx" id="47_kid1a"]
+[ext_resource type="PackedScene" uid="uid://k20tl76h144s" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_2.fbx" id="48_5marv"]
+[ext_resource type="PackedScene" uid="uid://df1a3dof7lnbf" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_3.fbx" id="49_mscnh"]
+[ext_resource type="PackedScene" uid="uid://djrwqp13vswfu" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_4.fbx" id="50_vwogw"]
+[ext_resource type="PackedScene" uid="uid://dhct3k3wshlkg" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_5.fbx" id="51_5cl2v"]
+[ext_resource type="PackedScene" uid="uid://dgo3j2p6iamp5" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_6.fbx" id="52_c1v48"]
+[ext_resource type="PackedScene" uid="uid://bopu7imbu80w8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_1.fbx" id="53_cueck"]
+[ext_resource type="PackedScene" uid="uid://dii5hybdq2v7x" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_2.fbx" id="54_l12p6"]
+[ext_resource type="PackedScene" uid="uid://gmgj67p5dmd8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_3.fbx" id="55_lgxy5"]
+[ext_resource type="PackedScene" uid="uid://bopmm8bn73tb" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_4.fbx" id="56_f0mn1"]
+[ext_resource type="PackedScene" uid="uid://4fscxs8yoe7r" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_5.fbx" id="57_0rwux"]
+[ext_resource type="PackedScene" uid="uid://cssebr6bqlurq" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_1.fbx" id="58_tcqqf"]
+[ext_resource type="PackedScene" uid="uid://pxuulfpqgtcd" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_2.fbx" id="59_mdifc"]
+[ext_resource type="PackedScene" uid="uid://cr1rfte0s50xc" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_3.fbx" id="60_ek1m2"]
+[ext_resource type="PackedScene" uid="uid://rf4731orie66" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_1.fbx" id="61_bce1t"]
+[ext_resource type="PackedScene" uid="uid://242fmpd1h6m7" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_2.fbx" id="62_nfucv"]
+[ext_resource type="PackedScene" uid="uid://dkxetuylcflqh" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_3.fbx" id="63_lry6b"]
+[ext_resource type="PackedScene" uid="uid://lbxmggcat1jd" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_4.fbx" id="64_ioisx"]
+[ext_resource type="PackedScene" uid="uid://dggfoo3nk4c7o" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_5.fbx" id="65_5neu3"]
+[ext_resource type="Image" uid="uid://dosntfa54lt7q" path="res://Levels/Forest/Forest/Object_0_0_1.res" id="69_i0exd"]
+[ext_resource type="Image" uid="uid://b8p3svfceqego" path="res://Levels/Forest/Forest/Object_0_0_2.res" id="70_wfney"]
+[ext_resource type="Image" uid="uid://c084htvceeg6d" path="res://Levels/Forest/Forest/Object_0_0_3.res" id="71_0kgp7"]
+[ext_resource type="Image" uid="uid://ckmphpkv04loy" path="res://Levels/Forest/Forest/Object_0_0_4.res" id="72_gmta6"]
+[ext_resource type="Image" uid="uid://bm8q36n087xpf" path="res://Levels/Forest/Forest/Object_0_0_5.res" id="73_8n8ic"]
+[ext_resource type="Image" uid="uid://ilnukfcarjwp" path="res://Levels/Forest/Forest/Object_0_0_6.res" id="74_qjnsg"]
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_3qi4o"]
 name = "Soil"
@@ -128,15 +161,128 @@ randomRotation = true
 randomSize = true
 randomSizeFactorMin = 1.0
 randomSizeFactorMax = 1.5
-objectScenes = Array[PackedScene]([ExtResource("30_uw8yt"), ExtResource("31_upugh"), ExtResource("32_dpdwj"), ExtResource("33_eg17w"), ExtResource("34_65adc"), ExtResource("35_rkdqx"), ExtResource("36_uxwyx"), ExtResource("37_jeli1"), ExtResource("38_x2gkl"), ExtResource("39_gte7o")])
+objectScenes = Array[PackedScene]([ExtResource("30_wsdtw"), ExtResource("31_evgx5"), ExtResource("32_ppxf6"), ExtResource("33_vr57s"), ExtResource("34_5hs60")])
 
 [sub_resource type="ObjectResource" id="ObjectResource_twvge"]
 definition = SubResource("ObjectDefinitionResource_cbe2c")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3arn4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wjqn6"]
+noise = SubResource("FastNoiseLite_3arn4")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_aygxr"]
+randomRange = 8.0
+noiseTexture = SubResource("NoiseTexture2D_wjqn6")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 3.0
+randomSizeFactorMax = 4.0
+objectScenes = Array[PackedScene]([ExtResource("35_gff66"), ExtResource("36_i0exd")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_6us64"]
+definition = SubResource("ObjectDefinitionResource_aygxr")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gtuab"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_edgpy"]
+noise = SubResource("FastNoiseLite_gtuab")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_60j5n"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_edgpy")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 0.25
+randomSizeFactorMax = 0.5
+objectScenes = Array[PackedScene]([ExtResource("37_wfney"), ExtResource("38_0kgp7"), ExtResource("39_gmta6"), ExtResource("40_8n8ic"), ExtResource("41_qjnsg")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_rjnk4"]
+definition = SubResource("ObjectDefinitionResource_60j5n")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5s7xq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7gfr2"]
+noise = SubResource("FastNoiseLite_5s7xq")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_lxaiu"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_7gfr2")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("42_hjqus"), ExtResource("43_7sg3j"), ExtResource("44_0yasj"), ExtResource("45_dneal"), ExtResource("46_nctp4"), ExtResource("47_kid1a"), ExtResource("48_5marv"), ExtResource("49_mscnh"), ExtResource("50_vwogw"), ExtResource("51_5cl2v"), ExtResource("52_c1v48")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_oqlnq"]
+definition = SubResource("ObjectDefinitionResource_lxaiu")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ip7mj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dc7in"]
+noise = SubResource("FastNoiseLite_ip7mj")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_j233e"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_dc7in")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("53_cueck"), ExtResource("54_l12p6"), ExtResource("55_lgxy5"), ExtResource("56_f0mn1"), ExtResource("57_0rwux")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_v8673"]
+definition = SubResource("ObjectDefinitionResource_j233e")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7idg0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6pu14"]
+noise = SubResource("FastNoiseLite_7idg0")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_eqdc0"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_6pu14")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("58_tcqqf"), ExtResource("59_mdifc"), ExtResource("60_ek1m2")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_hgcii"]
+definition = SubResource("ObjectDefinitionResource_eqdc0")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rxt6j"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hwjp1"]
+noise = SubResource("FastNoiseLite_rxt6j")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_1lemy"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_hwjp1")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("61_bce1t"), ExtResource("62_nfucv"), ExtResource("63_lry6b"), ExtResource("64_ioisx"), ExtResource("65_5neu3")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_73xtr"]
+definition = SubResource("ObjectDefinitionResource_1lemy")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i0exd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wfney"]
+noise = SubResource("FastNoiseLite_i0exd")
+
+[sub_resource type="WaterResource" id="WaterResource_0kgp7"]
+waterColor = Color(0.37382218, 0.64378524, 0.99999946, 1)
+waterFresnelColor = Color(0.79951876, 0.88062704, 1, 1)
+waterNormalMap = SubResource("NoiseTexture2D_wfney")
 
 [sub_resource type="ZoneResource" id="ZoneResource_8yk7o"]
 heightMapImage = ExtResource("5_niy7m")
 splatmapsImage = Array[Image]([ExtResource("6_e0n30"), ExtResource("22_qrtwu")])
 foliagesImage = Array[Image]([ExtResource("30_gbd7g")])
+objectsImage = Array[Image]([ExtResource("32_3vpcb"), ExtResource("69_i0exd"), ExtResource("70_wfney"), ExtResource("71_0kgp7"), ExtResource("72_gmta6"), ExtResource("73_8n8ic"), ExtResource("74_qjnsg")])
 
 [sub_resource type="ZonesResource" id="ZonesResource_niy7m"]
 zones = Array[ZoneResource]([SubResource("ZoneResource_8yk7o")])
@@ -167,7 +313,8 @@ textureSets = SubResource("TextureSetsResource_wmf4w")
 textureDetail = 50
 useAntiTile = false
 foliages = Array[FoliageResource]([SubResource("FoliageResource_uhetx")])
-objects = Array[ObjectResource]([SubResource("ObjectResource_twvge")])
+objects = Array[ObjectResource]([SubResource("ObjectResource_twvge"), SubResource("ObjectResource_6us64"), SubResource("ObjectResource_rjnk4"), SubResource("ObjectResource_oqlnq"), SubResource("ObjectResource_v8673"), SubResource("ObjectResource_hgcii"), SubResource("ObjectResource_73xtr")])
+waterDefinition = SubResource("WaterResource_0kgp7")
 terrainZones = SubResource("ZonesResource_niy7m")
 physics_interpolation_mode = 2
 metadata/_edit_lock_ = true
