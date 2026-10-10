@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_cmbib"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_scdmf"]
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_scdmf"]
+[ext_resource type="Environment" uid="uid://jua48wp7jelw" path="res://Levels/Forest/Resources/environment.tres" id="5_c751c"]
 [ext_resource type="TextureSetsResource" uid="uid://beqje6372pi61" path="res://Levels/Forest/Resources/TextureSet/map_textures.tres" id="5_elyv4"]
 [ext_resource type="Image" uid="uid://eegbwwepgh2n" path="res://Levels/Forest/Forest/Heightmap_0_0.res" id="5_niy7m"]
 [ext_resource type="FoliageResource" uid="uid://cig3m2a45iv6f" path="res://Levels/Forest/Resources/Foliage/grasses.tres" id="6_aisnn"]
 [ext_resource type="Image" uid="uid://bwaidkkn4rsyj" path="res://Levels/Forest/Forest/Splatmap_0_0_0.res" id="6_e0n30"]
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="7_dontm"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
+[ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
 [ext_resource type="Image" uid="uid://dfql6ddq7lvye" path="res://Levels/Forest/Forest/Foliage_0_0_0.res" id="30_gbd7g"]
 [ext_resource type="ObjectResource" uid="uid://dtb4ymdodm8rt" path="res://Levels/Forest/Resources/Objects/common_trees.tres" id="30_rkdqx"]
 [ext_resource type="ObjectResource" uid="uid://clmt54612oax6" path="res://Levels/Forest/Resources/Objects/bushes.tres" id="31_uxwyx"]
@@ -125,6 +127,13 @@ script = ExtResource("3_scdmf")
 
 [node name="Map" type="Node3D" parent="." unique_id=947647417]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map" unique_id=1841118192]
+environment = ExtResource("5_c751c")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map" unique_id=2068120018]
+occluder = ExtResource("26_aisnn")
+bake_simplification_distance = 0.01
+
 [node name="Map" type="TerraBrush" parent="Map" unique_id=286101245]
 dataPath = "res://Levels/Forest/Forest"
 zonesSize = 512
@@ -135,7 +144,7 @@ foliages = Array[FoliageResource]([ExtResource("6_aisnn")])
 objects = Array[ObjectResource]([ExtResource("30_rkdqx"), ExtResource("31_uxwyx"), ExtResource("32_jeli1"), ExtResource("33_x2gkl"), ExtResource("34_gte7o"), ExtResource("35_5rjx4"), ExtResource("36_jfa63")])
 terrainZones = SubResource("ZonesResource_niy7m")
 physics_interpolation_mode = 2
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="Water" type="MeshInstance3D" parent="Map" unique_id=180641496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0676098, 0)
