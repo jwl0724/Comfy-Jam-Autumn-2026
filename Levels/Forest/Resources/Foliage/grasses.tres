@@ -1,0 +1,23 @@
+[gd_resource type="FoliageResource" format=3 uid="uid://cig3m2a45iv6f"]
+
+[ext_resource type="Texture2D" uid="uid://d18j8koogcco7" path="res://Levels/Forest/Imports/FoliagePack/sprite_0054.png" id="1_wfki4"]
+[ext_resource type="Texture2D" uid="uid://bqv23g7v5a2cm" path="res://Levels/Forest/Imports/FoliagePack/sprite_0053.png" id="2_riw38"]
+[ext_resource type="Texture2D" uid="uid://dk3lftadf0w1t" path="res://Levels/Forest/Imports/FoliagePack/sprite_0056.png" id="3_t3rwg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jgk3e"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hby40"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aspdx"]
+noise = SubResource("FastNoiseLite_hby40")
+
+[sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_04cxx"]
+mesh = SubResource("QuadMesh_jgk3e")
+meshScale = Vector3(2.5, 2.5, 2.5)
+windStrength = 0.5
+albedoTextures = Array[Texture2D]([ExtResource("1_wfki4"), ExtResource("2_riw38"), ExtResource("3_t3rwg")])
+useGroundColor = true
+scaleNoiseTexture = SubResource("NoiseTexture2D_aspdx")
+
+[resource]
+definition = SubResource("FoliageDefinitionResource_04cxx")

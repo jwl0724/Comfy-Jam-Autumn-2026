@@ -1,0 +1,22 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://bjdt4s85wchgw"]
+
+[ext_resource type="PackedScene" uid="uid://cssebr6bqlurq" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_1.fbx" id="1_lin5p"]
+[ext_resource type="PackedScene" uid="uid://pxuulfpqgtcd" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_2.fbx" id="2_2iu7w"]
+[ext_resource type="PackedScene" uid="uid://cr1rfte0s50xc" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_3.fbx" id="3_exxmk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7idg0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6pu14"]
+noise = SubResource("FastNoiseLite_7idg0")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_eqdc0"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_6pu14")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("1_lin5p"), ExtResource("2_2iu7w"), ExtResource("3_exxmk")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_eqdc0")

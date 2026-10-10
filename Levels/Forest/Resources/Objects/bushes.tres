@@ -1,0 +1,21 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://clmt54612oax6"]
+
+[ext_resource type="PackedScene" uid="uid://bbv7ula4yal4c" path="res://Levels/Forest/Imports/NatureMegaPack/Bush_Common.fbx" id="1_8tu2u"]
+[ext_resource type="PackedScene" uid="uid://cucnpmmy7fvf4" path="res://Levels/Forest/Imports/NatureMegaPack/Bush_Common_Flowers.fbx" id="2_j2cx1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3arn4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wjqn6"]
+noise = SubResource("FastNoiseLite_3arn4")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_aygxr"]
+randomRange = 8.0
+noiseTexture = SubResource("NoiseTexture2D_wjqn6")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 3.0
+randomSizeFactorMax = 4.0
+objectScenes = Array[PackedScene]([ExtResource("1_8tu2u"), ExtResource("2_j2cx1")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_aygxr")

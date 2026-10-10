@@ -1,0 +1,24 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://bonoqv25n2g1w"]
+
+[ext_resource type="PackedScene" uid="uid://bopu7imbu80w8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_1.fbx" id="1_66nb0"]
+[ext_resource type="PackedScene" uid="uid://dii5hybdq2v7x" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_2.fbx" id="2_djgro"]
+[ext_resource type="PackedScene" uid="uid://gmgj67p5dmd8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_3.fbx" id="3_gqfas"]
+[ext_resource type="PackedScene" uid="uid://bopmm8bn73tb" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_4.fbx" id="4_yxf4m"]
+[ext_resource type="PackedScene" uid="uid://4fscxs8yoe7r" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_5.fbx" id="5_2sl8m"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ip7mj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dc7in"]
+noise = SubResource("FastNoiseLite_ip7mj")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_j233e"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_dc7in")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 3.0
+randomSizeFactorMax = 3.5
+objectScenes = Array[PackedScene]([ExtResource("1_66nb0"), ExtResource("2_djgro"), ExtResource("3_gqfas"), ExtResource("4_yxf4m"), ExtResource("5_2sl8m")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_j233e")

@@ -1,0 +1,77 @@
+[gd_resource type="TextureSetsResource" format=3 uid="uid://beqje6372pi61"]
+
+[ext_resource type="Texture2D" uid="uid://bd5d7itih4b7n" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_color_1k.png" id="1_3dlcp"]
+[ext_resource type="Texture2D" uid="uid://dkbffbt5jcyvn" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_height_1k.png" id="2_jhn8c"]
+[ext_resource type="Texture2D" uid="uid://bjq6vwwri5a6f" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_normal_gl_1k.png" id="3_47u20"]
+[ext_resource type="Texture2D" uid="uid://80oyqs48ehst" path="res://Levels/Forest/Imports/Textures/Soil/ground_02_roughness_1k.png" id="4_nnhui"]
+[ext_resource type="Texture2D" uid="uid://5c0njdqfpsqn" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_basecolor_1k.png" id="5_8fdt6"]
+[ext_resource type="Texture2D" uid="uid://18dbcbucvxgm" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_height_1k.png" id="6_57jmq"]
+[ext_resource type="Texture2D" uid="uid://yfu65wahb2y8" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_05_normal_gl_1k.png" id="7_gncoc"]
+[ext_resource type="Texture2D" uid="uid://c12tr6f6etdcd" path="res://Levels/Forest/Imports/Textures/Stone/cliff_rocks_02_roughness_1k.png" id="8_r15xo"]
+[ext_resource type="Texture2D" uid="uid://eoqyu0khbdi1" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_color_1k.png" id="9_piqa6"]
+[ext_resource type="Texture2D" uid="uid://d20wxv0nuygh3" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_height_1k.png" id="10_rvb2s"]
+[ext_resource type="Texture2D" uid="uid://c0kwbme3ym5r6" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_normal_gl_1k.png" id="11_spihm"]
+[ext_resource type="Texture2D" uid="uid://r3ypd7a5qkj6" path="res://Levels/Forest/Imports/Textures/Roots/ground_with_roots_01_roughness_1k.png" id="12_p8cgg"]
+[ext_resource type="Texture2D" uid="uid://b8y5ajd8wflfy" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_color_1k.png" id="13_cllj1"]
+[ext_resource type="Texture2D" uid="uid://bt5xsrouaqw41" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_height_1k.png" id="14_tsj2y"]
+[ext_resource type="Texture2D" uid="uid://ok7l8do6s1hf" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_normal_gl_1k.png" id="15_s8x8i"]
+[ext_resource type="Texture2D" uid="uid://peun5lwwil6j" path="res://Levels/Forest/Imports/Textures/Grass/grass_01_roughness_1k.png" id="16_ouecu"]
+[ext_resource type="Texture2D" uid="uid://ch1utrt431386" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_color_1k.png" id="17_80xx3"]
+[ext_resource type="Texture2D" uid="uid://b62dwbfjwa8f4" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_height_1k.png" id="18_qu4c5"]
+[ext_resource type="Texture2D" uid="uid://ckc8kcg4xj66b" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_normal_gl_1k.png" id="19_byuho"]
+[ext_resource type="Texture2D" uid="uid://basaw5dg3yahd" path="res://Levels/Forest/Imports/Textures/Sand/sand_04_roughness_1k.png" id="20_65tic"]
+[ext_resource type="Texture2D" uid="uid://didow68xflf63" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_NormalGL.png" id="21_o378e"]
+[ext_resource type="Texture2D" uid="uid://bwd0j28mj1ik" path="res://Levels/Forest/Imports/Textures/Leaves/ScatteredLeaves007_1K-PNG_Roughness.png" id="22_6ov67"]
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_3qi4o"]
+name = "Soil"
+albedoTexture = ExtResource("1_3dlcp")
+normalTexture = ExtResource("3_47u20")
+roughnessTexture = ExtResource("4_nnhui")
+heightTexture = ExtResource("2_jhn8c")
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_irkax"]
+name = "Stone"
+albedoTexture = ExtResource("5_8fdt6")
+normalTexture = ExtResource("7_gncoc")
+roughnessTexture = ExtResource("8_r15xo")
+heightTexture = ExtResource("6_57jmq")
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_texq4"]
+name = "Roots"
+albedoTexture = ExtResource("9_piqa6")
+normalTexture = ExtResource("11_spihm")
+roughnessTexture = ExtResource("12_p8cgg")
+heightTexture = ExtResource("10_rvb2s")
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_3vpcb"]
+name = "Grass"
+albedoTexture = ExtResource("13_cllj1")
+normalTexture = ExtResource("15_s8x8i")
+roughnessTexture = ExtResource("16_ouecu")
+heightTexture = ExtResource("14_tsj2y")
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_br85p"]
+name = "Sand"
+albedoTexture = ExtResource("17_80xx3")
+normalTexture = ExtResource("19_byuho")
+roughnessTexture = ExtResource("20_65tic")
+heightTexture = ExtResource("18_qu4c5")
+
+[sub_resource type="Gradient" id="Gradient_bq2g6"]
+offsets = PackedFloat32Array(0.015384615)
+colors = PackedColorArray(0.6509804, 0.32156864, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5k7u4"]
+gradient = SubResource("Gradient_bq2g6")
+width = 1024
+height = 1024
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_gbd7g"]
+name = "Leaves"
+albedoTexture = SubResource("GradientTexture2D_5k7u4")
+normalTexture = ExtResource("21_o378e")
+roughnessTexture = ExtResource("22_6ov67")
+
+[resource]
+textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_3qi4o"), SubResource("TextureSetResource_irkax"), SubResource("TextureSetResource_texq4"), SubResource("TextureSetResource_3vpcb"), SubResource("TextureSetResource_br85p"), SubResource("TextureSetResource_gbd7g")])

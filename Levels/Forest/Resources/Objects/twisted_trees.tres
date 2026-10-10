@@ -1,0 +1,24 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://cxbnkjmo13aog"]
+
+[ext_resource type="PackedScene" uid="uid://rf4731orie66" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_1.fbx" id="1_83g27"]
+[ext_resource type="PackedScene" uid="uid://242fmpd1h6m7" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_2.fbx" id="2_6etyy"]
+[ext_resource type="PackedScene" uid="uid://dkxetuylcflqh" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_3.fbx" id="3_nvw48"]
+[ext_resource type="PackedScene" uid="uid://lbxmggcat1jd" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_4.fbx" id="4_i2tbf"]
+[ext_resource type="PackedScene" uid="uid://dggfoo3nk4c7o" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_5.fbx" id="5_312op"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rxt6j"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hwjp1"]
+noise = SubResource("FastNoiseLite_rxt6j")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_1lemy"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_hwjp1")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("1_83g27"), ExtResource("2_6etyy"), ExtResource("3_nvw48"), ExtResource("4_i2tbf"), ExtResource("5_312op")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_1lemy")

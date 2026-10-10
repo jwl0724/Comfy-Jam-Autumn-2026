@@ -1,0 +1,24 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://bkby8f7wbncpu"]
+
+[ext_resource type="PackedScene" uid="uid://3n1podevb63m" path="res://Levels/Forest/Imports/NatureMegaPack/Fern_1.fbx" id="1_4e7r0"]
+[ext_resource type="PackedScene" uid="uid://c247th6sn04eg" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_3_Group.fbx" id="2_pfbmx"]
+[ext_resource type="PackedScene" uid="uid://cqxdwr5hyyj1p" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_3_Single.fbx" id="3_oy2bg"]
+[ext_resource type="PackedScene" uid="uid://htqneb8jbnwn" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_4_Group.fbx" id="4_ar3p8"]
+[ext_resource type="PackedScene" uid="uid://bdj0nb0smb21o" path="res://Levels/Forest/Imports/NatureMegaPack/Flower_4_Single.fbx" id="5_syek2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gtuab"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_edgpy"]
+noise = SubResource("FastNoiseLite_gtuab")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_60j5n"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_edgpy")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 0.25
+randomSizeFactorMax = 0.5
+objectScenes = Array[PackedScene]([ExtResource("1_4e7r0"), ExtResource("2_pfbmx"), ExtResource("3_oy2bg"), ExtResource("4_ar3p8"), ExtResource("5_syek2")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_60j5n")

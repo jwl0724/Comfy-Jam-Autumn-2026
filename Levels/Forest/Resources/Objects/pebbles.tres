@@ -1,0 +1,30 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://cgyhtovhok6e7"]
+
+[ext_resource type="PackedScene" uid="uid://bf3dhbo5arbtk" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_1.fbx" id="1_1821k"]
+[ext_resource type="PackedScene" uid="uid://cotdr7ax48ik0" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_2.fbx" id="2_qyfsg"]
+[ext_resource type="PackedScene" uid="uid://chf8r1weqyj1v" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_3.fbx" id="3_em4l6"]
+[ext_resource type="PackedScene" uid="uid://cwfg2ul1s0kwt" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_4.fbx" id="4_fft4c"]
+[ext_resource type="PackedScene" uid="uid://dq733dhqav7u0" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Round_5.fbx" id="5_xh33a"]
+[ext_resource type="PackedScene" uid="uid://b3e51qar2l2ul" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_1.fbx" id="6_cwpd7"]
+[ext_resource type="PackedScene" uid="uid://k20tl76h144s" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_2.fbx" id="7_g8v4p"]
+[ext_resource type="PackedScene" uid="uid://df1a3dof7lnbf" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_3.fbx" id="8_2njww"]
+[ext_resource type="PackedScene" uid="uid://djrwqp13vswfu" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_4.fbx" id="9_tqp8y"]
+[ext_resource type="PackedScene" uid="uid://dhct3k3wshlkg" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_5.fbx" id="10_ljsqd"]
+[ext_resource type="PackedScene" uid="uid://dgo3j2p6iamp5" path="res://Levels/Forest/Imports/NatureMegaPack/Pebble_Square_6.fbx" id="11_q0m08"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5s7xq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7gfr2"]
+noise = SubResource("FastNoiseLite_5s7xq")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_lxaiu"]
+randomRange = 3.0
+noiseTexture = SubResource("NoiseTexture2D_7gfr2")
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 1.0
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("1_1821k"), ExtResource("2_qyfsg"), ExtResource("3_em4l6"), ExtResource("4_fft4c"), ExtResource("5_xh33a"), ExtResource("6_cwpd7"), ExtResource("7_g8v4p"), ExtResource("8_2njww"), ExtResource("9_tqp8y"), ExtResource("10_ljsqd"), ExtResource("11_q0m08")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_lxaiu")
