@@ -39,6 +39,10 @@
 
 
 ## Credits
+
+## Shaders
+https://godotshaders.com/shader/toon-water-shader/
+
 ### Libraries
 https://godotassetlibrary.com/asset/n1tXOr/terrabrush
 
