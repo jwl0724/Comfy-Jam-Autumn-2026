@@ -52,7 +52,7 @@ zones = Array[ZoneResource]([SubResource("ZoneResource_8yk7o")])
 noise = SubResource("FastNoiseLite_0kgp7")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8n8ic"]
-frequency = 0.0533
+frequency = 0.0777
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qjnsg"]
 noise = SubResource("FastNoiseLite_8n8ic")
@@ -79,6 +79,126 @@ shader_parameter/_DepthFactor = 1.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_nctp4"]
 material = SubResource("ShaderMaterial_dneal")
 size = Vector2(500, 500)
+
+[sub_resource type="Shader" id="Shader_elyv4"]
+code = "/**
+* Ported from the original unity shader by Erik Roystan Ross
+* https://roystan.net/articles/toon-water.html
+* https://github.com/IronWarrior/ToonWaterShader
+* Camera Depth taken from Bastiaan Olij's video on: https://www.youtube.com/watch?v=Jq3he9Lbj7M
+*/
+
+shader_type spatial;
+
+const float SMOOTHSTEP_AA = 0.01;
+
+uniform sampler2D surfaceNoise;
+uniform sampler2D distortNoise;
+
+uniform float beer_factor = 0.8;
+
+uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
+uniform float foam_distance = 0.01;
+uniform float foam_max_distance = 0.4;
+uniform float foam_min_distance = 0.04;
+uniform vec4 foam_color: source_color  = vec4(1.0);
+
+uniform vec2 surface_noise_tiling = vec2(1.0, 4.0);
+uniform vec3 surface_noise_scroll = vec3(0.03, 0.03, 0.0);
+uniform float surface_noise_cutoff: hint_range(0, 1) = 0.777;
+uniform float surface_distortion_amount: hint_range(0, 1) = 0.27;
+
+uniform vec4 _DepthGradientShallow: source_color = vec4(0.325, 0.807, 0.971, 0.725);
+uniform vec4 _DepthGradientDeep: source_color = vec4(0.086, 0.407, 1, 0.749);
+uniform float _DepthMaxDistance: hint_range(0, 1) = 1.0;
+uniform float _DepthFactor = 1.0;
+
+varying vec2 noiseUV;
+varying vec2 distortUV;
+varying vec3 viewNormal;
+
+vec4 alphaBlend(vec4 top, vec4 bottom)
+{
+	vec3 color = (top.rgb * top.a) + (bottom.rgb * (1.0 - top.a));
+	float alpha = top.a + bottom.a * (1.0 - top.a);
+	
+	return vec4(color, alpha);
+}
+
+void vertex() {
+	viewNormal = (MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
+	noiseUV = UV * surface_noise_tiling;
+	distortUV = UV;
+}
+
+void fragment(){
+	// https://www.youtube.com/watch?v=Jq3he9Lbj7M
+	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
+	depth = depth * 2.0 - 1.0;
+	depth = PROJECTION_MATRIX[3][2] / (depth + PROJECTION_MATRIX[2][2]);
+	depth = depth + VERTEX.z;
+	depth = exp(-depth * beer_factor);
+	depth = 1.0 - depth;
+	
+	// Still unsure how to get properly the NORMAL from the camera
+	// this was my best attempt
+	vec3 existingNormal = vec3(dFdx(depth), dFdy(depth), 0);
+	
+	float normalDot = clamp(dot(existingNormal.xyz, viewNormal), 0.0, 1.0);
+	float foamDistance = mix(foam_max_distance, foam_min_distance, normalDot);
+	
+	float foamDepth = clamp(depth / foamDistance, 0.0, 1.0);
+	float surfaceNoiseCutoff = foamDepth * surface_noise_cutoff;
+	
+	vec4 distortNoiseSample = texture(distortNoise, distortUV);
+	vec2 distortAmount = (distortNoiseSample.xy * 2.0 -1.0) * surface_distortion_amount;
+	
+	vec2 noise_uv = vec2(
+		(noiseUV.x + TIME * surface_noise_scroll.x) + distortAmount.x , 
+		(noiseUV.y + TIME * surface_noise_scroll.y + distortAmount.y)
+	);
+	float surfaceNoiseSample = texture(surfaceNoise, noise_uv).r;
+	float surfaceNoiseAmount = smoothstep(surfaceNoiseCutoff - SMOOTHSTEP_AA, surfaceNoiseCutoff + SMOOTHSTEP_AA, surfaceNoiseSample);
+	
+	float waterDepth = clamp(depth / _DepthMaxDistance, 0.0, 1.0) * _DepthFactor;
+	vec4 waterColor = mix(_DepthGradientShallow, _DepthGradientDeep, waterDepth);
+
+	vec4 surfaceNoiseColor = foam_color;
+    surfaceNoiseColor.a *= surfaceNoiseAmount;
+	vec4 color = alphaBlend(surfaceNoiseColor, waterColor);
+	
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aisnn"]
+frequency = 0.0007
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c751c"]
+noise = SubResource("FastNoiseLite_aisnn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_elyv4"]
+render_priority = 0
+shader = SubResource("Shader_elyv4")
+shader_parameter/surfaceNoise = SubResource("NoiseTexture2D_c751c")
+shader_parameter/distortNoise = SubResource("NoiseTexture2D_gmta6")
+shader_parameter/beer_factor = 0.8
+shader_parameter/foam_distance = 0.01
+shader_parameter/foam_max_distance = 0.4
+shader_parameter/foam_min_distance = 0.04
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/surface_noise_tiling = Vector2(1, 4)
+shader_parameter/surface_noise_scroll = Vector3(1, 2, 0)
+shader_parameter/surface_noise_cutoff = 0.598000028405
+shader_parameter/surface_distortion_amount = 0.27
+shader_parameter/_DepthGradientShallow = Color(0.325, 0.807, 0.971, 0.725)
+shader_parameter/_DepthGradientDeep = Color(0.086, 0.407, 1, 0.749)
+shader_parameter/_DepthMaxDistance = 1.0
+shader_parameter/_DepthFactor = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aisnn"]
+material = SubResource("ShaderMaterial_elyv4")
+size = Vector2(50, 80)
 
 [node name="Forest" type="Node3D" unique_id=1823147826]
 script = ExtResource("1_cmbib")
@@ -111,14 +231,18 @@ foliages = Array[FoliageResource]([ExtResource("6_aisnn")])
 objects = Array[ObjectResource]([ExtResource("30_rkdqx"), ExtResource("31_uxwyx"), ExtResource("32_jeli1"), ExtResource("33_x2gkl"), ExtResource("34_gte7o"), ExtResource("35_5rjx4"), ExtResource("36_jfa63")])
 terrainZones = SubResource("ZonesResource_niy7m")
 physics_interpolation_mode = 2
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="Water" type="MeshInstance3D" parent="Map" unique_id=180641496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0676098, 0)
 mesh = SubResource("PlaneMesh_nctp4")
 
+[node name="Water2" type="MeshInstance3D" parent="Map" unique_id=1456171745]
+transform = Transform3D(0.9936035, 0.1019828, -0.0484948, 0, 0.4294396, 0.9030958, 0.11292571, -0.897319, 0.4266926, 166.38995, 30.236183, 222.03967)
+mesh = SubResource("PlaneMesh_aisnn")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1714604988]
-transform = Transform3D(-0.96482867, -0.26287964, 0, 0.26287964, -0.96482867, 0, 0, 0, 1, 0, 129.8657, 0)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 129.8657, 0)
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7500135, 0)
