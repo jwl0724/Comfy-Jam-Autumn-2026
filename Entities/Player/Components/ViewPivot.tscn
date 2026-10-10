@@ -8,7 +8,7 @@ script = ExtResource("1_ainw0")
 [node name="Camera" type="Camera3D" parent="." unique_id=1740672184]
 
 [node name="InteractRay" type="RayCast3D" parent="." unique_id=1097649128]
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -2.5)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false

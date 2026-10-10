@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u36tg"]
 radius = 0.4
-height = 1.5
+height = 2.5
 
 [node name="Player" type="CharacterBody3D" unique_id=893108555]
 collision_layer = 2
@@ -26,7 +26,7 @@ script = ExtResource("3_an6q6")
 [node name="Components" type="Node3D" parent="." unique_id=1369609793]
 
 [node name="Pivot" parent="Components" unique_id=885972578 instance=ExtResource("3_1des2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42915964, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2113099, 0)
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=911861287]
 shape = SubResource("CapsuleShape3D_u36tg")
