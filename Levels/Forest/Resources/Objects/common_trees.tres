@@ -1,10 +1,10 @@
 [gd_resource type="ObjectResource" format=3 uid="uid://dtb4ymdodm8rt"]
 
-[ext_resource type="PackedScene" uid="uid://cfg8vfisqewrq" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_1.fbx" id="1_rf2hk"]
-[ext_resource type="PackedScene" uid="uid://ou3t3h8my3n" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_2.fbx" id="2_tba7h"]
-[ext_resource type="PackedScene" uid="uid://b6ul83ty46luv" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_3.fbx" id="3_jc6jd"]
-[ext_resource type="PackedScene" uid="uid://himn4k6cgus7" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_4.fbx" id="4_ljxx0"]
-[ext_resource type="PackedScene" uid="uid://gwpyuysuax6e" path="res://Levels/Forest/Imports/NatureMegaPack/CommonTree_5.fbx" id="5_1xvtw"]
+[ext_resource type="PackedScene" uid="uid://dc0ebqo60uapu" path="res://Levels/Forest/Imports/ExtractedScenes/CommonTrees/common_tree_1.tscn" id="1_rf2hk"]
+[ext_resource type="PackedScene" uid="uid://yx2puyw3tgms" path="res://Levels/Forest/Imports/ExtractedScenes/CommonTrees/common_tree_2.tscn" id="2_tba7h"]
+[ext_resource type="PackedScene" uid="uid://be1qcfax8nh7t" path="res://Levels/Forest/Imports/ExtractedScenes/CommonTrees/common_tree_3.tscn" id="3_jc6jd"]
+[ext_resource type="PackedScene" uid="uid://yaa4pajgn275" path="res://Levels/Forest/Imports/ExtractedScenes/CommonTrees/common_tree_4.tscn" id="4_ljxx0"]
+[ext_resource type="PackedScene" uid="uid://pa7p06sgsmny" path="res://Levels/Forest/Imports/ExtractedScenes/CommonTrees/common_tree_5.tscn" id="5_1xvtw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5rjx4"]
 

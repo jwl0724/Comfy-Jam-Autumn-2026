@@ -1,10 +1,10 @@
 [gd_resource type="ObjectResource" format=3 uid="uid://bonoqv25n2g1w"]
 
-[ext_resource type="PackedScene" uid="uid://bopu7imbu80w8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_1.fbx" id="1_66nb0"]
-[ext_resource type="PackedScene" uid="uid://dii5hybdq2v7x" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_2.fbx" id="2_djgro"]
-[ext_resource type="PackedScene" uid="uid://gmgj67p5dmd8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_3.fbx" id="3_gqfas"]
-[ext_resource type="PackedScene" uid="uid://bopmm8bn73tb" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_4.fbx" id="4_yxf4m"]
-[ext_resource type="PackedScene" uid="uid://4fscxs8yoe7r" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_5.fbx" id="5_2sl8m"]
+[ext_resource type="PackedScene" uid="uid://b6ame3qb3e45n" path="res://Levels/Forest/Imports/ExtractedScenes/PineTrees/pine_1.tscn" id="1_66nb0"]
+[ext_resource type="PackedScene" uid="uid://c833l5obvw1k4" path="res://Levels/Forest/Imports/ExtractedScenes/PineTrees/pine_2.tscn" id="2_djgro"]
+[ext_resource type="PackedScene" uid="uid://tyha7djc7rh4" path="res://Levels/Forest/Imports/ExtractedScenes/PineTrees/pine_3.tscn" id="3_gqfas"]
+[ext_resource type="PackedScene" uid="uid://dmxfikqnb4lvd" path="res://Levels/Forest/Imports/ExtractedScenes/PineTrees/pine_4.tscn" id="4_yxf4m"]
+[ext_resource type="PackedScene" uid="uid://b7tidqb52vs0o" path="res://Levels/Forest/Imports/ExtractedScenes/PineTrees/pine_5.tscn" id="5_2sl8m"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ip7mj"]
 

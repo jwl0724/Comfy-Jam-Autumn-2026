@@ -1,10 +1,10 @@
 [gd_resource type="ObjectResource" format=3 uid="uid://cxbnkjmo13aog"]
 
-[ext_resource type="PackedScene" uid="uid://rf4731orie66" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_1.fbx" id="1_83g27"]
-[ext_resource type="PackedScene" uid="uid://242fmpd1h6m7" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_2.fbx" id="2_6etyy"]
-[ext_resource type="PackedScene" uid="uid://dkxetuylcflqh" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_3.fbx" id="3_nvw48"]
-[ext_resource type="PackedScene" uid="uid://lbxmggcat1jd" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_4.fbx" id="4_i2tbf"]
-[ext_resource type="PackedScene" uid="uid://dggfoo3nk4c7o" path="res://Levels/Forest/Imports/NatureMegaPack/TwistedTree_5.fbx" id="5_312op"]
+[ext_resource type="PackedScene" uid="uid://cwx756eih4loh" path="res://Levels/Forest/Imports/ExtractedScenes/TwistedTrees/twisted_tree_1.tscn" id="1_83g27"]
+[ext_resource type="PackedScene" uid="uid://ckaaltffoxbw7" path="res://Levels/Forest/Imports/ExtractedScenes/TwistedTrees/twisted_tree_2.tscn" id="2_6etyy"]
+[ext_resource type="PackedScene" uid="uid://bx733elsnlk3a" path="res://Levels/Forest/Imports/ExtractedScenes/TwistedTrees/twisted_tree_3.tscn" id="3_nvw48"]
+[ext_resource type="PackedScene" uid="uid://bl8gqqscbu137" path="res://Levels/Forest/Imports/ExtractedScenes/TwistedTrees/twisted_tree_4.tscn" id="4_i2tbf"]
+[ext_resource type="PackedScene" uid="uid://bi7hykd6632yy" path="res://Levels/Forest/Imports/ExtractedScenes/TwistedTrees/twisted_tree_5.tscn" id="5_312op"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rxt6j"]
 

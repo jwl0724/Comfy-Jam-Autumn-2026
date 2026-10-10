@@ -1,8 +1,8 @@
 [gd_resource type="ObjectResource" format=3 uid="uid://bjdt4s85wchgw"]
 
-[ext_resource type="PackedScene" uid="uid://cssebr6bqlurq" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_1.fbx" id="1_lin5p"]
-[ext_resource type="PackedScene" uid="uid://pxuulfpqgtcd" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_2.fbx" id="2_2iu7w"]
-[ext_resource type="PackedScene" uid="uid://cr1rfte0s50xc" path="res://Levels/Forest/Imports/NatureMegaPack/Rock_Medium_3.fbx" id="3_exxmk"]
+[ext_resource type="PackedScene" uid="uid://bqyd7xamwx8at" path="res://Levels/Forest/Imports/ExtractedScenes/Rocks/rock_medium_1.tscn" id="1_lin5p"]
+[ext_resource type="PackedScene" uid="uid://uye7gfuk00bd" path="res://Levels/Forest/Imports/ExtractedScenes/Rocks/rock_medium_2.tscn" id="2_2iu7w"]
+[ext_resource type="PackedScene" uid="uid://cgga3ojlkiyjc" path="res://Levels/Forest/Imports/ExtractedScenes/Rocks/rock_medium_3.tscn" id="3_exxmk"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7idg0"]
 
