@@ -6,6 +6,11 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_jgk3e"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wfki4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_riw38"]
+noise = SubResource("FastNoiseLite_wfki4")
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hby40"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aspdx"]
@@ -15,8 +20,10 @@ noise = SubResource("FastNoiseLite_hby40")
 mesh = SubResource("QuadMesh_jgk3e")
 meshScale = Vector3(2.5, 2.5, 2.5)
 windStrength = 0.5
+noiseTexture = SubResource("NoiseTexture2D_riw38")
 albedoTextures = Array[Texture2D]([ExtResource("1_wfki4"), ExtResource("2_riw38"), ExtResource("3_t3rwg")])
 useGroundColor = true
+useBrushScale = false
 scaleNoiseTexture = SubResource("NoiseTexture2D_aspdx")
 
 [resource]
