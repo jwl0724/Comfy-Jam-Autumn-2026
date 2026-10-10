@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6ame3qb3e45n"]
 
 [ext_resource type="PackedScene" uid="uid://bopu7imbu80w8" path="res://Levels/Forest/Imports/NatureMegaPack/Pine_1.fbx" id="1_hfw7s"]
+[ext_resource type="ArrayOccluder3D" uid="uid://xogi8oyn2k30" path="res://Levels/Forest/Imports/ExtractedScenes/PineTrees/pine_1.occ" id="2_b27fd"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b27fd"]
 points = PackedVector3Array(0.0028041936, -0.00026632613, 0.008637868, -0.0030041933, -0.0025904768, -0.0029809522, 0.0028041936, -0.0025904768, -0.0029809522, -0.001842061, 0.0032190469, -0.0029809522, -0.001842061, -0.0014281172, 0.013285714, -0.001842061, 0.0032190469, 0.013285714, 0.0016420614, 0.0032190469, -0.0029809522, 0.0016420614, 0.0032190469, 0.013285714, 0.0016420614, -0.0014281172, 0.013285714, -0.0030041933, 0.0020566871, 0.0039916136, 0.0028041936, 0.0020566871, -0.0029809522, 0.0016420614, -0.0025904768, 0.0063131484, -0.0030041933, 0.0020566871, -0.0029809522, -0.001842061, -0.0025904768, 0.005152381, 0.0028041936, 0.0020566871, 0.0074755084, -0.0030041933, -0.0014281172, 0.002829254, 0.0028041936, -0.0025904768, 0.0005061268)
@@ -198,3 +199,6 @@ shape = SubResource("ConvexPolygonShape3D_ac1cs")
 
 [node name="CollisionShape3D32" type="CollisionShape3D" parent="StaticBody3D" index="31" unique_id=845779973]
 shape = SubResource("ConvexPolygonShape3D_4fafa")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2" unique_id=1524235052]
+occluder = ExtResource("2_b27fd")
