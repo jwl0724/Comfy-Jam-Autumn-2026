@@ -59,3 +59,11 @@ sky_material = SubResource("ShaderMaterial_al6ku")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_61wp0")
+tonemap_mode = 2
+ssao_enabled = true
+fog_enabled = true
+fog_light_energy = 0.32
+fog_sky_affect = 0.508
+adjustment_enabled = true
+adjustment_contrast = 1.25
+adjustment_saturation = 1.2

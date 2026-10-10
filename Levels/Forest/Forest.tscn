@@ -29,6 +29,9 @@
 [ext_resource type="Image" uid="uid://ilnukfcarjwp" path="res://Levels/Forest/Forest/Object_0_0_6.res" id="74_qjnsg"]
 [ext_resource type="Shader" uid="uid://dtnvaups1i8tf" path="res://Levels/Forest/Resources/Shaders/water.gdshader" id="79_0kgp7"]
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_c751c"]
+exposure_multiplier = 1.5
+
 [sub_resource type="ZoneResource" id="ZoneResource_8yk7o"]
 heightMapImage = ExtResource("5_niy7m")
 splatmapsImage = Array[Image]([ExtResource("6_e0n30"), ExtResource("22_qrtwu")])
@@ -129,6 +132,7 @@ script = ExtResource("3_scdmf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Map" unique_id=1841118192]
 environment = ExtResource("5_c751c")
+camera_attributes = SubResource("CameraAttributesPractical_c751c")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map" unique_id=2068120018]
 occluder = ExtResource("26_aisnn")
