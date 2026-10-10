@@ -2,10 +2,24 @@
 
 [ext_resource type="Script" uid="uid://di0tx0ul76l3a" path="res://Common/UI/HUD/hud.gd" id="1_uyl2v"]
 [ext_resource type="PackedScene" uid="uid://svy10h66sr7c" path="res://Common/UI/HUD/Components/PhotoPreview/PhotoPreview.tscn" id="2_3lme5"]
+[ext_resource type="Shader" uid="uid://gcv6vnocp4qt" path="res://Common/UI/HUD/Shaders/retro.gdshader" id="2_qcx68"]
 [ext_resource type="PackedScene" uid="uid://cw6o2ta1pii8a" path="res://Common/UI/HUD/Components/Dialogue/Dialogue.tscn" id="3_gryef"]
 [ext_resource type="PackedScene" uid="uid://dboovtohf5esk" path="res://Common/UI/HUD/Components/Tutorial/TutorialText.tscn" id="4_37ke4"]
 [ext_resource type="PackedScene" uid="uid://dyqfoagllaj7u" path="res://Common/UI/Shared/Scrapbook/Scrapbook.tscn" id="4_mc25i"]
 [ext_resource type="PackedScene" uid="uid://dodpraxvnbs0q" path="res://Common/UI/HUD/Components/TimerDisplay/TimerDisplay.tscn" id="6_hgg0d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fk50d"]
+shader = ExtResource("2_qcx68")
+shader_parameter/pixel_resolution = 360.00001406
+shader_parameter/color_steps = 16
+shader_parameter/noise_strength = 0.2000000095
+shader_parameter/enable_dither = true
+shader_parameter/dither_strength = 0.3
+shader_parameter/enable_glow = true
+shader_parameter/glow_strength = 0.4
+shader_parameter/glow_spread = 0.005
+shader_parameter/enable_vintage = true
+shader_parameter/vintage_strength = 0.58400002774
 
 [node name="Hud" type="Control" unique_id=1395693383]
 layout_mode = 3
@@ -16,6 +30,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_uyl2v")
+
+[node name="RetroFilter" type="ColorRect" parent="." unique_id=867579612]
+material = SubResource("ShaderMaterial_fk50d")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TimerDisplay" parent="." unique_id=1687648138 instance=ExtResource("6_hgg0d")]
 layout_mode = 1
