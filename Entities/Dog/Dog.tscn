@@ -13,8 +13,7 @@ radius = 6.0
 radius = 1.1
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_477lp"]
-radius = 0.3
-height = 0.6
+radius = 0.8
 
 [node name="Dog" type="CharacterBody3D" unique_id=795914483]
 collision_layer = 16
@@ -48,4 +47,5 @@ interact_time_gap = 2.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.2745753, 0)
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1572817533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70184696, -0.11971095)
 shape = SubResource("CapsuleShape3D_477lp")

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="7_dontm"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
+[ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="28_il20w"]
 [ext_resource type="Image" uid="uid://dfql6ddq7lvye" path="res://Levels/Forest/Forest/Foliage_0_0_0.res" id="30_gbd7g"]
 [ext_resource type="ObjectResource" uid="uid://dtb4ymdodm8rt" path="res://Levels/Forest/Resources/Objects/common_trees.tres" id="30_rkdqx"]
 [ext_resource type="ObjectResource" uid="uid://clmt54612oax6" path="res://Levels/Forest/Resources/Objects/bushes.tres" id="31_uxwyx"]
@@ -169,5 +170,9 @@ light_energy = 3.0
 shadow_enabled = true
 shadow_opacity = 0.92
 
+[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("28_il20w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.190804, 1.2103758, 0)
+player_node = NodePath("../Player")
+
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7500135, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.204945, 1.2499962, 0)
