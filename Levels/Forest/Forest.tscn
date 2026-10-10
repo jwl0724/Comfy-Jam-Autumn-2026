@@ -151,8 +151,12 @@ metadata/_edit_lock_ = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0676098, 0)
 mesh = SubResource("PlaneMesh_nctp4")
 
-[node name="Water2" type="MeshInstance3D" parent="Map" unique_id=1456171745]
+[node name="Waterfall" type="MeshInstance3D" parent="Map" unique_id=1456171745]
 transform = Transform3D(0.9936035, 0.1019828, -0.0484948, 0, 0.4294396, 0.9030958, 0.11292571, -0.897319, 0.4266926, 166.38995, 30.236183, 222.03967)
+mesh = SubResource("PlaneMesh_aisnn")
+
+[node name="Waterfall2" type="MeshInstance3D" parent="Map" unique_id=1908301371]
+transform = Transform3D(-0.825153, 0.51016706, -0.24259436, 0.010539237, 0.44326752, 0.8963276, 0.56481105, 0.7370506, -0.37114024, -163.67914, 29.850231, -199.13403)
 mesh = SubResource("PlaneMesh_aisnn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1714604988]
