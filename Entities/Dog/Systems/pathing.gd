@@ -44,8 +44,9 @@ func _physics_process(delta):
         dog.rotation = old_rotation.lerp(target_rotation, dog.turn_rate)
 
         # Handle pathing direction
+        var y_velocity = dog.velocity.y
         var dir_to_target := dog.position.direction_to(pathing_target.position)
-        dir_to_target.y = 0
+        dir_to_target.y = y_velocity
         dog.velocity = dir_to_target * dog.move_speed
     dog.move_and_slide()
 

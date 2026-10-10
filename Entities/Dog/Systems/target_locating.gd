@@ -17,12 +17,13 @@ func _ready():
 
 
 func hint_at_target():
+    if location_key.size() == 0: return # TODO: Probably some bark sound effect or something here
+
     # Update target locations
     locating.emit(true)
     SignalBus.level_query_targetLocations.emit()
 
     # Find closest target
-    if location_key.size() == 0: return # TODO: Probably some bark sound effect or something here
     var closest := Vector3.INF
     for location in location_key.values():
         if dog.global_position.distance_squared_to(location) < dog.global_position.distance_squared_to(closest):
