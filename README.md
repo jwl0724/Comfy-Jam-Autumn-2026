@@ -34,7 +34,7 @@
 
 **Level**
 - Total 10 minutes to find everything (Adjustable)
-- Perhaps tween the color of the skybox to simulate passing of time
+- Tween the property Back Color Top and Back Color Bottom in skybox.gdshader
 - Envisioning a dense forest with lots of orange leaves on the ground and a river within that has an ongoing salmon run
 
 
@@ -42,6 +42,7 @@
 
 ## Shaders
 https://godotshaders.com/shader/toon-water-shader/
+https://godotshaders.com/shader/anime-style-sky-shader/
 
 ### Libraries
 https://godotassetlibrary.com/asset/n1tXOr/terrabrush

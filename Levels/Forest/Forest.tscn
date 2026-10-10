@@ -27,7 +27,7 @@
 [ext_resource type="Image" uid="uid://ckmphpkv04loy" path="res://Levels/Forest/Forest/Object_0_0_4.res" id="72_gmta6"]
 [ext_resource type="Image" uid="uid://bm8q36n087xpf" path="res://Levels/Forest/Forest/Object_0_0_5.res" id="73_8n8ic"]
 [ext_resource type="Image" uid="uid://ilnukfcarjwp" path="res://Levels/Forest/Forest/Object_0_0_6.res" id="74_qjnsg"]
-[ext_resource type="Shader" uid="uid://dtnvaups1i8tf" path="res://Levels/Forest/Imports/Textures/water.gdshader" id="79_0kgp7"]
+[ext_resource type="Shader" uid="uid://dtnvaups1i8tf" path="res://Levels/Forest/Resources/Shaders/water.gdshader" id="79_0kgp7"]
 
 [sub_resource type="ZoneResource" id="ZoneResource_8yk7o"]
 heightMapImage = ExtResource("5_niy7m")

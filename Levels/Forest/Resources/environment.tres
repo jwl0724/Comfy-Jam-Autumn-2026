@@ -1,3 +1,61 @@
 [gd_resource type="Environment" format=3 uid="uid://jua48wp7jelw"]
 
+[ext_resource type="Shader" uid="uid://bvwjqal4lgw4k" path="res://Levels/Forest/Resources/Shaders/skybox.gdshader" id="1_74fh2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_74fh2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ryha2"]
+width = 256
+height = 2048
+noise = SubResource("FastNoiseLite_74fh2")
+seamless = true
+invert = true
+in_3d_space = true
+
+[sub_resource type="Gradient" id="Gradient_pe6ek"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.6933439, 0.82572365, 0.9221685, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4qjd2"]
+gradient = SubResource("Gradient_pe6ek")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_al6ku"]
+shader = ExtResource("1_74fh2")
+shader_parameter/back_color_top = Color(0.12, 0.4, 0.66, 1)
+shader_parameter/back_color_bottom = Color(0.34, 0.75, 0.92, 1)
+shader_parameter/sun_size = 0.001
+shader_parameter/sun_softness = 0.1
+shader_parameter/sun_glow_size = 0.2
+shader_parameter/sun_color = Color(1, 1, 1, 1)
+shader_parameter/sun_glow_color = Color(1, 1, 1, 0)
+shader_parameter/hor_height_min = 0.05
+shader_parameter/hor_height_max = 0.2
+shader_parameter/hor_color_mix = Color(1, 1, 1, 0.125)
+shader_parameter/hor_color_add = Color(1, 1, 1, 0.125)
+shader_parameter/cloud_hor_tex = SubResource("NoiseTexture2D_ryha2")
+shader_parameter/cloud_hor_start = 0.25
+shader_parameter/cloud_hor_end = 0.5
+shader_parameter/cloud_hor_scale = Vector2(2, 2)
+shader_parameter/cloud_top_tex = SubResource("GradientTexture2D_4qjd2")
+shader_parameter/cloud_top_start = 0.6
+shader_parameter/cloud_top_end = 0.74400002882023
+shader_parameter/cloud_top_scale = 0.415
+shader_parameter/clouds_power = 3.0
+shader_parameter/cloud_transtion_start = 0.61500002595262
+shader_parameter/cloud_transtion_end = 0.89999997615814
+shader_parameter/cloud_color_bright = Color(1, 1, 1, 1)
+shader_parameter/cloud_color_dark = Color(0.8, 0.9, 1, 1)
+shader_parameter/cloud_color_edges_mix = Color(1, 1, 1, 1)
+shader_parameter/cloud_color_edges_add = Color(1, 1, 1, 1)
+shader_parameter/cloud_edges = 0.9
+shader_parameter/hor_speed = 0.2
+shader_parameter/hor_layer0_speed_mult = 0.05
+shader_parameter/hor_layer1_speed_mult = 0.1
+shader_parameter/top_speed = 0.05
+
+[sub_resource type="Sky" id="Sky_61wp0"]
+sky_material = SubResource("ShaderMaterial_al6ku")
+
 [resource]
+background_mode = 2
+sky = SubResource("Sky_61wp0")
