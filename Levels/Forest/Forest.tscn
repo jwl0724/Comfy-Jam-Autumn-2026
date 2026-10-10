@@ -30,7 +30,7 @@
 [ext_resource type="Shader" uid="uid://dtnvaups1i8tf" path="res://Levels/Forest/Resources/Shaders/water.gdshader" id="79_0kgp7"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_c751c"]
-exposure_multiplier = 1.5
+exposure_multiplier = 0.75
 
 [sub_resource type="ZoneResource" id="ZoneResource_8yk7o"]
 heightMapImage = ExtResource("5_niy7m")
@@ -162,8 +162,12 @@ mesh = SubResource("PlaneMesh_aisnn")
 transform = Transform3D(-0.825153, 0.51016706, -0.24259436, 0.010539237, 0.44326752, 0.8963276, 0.56481105, 0.7370506, -0.37114024, -163.67914, 29.850231, -199.13403)
 mesh = SubResource("PlaneMesh_aisnn")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1714604988]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 129.8657, 0)
+[node name="Sun" type="DirectionalLight3D" parent="Map" unique_id=598443714]
+transform = Transform3D(-0.06648292, -0.99778765, -1.2851889e-08, 0.8923787, -0.059459493, 0.44735327, -0.44636354, 0.029741341, 0.8943574, 0, 5.8375373, 0)
+light_color = Color(0.7513873, 0.39268664, 0, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_opacity = 0.92
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7500135, 0)
