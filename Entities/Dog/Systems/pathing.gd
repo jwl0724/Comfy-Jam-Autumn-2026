@@ -2,6 +2,7 @@ extends Node
 class_name DogPathing
 
 @export var follow_threshold: Area3D = null
+@export var nav_agent: NavigationAgent3D = null
 
 @onready var dog: Dog = owner
 @onready var pathing_target: Node3D = dog.player_node
@@ -15,7 +16,7 @@ func enable_pathing(enable: bool):
     pathing_enabled = enable
 
 
-# TODO: Might need to switch to PathAgent3D later after the map is created, will need to see later
+
 func _ready():
     follow_threshold.body_entered.connect(_on_body_entered)
     follow_threshold.body_exited.connect(_on_body_exited)
@@ -27,6 +28,8 @@ func _physics_process(delta):
     if !dog.is_on_floor(): dog.velocity.y -= dog.fall_speed * delta
     else: dog.velocity.y = 0
 
+    if Engine.get_physics_frames() % 10 == 0: nav_agent.target_position = pathing_target.global_position
+
     if !pathing_target || !pathing_enabled:
         dog.move_and_slide()
         return
@@ -36,18 +39,20 @@ func _physics_process(delta):
         dog.velocity.x = move_toward(dog.velocity.x, 0, dog.move_speed / 4)
         dog.velocity.z = move_toward(dog.velocity.z, 0, dog.move_speed / 4)
     else:
-        # Handle dog looking direction
-        var old_rotation := dog.rotation
-        dog.look_at(pathing_target.position)
-        dog.rotation.x = 0
-        var target_rotation := dog.rotation
-        dog.rotation = old_rotation.lerp(target_rotation, dog.turn_rate)
+        if nav_agent.is_navigation_finished(): return
 
         # Handle pathing direction
-        var y_velocity = dog.velocity.y
-        var dir_to_target := dog.position.direction_to(pathing_target.position)
-        dir_to_target.y = y_velocity
-        dog.velocity = dir_to_target * dog.move_speed
+        var next_pos = nav_agent.get_next_path_position()
+        var direction = (next_pos - dog.global_position).normalized()
+        dog.velocity.x = direction.x * dog.move_speed
+        dog.velocity.z = direction.z * dog.move_speed
+
+        # Handle dog looking position
+        var old_rotation = dog.rotation
+        dog.look_at(next_pos)
+        var new_rotation = dog.rotation
+        dog.rotation = old_rotation.lerp(new_rotation, dog.turn_rate)
+        dog.rotation.x = 0
     dog.move_and_slide()
 
 

@@ -11,6 +11,7 @@
 [ext_resource type="FoliageResource" uid="uid://cig3m2a45iv6f" path="res://Levels/Forest/Resources/Foliage/grasses.tres" id="6_aisnn"]
 [ext_resource type="Image" uid="uid://bwaidkkn4rsyj" path="res://Levels/Forest/Forest/Splatmap_0_0_0.res" id="6_e0n30"]
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="7_dontm"]
+[ext_resource type="NavigationMesh" uid="uid://ikf6j7nk7luq" path="res://Levels/Forest/Resources/nav_mesh.tres" id="8_5k7u4"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="28_il20w"]
@@ -139,13 +140,10 @@ gui_layer = Array[PackedScene]([ExtResource("2_scdmf")])
 
 [node name="LevelState" type="Node" parent="Systems" unique_id=411558482 node_paths=PackedStringArray("photo_target_node")]
 script = ExtResource("1_bd0nb")
-time_limit_seconds = 10.0
 photo_target_node = NodePath("../../PhotoTargets")
 
 [node name="SequenceHandler" type="Node" parent="Systems" unique_id=1367272529]
 script = ExtResource("3_scdmf")
-seconds_per_line = 0.5
-seconds_per_fade = 0.5
 
 [node name="TimeTransition" type="Node" parent="Systems" unique_id=316086817 node_paths=PackedStringArray("directional_light", "world_environment", "level_state_handler")]
 script = ExtResource("5_bq2g6")
@@ -172,7 +170,10 @@ camera_attributes = SubResource("CameraAttributesPractical_c751c")
 occluder = ExtResource("26_aisnn")
 bake_simplification_distance = 0.01
 
-[node name="Map" type="TerraBrush" parent="Map" unique_id=286101245]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map" unique_id=1560050936]
+navigation_mesh = ExtResource("8_5k7u4")
+
+[node name="Map" type="TerraBrush" parent="Map/NavigationRegion3D" unique_id=286101245]
 dataPath = "res://Levels/Forest/Forest"
 zonesSize = 512
 textureSets = ExtResource("5_elyv4")
@@ -184,28 +185,28 @@ terrainZones = SubResource("ZonesResource_niy7m")
 physics_interpolation_mode = 2
 metadata/_edit_lock_ = false
 
-[node name="Water" type="MeshInstance3D" parent="Map" unique_id=180641496]
+[node name="Water" type="MeshInstance3D" parent="Map/NavigationRegion3D" unique_id=180641496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0676098, 0)
 mesh = SubResource("PlaneMesh_nctp4")
 
-[node name="Waterfall" type="MeshInstance3D" parent="Map" unique_id=1456171745]
+[node name="Waterfall" type="MeshInstance3D" parent="Map/NavigationRegion3D" unique_id=1456171745]
 transform = Transform3D(0.9936034, 0.10198273, -0.048494752, 0, 0.42943946, 0.9030958, 0.1129257, -0.897319, 0.42669252, 166.38995, 30.236183, 222.03967)
 mesh = SubResource("PlaneMesh_aisnn")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Waterfall" unique_id=1940964292]
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/Waterfall" unique_id=1940964292]
 transform = Transform3D(0.9936034, 7.4029227e-09, 0.112925746, 0.101982705, 0.42943937, -0.89731914, -0.04849474, 0.90309554, 0.42669258, -6.030182, 0.28997803, -34.343575)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Waterfall/StaticBody3D" unique_id=62831322]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Waterfall/StaticBody3D" unique_id=62831322]
 shape = SubResource("BoxShape3D_bq2g6")
 
-[node name="Waterfall2" type="MeshInstance3D" parent="Map" unique_id=1908301371]
+[node name="Waterfall2" type="MeshInstance3D" parent="Map/NavigationRegion3D" unique_id=1908301371]
 transform = Transform3D(-0.825153, 0.51016706, -0.24259436, 0.010539237, 0.44326752, 0.8963276, 0.56481105, 0.7370506, -0.37114024, -163.67914, 29.850231, -199.13403)
 mesh = SubResource("PlaneMesh_aisnn")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Waterfall2" unique_id=1614296524]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/NavigationRegion3D/Waterfall2" unique_id=1614296524]
 transform = Transform3D(-0.9996659, 0.010539209, -0.023535341, -0.016426563, 0.443267, 0.89623827, 0.019878015, 0.8963264, -0.4429466, -2.9855652, -3.0391998, -28.162254)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Waterfall2/StaticBody3D2" unique_id=2062377777]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Waterfall2/StaticBody3D2" unique_id=2062377777]
 shape = SubResource("BoxShape3D_il20w")
 
 [node name="Sun" type="DirectionalLight3D" parent="Map" unique_id=598443714]
