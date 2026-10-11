@@ -58,6 +58,7 @@ https://freestylized.com/material/sand_04/
 
 
 ### Models
+https://opengameart.org/content/dslr-camera-blender
 https://opengameart.org/content/stylized-nature-megakit
 https://opengameart.org/content/animated-fish
 https://opengameart.org/content/rat-pack
