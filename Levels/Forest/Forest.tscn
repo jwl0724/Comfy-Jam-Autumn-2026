@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_cmbib"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_scdmf"]
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_scdmf"]
+[ext_resource type="Script" uid="uid://b2pvs8me1gtmb" path="res://Levels/Forest/Systems/time_transition.gd" id="5_bq2g6"]
 [ext_resource type="Environment" uid="uid://jua48wp7jelw" path="res://Levels/Forest/Resources/environment.tres" id="5_c751c"]
 [ext_resource type="TextureSetsResource" uid="uid://beqje6372pi61" path="res://Levels/Forest/Resources/TextureSet/map_textures.tres" id="5_elyv4"]
 [ext_resource type="Image" uid="uid://eegbwwepgh2n" path="res://Levels/Forest/Forest/Heightmap_0_0.res" id="5_niy7m"]
@@ -128,6 +129,9 @@ photo_target_node = NodePath("../../PhotoTargets")
 
 [node name="SequenceHandler" type="Node" parent="Systems" unique_id=1367272529]
 script = ExtResource("3_scdmf")
+
+[node name="TimeTransition" type="Node" parent="Systems" unique_id=316086817]
+script = ExtResource("5_bq2g6")
 
 [node name="TeleportPoints" type="Node" parent="." unique_id=186562654]
 
