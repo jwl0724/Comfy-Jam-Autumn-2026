@@ -7,4 +7,5 @@
 script = ExtResource("1_vbthi")
 model = ExtResource("1_7jg7h")
 target_name = "Red Toadstool"
+bounding_box = AABB(-0.75, 0, -0.75, 1.5, 1, 1.5)
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

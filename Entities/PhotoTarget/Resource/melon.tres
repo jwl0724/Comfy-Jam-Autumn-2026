@@ -7,4 +7,5 @@
 script = ExtResource("1_huwj1")
 model = ExtResource("1_1dgee")
 target_name = "Watermelon"
+bounding_box = AABB(-1.7, -1, -2, 4.25, 2.5, 3.5)
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

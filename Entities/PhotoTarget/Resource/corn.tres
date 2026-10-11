@@ -7,4 +7,5 @@
 script = ExtResource("1_mdubs")
 model = ExtResource("1_7rvhl")
 target_name = "Corn"
+bounding_box = AABB(-1.125, 0, -1.125, 2.3, 5, 2)
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

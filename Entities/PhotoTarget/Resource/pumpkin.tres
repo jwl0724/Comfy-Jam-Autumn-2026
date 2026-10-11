@@ -7,4 +7,5 @@
 script = ExtResource("1_pgjhl")
 model = ExtResource("1_vqeqm")
 target_name = "Pumpkin"
+bounding_box = AABB(-1.7, -0.5, -2.1, 4.25, 2.5, 3.5)
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

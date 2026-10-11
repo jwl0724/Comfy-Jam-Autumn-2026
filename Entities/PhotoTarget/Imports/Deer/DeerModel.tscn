@@ -5,4 +5,5 @@
 [node name="DeerScene" type="Node3D" unique_id=114666912]
 
 [node name="Deer" type="MeshInstance3D" parent="." unique_id=1940735752]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 1.8672926)
 mesh = ExtResource("1_fvq3m")

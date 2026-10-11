@@ -4,7 +4,7 @@ class_name PhotoTarget
 @export var data: PhotoTargetData = null
 @export var teleport_points: Array[Node3D] = [] ## Positions in which the target will teleport to if it goes off screen
 
-@onready var visible_notifier = $VisibleNotifier # TODO: Need to have an export on the resource that allows adjusting this value
+@onready var visible_notifier = $VisibleNotifier
 
 var model: Node3D = null
 var target_name: String = ""
@@ -18,6 +18,7 @@ var in_view: bool = false # If target is still within view
 
 
 func load_data(target_data: PhotoTargetData):
+    visible_notifier.aabb = target_data.bounding_box
     target_name = target_data.target_name
     behavior_script = target_data.behavior_script
     model = target_data.model.instantiate()
