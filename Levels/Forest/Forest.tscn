@@ -217,8 +217,8 @@ shadow_enabled = true
 shadow_opacity = 0.92
 
 [node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("28_il20w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.190804, 1.2103758, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.96999, 0.55350685, -5.2152233)
 player_node = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.204945, 1.2499962, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.14279, 1.2499962, 0)
