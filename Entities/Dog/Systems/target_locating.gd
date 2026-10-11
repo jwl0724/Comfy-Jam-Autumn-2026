@@ -17,11 +17,10 @@ func _ready():
 
 
 func hint_at_target():
-    if location_key.size() == 0: return # TODO: Probably some bark sound effect or something here
-
     # Update target locations
-    locating.emit(true)
     SignalBus.level_query_targetLocations.emit()
+    if location_key.size() == 0: return # TODO: Probably some bark sound effect or something here
+    locating.emit(true)
 
     # Find closest target
     var closest := Vector3.INF
@@ -44,15 +43,9 @@ func _on_notify_target_location(target: PhotoTarget):
 
 
 
-func _turn_dog_to_position(position: Vector3): # TODO: Might need to change how turning is done later? will see based on model
-    var original_rotation := dog.rotation
-    dog.look_at(position)
-    dog.rotation.x = 0
-    var target_rotation = dog.rotation
-    dog.rotation = original_rotation
-
+func _turn_dog_to_position(position: Vector3):
     var t = create_tween()
-    t.tween_property(dog, "rotation", target_rotation, 1)
+    t.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, position), 1)
     t.tween_interval(dog.interact_handler.interact_time_gap - 1)
     t.tween_callback(func(): locating.emit(false))
     t.play()
