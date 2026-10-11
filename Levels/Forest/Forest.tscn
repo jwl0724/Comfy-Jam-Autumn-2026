@@ -10,8 +10,17 @@
 [ext_resource type="Image" uid="uid://eegbwwepgh2n" path="res://Levels/Forest/Forest/Heightmap_0_0.res" id="5_niy7m"]
 [ext_resource type="FoliageResource" uid="uid://cig3m2a45iv6f" path="res://Levels/Forest/Resources/Foliage/grasses.tres" id="6_aisnn"]
 [ext_resource type="Image" uid="uid://bwaidkkn4rsyj" path="res://Levels/Forest/Forest/Splatmap_0_0_0.res" id="6_e0n30"]
+[ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="6_irkax"]
 [ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="7_dontm"]
+[ext_resource type="Resource" uid="uid://djimjb4wl7dp0" path="res://Entities/PhotoTarget/Resource/deer.tres" id="7_texq4"]
+[ext_resource type="Resource" uid="uid://dek12rt3cg2f1" path="res://Entities/PhotoTarget/Resource/beetroot.tres" id="8_3vpcb"]
 [ext_resource type="NavigationMesh" uid="uid://ikf6j7nk7luq" path="res://Levels/Forest/Resources/nav_mesh.tres" id="8_5k7u4"]
+[ext_resource type="Resource" uid="uid://bbdsifkrdpnt8" path="res://Entities/PhotoTarget/Resource/corn.tres" id="8_br85p"]
+[ext_resource type="Resource" uid="uid://wgxjk3syqfc2" path="res://Entities/PhotoTarget/Resource/melon.tres" id="10_gbd7g"]
+[ext_resource type="Resource" uid="uid://dcltjtl27oq8g" path="res://Entities/PhotoTarget/Resource/pumpkin.tres" id="11_gbd7g"]
+[ext_resource type="Resource" uid="uid://7ksw5s0ql04y" path="res://Entities/PhotoTarget/Resource/rat.tres" id="12_jgk3e"]
+[ext_resource type="Resource" uid="uid://b7uspqvtrs6sh" path="res://Entities/PhotoTarget/Resource/salmon.tres" id="13_aspdx"]
+[ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/red_toadstool.tres" id="14_04cxx"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="28_il20w"]
@@ -154,9 +163,140 @@ directional_light = NodePath("../../Map/Sun")
 world_environment = NodePath("../../Map/WorldEnvironment")
 level_state_handler = NodePath("../LevelState")
 
+[node name="PhotoTargets" type="Node" parent="." unique_id=1653841262]
+
+[node name="Beetroot" parent="PhotoTargets" unique_id=481856517 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(-0.09449056, 0, 0.99552584, 0, 1, 0, -0.99552584, 0, -0.09449056, -154.11519, 0.23821265, 113.17135)
+data = ExtResource("8_3vpcb")
+teleport_points = [NodePath("../../TeleportPoints/BeetrootPoints/P1"), NodePath("../../TeleportPoints/BeetrootPoints/P2"), NodePath("../../TeleportPoints/BeetrootPoints/P3")]
+
+[node name="Corn" parent="PhotoTargets" unique_id=133321002 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(0.62031305, 0, -0.7843543, 0, 1, 0, 0.7843543, 0, 0.62031305, 107.14335, 11.531515, 60.52621)
+data = ExtResource("8_br85p")
+teleport_points = [NodePath("../../TeleportPoints/CornPoints/P1"), NodePath("../../TeleportPoints/CornPoints/P2"), NodePath("../../TeleportPoints/CornPoints/P3")]
+
+[node name="Deer" parent="PhotoTargets" unique_id=2015734652 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(-0.476898, 0, -0.8789587, 0, 1, 0, 0.8789587, 0, -0.476898, 22.740835, -0.2014482, -170.6569)
+data = ExtResource("7_texq4")
+teleport_points = [NodePath("../../TeleportPoints/DeerPoints/P1"), NodePath("../../TeleportPoints/DeerPoints/P2"), NodePath("../../TeleportPoints/DeerPoints/P3")]
+
+[node name="Melon" parent="PhotoTargets" unique_id=2087480531 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(0.6395329, 0, -0.7687637, 0, 1, 0, 0.7687637, 0, 0.6395329, 129.08208, 0.4257555, -133.86697)
+data = ExtResource("10_gbd7g")
+teleport_points = [NodePath("../../TeleportPoints/MelonPoints/P1"), NodePath("../../TeleportPoints/MelonPoints/P2"), NodePath("../../TeleportPoints/MelonPoints/P3")]
+
+[node name="Pumpkin" parent="PhotoTargets" unique_id=476431855 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.32905, 2.4754243, -95.521385)
+data = ExtResource("11_gbd7g")
+teleport_points = [NodePath("../../TeleportPoints/PumpkinPoints/P1"), NodePath("../../TeleportPoints/PumpkinPoints/P2"), NodePath("../../TeleportPoints/PumpkinPoints/P3")]
+
+[node name="Rats" parent="PhotoTargets" unique_id=1585627505 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(-0.22558028, 0, -0.97422457, 0, 1, 0, 0.97422457, 0, -0.22558028, 184.25766, -0.09747481, 115.516846)
+data = ExtResource("12_jgk3e")
+teleport_points = [NodePath("../../TeleportPoints/RatPoints/P1"), NodePath("../../TeleportPoints/RatPoints/P2"), NodePath("../../TeleportPoints/RatPoints/P3")]
+
+[node name="Salmon" parent="PhotoTargets" unique_id=67987590 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(0.7596801, 0, 0.65029705, 0, 1, 0, -0.65029705, 0, 0.7596801, -153.62086, -1.1974521, -181.95096)
+data = ExtResource("13_aspdx")
+teleport_points = [null, null]
+
+[node name="Toadstool" parent="PhotoTargets" unique_id=1915917065 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.49277, -0.066222966, 164.3295)
+data = ExtResource("14_04cxx")
+teleport_points = [NodePath("../../TeleportPoints/ToadstoolPoints/P1"), NodePath("../../TeleportPoints/ToadstoolPoints/P2"), NodePath("../../TeleportPoints/ToadstoolPoints/P3"), NodePath("../../TeleportPoints/ToadstoolPoints/P4"), NodePath("../../TeleportPoints/ToadstoolPoints/P5")]
+
 [node name="TeleportPoints" type="Node" parent="." unique_id=186562654]
 
-[node name="PhotoTargets" type="Node" parent="." unique_id=1653841262]
+[node name="BeetrootPoints" type="Node" parent="TeleportPoints" unique_id=834216321]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/BeetrootPoints" unique_id=1425777029]
+transform = Transform3D(0.6106705, 0, 0.7918848, 0, 1, 0, -0.7918848, 0, 0.6106705, -169.20152, 0.18880385, 89.76412)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/BeetrootPoints" unique_id=1959847786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.9032, 0.19217613, 91.64058)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/BeetrootPoints" unique_id=1871360345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.73973, 0.19971716, 122.54942)
+
+[node name="CornPoints" type="Node" parent="TeleportPoints" unique_id=86492228]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/CornPoints" unique_id=1906941826]
+transform = Transform3D(0.7219052, 0, 0.691992, 0, 1, 0, -0.691992, 0, 0.7219052, 93.92457, 10.949719, 73.428375)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/CornPoints" unique_id=350379384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.48354, 3.8583522, -40.02267)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/CornPoints" unique_id=1516669930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.22218, -0.10554418, 182.69377)
+
+[node name="DeerPoints" type="Node" parent="TeleportPoints" unique_id=1170344156]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/DeerPoints" unique_id=951055348]
+transform = Transform3D(0.9694796, 0, 0.24517201, 0, 1, 0, -0.24517201, 0, 0.9694796, -198.5863, -0.19197845, 179.43619)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/DeerPoints" unique_id=1368795985]
+transform = Transform3D(0.17320126, 0, 0.98488647, 0, 1, 0, -0.98488647, 0, 0.17320126, 124.61633, -0.12012114, 179.22751)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/DeerPoints" unique_id=776769381]
+transform = Transform3D(0.7603493, 0, 0.6495144, 0, 1, 0, -0.6495144, 0, 0.7603493, -198.14995, -0.19744873, -148.45135)
+
+[node name="MelonPoints" type="Node" parent="TeleportPoints" unique_id=1268357544]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/MelonPoints" unique_id=1637094734]
+transform = Transform3D(-0.7285623, 0, 0.68497956, 0, 1, 0, -0.68497956, 0, -0.7285623, -11.681495, 0.61379683, -157.89575)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/MelonPoints" unique_id=76084823]
+transform = Transform3D(0.13152972, 0, -0.9913122, 0, 1, 0, 0.9913122, 0, 0.13152972, -6.6082907, 0.42516994, -187.54442)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/MelonPoints" unique_id=1488509585]
+transform = Transform3D(-0.22056125, 0, -0.97537315, 0, 1, 0, 0.97537315, 0, -0.22056125, -24.526693, 0.37105858, -199.09106)
+
+[node name="PumpkinPoints" type="Node" parent="TeleportPoints" unique_id=2084688853]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/PumpkinPoints" unique_id=1293696350]
+transform = Transform3D(-0.851736, 0, 0.5239711, 0, 1, 0, -0.5239711, 0, -0.851736, 194.78236, -0.013169602, -67.18748)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/PumpkinPoints" unique_id=1978615715]
+transform = Transform3D(-0.85019606, 0, 0.5264662, 0, 1, 0, -0.5264662, 0, -0.85019606, 164.08469, 0.12536304, -124.981514)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/PumpkinPoints" unique_id=29839992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.4676, 0.12536304, -96.23298)
+
+[node name="RatPoints" type="Node" parent="TeleportPoints" unique_id=1147107492]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/RatPoints" unique_id=995593059]
+transform = Transform3D(0.9269832, 0.05949802, 0.37035406, -0.055251546, 0.99822843, -0.022074442, -0.37101135, 1.8626451e-09, 0.9286283, 163.13902, 3.6740317, 85.30885)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/RatPoints" unique_id=1014666146]
+transform = Transform3D(-0.7392902, 0, 0.67338693, 0, 1, 0, -0.67338693, 0, -0.7392902, 103.76887, 11.904929, 63.20734)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/RatPoints" unique_id=274686506]
+transform = Transform3D(0.05524642, 0, -0.99847275, 0, 1, 0, 0.99847275, 0, 0.05524642, 108.11121, 0.16934139, 184.719)
+
+[node name="SalmonPoints" type="Node" parent="TeleportPoints" unique_id=993618255]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/SalmonPoints" unique_id=943339744]
+transform = Transform3D(-0.9940221, 0, -0.10917925, 0, 1, 0, 0.10917925, 0, -0.9940221, 10.048248, -1.1171136, 184.29904)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/SalmonPoints" unique_id=340833093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.28604, -1.3420265, 181.27359)
+
+[node name="ToadstoolPoints" type="Node" parent="TeleportPoints" unique_id=710689747]
+
+[node name="P1" type="Node3D" parent="TeleportPoints/ToadstoolPoints" unique_id=1256099134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.813111, -0.56016093, 150.31259)
+
+[node name="P2" type="Node3D" parent="TeleportPoints/ToadstoolPoints" unique_id=536983872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.32583, -0.07991236, 114.46474)
+
+[node name="P3" type="Node3D" parent="TeleportPoints/ToadstoolPoints" unique_id=1931634391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.48064, -0.10996442, 141.09962)
+
+[node name="P4" type="Node3D" parent="TeleportPoints/ToadstoolPoints" unique_id=78249462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.29004, -0.08233398, 113.40522)
+
+[node name="P5" type="Node3D" parent="TeleportPoints/ToadstoolPoints" unique_id=561170583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.6224, -0.10342836, 94.113335)
 
 [node name="Environment" type="Node" parent="." unique_id=770317155]
 

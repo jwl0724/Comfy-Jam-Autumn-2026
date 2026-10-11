@@ -28,6 +28,7 @@ func load_data(target_data: PhotoTargetData):
 
 func teleport_to_point(point: Node3D):
     position = point.position
+    rotation = point.rotation
     has_moved = true
 
 
