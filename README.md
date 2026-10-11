@@ -41,6 +41,7 @@
 ## Credits
 
 ## Shaders
+https://godotshaders.com/shader/first-person-view-model-shader-updated-for-godot-4-3/
 https://godotshaders.com/shader/toon-water-shader/
 https://godotshaders.com/shader/anime-style-sky-shader/
 
