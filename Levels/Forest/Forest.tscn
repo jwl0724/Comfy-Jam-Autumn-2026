@@ -198,7 +198,7 @@ teleport_points = [NodePath("../../TeleportPoints/RatPoints/P1"), NodePath("../.
 [node name="Salmon" parent="PhotoTargets" unique_id=67987590 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
 transform = Transform3D(0.7596801, 0, 0.65029705, 0, 1, 0, -0.65029705, 0, 0.7596801, -153.62086, -1.1974521, -181.95096)
 data = ExtResource("13_aspdx")
-teleport_points = [null, null]
+teleport_points = [NodePath("../../TeleportPoints/SalmonPoints/P1"), NodePath("../../TeleportPoints/SalmonPoints/P2")]
 
 [node name="Toadstool" parent="PhotoTargets" unique_id=1915917065 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.49277, -0.066222966, 164.3295)
@@ -316,9 +316,11 @@ navigation_mesh = ExtResource("8_5k7u4")
 [node name="Map" type="TerraBrush" parent="Map/NavigationRegion3D" unique_id=286101245]
 dataPath = "res://Levels/Forest/Forest"
 zonesSize = 512
+collisionLayers = 32
+collisionMask = 0
 textureSets = ExtResource("5_elyv4")
 textureDetail = 50
-useAntiTile = false
+useSharpTransitions = true
 foliages = Array[FoliageResource]([ExtResource("6_aisnn")])
 objects = Array[ObjectResource]([ExtResource("30_rkdqx"), ExtResource("31_uxwyx"), ExtResource("32_jeli1"), ExtResource("33_x2gkl"), ExtResource("34_gte7o"), ExtResource("35_5rjx4"), ExtResource("36_jfa63")])
 terrainZones = SubResource("ZonesResource_niy7m")

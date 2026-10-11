@@ -6,6 +6,8 @@ class_name PhotoTarget
 
 @onready var visible_notifier = $VisibleNotifier
 
+const max_detect_distance: float = 20 ** 2
+
 var model: Node3D = null
 var target_name: String = ""
 var behavior_script: GDScript = null # TODO: Might not need this? Assume this is for when implementing moving animals maybe
@@ -46,7 +48,8 @@ func _ready():
 
 
 func _physics_process(_delta):
-    if !in_screen || has_moved: return
+    if !in_screen || has_moved || global_position.distance_squared_to(get_viewport().get_camera_3d().global_position) > max_detect_distance: return
+
     # Test Ray
     var query := PhysicsRayQueryParameters3D.create(global_position, get_viewport().get_camera_3d().global_position, Constants.PhysLayers.Terrain)
     var collision := get_world_3d().direct_space_state.intersect_ray(query)
@@ -60,7 +63,7 @@ func _physics_process(_delta):
 
 
 func _on_query_view_request():
-    if !in_screen || global_position.distance_to(get_viewport().get_camera_3d().global_position) > 20: return
+    if !in_screen || global_position.distance_to(get_viewport().get_camera_3d().global_position) > max_detect_distance: return
     if in_view:
         SignalBus.level_notify_targetView.emit(self)
         return

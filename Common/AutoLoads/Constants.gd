@@ -7,6 +7,7 @@ class PhysLayers:
     const InteractablePhys: int = 4 # Layer for anything that can be interacted with
     const Objective: int = 8 # Layer for objects that are photo requirements
     const DogPhys: int = 16 # Layer for specifically the dog
+    const Ground: int = 32 # Layer for terrain ground
 
 # Input Map Names
 class InputNames:
