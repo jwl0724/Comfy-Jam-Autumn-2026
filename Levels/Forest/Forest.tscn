@@ -265,7 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.4676, 0.12536304, -96.232
 [node name="RatPoints" type="Node" parent="TeleportPoints" unique_id=1147107492]
 
 [node name="P1" type="Node3D" parent="TeleportPoints/RatPoints" unique_id=995593059]
-transform = Transform3D(0.9269832, 0.05949802, 0.37035406, -0.055251546, 0.99822843, -0.022074442, -0.37101135, 1.8626451e-09, 0.9286283, 163.13902, 3.6740317, 85.30885)
+transform = Transform3D(0.9291325, 0, 0.36974674, 0, 1, 0, -0.3697467, 0, 0.9291326, 163.07552, 2.9170697, 85.189865)
 
 [node name="P2" type="Node3D" parent="TeleportPoints/RatPoints" unique_id=1014666146]
 transform = Transform3D(-0.7392902, 0, 0.67338693, 0, 1, 0, -0.67338693, 0, -0.7392902, 103.76887, 11.904929, 63.20734)
@@ -361,6 +361,7 @@ shadow_opacity = 0.92
 [node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("28_il20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.96999, 0.55350685, -5.2152233)
 player_node = NodePath("../Player")
+move_speed = 9.5
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.14279, 1.2499962, 0)
