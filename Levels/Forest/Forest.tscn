@@ -31,6 +31,20 @@
 [ext_resource type="Image" uid="uid://ilnukfcarjwp" path="res://Levels/Forest/Forest/Object_0_0_6.res" id="74_qjnsg"]
 [ext_resource type="Shader" uid="uid://dtnvaups1i8tf" path="res://Levels/Forest/Resources/Shaders/water.gdshader" id="79_0kgp7"]
 
+[sub_resource type="Gradient" id="Gradient_5k7u4"]
+offsets = PackedFloat32Array(0, 0.1845238, 0.51785713, 0.83928573, 0.96130955, 1)
+colors = PackedColorArray(0.9054692, 0.9199903, 0.82487583, 1, 0.30274498, 0.6059784, 0.91079885, 1, 0.3019608, 0.60784316, 0.9098039, 1, 0.12156863, 0.4, 0.65882355, 1, 0.9372549, 0.4745098, 0.078431375, 1, 0.8117647, 0.5921569, 0.047058824, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qrtwu"]
+gradient = SubResource("Gradient_5k7u4")
+
+[sub_resource type="Gradient" id="Gradient_irkax"]
+offsets = PackedFloat32Array(0.0029761905, 0.19345239, 0.78571427, 0.9583333, 1)
+colors = PackedColorArray(0.5882353, 0.7490196, 0.5176471, 1, 0.34117648, 0.7490196, 0.92156863, 1, 0.34117648, 0.7490196, 0.92156863, 1, 0.8862745, 0.47058824, 0.101960786, 1, 0.8862745, 0.26666668, 0.019607844, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_texq4"]
+gradient = SubResource("Gradient_irkax")
+
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_c751c"]
 exposure_multiplier = 0.75
 
@@ -125,13 +139,22 @@ gui_layer = Array[PackedScene]([ExtResource("2_scdmf")])
 
 [node name="LevelState" type="Node" parent="Systems" unique_id=411558482 node_paths=PackedStringArray("photo_target_node")]
 script = ExtResource("1_bd0nb")
+time_limit_seconds = 10.0
 photo_target_node = NodePath("../../PhotoTargets")
 
 [node name="SequenceHandler" type="Node" parent="Systems" unique_id=1367272529]
 script = ExtResource("3_scdmf")
+seconds_per_line = 0.5
+seconds_per_fade = 0.5
 
-[node name="TimeTransition" type="Node" parent="Systems" unique_id=316086817]
+[node name="TimeTransition" type="Node" parent="Systems" unique_id=316086817 node_paths=PackedStringArray("directional_light", "world_environment", "level_state_handler")]
 script = ExtResource("5_bq2g6")
+sky_top_gradient = SubResource("GradientTexture1D_qrtwu")
+sky_bot_gradient = SubResource("GradientTexture1D_texq4")
+sun_end_angle = -160.0
+directional_light = NodePath("../../Map/Sun")
+world_environment = NodePath("../../Map/WorldEnvironment")
+level_state_handler = NodePath("../LevelState")
 
 [node name="TeleportPoints" type="Node" parent="." unique_id=186562654]
 
@@ -186,7 +209,7 @@ transform = Transform3D(-0.9996659, 0.010539209, -0.023535341, -0.016426563, 0.4
 shape = SubResource("BoxShape3D_il20w")
 
 [node name="Sun" type="DirectionalLight3D" parent="Map" unique_id=598443714]
-transform = Transform3D(-0.06648292, -0.99778765, -1.2851889e-08, 0.8923787, -0.059459493, 0.44735327, -0.44636354, 0.029741341, 0.8943574, 0, 5.8375373, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8480482, 0.52991927, 0, -0.5299193, 0.8480481, 0, 5.8375373, 0)
 light_color = Color(0.7513873, 0.39268664, 0, 1)
 light_energy = 3.0
 shadow_enabled = true
@@ -198,4 +221,3 @@ player_node = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.204945, 1.2499962, 0)
-move_speed = 60.0
