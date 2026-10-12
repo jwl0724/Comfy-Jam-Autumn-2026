@@ -34,7 +34,11 @@ func _ready():
 
 
 func _physics_process(delta):
-    if aim_tween && aim_tween.is_running() || !visible: return
+    if aim_tween && aim_tween.is_running() || !visible:
+        # Reset default camera rotations for smooth effect of moving camera to eye
+        rotation.z = lerp_angle(rotation.z, base_rotation.z, turn_speed * delta)
+        rotation.y = lerp_angle(rotation.y, base_rotation.y, turn_speed * delta)
+        return
 
     # Handle item tilt
     current_offset -= pivot.global_rotation.y - last_pivot_y
