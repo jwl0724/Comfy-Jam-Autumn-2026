@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fpv6kypga8j8" path="res://Entities/Player/Components/view_pivot.gd" id="1_ainw0"]
 [ext_resource type="PackedScene" uid="uid://klconi16o7i3" path="res://Entities/Player/Imports/DSLR.tscn" id="2_5yaim"]
-[ext_resource type="Script" uid="uid://be55d07otew6n" path="res://Entities/Player/Systems/held_item_view.gd" id="3_3qd8p"]
+[ext_resource type="Script" uid="uid://be55d07otew6n" path="res://Entities/Player/Components/held_camera.gd" id="3_3qd8p"]
 
 [node name="Pivot" type="Node3D" unique_id=885972578]
 script = ExtResource("1_ainw0")
