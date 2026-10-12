@@ -41,10 +41,12 @@ func _input(event: InputEvent):
 
 
 func _on_photo_shoot():
+    SignalBus.game_transition_snapEffect.emit(0.15)
+    await SignalBus.game_transition_snapCovered
     SignalBus.game_layers_visible.emit(false)
     SignalBus.hud_photoPreview_visible.emit(true, await screenshot_handler.get_screenshot_texture())
     SignalBus.game_layers_visible.emit(true)
-    print("TODO: Do a camera snap effect")
+    view_controller.reset_held_camera()
 
 
 

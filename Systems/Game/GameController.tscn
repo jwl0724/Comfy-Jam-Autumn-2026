@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2l4386pikp20" path="res://Common/UI/Menus/PauseMenu/Pause.tscn" id="4_j0ier"]
 [ext_resource type="PackedScene" uid="uid://r7gtxx7j3bah" path="res://Common/UI/Menus/PostGame/PostGame.tscn" id="4_vf6nk"]
 [ext_resource type="PackedScene" uid="uid://bylnirxgwoeag" path="res://Common/UI/Transitions/Fade.tscn" id="5_j6267"]
+[ext_resource type="PackedScene" uid="uid://ehncdoxv8lja" path="res://Common/UI/Transitions/Snap.tscn" id="7_vf6nk"]
 
 [node name="GameController" type="Node" unique_id=1964676766]
 script = ExtResource("1_yl5u5")
@@ -62,6 +63,10 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Fade" parent="Transition/Root" unique_id=1292248484 instance=ExtResource("5_j6267")]
+visible = false
+layout_mode = 1
+
+[node name="Snap" parent="Transition/Root" unique_id=777046713 instance=ExtResource("7_vf6nk")]
 visible = false
 layout_mode = 1
 

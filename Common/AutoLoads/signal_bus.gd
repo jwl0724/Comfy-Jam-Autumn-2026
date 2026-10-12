@@ -10,6 +10,8 @@ signal game_layers_clearGUI(layer: GameController.ControlLayers)
 # Transition Signals
 signal game_transition_fadeShow(color: Color, time: float) ## A fade transition to show screen
 signal game_transition_fadeHide(color: Color, time: float) ## A fade transition to hide screen
+signal game_transition_snapEffect(time: float) ## A quick transition when taking a picture
+signal game_transition_snapCovered(time: float) ## The exact time when snap is covering screen
 
 # Game Controller Signals
 signal game_pause(do_pause: bool)

@@ -29,6 +29,11 @@ func toggle_camera_bob(do_bob: bool):
 
 
 
+func reset_held_camera():
+    held_camera.remove_from_eye()
+
+
+
 func _physics_process(delta):
     # Handle camera bob
     if do_camera_bob:
@@ -76,8 +81,6 @@ func _input(event: InputEvent):
         held_camera.remove_from_eye()
 
     if event.is_action_pressed(Constants.InputNames.Shoot) && is_aiming:
-        is_aiming = false
-        camera.fov = 55
         shot.emit()
 
 
