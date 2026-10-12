@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://jxcuyws4cpbu"]
 
 [ext_resource type="Script" uid="uid://dmbjv1fjnx4aq" path="res://Common/UI/Menus/MainMenu/main_menu.gd" id="1_krvq2"]
+[ext_resource type="Script" uid="uid://ejlb35yi452e" path="res://Common/UI/Menus/MainMenu/background_effects.gd" id="2_w2pdp"]
+[ext_resource type="Texture2D" uid="uid://bt2m7lqbov02b" path="res://Common/UI/Menus/MainMenu/Imports/BG1.png" id="3_p7kkj"]
+[ext_resource type="Texture2D" uid="uid://dnrp03xtxiyn0" path="res://Common/UI/Menus/MainMenu/Imports/BG2.png" id="4_7rrnn"]
+[ext_resource type="Texture2D" uid="uid://cudqy65mbodoo" path="res://Common/UI/Menus/MainMenu/Imports/BG3.png" id="5_o313n"]
+[ext_resource type="Texture2D" uid="uid://nyawumd0jjn" path="res://Common/UI/Menus/MainMenu/Imports/BG4.png" id="6_nh1ey"]
 
 [node name="MainMenu" type="Control" unique_id=1965724977]
 layout_mode = 3
@@ -10,6 +15,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_krvq2")
+
+[node name="Background" type="Control" parent="." unique_id=212833206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_w2pdp")
+image_collection = Array[Texture2D]([ExtResource("3_p7kkj"), ExtResource("4_7rrnn"), ExtResource("5_o313n"), ExtResource("6_nh1ey")])
+
+[node name="Background" type="TextureRect" parent="Background" unique_id=694773399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_p7kkj")
+
+[node name="Transition" type="TextureRect" parent="Background" unique_id=344591371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_p7kkj")
+
+[node name="Timer" type="Timer" parent="Background" unique_id=2045930344]
 
 [node name="Label" type="Label" parent="." unique_id=2031228345]
 layout_mode = 1
