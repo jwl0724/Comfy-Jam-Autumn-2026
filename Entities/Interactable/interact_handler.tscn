@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bx3da7gk78d44"]
 
-[ext_resource type="Script" uid="uid://tqxom1l1apjd" path="res://Entities/Interactable/Components/interact_handler.gd" id="1_6wrxi"]
+[ext_resource type="Script" uid="uid://tqxom1l1apjd" path="res://Entities/Interactable/interact_handler.gd" id="1_6wrxi"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gugky"]
 
