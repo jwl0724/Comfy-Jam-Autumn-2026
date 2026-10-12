@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://fpv6kypga8j8" path="res://Entities/Player/Components/view_pivot.gd" id="1_ainw0"]
 [ext_resource type="PackedScene" uid="uid://klconi16o7i3" path="res://Entities/Player/Imports/DSLR.tscn" id="2_5yaim"]
+[ext_resource type="Script" uid="uid://be55d07otew6n" path="res://Entities/Player/Systems/held_item_view.gd" id="3_3qd8p"]
 
 [node name="Pivot" type="Node3D" unique_id=885972578]
 script = ExtResource("1_ainw0")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1740672184]
 
-[node name="DSLR" parent="Camera" unique_id=761961472 instance=ExtResource("2_5yaim")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.68261635, -0.62467265, -0.6720414)
+[node name="DSLR" parent="Camera" unique_id=761961472 node_paths=PackedStringArray("pivot") instance=ExtResource("2_5yaim")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.68261635, -0.62467265, -0.6720415)
+script = ExtResource("3_3qd8p")
+pivot = NodePath("../..")
 
 [node name="InteractRay" type="RayCast3D" parent="." unique_id=1097649128]
 target_position = Vector3(0, 0, -2.5)
