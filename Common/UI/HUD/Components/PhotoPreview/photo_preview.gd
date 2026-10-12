@@ -4,7 +4,7 @@ class_name PhotoPreview
 
 
 const no_target_text: String = "No Target Detected"
-const target_found_text: String = "Picture of a %s"
+const target_found_text: String = "Picture of %s"
 
 @onready var requirement_title: Label = $RequirementTitle
 @onready var preview: TextureRect = $Container/Photo

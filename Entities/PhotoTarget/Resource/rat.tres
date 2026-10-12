@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_p7i4e")
 model = ExtResource("1_k2ryr")
-target_name = "Rat"
+target_name = "Rats"
 bounding_box = AABB(-1.25, -0.25, -1.25, 2.5, 1, 2)
 metadata/_custom_type_script = "uid://bu2110irdeg6r"

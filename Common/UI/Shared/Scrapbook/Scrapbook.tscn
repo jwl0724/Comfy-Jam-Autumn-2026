@@ -79,7 +79,7 @@ entry_name = "Corn"
 [node name="Rat" parent="Container/Grid" unique_id=123558794 instance=ExtResource("2_s2omm")]
 visible = false
 layout_mode = 2
-entry_name = "Rat"
+entry_name = "Rats"
 
 [node name="Salmon" parent="Container/Grid" unique_id=1890521779 instance=ExtResource("2_s2omm")]
 visible = false
