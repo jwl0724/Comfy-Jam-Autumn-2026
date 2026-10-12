@@ -13,6 +13,7 @@ script = ExtResource("1_ainw0")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.68261635, -0.62467265, -0.6720415)
 script = ExtResource("3_3qd8p")
 pivot = NodePath("../..")
+eye_pos = Vector3(0.197, -0.165, -0.19)
 
 [node name="InteractRay" type="RayCast3D" parent="." unique_id=1097649128]
 target_position = Vector3(0, 0, -2.5)

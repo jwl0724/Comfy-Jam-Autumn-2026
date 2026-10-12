@@ -23,7 +23,6 @@ func _ready():
 
     move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
-    view_controller.aimed.connect(_on_aim_down)
     view_controller.shot.connect(_on_photo_shoot)
 
     SignalBus.level_player_enableControls.connect(_on_enable_controls)
@@ -38,11 +37,6 @@ func _input(event: InputEvent):
     if event is InputEventMouseMotion || !controls_enabled: return
     if event.is_action_pressed(Constants.InputNames.Book):
         SignalBus.menu_scrapbook_visible.emit(true)
-
-
-
-func _on_aim_down():
-    print("TODO: Have a camera going up to screen animation then apply a camera display filter on it")
 
 
 
