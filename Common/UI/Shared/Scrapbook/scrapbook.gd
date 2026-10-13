@@ -89,6 +89,7 @@ func _on_scrapbook_request(to_visible: bool):
     if to_visible:
         SignalBus.audio_play_sfx.emit(book_interact_sound)
         SignalBus.level_player_enableControls.emit(false)
+        SignalBus.level_player_hideHeld.emit(true)
         visible = true
         close_button.visible = false
         book.position = size.y * Vector2.DOWN
@@ -108,12 +109,13 @@ func _on_scrapbook_request(to_visible: bool):
         t.tween_callback(func():
             visible = false
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-            SignalBus.level_player_enableControls.emit(true))
+            SignalBus.level_player_enableControls.emit(true)
+            SignalBus.level_player_hideHeld.emit(false))
 
 
 
 func _on_close_pressed():
-    current_page = 0
+    flip_page(0)
     SignalBus.menu_scrapbook_visible.emit(false) # In case other objects require this signal to continue operations
 
 

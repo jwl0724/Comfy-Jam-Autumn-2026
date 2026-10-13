@@ -31,6 +31,8 @@ func _ready():
     last_pivot_y = pivot.global_rotation.y
     baseline_pos = position
 
+    SignalBus.level_player_hideHeld.connect(_on_hide_request)
+
 
 
 func _physics_process(delta):
@@ -75,3 +77,18 @@ func remove_from_eye():
     aim_tween = create_tween()
     aim_tween.tween_property(self, "position", baseline_pos, 0.2)
     aim_tween.play()
+
+
+
+func _on_hide_request(do_hide: bool):
+    if do_hide:
+        var t = create_tween()
+        t.tween_property(self, "position", Vector3.DOWN, 0.2)
+        t.tween_callback(func(): visible = false)
+        t.play()
+    else:
+        position = Vector3.DOWN
+        visible = true
+        var t = create_tween()
+        t.tween_property(self, "position", baseline_pos, 0.2)
+        t.play()
