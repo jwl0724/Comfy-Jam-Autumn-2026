@@ -62,7 +62,7 @@ func flip_page(page: int):
 
 
 func _on_page_flip_pressed(to_right: bool):
-    SignalBus.audio_play_sfx.emit(page_flip_sound)
+    SignalBus.audio_play_sfx.emit(page_flip_sound, true)
     var page = current_page
     if to_right: page = clampi(current_page + 1, 0, max_pages - 1)
     else: page = clampi(current_page - 1, 0, max_pages - 1)
@@ -87,7 +87,7 @@ func _on_photo_add_request(photo: Texture2D, target_name: String):
 
 func _on_scrapbook_request(to_visible: bool):
     if to_visible:
-        SignalBus.audio_play_sfx.emit(book_interact_sound)
+        SignalBus.audio_play_sfx.emit(book_interact_sound, true)
         SignalBus.level_player_enableControls.emit(false)
         SignalBus.level_player_hideHeld.emit(true)
         visible = true

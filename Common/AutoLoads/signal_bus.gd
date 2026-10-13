@@ -51,4 +51,4 @@ signal options_changed_musicDB(linear: float)
 signal options_changed_sfxDB(linear: float)
 
 # Audio Signals
-signal audio_play_sfx(clip: AudioStream)
+signal audio_play_sfx(clip: AudioStream, pitch_shift: bool)

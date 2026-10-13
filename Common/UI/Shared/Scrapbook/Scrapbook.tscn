@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clnja5s6plpf0" path="res://Common/UI/Shared/Scrapbook/scrapbook.gd" id="1_kppxn"]
 [ext_resource type="Theme" uid="uid://cw6v7dal50max" path="res://Common/UI/Themes/scrapbook.tres" id="1_rl1uf"]
 [ext_resource type="PackedScene" uid="uid://mttfw02skoyc" path="res://Common/UI/Shared/Scrapbook/Components/ScrapbookEntry.tscn" id="2_s2omm"]
-[ext_resource type="AudioStream" uid="uid://d4dbk8pwas0km" path="res://Common/UI/Shared/Scrapbook/page_flip.mp3" id="3_o6hhb"]
+[ext_resource type="AudioStream" uid="uid://b37kq54t536o4" path="res://Common/UI/Shared/Scrapbook/page_flip.mp3" id="3_o6hhb"]
 [ext_resource type="Texture2D" uid="uid://xhb0ly8jk8ks" path="res://Common/UI/Shared/Scrapbook/Background/Default.png" id="3_rn3ma"]
 [ext_resource type="Texture2D" uid="uid://hdbbqjhddup5" path="res://Common/UI/Shared/Scrapbook/Background/LeftPreview.png" id="4_45lp3"]
 [ext_resource type="AudioStream" uid="uid://dmnbb50osq0t3" path="res://Common/UI/Shared/Scrapbook/open_close.mp3" id="4_npdga"]

@@ -3,7 +3,11 @@ extends Node
 var _player1: AudioStreamPlayer = null # for cross-fading music
 var _player2: AudioStreamPlayer = null
 
+var _sfx_player1: AudioStreamPlayer = null # used for UI sounds
+var _sfx_player2: AudioStreamPlayer = null
+
 var in_use_player: AudioStreamPlayer = null
+var in_use_sfx_player: AudioStreamPlayer = null
 
 var playlist: Array[AudioStream]
 var playlist_index: int = 0
@@ -22,8 +26,22 @@ func _ready() -> void:
     _player2 = AudioStreamPlayer.new()
     _player2.bus = Constants.AudioBusNames.DefaultMusic
 
+    add_child(_player1)
+    add_child(_player2)
+
+    _sfx_player1 = AudioStreamPlayer.new()
+    _sfx_player1.bus = Constants.AudioBusNames.DefaultSFX
+    in_use_sfx_player = _sfx_player1
+
+    _sfx_player2 = AudioStreamPlayer.new()
+    _sfx_player2.bus = Constants.AudioBusNames.DefaultSFX
+
+    add_child(_sfx_player1)
+    add_child(_sfx_player2)
+
     SignalBus.options_changed_musicDB.connect(_on_options_music_db_changed)
     SignalBus.options_changed_sfxDB.connect(_on_options_sfx_db_changed)
+    SignalBus.audio_play_sfx.connect(_on_sfx_play)
 
 
 
@@ -139,3 +157,12 @@ func _on_options_music_db_changed(linear: float) -> void:
 
 func _on_options_sfx_db_changed(linear: float) -> void:
     AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(Constants.AudioBusNames.DefaultSFX), linear)
+
+
+
+func _on_sfx_play(clip: AudioStream, pitch_shift: bool):
+    if in_use_sfx_player.playing:
+        in_use_sfx_player = _sfx_player2 if in_use_sfx_player == _sfx_player1 else _sfx_player1
+    in_use_sfx_player.stream = clip
+    in_use_sfx_player.pitch_scale = randf_range(0.9, 1.1) if pitch_shift else 1.
+    in_use_sfx_player.play()

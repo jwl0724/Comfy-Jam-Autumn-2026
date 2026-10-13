@@ -45,8 +45,8 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Sound Effects
+https://pixabay.com/sound-effects/film-special-effects-pageturn-102978/
 https://pixabay.com/sound-effects/book-closing-466850/
-https://pixabay.com/sound-effects/film-special-effects-turning-page-in-a-book-419580/
 
 ### Shaders
 https://godotshaders.com/shader/first-person-view-model-shader-updated-for-godot-4-3/
