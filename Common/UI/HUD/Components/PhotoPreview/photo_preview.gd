@@ -49,12 +49,14 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
 
 
 func _on_target_found(target: PhotoTarget):
-    current_target = target
-    keep_button.visible = true
-    requirement_title.text = target_found_text % target.target_name
+    if current_target == null || _is_closer(target): current_target = target # Check which target is closer to viewpoint
+    else: return
 
-    if !found_targets.has(target.target_name):
-        found_targets.append(target.target_name)
+    keep_button.visible = true
+    requirement_title.text = target_found_text % current_target.target_name
+
+    if !found_targets.has(current_target.target_name):
+        found_targets.append(current_target.target_name)
         discard_button.visible = false
 
 
@@ -69,3 +71,9 @@ func _on_keep():
 func _on_discard():
     current_target = null
     SignalBus.hud_photoPreview_visible.emit(false, null)
+
+
+
+func _is_closer(new_target: PhotoTarget):
+    var player_pos = get_viewport().get_camera_3d().global_position
+    return player_pos.distance_squared_to(new_target.global_position) < player_pos.distance_squared_to(current_target.global_position)

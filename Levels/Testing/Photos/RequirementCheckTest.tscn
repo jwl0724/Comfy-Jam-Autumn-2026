@@ -29,6 +29,7 @@ size = Vector3(10, 10, 1)
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("1_k8nqr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7913985, 0)
+force_enable_controls = true
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1668739097]
 mesh = SubResource("PlaneMesh_m1ypo")
@@ -48,12 +49,12 @@ player_node = NodePath("../Player")
 [node name="PhotoTarget" parent="." unique_id=133321002 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_anav2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0716114, 2.0534527, -11.71747)
 data = ExtResource("4_m1ypo")
-teleport_points = [NodePath("../TeleportPoints/Node3D2"), NodePath("../TeleportPoints/Node3D4")]
+teleport_points = [NodePath("../Node3D")]
 
 [node name="PhotoTarget2" parent="." unique_id=1884669822 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_anav2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0716114, 2.0534527, 11.429443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0716114, 2.0534527, -20.411072)
 data = ExtResource("5_afwpu")
-teleport_points = [NodePath("../TeleportPoints/Node3D"), NodePath("../TeleportPoints/Node3D3")]
+teleport_points = [NodePath("../Node3D2")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1715900534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027897835, 1.6985233, -3.4478767)
@@ -67,16 +68,8 @@ shape = SubResource("ConvexPolygonShape3D_anav2")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="MeshInstance3D" unique_id=1738757334]
 occluder = SubResource("BoxOccluder3D_anav2")
 
-[node name="TeleportPoints" type="Node3D" parent="." unique_id=2060656849]
+[node name="Node3D" type="Node3D" parent="." unique_id=1558173372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02275, -29.624737)
 
-[node name="Node3D" type="Node3D" parent="TeleportPoints" unique_id=705878268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.547016, 0, -23.101063)
-
-[node name="Node3D2" type="Node3D" parent="TeleportPoints" unique_id=2127789818]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6514645, 0, 24.534191)
-
-[node name="Node3D3" type="Node3D" parent="TeleportPoints" unique_id=1506171480]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.789734, 0, -23.101063)
-
-[node name="Node3D4" type="Node3D" parent="TeleportPoints" unique_id=1952156413]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.561096, 0, 23.191586)
+[node name="Node3D2" type="Node3D" parent="." unique_id=205107733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9105835, 2.0534527, -9.345942)

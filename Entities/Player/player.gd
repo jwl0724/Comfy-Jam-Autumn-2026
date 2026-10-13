@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+@export var force_enable_controls: bool = false
+
 # Stats
 @export var move_speed: float = 50
 @export var fall_speed: float = 10
@@ -16,7 +18,7 @@ class_name Player
 @onready var move_controller: PlayerMovementController = $Systems/Movement
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
 
-var controls_enabled: bool = true
+var controls_enabled: bool = false
 var can_pause: bool = true
 var is_active: bool = false
 
@@ -24,6 +26,7 @@ var is_active: bool = false
 
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+    controls_enabled = GameController.debug_mode && force_enable_controls
 
     move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
@@ -68,7 +71,7 @@ func _on_move_notify(is_moving: bool):
 
 
 func _on_enable_controls(enable: bool):
-    controls_enabled = enable && is_active
+    controls_enabled = (enable && is_active) || (GameController.debug_mode && force_enable_controls)
 
 
 
