@@ -46,6 +46,13 @@ func _ready():
     page_right.mouse_exited.connect(_reset_bg_texture)
 
 
+
+func _input(event: InputEvent):
+    if !visible || event is InputEventMouseMotion: return
+    if event.is_action_pressed(Constants.InputNames.Book): _on_close_pressed()
+
+
+
 ## First page is 0
 func flip_page(page: int):
     if current_page == page: return
