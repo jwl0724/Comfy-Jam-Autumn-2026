@@ -19,5 +19,6 @@ func _ready():
 
 func set_photo(photo_texture: Texture2D):
     photo_rect.texture = photo_texture
+    photo_rect.material = null
     hint_label.visible = false
     photo_label_container.visible = true

@@ -51,6 +51,7 @@ https://godotshaders.com/shader/anime-style-sky-shader/
 https://godotshaders.com/shader/squigglevision/
 https://godotshaders.com/shader/kuwahara-shader/
 https://godotshaders.com/shader/squiggle-pen-canvas-post-process/
+https://godotshaders.com/shader/wiggle-2d/
 
 ### Libraries
 https://godotassetlibrary.com/asset/n1tXOr/terrabrush

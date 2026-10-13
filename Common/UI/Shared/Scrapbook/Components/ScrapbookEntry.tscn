@@ -3,8 +3,13 @@
 [ext_resource type="Script" uid="uid://tx4in1nwetoq" path="res://Common/UI/Shared/Scrapbook/Components/scrapbook_entry.gd" id="1_0mvwx"]
 [ext_resource type="Theme" uid="uid://cw6v7dal50max" path="res://Common/UI/Themes/scrapbook.tres" id="1_85no6"]
 [ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="3_8olwp"]
+[ext_resource type="Shader" uid="uid://td5v4alw17lh" path="res://Common/UI/Shared/Scrapbook/Components/wiggle.gdshader" id="3_lddrd"]
 [ext_resource type="Texture2D" uid="uid://bkoqnjohovi0t" path="res://Common/UI/Shared/Scrapbook/Components/paper.png" id="3_smhbv"]
-[ext_resource type="Shader" uid="uid://vi44eo6owm8r" path="res://Common/UI/Shared/Scrapbook/Background/sketchy.gdshader" id="5_lddrd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_em21a"]
+shader = ExtResource("3_lddrd")
+shader_parameter/Strength = 0.90000004275
+shader_parameter/RandomOffset = 0.5
 
 [sub_resource type="Gradient" id="Gradient_lnu3d"]
 offsets = PackedFloat32Array(1)
@@ -13,21 +18,17 @@ colors = PackedColorArray(0.07683588, 0.07683579, 0.07683582, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_0mvwx"]
 gradient = SubResource("Gradient_lnu3d")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_em21a"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lddrd"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jac3a"]
-noise = SubResource("FastNoiseLite_em21a")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_em21a"]
+noise = SubResource("FastNoiseLite_lddrd")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bx1y"]
-shader = ExtResource("5_lddrd")
-shader_parameter/weight = 0.705
-shader_parameter/line_thickness = 1.0
-shader_parameter/color = Color(0.728822, 0.728822, 0.728822, 1)
-shader_parameter/opacity = 1.0
-shader_parameter/scale = Vector2(10, 10)
-shader_parameter/strength = 0.5
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jac3a"]
+shader = ExtResource("3_8olwp")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.235
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_jac3a")
+shader_parameter/noise = SubResource("NoiseTexture2D_em21a")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8olwp"]
 
@@ -50,6 +51,7 @@ theme = ExtResource("1_85no6")
 script = ExtResource("1_0mvwx")
 
 [node name="PhotoBG" type="ColorRect" parent="." unique_id=966560274]
+material = SubResource("ShaderMaterial_em21a")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,12 +73,14 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Photo" type="TextureRect" parent="PhotoBG/MarginContainer" unique_id=1300188314]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_em21a")
 custom_minimum_size = Vector2(192, 108)
 layout_mode = 2
 texture = SubResource("GradientTexture1D_0mvwx")
 expand_mode = 2
 
 [node name="HintLabel" type="Label" parent="." unique_id=33361300]
+material = SubResource("ShaderMaterial_jac3a")
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -89,15 +93,6 @@ grow_vertical = 2
 text = "Mushroom"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SquiggleFilter" type="ColorRect" parent="." unique_id=1109237400]
-material = SubResource("ShaderMaterial_2bx1y")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Decor" type="Control" parent="." unique_id=288756421]
 layout_mode = 1
@@ -164,6 +159,7 @@ texture = ExtResource("3_smhbv")
 
 [node name="PhotoLabel" type="Label" parent="ActualLabel/Paper" unique_id=26270850]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jac3a")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
