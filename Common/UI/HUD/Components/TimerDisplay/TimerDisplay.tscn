@@ -1,6 +1,34 @@
 [gd_scene format=3 uid="uid://dodpraxvnbs0q"]
 
+[ext_resource type="Theme" uid="uid://cw6v7dal50max" path="res://Common/UI/Themes/scrapbook.tres" id="1_l073s"]
 [ext_resource type="Script" uid="uid://dt6d0cbrrdfj3" path="res://Common/UI/HUD/Components/TimerDisplay/timer_display.gd" id="1_w3ca4"]
+[ext_resource type="Shader" uid="uid://2huxdbkd6ywq" path="res://Common/UI/HUD/Components/TimerDisplay/circle_progress.gdshader" id="2_0ukxr"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="4_koqqo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ujdr"]
+shader = ExtResource("2_0ukxr")
+shader_parameter/progress = 0.5
+shader_parameter/ring_thickness = 0.1
+shader_parameter/ring_radius = 0.4
+shader_parameter/progress_color = Color(0.003921569, 0.08627451, 0.18039216, 1)
+shader_parameter/background_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+shader_parameter/gradient_color = Color(0.20392157, 0.59607846, 0.85882354, 1)
+shader_parameter/smoothness = 0.01
+shader_parameter/gradient_strength = 1.0
+shader_parameter/use_gradient = true
+shader_parameter/rotation_offset = 3.142000149245
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_koqqo"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lk32c"]
+noise = SubResource("FastNoiseLite_koqqo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qb5lw"]
+shader = ExtResource("4_koqqo")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_lk32c")
 
 [node name="TimerDisplay" type="MarginContainer" unique_id=1687648138]
 custom_minimum_size = Vector2(0, 30)
@@ -8,13 +36,28 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 27.0
 grow_horizontal = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme = ExtResource("1_l073s")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 script = ExtResource("1_w3ca4")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1023702490]
+[node name="Progress" type="ColorRect" parent="." unique_id=1336151961]
+material = SubResource("ShaderMaterial_0ujdr")
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_vertical = 1
-show_percentage = false
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Time" type="Label" parent="Progress" unique_id=163004142]
+material = SubResource("ShaderMaterial_qb5lw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10:00"
+horizontal_alignment = 1
+vertical_alignment = 1
