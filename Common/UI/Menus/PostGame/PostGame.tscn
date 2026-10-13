@@ -1,7 +1,55 @@
 [gd_scene format=3 uid="uid://r7gtxx7j3bah"]
 
 [ext_resource type="Script" uid="uid://hsj2ir7tmd0v" path="res://Common/UI/Menus/PostGame/post_game.gd" id="1_do6pw"]
-[ext_resource type="Texture2D" uid="uid://blcye1yau2g6" path="res://Common/UI/Shared/Placeholders/Images/Filler.png" id="2_sj27f"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="3_rwv7n"]
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="3_u8y66"]
+[ext_resource type="Shader" uid="uid://td5v4alw17lh" path="res://Common/UI/Shared/Scrapbook/Components/wiggle.gdshader" id="4_5tpwd"]
+[ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="4_u8y66"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5tpwd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_smo2j"]
+noise = SubResource("FastNoiseLite_5tpwd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4c1o2"]
+shader = ExtResource("3_rwv7n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_smo2j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tpwd"]
+shader = ExtResource("3_rwv7n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_smo2j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yy7b"]
+shader = ExtResource("4_5tpwd")
+shader_parameter/Strength = 0.70000003325
+shader_parameter/RandomOffset = 0.5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u8y66"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u8y66"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5tpwd"]
+noise = SubResource("FastNoiseLite_u8y66")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sm5e7"]
+shader = ExtResource("3_rwv7n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.15
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_5tpwd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdhnv"]
+shader = ExtResource("3_rwv7n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.15
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_5tpwd")
 
 [node name="PostGame" type="Control" unique_id=1662977098]
 layout_mode = 3
@@ -21,28 +69,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
-[node name="Title" type="Label" parent="." unique_id=1919103060]
+[node name="Title" type="Label" parent="." unique_id=319973231]
+material = SubResource("ShaderMaterial_4c1o2")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 18.0
-offset_bottom = 41.0
+offset_top = 12.0
+offset_bottom = 49.0
 grow_horizontal = 2
-text = "You didn't take any photos to show here :("
+theme = ExtResource("3_u8y66")
+theme_override_colors/font_color = Color(0.9676589, 0.5847179, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "You didn't find anything :("
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Time" type="Label" parent="." unique_id=758448630]
+material = SubResource("ShaderMaterial_5tpwd")
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -31.0
-offset_right = 135.0
-offset_bottom = -8.0
+offset_left = 5.0
+offset_top = -28.0
+offset_right = 170.0
+offset_bottom = -5.0
 grow_vertical = 0
+theme = ExtResource("3_u8y66")
+theme_override_font_sizes/font_size = 28
 text = "Time Spent: 8:00"
+vertical_alignment = 1
 
 [node name="Container" type="MarginContainer" parent="." unique_id=307237423]
 layout_mode = 1
@@ -57,6 +113,7 @@ theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 68
 
 [node name="Border" type="ColorRect" parent="Container" unique_id=1256601048]
+material = SubResource("ShaderMaterial_6yy7b")
 layout_mode = 2
 color = Color(0.78352344, 0.7835234, 0.7835234, 1)
 
@@ -65,37 +122,76 @@ custom_minimum_size = Vector2(400, 224)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_sj27f")
+texture = SubResource("PlaceholderTexture2D_u8y66")
 expand_mode = 2
 
 [node name="Previous" type="Button" parent="." unique_id=1186267730]
+material = SubResource("ShaderMaterial_sm5e7")
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 47.0
-offset_top = -15.5
-offset_right = 65.0
-offset_bottom = 15.5
+offset_top = -51.0
+offset_right = 91.0
+offset_bottom = 36.0
 grow_vertical = 2
+theme = ExtResource("4_u8y66")
+theme_override_font_sizes/font_size = 64
 text = "<"
 
+[node name="Shadow" type="Label" parent="Previous" unique_id=352954464]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.96489865, 0.42358288, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Next" type="Button" parent="." unique_id=501911029]
+material = SubResource("ShaderMaterial_mdhnv")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -15.5
+offset_left = -97.0
+offset_top = -51.0
 offset_right = -53.0
-offset_bottom = 15.5
+offset_bottom = 36.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("4_u8y66")
+theme_override_font_sizes/font_size = 64
 text = ">"
 
+[node name="Shadow" type="Label" parent="Next" unique_id=1245417333]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.96489865, 0.42358288, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = ">"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Menu" type="Button" parent="." unique_id=204455416]
+material = SubResource("ShaderMaterial_5tpwd")
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -108,4 +204,22 @@ offset_right = 57.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_u8y66")
 text = "Back to Menu"
+
+[node name="Shadow" type="Label" parent="Menu" unique_id=1676801809]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.96489865, 0.42358288, 0, 1)
+text = "Back to Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
