@@ -42,6 +42,12 @@ _subresources={
 "PATH:Cube": {
 "mesh_instance/cast_shadow": 0
 },
+"PATH:Cube/Cylinder_001": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Cube/Cylinder_002": {
+"mesh_instance/cast_shadow": 0
+},
 "PATH:Cylinder": {
 "mesh_instance/cast_shadow": 0
 },
