@@ -18,6 +18,7 @@ class_name Player
 
 var controls_enabled: bool = true
 var can_pause: bool = true
+var is_active: bool = false
 
 
 
@@ -30,6 +31,8 @@ func _ready():
 
     SignalBus.level_player_enableControls.connect(_on_enable_controls)
     SignalBus.level_player_enablePause.connect(_on_enable_pause)
+    SignalBus.level_game_start.connect(func(): is_active = true)
+    SignalBus.level_game_end.connect(func(): is_active = false)
 
 
 
@@ -65,7 +68,7 @@ func _on_move_notify(is_moving: bool):
 
 
 func _on_enable_controls(enable: bool):
-    controls_enabled = enable
+    controls_enabled = enable && is_active
 
 
 

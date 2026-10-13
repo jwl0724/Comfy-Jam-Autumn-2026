@@ -32,6 +32,13 @@ func _physics_process(delta):
     if !dog.is_on_floor(): dog.velocity.y -= dog.fall_speed * delta
     else: dog.velocity.y = 0
 
+    # Handle if inactive
+    if !dog.is_active:
+        dog.velocity.x = 0
+        dog.velocity.z = 0
+        dog.move_and_slide()
+        return
+
     # Handle disabled pathing behavior
     if !pathing_target || !pathing_enabled:
         dog.move_and_slide()

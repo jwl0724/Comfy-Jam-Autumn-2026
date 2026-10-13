@@ -13,15 +13,20 @@ class_name Dog
 @onready var target_locator: TargetLocating = $Systems/TargetLocating
 @onready var pathing_handler: DogPathing = $Systems/Pathing
 
+var is_active: bool = false
+
 
 
 func _ready():
     target_locator.locating.connect(_on_locating_notify)
     interact_handler.interacted.connect(_on_interact)
+    SignalBus.level_game_start.connect(func(): is_active = true)
+    SignalBus.level_game_end.connect(func(): is_active = false)
 
 
 
 func _on_interact(_player: Player):
+    if !is_active: return
     target_locator.hint_at_target()
 
 

@@ -26,6 +26,8 @@ signal level_time_sendData(time_left: float, wait_time: float)
 signal level_player_enablePause(enable: bool)
 signal level_player_enableControls(enable: bool)
 signal level_player_hideHeld(do_hide: bool)
+signal level_game_start()
+signal level_game_end()
 
 # Level Signals for PhotoTarget
 signal level_query_targetView()

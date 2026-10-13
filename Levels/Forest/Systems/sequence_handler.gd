@@ -29,6 +29,7 @@ const lose_dialogue: Array[String] = [
 
 func play_start_sequence():
     # TODO: Probably add some scripted actions here?
+    SignalBus.level_game_start.emit() # This would need to be moved till after start sequence if scripted actions are wanted
     var t = create_tween()
 
     t.tween_callback(func(): SignalBus.game_transition_fadeShow.emit(Color.BLACK, seconds_per_fade))
@@ -49,6 +50,7 @@ func play_start_sequence():
 
 # Add fade sequence here, and then open the scrapbook UI here
 func play_win_sequence():
+    SignalBus.level_game_end.emit()
     var t = create_tween()
 
     t.tween_callback(func(): # Stop player from moving and close all menus
@@ -68,6 +70,7 @@ func play_win_sequence():
 
 # Add fade sequence here, and then open the scrapbook UI here
 func play_lose_sequence():
+    SignalBus.level_game_end.emit()
     var t = create_tween()
 
     t.tween_callback(func(): # Stop player from moving and close all menus
