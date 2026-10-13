@@ -8,11 +8,17 @@
 [ext_resource type="Shader" uid="uid://vi44eo6owm8r" path="res://Common/UI/Shared/Scrapbook/Background/sketchy.gdshader" id="5_5puvj"]
 [ext_resource type="Shader" uid="uid://byepmv3u3afhy" path="res://Common/UI/Shared/Scrapbook/Background/toon_shader.gdshader" id="5_m57fd"]
 [ext_resource type="Texture2D" uid="uid://cd6ibo8neauno" path="res://Common/UI/Shared/Scrapbook/Background/RightPreview.png" id="5_mem7n"]
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="9_mem7n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4775e"]
 shader = ExtResource("5_m57fd")
 shader_parameter/radius = 5
 shader_parameter/offset = Vector3(0, 0, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sqclt"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o6hhb"]
+noise = SubResource("FastNoiseLite_sqclt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45lp3"]
 shader = ExtResource("5_5puvj")
@@ -23,6 +29,7 @@ shader_parameter/opacity = 0.499999988824
 shader_parameter/scale = Vector2(10, 10)
 shader_parameter/strength = 0.5
 shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_o6hhb")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2omm"]
 
@@ -33,6 +40,16 @@ shader_parameter/fps = 6.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5r6o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lljhy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npdga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkvus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27npc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mo72f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nd8mb"]
 
 [node name="Scrapbook" type="Control" unique_id=23996365]
 layout_mode = 3
@@ -106,8 +123,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/h_separation = 43
-theme_override_constants/v_separation = -45
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 5
 columns = 2
 
 [node name="Beetroot" parent="Container/PageContainer/Grid" unique_id=99451584 instance=ExtResource("2_s2omm")]
@@ -183,4 +200,13 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = 41.0
 grow_horizontal = 0
+theme = ExtResource("9_mem7n")
+theme_override_colors/font_pressed_color = Color(0.30323282, 0.30323285, 0.30323276, 1)
+theme_override_colors/font_hover_color = Color(0.60122335, 0.6012229, 0.60122293, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_npdga")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pkvus")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_27npc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mo72f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nd8mb")
 text = "X"
