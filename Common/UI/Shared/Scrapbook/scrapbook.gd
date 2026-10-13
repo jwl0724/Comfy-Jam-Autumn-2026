@@ -5,8 +5,10 @@ const entries_per_page: int = 4
 @export var transition_time: float = 0.1
 
 @export_group("Required Assets")
-@export var page_flip_sound: AudioStream = null
-@export var book_interact_sound: AudioStream = null
+@export var page_flip_sfx: AudioStream = null
+@export var book_close_sfx: AudioStream = null
+@export var book_open_sfx: AudioStream = null
+
 @export var default_texture: Texture2D = null
 @export var left_preview_texture: Texture2D = null
 @export var right_preview_texture: Texture2D = null
@@ -69,7 +71,7 @@ func flip_page(page: int):
 
 
 func _on_page_flip_pressed(to_right: bool):
-    SignalBus.audio_play_sfx.emit(page_flip_sound, true)
+    SignalBus.audio_play_sfx.emit(page_flip_sfx, true)
     var page = current_page
     if to_right: page = clampi(current_page + 1, 0, max_pages - 1)
     else: page = clampi(current_page - 1, 0, max_pages - 1)
@@ -94,9 +96,9 @@ func _on_photo_add_request(photo: Texture2D, target_name: String):
 
 func _on_scrapbook_request(to_visible: bool):
     if to_visible:
-        SignalBus.audio_play_sfx.emit(book_interact_sound, true)
         SignalBus.level_player_enableControls.emit(false)
         SignalBus.level_player_hideHeld.emit(true)
+        SignalBus.audio_play_sfx.emit(book_open_sfx, true)
         visible = true
         close_button.visible = false
         book.position = size.y * Vector2.DOWN
@@ -110,6 +112,7 @@ func _on_scrapbook_request(to_visible: bool):
 
     else:
         close_button.visible = false
+        SignalBus.audio_play_sfx.emit(book_close_sfx, true)
 
         var t = create_tween()
         t.tween_property(book,"position", Vector2.DOWN * size.y, transition_time)

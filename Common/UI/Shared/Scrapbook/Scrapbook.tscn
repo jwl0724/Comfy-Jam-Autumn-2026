@@ -6,10 +6,11 @@
 [ext_resource type="AudioStream" uid="uid://b37kq54t536o4" path="res://Common/UI/Shared/Scrapbook/page_flip.mp3" id="3_o6hhb"]
 [ext_resource type="Texture2D" uid="uid://xhb0ly8jk8ks" path="res://Common/UI/Shared/Scrapbook/Background/Default.png" id="3_rn3ma"]
 [ext_resource type="Texture2D" uid="uid://hdbbqjhddup5" path="res://Common/UI/Shared/Scrapbook/Background/LeftPreview.png" id="4_45lp3"]
-[ext_resource type="AudioStream" uid="uid://dmnbb50osq0t3" path="res://Common/UI/Shared/Scrapbook/open_close.mp3" id="4_npdga"]
+[ext_resource type="AudioStream" uid="uid://dmnbb50osq0t3" path="res://Common/UI/Shared/Scrapbook/book_close.mp3" id="4_npdga"]
 [ext_resource type="Shader" uid="uid://vi44eo6owm8r" path="res://Common/UI/Shared/Scrapbook/Background/sketchy.gdshader" id="5_5puvj"]
 [ext_resource type="Shader" uid="uid://byepmv3u3afhy" path="res://Common/UI/Shared/Scrapbook/Background/toon_shader.gdshader" id="5_m57fd"]
 [ext_resource type="Texture2D" uid="uid://cd6ibo8neauno" path="res://Common/UI/Shared/Scrapbook/Background/RightPreview.png" id="5_mem7n"]
+[ext_resource type="AudioStream" uid="uid://brmgaasukk1ke" path="res://Common/UI/Shared/Scrapbook/book_open.mp3" id="5_npdga"]
 [ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="9_mem7n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4775e"]
@@ -62,8 +63,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_rl1uf")
 script = ExtResource("1_kppxn")
-page_flip_sound = ExtResource("3_o6hhb")
-book_interact_sound = ExtResource("4_npdga")
+page_flip_sfx = ExtResource("3_o6hhb")
+book_close_sfx = ExtResource("4_npdga")
+book_open_sfx = ExtResource("5_npdga")
 default_texture = ExtResource("3_rn3ma")
 left_preview_texture = ExtResource("4_45lp3")
 right_preview_texture = ExtResource("5_mem7n")
