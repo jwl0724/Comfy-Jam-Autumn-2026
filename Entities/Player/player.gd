@@ -54,7 +54,9 @@ func _on_photo_shoot():
     SignalBus.audio_play_sfx.emit(camera_flash_sfx, true)
     await SignalBus.game_transition_snapCovered
     SignalBus.game_layers_visible.emit(false)
+    view_controller.force_hide_held_camera(true)
     SignalBus.hud_photoPreview_visible.emit(true, await screenshot_handler.get_screenshot_texture())
+    view_controller.force_hide_held_camera(false)
     SignalBus.game_layers_visible.emit(true)
     view_controller.reset_held_camera()
 

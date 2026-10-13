@@ -34,6 +34,11 @@ func reset_held_camera():
 
 
 
+func force_hide_held_camera(do_hide: bool):
+    held_camera.visible = !do_hide
+
+
+
 func _physics_process(delta):
     # Handle camera bob
     if do_camera_bob:
@@ -77,7 +82,8 @@ func _input(event: InputEvent):
     if event.is_action_pressed(Constants.InputNames.Aim):
         held_camera.hold_to_eye()
 
-    elif event.is_action_released(Constants.InputNames.Aim): # TODO: Find a camera filter and apply to hud when camera is up
+    elif event.is_action_released(Constants.InputNames.Aim):
+        is_aiming = false
         held_camera.remove_from_eye()
 
     if event.is_action_pressed(Constants.InputNames.Shoot) && is_aiming:
