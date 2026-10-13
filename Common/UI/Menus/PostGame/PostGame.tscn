@@ -5,6 +5,14 @@
 [ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="3_u8y66"]
 [ext_resource type="Shader" uid="uid://td5v4alw17lh" path="res://Common/UI/Shared/Scrapbook/Components/wiggle.gdshader" id="4_5tpwd"]
 [ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="4_u8y66"]
+[ext_resource type="Theme" uid="uid://cw6v7dal50max" path="res://Common/UI/Themes/scrapbook.tres" id="5_5tpwd"]
+
+[sub_resource type="Gradient" id="Gradient_u8y66"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5tpwd"]
+gradient = SubResource("Gradient_u8y66")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5tpwd"]
 
@@ -31,6 +39,18 @@ shader_parameter/Strength = 0.70000003325
 shader_parameter/RandomOffset = 0.5
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u8y66"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4c1o2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sm5e7"]
+noise = SubResource("FastNoiseLite_4c1o2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwebp"]
+shader = ExtResource("3_rwv7n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.235
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_sm5e7")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_u8y66"]
 
@@ -59,6 +79,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_do6pw")
+no_data_texture = SubResource("GradientTexture1D_5tpwd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2008901262]
 layout_mode = 1
@@ -124,6 +145,16 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("PlaceholderTexture2D_u8y66")
 expand_mode = 2
+
+[node name="FailMessage" type="Label" parent="Container" unique_id=1202586586]
+material = SubResource("ShaderMaterial_dwebp")
+layout_mode = 2
+theme = ExtResource("5_5tpwd")
+theme_override_font_sizes/font_size = 64
+text = "Better Luck
+Next TIme"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Previous" type="Button" parent="." unique_id=1186267730]
 material = SubResource("ShaderMaterial_sm5e7")

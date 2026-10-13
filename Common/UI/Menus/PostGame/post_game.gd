@@ -1,10 +1,12 @@
 extends Control
 class_name PostGame
 
+@export var no_data_texture: Texture2D = null
 
 @onready var title: Label = $Title
 @onready var time_taken: Label = $Time
 @onready var photo_rect: TextureRect = $Container/Photo
+@onready var fail_message: Label = $Container/FailMessage
 @onready var previous_button: Button = $Previous
 @onready var next_button: Button = $Next
 @onready var menu_button: Button = $Menu
@@ -16,7 +18,8 @@ var current_index: int = 0
 
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-    photo_rect.visible = false
+    photo_rect.texture = no_data_texture
+    fail_message.visible = true
     _update_nav_buttons()
 
     next_button.pressed.connect(_on_next_pressed)
@@ -29,7 +32,7 @@ func _ready():
 
 func populate_data(data: Dictionary[String, Texture2D]):
     data_set = data
-    photo_rect.visible = data_set.size() > 0
+    fail_message.visible = data_set.size() <= 0
     set_photo()
     _update_nav_buttons()
 
@@ -46,7 +49,7 @@ func populate_time_spent(time_left: float, wait_time: float):
 
 
 func set_photo():
-    if !photo_rect.visible: return # Don't set anything if no photos were provided
+    if data_set.size() <= 0: return # Don't set anything if no photos were provided
     photo_rect.texture = data_set[data_set.keys()[current_index]]
     title.text = data_set.keys()[current_index]
 
