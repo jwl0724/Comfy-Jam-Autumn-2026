@@ -76,11 +76,11 @@ text = "Press E to Interact"
 visible = false
 layout_mode = 1
 
-[node name="Dialogue" parent="." unique_id=1657509195 instance=ExtResource("3_gryef")]
-layout_mode = 1
-
 [node name="Scrapbook" parent="." unique_id=23996365 instance=ExtResource("4_mc25i")]
 visible = false
+layout_mode = 1
+
+[node name="Dialogue" parent="." unique_id=1657509195 instance=ExtResource("3_gryef")]
 layout_mode = 1
 
 [node name="Tutorial" parent="." unique_id=1880504937 instance=ExtResource("4_37ke4")]

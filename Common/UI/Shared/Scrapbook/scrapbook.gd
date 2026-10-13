@@ -2,10 +2,16 @@ extends Control
 
 const entries_per_page: int = 4
 
+@export var transition_time: float = 0.1
+
+@export_group("Required Assets")
+@export var page_flip_sound: AudioStream = null
+@export var book_interact_sound: AudioStream = null
 @export var default_texture: Texture2D = null
 @export var left_preview_texture: Texture2D = null
 @export var right_preview_texture: Texture2D = null
 
+@onready var book: Control = $Container
 @onready var book_bg: TextureRect = %BookBackground
 @onready var entry_container: GridContainer = %Grid
 @onready var close_button: Button = $Close
@@ -56,6 +62,7 @@ func flip_page(page: int):
 
 
 func _on_page_flip_pressed(to_right: bool):
+    SignalBus.audio_play_sfx.emit(page_flip_sound)
     var page = current_page
     if to_right: page = clampi(current_page + 1, 0, max_pages - 1)
     else: page = clampi(current_page - 1, 0, max_pages - 1)
@@ -79,13 +86,34 @@ func _on_photo_add_request(photo: Texture2D, target_name: String):
 
 
 func _on_scrapbook_request(to_visible: bool):
-    visible = to_visible
-    SignalBus.level_player_enableControls.emit(!to_visible)
-    Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED
+    if to_visible:
+        SignalBus.audio_play_sfx.emit(book_interact_sound)
+        SignalBus.level_player_enableControls.emit(false)
+        visible = true
+        close_button.visible = false
+        book.position = size.y * Vector2.DOWN
+
+        var t = create_tween()
+        t.tween_property(book, "position", Vector2.ZERO, transition_time)
+        t.tween_callback(func():
+            close_button.visible = true
+            Input.mouse_mode = Input.MOUSE_MODE_VISIBLE)
+        t.play()
+
+    else:
+        close_button.visible = false
+
+        var t = create_tween()
+        t.tween_property(book,"position", Vector2.DOWN * size.y, transition_time)
+        t.tween_callback(func():
+            visible = false
+            Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+            SignalBus.level_player_enableControls.emit(true))
 
 
 
 func _on_close_pressed():
+    current_page = 0
     SignalBus.menu_scrapbook_visible.emit(false) # In case other objects require this signal to continue operations
 
 

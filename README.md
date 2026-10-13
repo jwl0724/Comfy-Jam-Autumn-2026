@@ -40,11 +40,15 @@
 
 ## Credits
 
-## Fonts
+### Fonts
 https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
-## Shaders
+### Sound Effects
+https://pixabay.com/sound-effects/book-closing-466850/
+https://pixabay.com/sound-effects/film-special-effects-turning-page-in-a-book-419580/
+
+### Shaders
 https://godotshaders.com/shader/first-person-view-model-shader-updated-for-godot-4-3/
 https://godotshaders.com/shader/toon-water-shader/
 https://godotshaders.com/shader/anime-style-sky-shader/

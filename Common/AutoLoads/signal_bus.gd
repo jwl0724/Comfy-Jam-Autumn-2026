@@ -48,3 +48,6 @@ signal menu_scrapbook_sendData(photo_key: Dictionary[String, Texture2D])
 # Options Signals
 signal options_changed_musicDB(linear: float)
 signal options_changed_sfxDB(linear: float)
+
+# Audio Signals
+signal audio_play_sfx(clip: AudioStream)
