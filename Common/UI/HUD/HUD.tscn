@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dboovtohf5esk" path="res://Common/UI/HUD/Components/Tutorial/TutorialText.tscn" id="4_37ke4"]
 [ext_resource type="PackedScene" uid="uid://dyqfoagllaj7u" path="res://Common/UI/Shared/Scrapbook/Scrapbook.tscn" id="4_mc25i"]
 [ext_resource type="PackedScene" uid="uid://dodpraxvnbs0q" path="res://Common/UI/HUD/Components/TimerDisplay/TimerDisplay.tscn" id="6_hgg0d"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="6_sq7rj"]
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="6_ydfnv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fk50d"]
 shader = ExtResource("2_qcx68")
@@ -23,6 +25,18 @@ shader_parameter/glow_spread = 0.005
 shader_parameter/enable_vintage = true
 shader_parameter/vintage_strength = 1.0
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nuxwx"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vqpej"]
+noise = SubResource("FastNoiseLite_nuxwx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2kgqw"]
+shader = ExtResource("6_sq7rj")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.25
+shader_parameter/fps = 10.0
+shader_parameter/noise = SubResource("NoiseTexture2D_vqpej")
+
 [node name="Hud" type="Control" unique_id=1395693383]
 layout_mode = 3
 anchors_preset = 15
@@ -34,6 +48,7 @@ mouse_filter = 2
 script = ExtResource("1_uyl2v")
 
 [node name="CameraFilter" type="ColorRect" parent="." unique_id=867579612]
+visible = false
 material = SubResource("ShaderMaterial_fk50d")
 layout_mode = 1
 anchors_preset = 15
@@ -58,19 +73,24 @@ layout_mode = 1
 offset_bottom = 30.0
 
 [node name="InteractPrompt" type="Label" parent="." unique_id=109536656]
+material = SubResource("ShaderMaterial_2kgqw")
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -70.5
-offset_top = -85.0
-offset_right = 70.5
-offset_bottom = -62.0
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -16.5
+offset_right = 12.0
+offset_bottom = 16.5
 grow_horizontal = 2
-grow_vertical = 0
-text = "Press E to Interact"
+grow_vertical = 2
+theme = ExtResource("6_ydfnv")
+theme_override_colors/font_color = Color(1, 1, 1, 0.837)
+theme_override_colors/font_outline_color = Color(0.06100855, 0.06100855, 0.06100855, 0.416)
+theme_override_constants/outline_size = 10
+text = "[E]"
 
 [node name="PhotoPreview" parent="." unique_id=1688282761 instance=ExtResource("2_3lme5")]
 visible = false
