@@ -87,8 +87,8 @@ func _populate_post_menu_screen(data: Dictionary[String, Texture2D]):
 
 
 func _on_in_game():
-    change_scenes(ingame_scene)
     _on_clearGUI(ControlLayers.GUI)
+    change_scenes(ingame_scene)
 
 
 
