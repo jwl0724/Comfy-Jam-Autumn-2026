@@ -1,13 +1,16 @@
 extends Control
 
-# TODO: Scrapbook looks terrible right now, need to actually improve the visuals later down the road
-
 const entries_per_page: int = 4
 
-@onready var entry_container: GridContainer = $Container/Grid
+@export var default_texture: Texture2D = null
+@export var left_preview_texture: Texture2D = null
+@export var right_preview_texture: Texture2D = null
+
+@onready var book_bg: TextureRect = %BookBackground
+@onready var entry_container: GridContainer = %Grid
 @onready var close_button: Button = $Close
-@onready var page_left: Button = $Container/PageLeft
-@onready var page_right: Button = $Container/PageRight
+@onready var page_left: Button = %PageLeft
+@onready var page_right: Button = %PageRight
 
 var entry_key: Dictionary[String, ScrapbookEntry] = {}
 var current_page: int = 0
@@ -30,7 +33,11 @@ func _ready():
 
     close_button.pressed.connect(_on_close_pressed)
     page_left.pressed.connect(func(): _on_page_flip_pressed(false))
+    page_left.mouse_entered.connect(func(): _on_mouse_entered(true))
+    page_left.mouse_exited.connect(_reset_bg_texture)
     page_right.pressed.connect(func(): _on_page_flip_pressed(true))
+    page_right.mouse_entered.connect(func(): _on_mouse_entered(false))
+    page_right.mouse_exited.connect(_reset_bg_texture)
 
 
 ## First page is 0
@@ -53,6 +60,7 @@ func _on_page_flip_pressed(to_right: bool):
     if to_right: page = clampi(current_page + 1, 0, max_pages - 1)
     else: page = clampi(current_page - 1, 0, max_pages - 1)
     flip_page(page)
+    _reset_bg_texture()
 
 
 
@@ -79,3 +87,18 @@ func _on_scrapbook_request(to_visible: bool):
 
 func _on_close_pressed():
     SignalBus.menu_scrapbook_visible.emit(false) # In case other objects require this signal to continue operations
+
+
+
+func _on_mouse_entered(on_left: bool):
+    if on_left:
+        if current_page == 0: return
+        book_bg.texture = left_preview_texture
+    else:
+        if current_page == max_pages - 1: return
+        book_bg.texture = right_preview_texture
+
+
+
+func _reset_bg_texture():
+    book_bg.texture = default_texture
