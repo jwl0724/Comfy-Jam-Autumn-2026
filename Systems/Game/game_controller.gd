@@ -33,6 +33,8 @@ func _ready():
     SignalBus.game_layers_clearGUI.connect(_on_clearGUI)
 
     SignalBus.game_pause.connect(_on_pause_request)
+    SignalBus.game_quit.connect(_on_game_quit)
+    SignalBus.game_navigate_ingame.connect(_on_in_game)
     SignalBus.game_navigate_mainMenu.connect(_on_back_to_menu)
     SignalBus.game_navigate_postgame.connect(_on_to_post_game)
 
@@ -84,6 +86,12 @@ func _populate_post_menu_screen(data: Dictionary[String, Texture2D]):
 
 
 
+func _on_in_game():
+    change_scenes(ingame_scene)
+    _on_clearGUI(ControlLayers.GUI)
+
+
+
 func _on_back_to_menu():
     _on_clearGUI(ControlLayers.GUI)
     change_scenes(main_menu_scene)
@@ -93,6 +101,11 @@ func _on_back_to_menu():
 func _on_pause_request(do_pause: bool):
     get_tree().paused = do_pause
     pause_menu.enable_menu(do_pause)
+
+
+
+func _on_game_quit():
+    get_tree().quit()
 
 
 

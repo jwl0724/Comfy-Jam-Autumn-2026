@@ -1,11 +1,72 @@
 [gd_scene format=3 uid="uid://jxcuyws4cpbu"]
 
 [ext_resource type="Script" uid="uid://dmbjv1fjnx4aq" path="res://Common/UI/Menus/MainMenu/main_menu.gd" id="1_krvq2"]
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_o313n"]
 [ext_resource type="Script" uid="uid://ejlb35yi452e" path="res://Common/UI/Menus/MainMenu/background_effects.gd" id="2_w2pdp"]
+[ext_resource type="AudioStream" uid="uid://dwwv4lwvanvr1" path="res://Entities/Player/Imports/camera_flash.mp3" id="3_j8jh4"]
 [ext_resource type="Texture2D" uid="uid://bt2m7lqbov02b" path="res://Common/UI/Menus/MainMenu/Imports/BG1.png" id="3_p7kkj"]
 [ext_resource type="Texture2D" uid="uid://dnrp03xtxiyn0" path="res://Common/UI/Menus/MainMenu/Imports/BG2.png" id="4_7rrnn"]
 [ext_resource type="Texture2D" uid="uid://cudqy65mbodoo" path="res://Common/UI/Menus/MainMenu/Imports/BG3.png" id="5_o313n"]
 [ext_resource type="Texture2D" uid="uid://nyawumd0jjn" path="res://Common/UI/Menus/MainMenu/Imports/BG4.png" id="6_nh1ey"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="8_nh1ey"]
+[ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="9_ilwvv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ilwvv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j8jh4"]
+noise = SubResource("FastNoiseLite_ilwvv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlqeb"]
+shader = ExtResource("8_nh1ey")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_j8jh4")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fd0l0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ayaj3"]
+noise = SubResource("FastNoiseLite_fd0l0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdwcn"]
+shader = ExtResource("8_nh1ey")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.25
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_ayaj3")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j8jh4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vlqeb"]
+noise = SubResource("FastNoiseLite_j8jh4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fd0l0"]
+shader = ExtResource("8_nh1ey")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_vlqeb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayaj3"]
+shader = ExtResource("8_nh1ey")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_vlqeb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clc0y"]
+shader = ExtResource("8_nh1ey")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_vlqeb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rspr5"]
+shader = ExtResource("8_nh1ey")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_vlqeb")
 
 [node name="MainMenu" type="Control" unique_id=1965724977]
 layout_mode = 3
@@ -14,7 +75,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_o313n")
 script = ExtResource("1_krvq2")
+camera_snap_sfx = ExtResource("3_j8jh4")
 
 [node name="Background" type="Control" parent="." unique_id=212833206]
 layout_mode = 1
@@ -49,39 +112,157 @@ texture = ExtResource("3_p7kkj")
 
 [node name="Timer" type="Timer" parent="Background" unique_id=2045930344]
 
-[node name="Label" type="Label" parent="." unique_id=2031228345]
+[node name="Title" type="Control" parent="." unique_id=1924061848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title" unique_id=538231832]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -210.0
+offset_top = 39.0
+offset_right = 210.0
+offset_bottom = 170.0
 grow_horizontal = 2
-text = "VERY COOL GAME NAME HERE THAT I HAVE TOTALLY COME UP WITH ALREADY"
+theme_override_constants/separation = -7
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2046792520]
+[node name="Label" type="Label" parent="Title/VBoxContainer" unique_id=2031228345]
+material = SubResource("ShaderMaterial_vlqeb")
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94764113, 0.7509483, 0.1931151, 1)
+theme_override_colors/font_shadow_color = Color(0.33003333, 0.012920001, 0.050708726, 1)
+theme_override_colors/font_outline_color = Color(0.211804, 0.0031318725, 0.01885015, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 48
+theme_override_constants/shadow_outline_size = 30
+theme_override_font_sizes/font_size = 128
+text = "OH SNAP! "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Title/VBoxContainer" unique_id=1078198085]
+material = SubResource("ShaderMaterial_pdwcn")
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9157799, 0.37187055, 0.17558163, 1)
+theme_override_colors/font_shadow_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+theme_override_colors/font_outline_color = Color(0.21176471, 0.003921569, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 54
+text = "WHERE'D IT GO?"
+horizontal_alignment = 1
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=2046792520]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchor_bottom = 1.0
+offset_left = -60.5
+offset_top = -154.0
+offset_right = 60.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("9_ilwvv")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Start" type="Button" parent="Container" unique_id=1397626493]
+material = SubResource("ShaderMaterial_fd0l0")
+layout_mode = 2
+text = "Start Game"
+
+[node name="Shadow" type="Label" parent="Container/Start" unique_id=1441757326]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1397626493]
-layout_mode = 2
-text = "Start"
-
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=1849605272]
+[node name="Options" type="Button" parent="Container" unique_id=1849605272]
+material = SubResource("ShaderMaterial_ayaj3")
 layout_mode = 2
 text = "Options"
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1321445333]
+[node name="Shadow" type="Label" parent="Container/Options" unique_id=292367370]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Button" parent="Container" unique_id=1828538527]
+material = SubResource("ShaderMaterial_clc0y")
+layout_mode = 2
+text = "Credits"
+
+[node name="Shadow" type="Label" parent="Container/Credits" unique_id=1388466013]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="Container" unique_id=1321445333]
+material = SubResource("ShaderMaterial_rspr5")
 layout_mode = 2
 text = "Quit"
+
+[node name="Shadow" type="Label" parent="Container/Quit" unique_id=1630559410]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1

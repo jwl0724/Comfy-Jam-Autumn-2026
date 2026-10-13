@@ -15,6 +15,7 @@ signal game_transition_snapCovered(time: float) ## The exact time when snap is c
 
 # Game Controller Signals
 signal game_pause(do_pause: bool)
+signal game_quit()
 signal game_navigate_mainMenu()
 signal game_navigate_ingame()
 signal game_navigate_postgame()

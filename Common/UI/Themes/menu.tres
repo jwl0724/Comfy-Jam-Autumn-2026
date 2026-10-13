@@ -1,0 +1,25 @@
+[gd_resource type="Theme" format=3 uid="uid://b86se6c58yq8b"]
+
+[ext_resource type="FontFile" uid="uid://brl3ehxm7h8c4" path="res://Common/UI/Themes/Fonts/Sophiecomic-Regular.ttf" id="1_o5d8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6kydq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_np65o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ohnr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trlkv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svidb"]
+
+[resource]
+default_font = ExtResource("1_o5d8s")
+default_font_size = 30
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0.94509804, 0.7490196, 0.19215687, 1)
+Button/colors/font_pressed_color = Color(0.53754604, 0.41752, 0.05846741, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_6kydq")
+Button/styles/focus = SubResource("StyleBoxEmpty_np65o")
+Button/styles/hover = SubResource("StyleBoxEmpty_1ohnr")
+Button/styles/normal = SubResource("StyleBoxEmpty_trlkv")
+Button/styles/pressed = SubResource("StyleBoxEmpty_svidb")
