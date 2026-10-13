@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d0lq0nsdjmqrl" path="res://Common/UI/HUD/Components/PhotoPreview/photo_preview.gd" id="1_oomk3"]
 [ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_u7dql"]
-[ext_resource type="Texture2D" uid="uid://blcye1yau2g6" path="res://Common/UI/Shared/Placeholders/Images/Filler.png" id="2_7hg8k"]
 [ext_resource type="Shader" uid="uid://td5v4alw17lh" path="res://Common/UI/Shared/Scrapbook/Components/wiggle.gdshader" id="2_ruv4c"]
 [ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="3_7tw8t"]
 [ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="4_ruv4c"]
@@ -12,9 +11,11 @@ shader = ExtResource("2_ruv4c")
 shader_parameter/Strength = 0.70000003325
 shader_parameter/RandomOffset = 0.5
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ruv4c"]
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_u7dql"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_smo2j"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ruv4c"]
 noise = SubResource("FastNoiseLite_u7dql")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sajsn"]
@@ -22,7 +23,12 @@ shader = ExtResource("4_ruv4c")
 shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.3
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_smo2j")
+shader_parameter/noise = SubResource("NoiseTexture2D_ruv4c")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5tpwd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_smo2j"]
+noise = SubResource("FastNoiseLite_5tpwd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ysmh"]
 shader = ExtResource("4_ruv4c")
@@ -72,7 +78,7 @@ custom_minimum_size = Vector2(400, 224)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_7hg8k")
+texture = SubResource("PlaceholderTexture2D_ruv4c")
 expand_mode = 2
 
 [node name="RequirementTitle" type="Label" parent="." unique_id=176429407]
