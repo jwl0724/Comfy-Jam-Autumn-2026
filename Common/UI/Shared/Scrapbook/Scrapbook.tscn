@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyqfoagllaj7u"]
 
 [ext_resource type="Script" uid="uid://clnja5s6plpf0" path="res://Common/UI/Shared/Scrapbook/scrapbook.gd" id="1_kppxn"]
+[ext_resource type="Theme" uid="uid://cw6v7dal50max" path="res://Common/UI/Resources/scrapbook.tres" id="1_rl1uf"]
 [ext_resource type="PackedScene" uid="uid://mttfw02skoyc" path="res://Common/UI/Shared/Scrapbook/Components/ScrapbookEntry.tscn" id="2_s2omm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2omm"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_rl1uf")
 script = ExtResource("1_kppxn")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1308459696]

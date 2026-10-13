@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cw6v7dal50max"]
+
+[ext_resource type="FontFile" uid="uid://cqhmxc4rr0cdw" path="res://Common/UI/Resources/Fonts/MessyHandwritten-Regular.ttf" id="1_ykclh"]
+
+[resource]
+default_font = ExtResource("1_ykclh")
+default_font_size = 32

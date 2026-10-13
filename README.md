@@ -40,6 +40,10 @@
 
 ## Credits
 
+## Fonts
+https://www.1001fonts.com/sophiecomic-font.html
+https://www.1001fonts.com/messy-handwritten-font.html
+
 ## Shaders
 https://godotshaders.com/shader/first-person-view-model-shader-updated-for-godot-4-3/
 https://godotshaders.com/shader/toon-water-shader/
