@@ -48,9 +48,16 @@ https://www.1001fonts.com/messy-handwritten-font.html
 https://godotshaders.com/shader/first-person-view-model-shader-updated-for-godot-4-3/
 https://godotshaders.com/shader/toon-water-shader/
 https://godotshaders.com/shader/anime-style-sky-shader/
+https://godotshaders.com/shader/squigglevision/
+https://godotshaders.com/shader/kuwahara-shader/
+https://godotshaders.com/shader/squiggle-pen-canvas-post-process/
 
 ### Libraries
 https://godotassetlibrary.com/asset/n1tXOr/terrabrush
+
+### Art
+https://opengameart.org/content/book-cover
+
 
 ### Textures
 https://kenney.nl/assets/foliage-sprites

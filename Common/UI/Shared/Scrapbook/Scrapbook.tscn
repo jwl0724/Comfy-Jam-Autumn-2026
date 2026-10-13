@@ -3,6 +3,24 @@
 [ext_resource type="Script" uid="uid://clnja5s6plpf0" path="res://Common/UI/Shared/Scrapbook/scrapbook.gd" id="1_kppxn"]
 [ext_resource type="Theme" uid="uid://cw6v7dal50max" path="res://Common/UI/Themes/scrapbook.tres" id="1_rl1uf"]
 [ext_resource type="PackedScene" uid="uid://mttfw02skoyc" path="res://Common/UI/Shared/Scrapbook/Components/ScrapbookEntry.tscn" id="2_s2omm"]
+[ext_resource type="Texture2D" uid="uid://xhb0ly8jk8ks" path="res://Common/UI/Shared/Scrapbook/Background/Default.png" id="3_rn3ma"]
+[ext_resource type="Shader" uid="uid://vi44eo6owm8r" path="res://Common/UI/Shared/Scrapbook/Background/sketchy.gdshader" id="5_5puvj"]
+[ext_resource type="Shader" uid="uid://byepmv3u3afhy" path="res://Common/UI/Shared/Scrapbook/Background/toon_shader.gdshader" id="5_m57fd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4775e"]
+shader = ExtResource("5_m57fd")
+shader_parameter/radius = 5
+shader_parameter/offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45lp3"]
+shader = ExtResource("5_5puvj")
+shader_parameter/weight = 0.1
+shader_parameter/line_thickness = 1.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/opacity = 0.499999988824
+shader_parameter/scale = Vector2(10, 10)
+shader_parameter/strength = 0.5
+shader_parameter/fps = 6.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2omm"]
 
@@ -25,6 +43,7 @@ theme = ExtResource("1_rl1uf")
 script = ExtResource("1_kppxn")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1308459696]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,11 +64,33 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="Background" type="ColorRect" parent="Container" unique_id=220023261]
+[node name="BookBackground" type="TextureRect" parent="Container" unique_id=300291094]
 layout_mode = 2
-color = Color(0.728822, 0.728822, 0.728822, 1)
+texture = ExtResource("3_rn3ma")
+expand_mode = 2
+
+[node name="FilterContainer" type="MarginContainer" parent="Container/BookBackground" unique_id=1924519144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Toon" type="ColorRect" parent="Container/BookBackground/FilterContainer" unique_id=1352827472]
+material = SubResource("ShaderMaterial_4775e")
+layout_mode = 2
+
+[node name="Sketch" type="ColorRect" parent="Container/BookBackground/FilterContainer" unique_id=309169952]
+material = SubResource("ShaderMaterial_45lp3")
+layout_mode = 2
 
 [node name="Grid" type="GridContainer" parent="Container" unique_id=332184268]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -94,6 +135,7 @@ layout_mode = 2
 entry_name = "Deer"
 
 [node name="PageLeft" type="Button" parent="Container" unique_id=1478157441]
+visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -105,6 +147,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_w5r6o")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lljhy")
 
 [node name="PageRight" type="Button" parent="Container" unique_id=1973458046]
+visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 8
