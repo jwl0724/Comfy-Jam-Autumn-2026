@@ -1,11 +1,11 @@
 extends Control
 class_name PhotoPreview
 
-
-
 const no_target_text: String = "No Subject Found"
 const target_found_text: String = "Picture of %s"
+const slide_time: float = 0.5
 
+@onready var photo_container: MarginContainer = $Container
 @onready var requirement_title: Label = $RequirementTitle
 @onready var preview: TextureRect = $Container/Photo
 @onready var keep_button: Button = $ButtonContainer/Keep
@@ -36,7 +36,7 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
 
     visible = to_visible
     keep_button.visible = false
-    discard_button.visible = true # This is slightly buggy when targets are in the same photo, when placing objectives in map, keep them far apart
+    discard_button.visible = true
 
     SignalBus.level_player_enableControls.emit(!to_visible)
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if to_visible else Input.MOUSE_MODE_CAPTURED
@@ -45,6 +45,27 @@ func _on_preview_visible_request(to_visible: bool, photo: Texture2D):
     preview.texture = photo
     requirement_title.text = no_target_text
     SignalBus.level_query_targetView.emit()
+
+    # Play slide in animation
+    var move_distance: float = 75
+    requirement_title.visible_ratio = 0
+    photo_container.position = Vector2.DOWN * move_distance
+    photo_container.modulate = Color.TRANSPARENT
+    keep_button.modulate = Color.TRANSPARENT
+    keep_button.disabled = true
+    discard_button.modulate = Color.TRANSPARENT
+    discard_button.disabled = true
+
+    var t = create_tween()
+    t.tween_property(photo_container, "position", Vector2.ZERO, slide_time / 2)
+    t.parallel().tween_property(photo_container, "modulate", Color.WHITE, slide_time / 2)
+    t.parallel().tween_property(keep_button, "modulate", Color.WHITE, slide_time/ 2)
+    t.parallel().tween_property(discard_button, "modulate", Color.WHITE, slide_time / 2)
+    t.tween_property(requirement_title, "visible_ratio", 1, slide_time / 2)
+    t.tween_callback(func():
+        discard_button.disabled = false
+        keep_button.disabled = false)
+    t.play()
 
 
 
