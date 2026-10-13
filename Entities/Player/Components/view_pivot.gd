@@ -86,11 +86,13 @@ func _input(event: InputEvent):
 
 
 func _on_held_to_eye():
+    SignalBus.hud_cameraFilter_visible.emit(true)
     camera.fov = 55
     is_aiming = true
 
 
 
 func _on_removed_from_eye():
+    SignalBus.hud_cameraFilter_visible.emit(false)
     is_aiming = false
     camera.fov = 75
