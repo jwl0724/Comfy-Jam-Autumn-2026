@@ -4,14 +4,14 @@ class_name TutorialText
 const seconds_per_line: float = 3.25
 const seconds_per_transition: float = 0.15
 const transition_distance: float = 5
+const gap_per_message: float = 2
+
 const tutorial_sequence: Array[String] = [
-    "Use 'WASD' to move",
-    "Move the camera using the mouse",
     "Hold right click to aim your camera",
     "Left click while aiming to take a photo",
     "Press 'V' to open your scrapbook",
     "Press 'E' to interact with your dog Gou",
-    "Gou will face the direction of a missing photo subject"
+    "Gou will face the direction of a missing subject"
 ]
 
 var running_tutorial_tween: Tween = null
@@ -42,6 +42,7 @@ func _on_tutorial_request():
 
         running_tutorial_tween.tween_property(self, "modulate", Color.TRANSPARENT, seconds_per_transition)
         running_tutorial_tween.parallel().tween_property(self, "position", position + Vector2.DOWN * transition_distance, seconds_per_transition)
+        running_tutorial_tween.tween_interval(gap_per_message)
 
     running_tutorial_tween.tween_callback(func():
         visible = false

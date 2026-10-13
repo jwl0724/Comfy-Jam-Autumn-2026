@@ -1,15 +1,37 @@
 [gd_scene format=3 uid="uid://dboovtohf5esk"]
 
 [ext_resource type="Script" uid="uid://yl75dt6gupp2" path="res://Common/UI/HUD/Components/Tutorial/tutorial_text.gd" id="1_1ytp3"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="1_l0h61"]
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="2_ea0t6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ku4x4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_guoso"]
+noise = SubResource("FastNoiseLite_ku4x4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qxf1"]
+shader = ExtResource("1_l0h61")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.2
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_guoso")
 
 [node name="Tutorial" type="Label" unique_id=1880504937]
+material = SubResource("ShaderMaterial_5qxf1")
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
+offset_top = -93.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_ea0t6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.38000003)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 48
+text = "Gou will face the direction of a missing photo subject"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
 script = ExtResource("1_1ytp3")
