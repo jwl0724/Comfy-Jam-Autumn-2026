@@ -9,6 +9,9 @@ class_name Player
 @export var mouse_sensitivity: float = 0.005
 @export var max_up_view_angle: float = 89
 
+# Data references
+@export var camera_flash_sfx: AudioStream = null
+
 @onready var view_controller: ViewPivot = $Components/Pivot
 @onready var move_controller: PlayerMovementController = $Systems/Movement
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
@@ -42,6 +45,7 @@ func _input(event: InputEvent):
 
 func _on_photo_shoot():
     SignalBus.game_transition_snapEffect.emit(0.15)
+    SignalBus.audio_play_sfx.emit(camera_flash_sfx, true)
     await SignalBus.game_transition_snapCovered
     SignalBus.game_layers_visible.emit(false)
     SignalBus.hud_photoPreview_visible.emit(true, await screenshot_handler.get_screenshot_texture())

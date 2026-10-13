@@ -45,6 +45,7 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Sound Effects
+https://pixabay.com/sound-effects/technology-camera-13695/
 https://pixabay.com/sound-effects/film-special-effects-pageturn-102978/
 https://pixabay.com/sound-effects/book-closing-466850/
 

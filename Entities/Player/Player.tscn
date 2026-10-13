@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqnsqbsm06a4i"]
 
 [ext_resource type="Script" uid="uid://b2un8a8506dkk" path="res://Entities/Player/player.gd" id="1_e5kic"]
+[ext_resource type="AudioStream" uid="uid://dwwv4lwvanvr1" path="res://Entities/Player/Imports/camera_flash.mp3" id="2_an6q6"]
 [ext_resource type="PackedScene" uid="uid://bky3hsdeg61tm" path="res://Entities/Player/Components/ViewPivot.tscn" id="3_1des2"]
 [ext_resource type="Script" uid="uid://d3038jbkvo8wj" path="res://Entities/Player/Systems/screenshot_handler.gd" id="3_an6q6"]
 [ext_resource type="Script" uid="uid://dfdv7amsu6564" path="res://Entities/Player/Systems/movement_controller.gd" id="3_vweq0"]
@@ -15,6 +16,7 @@ collision_mask = 33
 floor_snap_length = 0.2
 script = ExtResource("1_e5kic")
 move_speed = 10.0
+camera_flash_sfx = ExtResource("2_an6q6")
 
 [node name="Systems" type="Node" parent="." unique_id=1047118889]
 
