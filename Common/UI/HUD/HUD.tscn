@@ -92,6 +92,16 @@ theme_override_colors/font_outline_color = Color(0.06100855, 0.06100855, 0.06100
 theme_override_constants/outline_size = 10
 text = "[E]"
 
+[node name="Tutorial" parent="." unique_id=1880504937 instance=ExtResource("4_37ke4")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = -88.0
+offset_right = 320.0
+offset_bottom = -11.0
+
 [node name="PhotoPreview" parent="." unique_id=1688282761 instance=ExtResource("2_3lme5")]
 visible = false
 layout_mode = 1
@@ -102,13 +112,3 @@ layout_mode = 1
 
 [node name="Dialogue" parent="." unique_id=1657509195 instance=ExtResource("3_gryef")]
 layout_mode = 1
-
-[node name="Tutorial" parent="." unique_id=1880504937 instance=ExtResource("4_37ke4")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -320.0
-offset_top = -88.0
-offset_right = 320.0
-offset_bottom = -11.0
