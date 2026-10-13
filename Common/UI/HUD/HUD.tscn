@@ -77,10 +77,7 @@ visible = false
 layout_mode = 1
 
 [node name="Dialogue" parent="." unique_id=1657509195 instance=ExtResource("3_gryef")]
-visible = false
 layout_mode = 1
-offset_top = -54.0
-offset_bottom = -31.0
 
 [node name="Scrapbook" parent="." unique_id=23996365 instance=ExtResource("4_mc25i")]
 visible = false

@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://ba10t1m7t0dj6"]
 
-[ext_resource type="FontFile" uid="uid://brl3ehxm7h8c4" path="res://Common/UI/Themes/Fonts/Sophiecomic-Regular.ttf" id="1_axtp8"]
+[ext_resource type="FontFile" uid="uid://brl3ehxm7h8c4" path="res://Common/UI/Themes/Fonts/Sophiecomic-Regular.ttf" id="1_5lcr1"]
 
 [resource]
-default_font = ExtResource("1_axtp8")
+default_font = ExtResource("1_5lcr1")
 default_font_size = 24

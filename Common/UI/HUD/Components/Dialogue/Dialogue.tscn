@@ -1,15 +1,64 @@
 [gd_scene format=3 uid="uid://cw6o2ta1pii8a"]
 
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_cf1hc"]
 [ext_resource type="Script" uid="uid://c7rjouu1xc240" path="res://Common/UI/HUD/Components/Dialogue/dialogue.gd" id="1_xewkj"]
 
-[node name="Dialogue" type="Label" unique_id=1657509195]
-anchors_preset = 12
-anchor_top = 1.0
+[sub_resource type="Gradient" id="Gradient_p17pc"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.92168134, 0.4977886, 0, 0, 0.92168134, 0.49670067, 0, 1, 0.92168134, 0.4977886, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cxb7o"]
+gradient = SubResource("Gradient_p17pc")
+
+[node name="Dialogue" type="Control" unique_id=875567049]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_cf1hc")
+script = ExtResource("1_xewkj")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1308495863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1793766983]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Speaker" type="Label" parent="MarginContainer/VBoxContainer" unique_id=889556550]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.9157799, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.91764706, 0, 1)
+theme_override_constants/outline_size = 3
+text = "YOU"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_xewkj")
+
+[node name="Border" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1454790095]
+custom_minimum_size = Vector2(500, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("GradientTexture1D_cxb7o")
+
+[node name="Dialogue" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1399444809]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.115)
+theme_override_constants/outline_size = 10
+horizontal_alignment = 1
+autowrap_mode = 2
