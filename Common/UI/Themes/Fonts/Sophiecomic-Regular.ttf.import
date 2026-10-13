@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://brl3ehxm7h8c4"
-path="res://.godot/imported/Sophiecomic-Regular.ttf-e691bae489ec4ef209786943aa164ca1.fontdata"
+path="res://.godot/imported/Sophiecomic-Regular.ttf-33c06b3caafac07974579430e63d3fa2.fontdata"
 
 [deps]
 
-source_file="res://Common/UI/Resources/Fonts/Sophiecomic-Regular.ttf"
-dest_files=["res://.godot/imported/Sophiecomic-Regular.ttf-e691bae489ec4ef209786943aa164ca1.fontdata"]
+source_file="res://Common/UI/Themes/Fonts/Sophiecomic-Regular.ttf"
+dest_files=["res://.godot/imported/Sophiecomic-Regular.ttf-33c06b3caafac07974579430e63d3fa2.fontdata"]
 
 [params]
 

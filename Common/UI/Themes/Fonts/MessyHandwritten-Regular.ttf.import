@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cqhmxc4rr0cdw"
-path="res://.godot/imported/MessyHandwritten-Regular.ttf-e5165fb744c305cf7e6e059daf6bd537.fontdata"
+path="res://.godot/imported/MessyHandwritten-Regular.ttf-07167c2e7d98a1fa033754191e9261ac.fontdata"
 
 [deps]
 
-source_file="res://Common/UI/Resources/Fonts/MessyHandwritten-Regular.ttf"
-dest_files=["res://.godot/imported/MessyHandwritten-Regular.ttf-e5165fb744c305cf7e6e059daf6bd537.fontdata"]
+source_file="res://Common/UI/Themes/Fonts/MessyHandwritten-Regular.ttf"
+dest_files=["res://.godot/imported/MessyHandwritten-Regular.ttf-07167c2e7d98a1fa033754191e9261ac.fontdata"]
 
 [params]
 
