@@ -37,7 +37,7 @@ func _ready():
     sfx_slider.value_changed.connect(func(f: float): _update_slider(f, sfx_label, SignalBus.options_changed_sfxDB))
     fov_slider.value_changed.connect(func(f: float): _update_slider(f, fov_label, SignalBus.options_changed_fov))
     mouse_sensitivity_slider.value_changed.connect(func(f: float): _update_slider(f, mouse_label, SignalBus.options_changed_mouse_sensitivity))
-    fullscreen_check.toggled.connect(func(on: bool): SignalBus.options_changed_fullscreen.emit(on))
+    fullscreen_check.toggled.connect(_on_fullscreen_toggle)
 
 
 
@@ -58,6 +58,12 @@ func _set_values():
     mouse_sensitivity_slider.value = Options.mouse_sensitivity_linear
     mouse_label.text = _get_linear_display(mouse_sensitivity_slider.value)
     fullscreen_check.button_pressed = Options.is_fullscreen
+
+
+
+func _on_fullscreen_toggle(on: bool):
+    SignalBus.options_changed_fullscreen.emit(on)
+    fullscreen_check.button_pressed = Options.is_fullscreen # Need check in case fullscreen isn't enabled
 
 
 
