@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://rhv41vki2yt6" path="res://Entities/Dog/Systems/pathing.gd" id="2_xwa67"]
 [ext_resource type="Script" uid="uid://cfjmv8lsyip1n" path="res://Entities/Dog/Systems/target_locating.gd" id="3_cy0vn"]
 [ext_resource type="PackedScene" uid="uid://bx3da7gk78d44" path="res://Entities/Interactable/interact_handler.tscn" id="3_xwa67"]
+[ext_resource type="Script" uid="uid://psrwohycc4hf" path="res://Entities/Shared/entity_sound_manager.gd" id="5_pim2n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_235xh"]
 radius = 6.0
@@ -47,6 +48,15 @@ shape = SubResource("SphereShape3D_235xh")
 interact_hitbox_shape = SubResource("SphereShape3D_cy0vn")
 interact_limit = -1
 interact_time_gap = 2.0
+
+[node name="SoundManager" type="Node3D" parent="Components" unique_id=1629851902]
+script = ExtResource("5_pim2n")
+
+[node name="Misc" type="AudioStreamPlayer3D" parent="Components/SoundManager" unique_id=1204822227]
+
+[node name="Footstep" type="AudioStreamPlayer3D" parent="Components/SoundManager" unique_id=1329261469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24305367, 0)
+max_polyphony = 8
 
 [node name="DogModel" parent="." unique_id=1960028621 instance=ExtResource("2_235xh")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.2745753, 0)
