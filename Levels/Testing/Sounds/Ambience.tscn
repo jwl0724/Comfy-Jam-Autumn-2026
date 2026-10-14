@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bvq8ugca5ad4u"]
+
+[ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="1_3ya25"]
+[ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_al7o6"]
+[ext_resource type="Resource" uid="uid://dek12rt3cg2f1" path="res://Entities/PhotoTarget/Resource/beetroot.tres" id="2_5n3l3"]
+[ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="2_k8du8"]
+[ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_vg2ev"]
+[ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_vg2ev"]
+[ext_resource type="Resource" uid="uid://dcltjtl27oq8g" path="res://Entities/PhotoTarget/Resource/pumpkin.tres" id="3_xnwuk"]
+[ext_resource type="PackedScene" uid="uid://dqnsqbsm06a4i" path="res://Entities/Player/Player.tscn" id="4_al7o6"]
+[ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="5_k8du8"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vg2ev"]
+vertices = PackedVector3Array(-50.28371, 1.1211464, -3.2837105, -30.53371, 1.1211464, -3.2837105, -30.28371, 1.1211464, -4.5337105, -20.78371, 1.1211464, -4.5337105, -20.53371, 1.1211464, -50.28371, -50.28371, 1.1211464, -50.28371, -19.28371, 1.1211464, -4.5337105, -19.03371, 1.1211464, -3.7837105, -5.7837105, 1.1211464, -3.7837105, -5.5337105, 1.1211464, -4.5337105, -4.2837105, 1.1211464, -50.28371, -4.0337105, 1.1211464, -4.5337105, 3.9662895, 1.1211464, -4.5337105, 4.2162895, 1.1211464, -50.28371, 5.4662895, 1.1211464, -4.5337105, 5.7162895, 1.1211464, -3.7837105, 15.7162895, 1.1211464, -3.7837105, 15.9662895, 1.1211464, -4.5337105, 17.21629, 1.1211464, -50.28371, 17.46629, 1.1211464, -4.5337105, 26.96629, 1.1211464, -4.5337105, 27.21629, 1.1211464, -3.2837105, 50.21629, 1.1211464, -3.2837105, 50.21629, 1.1211464, -50.28371, -5.2837105, 1.1211464, -2.2837105, -19.53371, 1.1211464, -2.2837105, -21.53371, 1.1211464, 50.21629, -3.2837105, 1.1211464, 50.21629, -21.53371, 1.1211464, -2.2837105, -3.2837105, 1.1211464, -2.2837105, 5.4662895, 1.1211464, -2.2837105, 3.4662895, 1.1211464, 50.21629, 18.21629, 1.1211464, 50.21629, 16.21629, 1.1211464, -2.2837105, 3.4662895, 1.1211464, -2.2837105, 18.21629, 1.1211464, -2.2837105, -30.28371, 1.1211464, -2.2837105, -50.28371, 1.1211464, 50.21629, 26.96629, 1.1211464, -2.2837105, 50.21629, 1.1211464, 50.21629)
+polygons = [PackedInt32Array(0, 2, 1), PackedInt32Array(4, 3, 2), PackedInt32Array(0, 5, 2), PackedInt32Array(2, 5, 4), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 4), PackedInt32Array(9, 4, 10), PackedInt32Array(6, 3, 4), PackedInt32Array(10, 11, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 13), PackedInt32Array(17, 13, 18), PackedInt32Array(14, 12, 13), PackedInt32Array(18, 19, 17), PackedInt32Array(22, 21, 20), PackedInt32Array(20, 19, 18), PackedInt32Array(22, 20, 23), PackedInt32Array(23, 20, 18), PackedInt32Array(8, 24, 7), PackedInt32Array(7, 24, 25), PackedInt32Array(25, 24, 27), PackedInt32Array(25, 27, 26), PackedInt32Array(26, 28, 25), PackedInt32Array(24, 29, 27), PackedInt32Array(15, 16, 30), PackedInt32Array(30, 16, 33), PackedInt32Array(30, 33, 32), PackedInt32Array(30, 32, 31), PackedInt32Array(31, 34, 30), PackedInt32Array(33, 35, 32), PackedInt32Array(1, 36, 0), PackedInt32Array(0, 36, 37), PackedInt32Array(37, 36, 26), PackedInt32Array(36, 28, 26), PackedInt32Array(21, 22, 38), PackedInt32Array(38, 22, 39), PackedInt32Array(38, 39, 32), PackedInt32Array(32, 35, 38), PackedInt32Array(29, 34, 27), PackedInt32Array(27, 34, 31)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
+albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1ous3"]
+material = SubResource("StandardMaterial3D_jbb1d")
+size = Vector2(100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_04k8e"]
+points = PackedVector3Array(50.78371, 0.7934955, 50.78371, -50.78371, -0.7934955, -50.78371, -50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, -50.78371, -50.78371, -0.7934955, 50.78371, -50.78371, 0.7934955, 50.78371, 50.78371, 0.7934955, -50.78371, 50.78371, -0.7934955, 50.78371)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmx4w"]
+size = Vector3(10, 10, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lallm"]
+points = PackedVector3Array(-5.078371, -5.077377, -0.57936513, 4.7881784, 4.787241, 0.5, 4.7881784, -4.787241, 0.5, 5.078371, 5.077377, -0.57936513, -4.7881784, 4.787241, 0.5, 5.078371, -5.077377, -0.57936513, -5.078371, 5.077377, -0.57936513, -4.7881784, -4.787241, 0.5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_gqi4d"]
+size = Vector3(10, 10, 1)
+
+[node name="Ambience" type="Node3D" unique_id=1644149437]
+script = ExtResource("1_al7o6")
+gui_layer = Array[PackedScene]([ExtResource("2_vg2ev")])
+
+[node name="Systems" type="Node" parent="." unique_id=468902368]
+
+[node name="LevelState" type="Node" parent="Systems" unique_id=1186954188 node_paths=PackedStringArray("photo_target_node")]
+script = ExtResource("2_k8du8")
+time_limit_seconds = 960.0
+photo_target_node = NodePath("../../PhotoTargets")
+
+[node name="SequenceHandler" type="Node" parent="Systems" unique_id=137193446]
+script = ExtResource("3_vg2ev")
+seconds_per_line = 0.1
+seconds_per_fade = 0.1
+
+[node name="TeleportPoints" type="Node" parent="." unique_id=348399154]
+
+[node name="Node3D" type="Node3D" parent="TeleportPoints" unique_id=2072090423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.984234, 0, -14.871021)
+
+[node name="Node3D2" type="Node3D" parent="TeleportPoints" unique_id=1821871819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10316849, 0, -14.871021)
+
+[node name="PhotoTargets" type="Node" parent="." unique_id=807018719]
+
+[node name="PhotoTarget" parent="PhotoTargets" unique_id=133321002 node_paths=PackedStringArray("teleport_points") instance=ExtResource("1_3ya25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.01339, 2.0534527, 28.614298)
+data = ExtResource("2_5n3l3")
+teleport_points = [NodePath("../../TeleportPoints/Node3D")]
+
+[node name="PhotoTarget2" parent="PhotoTargets" unique_id=271048828 node_paths=PackedStringArray("teleport_points") instance=ExtResource("1_3ya25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.354494, 2.0534527, 28.468803)
+data = ExtResource("3_xnwuk")
+teleport_points = [NodePath("../../TeleportPoints/Node3D2")]
+
+[node name="Environment" type="Node" parent="." unique_id=1208780786]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Environment" unique_id=168758842]
+navigation_mesh = SubResource("NavigationMesh_vg2ev")
+
+[node name="Ground" type="MeshInstance3D" parent="Environment/NavigationRegion3D" unique_id=1103872208]
+mesh = SubResource("PlaneMesh_1ous3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/NavigationRegion3D/Ground" unique_id=61614409]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/NavigationRegion3D/Ground/StaticBody3D" unique_id=1223389958]
+shape = SubResource("ConvexPolygonShape3D_04k8e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/NavigationRegion3D" unique_id=1313582741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027897835, 1.6985233, -3.4478767)
+mesh = SubResource("BoxMesh_bmx4w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/NavigationRegion3D/MeshInstance3D" unique_id=1632411438]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=1981595367]
+shape = SubResource("ConvexPolygonShape3D_lallm")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Environment/NavigationRegion3D/MeshInstance3D" unique_id=1497945852]
+occluder = SubResource("BoxOccluder3D_gqi4d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment/NavigationRegion3D" unique_id=629675939]
+transform = Transform3D(1, 0, 0, 0, 0.028078636, 0.9996057, 0, -0.9996057, 0.028078636, 0, 9.56009, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/NavigationRegion3D" unique_id=197107940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.84098, 1.6985233, -3.4478767)
+mesh = SubResource("BoxMesh_bmx4w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/NavigationRegion3D/MeshInstance3D2" unique_id=1513888160]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/NavigationRegion3D/MeshInstance3D2/StaticBody3D" unique_id=1890513023]
+shape = SubResource("ConvexPolygonShape3D_lallm")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Environment/NavigationRegion3D/MeshInstance3D2" unique_id=582404734]
+occluder = SubResource("BoxOccluder3D_gqi4d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/NavigationRegion3D" unique_id=1280915602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.484772, 1.6985233, -3.4478767)
+mesh = SubResource("BoxMesh_bmx4w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/NavigationRegion3D/MeshInstance3D3" unique_id=1701729975]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/NavigationRegion3D/MeshInstance3D3/StaticBody3D" unique_id=1475178354]
+shape = SubResource("ConvexPolygonShape3D_lallm")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Environment/NavigationRegion3D/MeshInstance3D3" unique_id=2069826248]
+occluder = SubResource("BoxOccluder3D_gqi4d")
+
+[node name="Player" parent="." unique_id=893108555 instance=ExtResource("4_al7o6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7913985, 0)
+
+[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("5_k8du8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7303501, 0.6313883, 3.638915)
+player_node = NodePath("../Player")
