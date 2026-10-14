@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://dhp1s2cexgggt"]
+
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_hod2i"]
+[ext_resource type="Script" uid="uid://rso0uxfclvvh" path="res://Common/UI/Menus/Loading/loading_screen.gd" id="2_1682b"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="3_48jse"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tf3ok"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ddsy"]
+noise = SubResource("FastNoiseLite_tf3ok")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hm5cd"]
+shader = ExtResource("3_48jse")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_5ddsy")
+
+[sub_resource type="GDScript" id="GDScript_l2rmd"]
+script/source = "extends Label"
+
+[sub_resource type="Animation" id="Animation_116st"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.79]
+}
+
+[sub_resource type="Animation" id="Animation_qnwlt"]
+resource_name = "elipsis"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.79, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xqk4"]
+_data = {
+&"RESET": SubResource("Animation_116st"),
+&"elipsis": SubResource("Animation_qnwlt")
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_forgi"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j8jh4"]
+noise = SubResource("FastNoiseLite_forgi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mx41q"]
+shader = ExtResource("3_48jse")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_j8jh4")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m0awl"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ayaj3"]
+noise = SubResource("FastNoiseLite_m0awl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8n16"]
+shader = ExtResource("3_48jse")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.25
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_ayaj3")
+
+[sub_resource type="Animation" id="Animation_lvkmu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(420, 287)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8f3qa"]
+resource_name = "bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(420, 287), Vector2(418, 283), Vector2(420, 287), Vector2(422, 283), Vector2(420, 287)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.05235987755982989, 0.0, 0.05235987755982989, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpk6j"]
+_data = {
+&"RESET": SubResource("Animation_lvkmu"),
+&"bounce": SubResource("Animation_8f3qa")
+}
+
+[node name="LoadingScreen" type="ColorRect" unique_id=37149684]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hod2i")
+script = ExtResource("2_1682b")
+
+[node name="Container" type="MarginContainer" parent="." unique_id=2906284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Container" unique_id=1046099604]
+material = SubResource("ShaderMaterial_hm5cd")
+custom_minimum_size = Vector2(183, 28)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+theme_override_font_sizes/font_size = 36
+text = "Now Loading..."
+vertical_alignment = 1
+visible_characters = 11
+visible_ratio = 0.79
+script = SubResource("GDScript_l2rmd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container/Label" unique_id=1506171561]
+libraries/ = SubResource("AnimationLibrary_2xqk4")
+autoplay = &"elipsis"
+speed_scale = 0.5
+
+[node name="Title" type="Control" parent="Container" unique_id=1704847013]
+custom_minimum_size = Vector2(210, 63)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Title" unique_id=466214459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -7
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Container/Title/VBoxContainer" unique_id=1177887253]
+material = SubResource("ShaderMaterial_mx41q")
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94764113, 0.7509483, 0.1931151, 1)
+theme_override_colors/font_shadow_color = Color(0.33003333, 0.012920001, 0.050708726, 1)
+theme_override_colors/font_outline_color = Color(0.211804, 0.0031318725, 0.01885015, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 64
+text = "OH SNAP! "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="Container/Title/VBoxContainer" unique_id=1358726487]
+material = SubResource("ShaderMaterial_g8n16")
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9157799, 0.37187055, 0.17558163, 1)
+theme_override_colors/font_shadow_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+theme_override_colors/font_outline_color = Color(0.21176471, 0.003921569, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 27
+text = "WHERE'D IT GO?"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container/Title" unique_id=1197639968]
+libraries/ = SubResource("AnimationLibrary_mpk6j")
+autoplay = &"bounce"
+speed_scale = 2.0
