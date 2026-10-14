@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://r7gtxx7j3bah"]
 
 [ext_resource type="Script" uid="uid://hsj2ir7tmd0v" path="res://Common/UI/Menus/PostGame/post_game.gd" id="1_do6pw"]
+[ext_resource type="Shader" uid="uid://cv2re0htwxkok" path="res://Common/UI/Menus/PostGame/blur.gdshader" id="2_4c1o2"]
 [ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="3_rwv7n"]
 [ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="3_u8y66"]
 [ext_resource type="Shader" uid="uid://td5v4alw17lh" path="res://Common/UI/Shared/Scrapbook/Components/wiggle.gdshader" id="4_5tpwd"]
@@ -13,6 +14,10 @@ colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5tpwd"]
 gradient = SubResource("Gradient_u8y66")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oo50w"]
+shader = ExtResource("2_4c1o2")
+shader_parameter/lod = 3.0000001425
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5tpwd"]
 
@@ -81,14 +86,24 @@ grow_vertical = 2
 script = ExtResource("1_do6pw")
 no_data_texture = SubResource("GradientTexture1D_5tpwd")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2008901262]
+[node name="BlurFilter" type="ColorRect" parent="." unique_id=1394615205]
+material = SubResource("ShaderMaterial_oo50w")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[node name="Background" type="TextureRect" parent="BlurFilter" unique_id=1679034248]
+modulate = Color(0.24840015, 0.24840018, 0.24840012, 0.771)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Title" type="Label" parent="." unique_id=319973231]
 material = SubResource("ShaderMaterial_4c1o2")

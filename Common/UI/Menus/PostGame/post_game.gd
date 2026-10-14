@@ -5,6 +5,7 @@ class_name PostGame
 
 @onready var title: Label = $Title
 @onready var time_taken: Label = $Time
+@onready var bg_texture: TextureRect = $BlurFilter/Background
 @onready var photo_rect: TextureRect = $Container/Photo
 @onready var fail_message: Label = $Container/FailMessage
 @onready var previous_button: Button = $Previous
@@ -19,6 +20,7 @@ var current_index: int = 0
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
     photo_rect.texture = no_data_texture
+    bg_texture.texture = no_data_texture
     fail_message.visible = true
     _update_nav_buttons()
 
@@ -50,8 +52,10 @@ func populate_time_spent(time_left: float, wait_time: float):
 
 func set_photo():
     if data_set.size() <= 0: return # Don't set anything if no photos were provided
-    photo_rect.texture = data_set[data_set.keys()[current_index]]
     title.text = data_set.keys()[current_index]
+    var tex := data_set[data_set.keys()[current_index]]
+    photo_rect.texture = tex
+    bg_texture.texture = tex
 
 
 

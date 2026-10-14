@@ -8,13 +8,7 @@
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_8u5jq"]
 [ext_resource type="Resource" uid="uid://dek12rt3cg2f1" path="res://Entities/PhotoTarget/Resource/beetroot.tres" id="3_g3bex"]
 [ext_resource type="PackedScene" uid="uid://bfdt3fs1hkjx4" path="res://Entities/PhotoTarget/PhotoTarget.tscn" id="3_s3k57"]
-[ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/red_toadstool.tres" id="4_b5ksk"]
 [ext_resource type="Resource" uid="uid://dcltjtl27oq8g" path="res://Entities/PhotoTarget/Resource/pumpkin.tres" id="5_lcu8r"]
-[ext_resource type="Resource" uid="uid://b7uspqvtrs6sh" path="res://Entities/PhotoTarget/Resource/salmon.tres" id="6_s54iu"]
-[ext_resource type="Resource" uid="uid://wgxjk3syqfc2" path="res://Entities/PhotoTarget/Resource/melon.tres" id="7_twywq"]
-[ext_resource type="Resource" uid="uid://7ksw5s0ql04y" path="res://Entities/PhotoTarget/Resource/rat.tres" id="8_8u5jq"]
-[ext_resource type="Resource" uid="uid://bbdsifkrdpnt8" path="res://Entities/PhotoTarget/Resource/corn.tres" id="9_2h7nk"]
-[ext_resource type="Resource" uid="uid://djimjb4wl7dp0" path="res://Entities/PhotoTarget/Resource/deer.tres" id="10_svviu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbb1d"]
 albedo_color = Color(0.15175933, 0.32020256, 0.1278036, 1)
@@ -47,6 +41,8 @@ photo_target_node = NodePath("../../PhotoTargets")
 
 [node name="SequenceHandler" type="Node" parent="Systems" unique_id=675271532]
 script = ExtResource("3_8u5jq")
+seconds_per_line = 0.5
+seconds_per_fade = 0.1
 
 [node name="TeleportPoints" type="Node" parent="." unique_id=457785661]
 
@@ -55,24 +51,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.984234, 0, -14.871021)
 
 [node name="Node3D2" type="Node3D" parent="TeleportPoints" unique_id=1581682965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10316849, 0, -14.871021)
-
-[node name="Node3D3" type="Node3D" parent="TeleportPoints" unique_id=1807364550]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.597664, 0, -14.871021)
-
-[node name="Node3D4" type="Node3D" parent="TeleportPoints" unique_id=324961926]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10316849, 0, 40.15258)
-
-[node name="Node3D5" type="Node3D" parent="TeleportPoints" unique_id=1083797925]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.234772, 0, 2.4380112)
-
-[node name="Node3D6" type="Node3D" parent="TeleportPoints" unique_id=105152244]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.746471, 0, 10.381083)
-
-[node name="Node3D7" type="Node3D" parent="TeleportPoints" unique_id=1843908482]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0951548, 0, 4.0519733)
-
-[node name="Node3D8" type="Node3D" parent="TeleportPoints" unique_id=1154865697]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.14853, 0, 37.505886)
 
 [node name="PhotoTargets" type="Node" parent="." unique_id=366125830]
 
@@ -85,36 +63,6 @@ teleport_points = [NodePath("../../TeleportPoints/Node3D")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.354494, 2.0534527, 28.468803)
 data = ExtResource("5_lcu8r")
 teleport_points = [NodePath("../../TeleportPoints/Node3D2")]
-
-[node name="PhotoTarget3" parent="PhotoTargets" unique_id=820495822 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_s3k57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.43159, 2.0534527, -26.266264)
-data = ExtResource("4_b5ksk")
-teleport_points = [NodePath("../../TeleportPoints/Node3D3")]
-
-[node name="PhotoTarget4" parent="PhotoTargets" unique_id=336577895 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_s3k57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.867789, 2.0534527, -26.019804)
-data = ExtResource("6_s54iu")
-teleport_points = [NodePath(".")]
-
-[node name="PhotoTarget5" parent="PhotoTargets" unique_id=1393019390 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_s3k57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25830364, 2.0534527, 29.025572)
-data = ExtResource("7_twywq")
-teleport_points = [NodePath("../../TeleportPoints/Node3D5")]
-
-[node name="PhotoTarget6" parent="PhotoTargets" unique_id=404012572 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_s3k57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.122496, 2.0534527, -26.637125)
-data = ExtResource("8_8u5jq")
-teleport_points = [NodePath("../../TeleportPoints/Node3D6")]
-
-[node name="PhotoTarget7" parent="PhotoTargets" unique_id=1475659645 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_s3k57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.34754, 2.0534527, -26.596323)
-data = ExtResource("9_2h7nk")
-teleport_points = [NodePath("../../TeleportPoints/Node3D7")]
-
-[node name="PhotoTarget8" parent="PhotoTargets" unique_id=1615820217 node_paths=PackedStringArray("teleport_points") instance=ExtResource("3_s3k57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.178082, 2.0534527, 28.614298)
-data = ExtResource("10_svviu")
-teleport_points = [NodePath("../../TeleportPoints/Node3D8")]
 
 [node name="Environment" type="Node" parent="." unique_id=732521275]
 

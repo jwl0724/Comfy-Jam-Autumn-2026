@@ -51,6 +51,7 @@ https://pixabay.com/sound-effects/film-special-effects-pageturn-102978/
 https://pixabay.com/sound-effects/book-closing-466850/
 
 ### Shaders
+https://godotshaders.com/shader/simple-blur/
 https://godotshaders.com/shader/circular-progress-bar/
 https://godotshaders.com/shader/first-person-view-model-shader-updated-for-godot-4-3/
 https://godotshaders.com/shader/toon-water-shader/
