@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmbjv1fjnx4aq" path="res://Common/UI/Menus/MainMenu/main_menu.gd" id="1_krvq2"]
 [ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_o313n"]
 [ext_resource type="Script" uid="uid://ejlb35yi452e" path="res://Common/UI/Menus/MainMenu/background_effects.gd" id="2_w2pdp"]
-[ext_resource type="AudioStream" uid="uid://dwwv4lwvanvr1" path="res://Entities/Player/Imports/camera_flash.mp3" id="3_j8jh4"]
+[ext_resource type="AudioStream" uid="uid://cdgudw7ine6up" path="res://Common/UI/Menus/MainMenu/Imports/CameraFlash.mp3" id="3_fd0l0"]
 [ext_resource type="Texture2D" uid="uid://bt2m7lqbov02b" path="res://Common/UI/Menus/MainMenu/Imports/BG1.png" id="3_p7kkj"]
 [ext_resource type="Texture2D" uid="uid://dnrp03xtxiyn0" path="res://Common/UI/Menus/MainMenu/Imports/BG2.png" id="4_7rrnn"]
 [ext_resource type="Texture2D" uid="uid://cudqy65mbodoo" path="res://Common/UI/Menus/MainMenu/Imports/BG3.png" id="5_o313n"]
@@ -84,7 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_o313n")
 script = ExtResource("1_krvq2")
-camera_snap_sfx = ExtResource("3_j8jh4")
+camera_snap_sfx = ExtResource("3_fd0l0")
 
 [node name="Background" type="Control" parent="." unique_id=212833206]
 layout_mode = 1

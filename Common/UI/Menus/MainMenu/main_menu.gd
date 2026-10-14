@@ -50,9 +50,11 @@ func play_open_sequence():
 
 func _on_start_pressed():
     if intro_tween && intro_tween.is_running(): return
-    SignalBus.game_transition_fadeHide.emit(Color.WHITE, 0.1)
+
     SignalBus.audio_play_sfx.emit(camera_snap_sfx, false)
     var t = create_tween()
+    t.tween_interval(0.15)
+    t.tween_callback(func(): SignalBus.game_transition_fadeHide.emit(Color.WHITE, 0.075))
     t.tween_interval(1)
     t.tween_callback(func(): SignalBus.game_navigate_ingame.emit())
     t.play()
