@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+const default_sensitivity: float = 0.005 # The half-way point for linear
+
 @export var force_enable_controls: bool = false
 
 # Stats
@@ -8,7 +10,6 @@ class_name Player
 @export var fall_speed: float = 10
 
 @export var camera_bob_strength: float = 0.5
-@export var mouse_sensitivity: float = 0.005
 @export var max_up_view_angle: float = 89
 
 # Data references
@@ -18,6 +19,7 @@ class_name Player
 @onready var move_controller: PlayerMovementController = $Systems/Movement
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
 
+var mouse_sensitivity: float = 0.005
 var controls_enabled: bool = false
 var can_pause: bool = true
 var is_active: bool = false
@@ -31,11 +33,13 @@ func _ready():
     move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
     view_controller.shot.connect(_on_photo_shoot)
+    _on_mouse_sensitivity_changed(Options.mouse_sensitivity_linear) # Set sensitivity based off options value
 
     SignalBus.level_player_enableControls.connect(_on_enable_controls)
     SignalBus.level_player_enablePause.connect(_on_enable_pause)
     SignalBus.level_game_start.connect(func(): is_active = true)
     SignalBus.level_game_end.connect(func(): is_active = false)
+    SignalBus.options_changed_mouse_sensitivity.connect(_on_mouse_sensitivity_changed)
 
 
 
@@ -46,6 +50,12 @@ func _input(event: InputEvent):
     if event is InputEventMouseMotion || !controls_enabled: return
     if event.is_action_pressed(Constants.InputNames.Book):
         SignalBus.menu_scrapbook_visible.emit(true)
+
+
+
+func _on_mouse_sensitivity_changed(linear: float):
+    mouse_sensitivity = lerpf(default_sensitivity / 2, default_sensitivity * 2, linear)
+    print(mouse_sensitivity)
 
 
 
