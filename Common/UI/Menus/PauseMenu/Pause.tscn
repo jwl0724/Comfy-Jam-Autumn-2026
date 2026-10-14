@@ -72,6 +72,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 50
 
 [node name="Title" type="Control" parent="Container" unique_id=1865215421]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(210, 63)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -117,6 +118,7 @@ text = "WHERE'D IT GO?"
 horizontal_alignment = 1
 
 [node name="ButtonContainer" type="VBoxContainer" parent="Container" unique_id=314439050]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -193,6 +195,7 @@ text = "Back to Menu"
 vertical_alignment = 1
 
 [node name="PauseTitle" type="Label" parent="Container" unique_id=1540109296]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_8su83")
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
