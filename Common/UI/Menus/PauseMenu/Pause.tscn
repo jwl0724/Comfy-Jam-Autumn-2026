@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="3_8svk6"]
 [ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="4_8svk6"]
 [ext_resource type="Shader" uid="uid://td5v4alw17lh" path="res://Common/UI/Shared/Scrapbook/Components/wiggle.gdshader" id="5_6dtlo"]
+[ext_resource type="PackedScene" uid="uid://da6rs3v5kd3fa" path="res://Common/UI/Menus/OptionsMenu/OptionsMenu.tscn" id="6_8su83"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6dtlo"]
 
@@ -354,3 +355,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
 text = "Back to Menu"
 vertical_alignment = 1
+
+[node name="OptionsMenu" parent="." unique_id=348363992 instance=ExtResource("6_8su83")]
+layout_mode = 1

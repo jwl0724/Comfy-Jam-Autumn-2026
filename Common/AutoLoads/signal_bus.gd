@@ -50,6 +50,7 @@ signal menu_scrapbook_requestData()
 signal menu_scrapbook_sendData(photo_key: Dictionary[String, Texture2D])
 
 # Options Signals
+signal options_visible(to_visible: bool)
 signal options_changed_musicDB(linear: float)
 signal options_changed_sfxDB(linear: float)
 signal options_changed_fov(new_value: float)

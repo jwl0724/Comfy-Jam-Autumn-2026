@@ -58,7 +58,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.75900006)
+color = Color(0, 0, 0, 0.873)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1693510318]
 layout_mode = 1
@@ -128,6 +128,7 @@ vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1298418477]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 40
 

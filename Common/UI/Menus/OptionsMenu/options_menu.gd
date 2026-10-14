@@ -11,9 +11,15 @@ class_name OptionsMenu
 @onready var mouse_label: Label = %MouseValue
 @onready var fullscreen_check: CheckBox = %FullscreenCheck
 
+@onready var back_button: Button = %Back
+
 
 
 func _ready():
+    visible = false
+    SignalBus.options_visible.connect(_on_visible_request)
+    back_button.pressed.connect(func(): SignalBus.options_visible.emit(false)) # In case something needs the signal later in the future
+
     # Set starting values
     music_slider.max_value = 1
     music_slider.min_value = 0
@@ -35,8 +41,10 @@ func _ready():
 
 
 
-func open_options():
+func _on_visible_request(to_visible: bool):
+    if !can_process(): return
     _set_values()
+    visible = to_visible
 
 
 

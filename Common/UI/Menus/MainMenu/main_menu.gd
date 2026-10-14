@@ -32,7 +32,7 @@ func _on_start_pressed():
 
 
 func _on_options_pressed():
-    print("TODO: Still have to make options menu")
+    SignalBus.options_visible.emit(true)
 
 
 

@@ -97,7 +97,7 @@ func _on_resume_pressed():
 
 
 func _on_options_pressed():
-    print("TODO: Create an options menu and connect it to the button here")
+    SignalBus.options_visible.emit(true)
 
 
 

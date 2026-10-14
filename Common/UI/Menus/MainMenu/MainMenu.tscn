@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="8_nh1ey"]
 [ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="9_ilwvv"]
 [ext_resource type="PackedScene" uid="uid://b1nk4lds785v8" path="res://Common/UI/Menus/CreditsMenu/CreditsMenu.tscn" id="11_vlqeb"]
+[ext_resource type="PackedScene" uid="uid://da6rs3v5kd3fa" path="res://Common/UI/Menus/OptionsMenu/OptionsMenu.tscn" id="12_fd0l0"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ilwvv"]
 
@@ -38,7 +39,7 @@ shader_parameter/noise = SubResource("NoiseTexture2D_ayaj3")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j8jh4"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vlqeb"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pdwcn"]
 noise = SubResource("FastNoiseLite_j8jh4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd0l0"]
@@ -46,7 +47,12 @@ shader = ExtResource("8_nh1ey")
 shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.3
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_vlqeb")
+shader_parameter/noise = SubResource("NoiseTexture2D_pdwcn")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xt15v"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vlqeb"]
+noise = SubResource("FastNoiseLite_xt15v")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ayaj3"]
 shader = ExtResource("8_nh1ey")
@@ -278,4 +284,9 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="CreditsMenu" parent="SubMenus" unique_id=584761489 instance=ExtResource("11_vlqeb")]
+visible = false
+layout_mode = 1
+
+[node name="OptionsMenu" parent="SubMenus" unique_id=348363992 instance=ExtResource("12_fd0l0")]
+visible = false
 layout_mode = 1
