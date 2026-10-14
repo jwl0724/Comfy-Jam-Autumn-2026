@@ -1,5 +1,46 @@
 [gd_scene format=3 uid="uid://da6rs3v5kd3fa"]
 
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_ntph8"]
+[ext_resource type="Script" uid="uid://b0inl24x36xkn" path="res://Common/UI/Menus/OptionsMenu/options_menu.gd" id="2_5d1uf"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="3_5ddsy"]
+[ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="4_2au1p"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h4o78"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d3h04"]
+noise = SubResource("FastNoiseLite_h4o78")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2p21m"]
+shader = ExtResource("3_5ddsy")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_d3h04")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xt15v"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vlqeb"]
+noise = SubResource("FastNoiseLite_xt15v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2epk3"]
+shader = ExtResource("3_5ddsy")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.3
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_vlqeb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5d1uf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ddsy"]
+noise = SubResource("FastNoiseLite_5d1uf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2au1p"]
+shader = ExtResource("3_5ddsy")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_5ddsy")
+
 [node name="OptionsMenu" type="Control" unique_id=348363992]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +48,253 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ntph8")
+script = ExtResource("2_5d1uf")
+
+[node name="Background" type="ColorRect" parent="." unique_id=115878849]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75900006)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1693510318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=862422801]
+material = SubResource("ShaderMaterial_2p21m")
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 54
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shadow" type="Label" parent="MarginContainer/Title" unique_id=1975038055]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8117647, 0.31764707, 0.15294118, 1)
+theme_override_colors/font_outline_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 54
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="MarginContainer" unique_id=1689074446]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2epk3")
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("4_2au1p")
+text = "Back"
+
+[node name="Shadow" type="Label" parent="MarginContainer/Back" unique_id=1432038862]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1)
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1298418477]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1854697173]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Header" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=840582166]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.96489865, 0.4834036, 0.11207495, 1)
+theme_override_font_sizes/font_size = 28
+text = "Audio Settings"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=456984148]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2056298605]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=365629097]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1649532869]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="MusicValue" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=280162455]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2au1p")
+custom_minimum_size = Vector2(28, 19)
+layout_mode = 2
+size_flags_vertical = 0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1453503369]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=759580900]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+text = "Sound Effect Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=8040002]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=216710961]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="SFXValue" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2085176671]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2au1p")
+custom_minimum_size = Vector2(28, 19)
+layout_mode = 2
+size_flags_vertical = 0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=545976814]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Header2" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1355324610]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.96489865, 0.4834036, 0.11207495, 1)
+theme_override_font_sizes/font_size = 28
+text = "Camera Settings"
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=529641664]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=300857350]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+text = "Field of View (FOV)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=174286023]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FOVSlider" type="HSlider" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=728708556]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="FOVValue" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=724533078]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2au1p")
+custom_minimum_size = Vector2(28, 19)
+layout_mode = 2
+size_flags_vertical = 0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1705536909]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1821106886]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+text = "Mouse Sensitivity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1122898591]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MouseSlider" type="HSlider" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1545610426]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="MouseValue" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2070880713]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2au1p")
+custom_minimum_size = Vector2(28, 19)
+layout_mode = 2
+size_flags_vertical = 0
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=788913034]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=2039590038]
+material = SubResource("ShaderMaterial_2au1p")
+layout_mode = 2
+size_flags_vertical = 0
+text = "FullScreen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=638054223]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FullscreenCheck" type="CheckBox" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=466927819]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(386, 0)
+layout_mode = 2
+size_flags_horizontal = 3
