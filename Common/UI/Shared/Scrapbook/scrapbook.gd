@@ -95,6 +95,7 @@ func _on_photo_add_request(photo: Texture2D, target_name: String):
 
 
 func _on_scrapbook_request(to_visible: bool):
+    if visible == to_visible: return # Skip doing anything if already in same state
     if to_visible:
         SignalBus.level_player_enableControls.emit(false)
         SignalBus.level_player_hideHeld.emit(true)
