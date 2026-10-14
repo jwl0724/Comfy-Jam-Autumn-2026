@@ -96,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="BlurFilter" unique_id=1679034248]
-modulate = Color(0.24840015, 0.24840018, 0.24840012, 0.771)
+modulate = Color(0.30323282, 0.30323282, 0.30323288, 0.8235294)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -104,6 +104,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 3
 
 [node name="Title" type="Label" parent="." unique_id=319973231]
 material = SubResource("ShaderMaterial_4c1o2")
