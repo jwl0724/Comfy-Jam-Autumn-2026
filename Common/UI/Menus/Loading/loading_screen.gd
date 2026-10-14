@@ -1,7 +1,7 @@
 extends ColorRect
 class_name LoadingScreen
 
-const fade_time: float = 0.5
+const fade_time: float = 0.2
 
 signal closed()
 
