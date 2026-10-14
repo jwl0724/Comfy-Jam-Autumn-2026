@@ -55,7 +55,6 @@ func _input(event: InputEvent):
 
 func _on_mouse_sensitivity_changed(linear: float):
     mouse_sensitivity = lerpf(default_sensitivity / 2, default_sensitivity * 2, linear)
-    print(mouse_sensitivity)
 
 
 
