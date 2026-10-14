@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qsqbt3jet3xi"]
 
 [ext_resource type="Script" uid="uid://jm2xbcjckc8c" path="res://Systems/Game/game_controller.gd" id="1_yl5u5"]
+[ext_resource type="PackedScene" uid="uid://3fe5epi3brun" path="res://Common/UI/Menus/Splash/Splash.tscn" id="2_vg6rv"]
 [ext_resource type="PackedScene" uid="uid://jxcuyws4cpbu" path="res://Common/UI/Menus/MainMenu/MainMenu.tscn" id="3_iq1bj"]
 [ext_resource type="PackedScene" uid="uid://dkkjyj17iujcm" path="res://Levels/Forest/Forest.tscn" id="3_j6267"]
 [ext_resource type="PackedScene" uid="uid://c2l4386pikp20" path="res://Common/UI/Menus/PauseMenu/Pause.tscn" id="4_j0ier"]
@@ -10,11 +11,10 @@
 
 [node name="GameController" type="Node" unique_id=1964676766]
 script = ExtResource("1_yl5u5")
-launch_scene = ExtResource("3_iq1bj")
+launch_scene = ExtResource("2_vg6rv")
 main_menu_scene = ExtResource("3_iq1bj")
 ingame_scene = ExtResource("3_j6267")
 post_game_scene = ExtResource("4_vf6nk")
-enable_debug = true
 debug_scene = ExtResource("3_j6267")
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]

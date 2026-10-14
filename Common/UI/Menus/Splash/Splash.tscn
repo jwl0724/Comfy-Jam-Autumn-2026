@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://3fe5epi3brun"]
+
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_36xdl"]
+[ext_resource type="Script" uid="uid://dedv6vma6mo38" path="res://Common/UI/Menus/Splash/splash.gd" id="2_la0a8"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="3_u7plc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5d1uf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ddsy"]
+noise = SubResource("FastNoiseLite_5d1uf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vek8b"]
+shader = ExtResource("3_u7plc")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_5ddsy")
+
+[node name="Splash" type="ColorRect" unique_id=2060393149]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_36xdl")
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_la0a8")
+
+[node name="Label" type="Label" parent="." unique_id=737043615]
+material = SubResource("ShaderMaterial_vek8b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "A game created by golden_rice 
+for ComfyJam Autumn 2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
