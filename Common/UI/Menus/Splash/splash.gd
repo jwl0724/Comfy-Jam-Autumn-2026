@@ -16,5 +16,5 @@ func _ready():
     t.tween_interval(fade_time)
     t.tween_callback(func():
         SignalBus.game_transition_fadeHide.emit(Color.BLACK, 0)
-        SignalBus.game_navigate_mainMenu.emit())
+        SignalBus.game_navigate_mainMenuWithAnimation.emit())
     t.play()

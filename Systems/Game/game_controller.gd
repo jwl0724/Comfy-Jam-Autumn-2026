@@ -37,6 +37,7 @@ func _ready():
     SignalBus.game_navigate_ingame.connect(_on_in_game)
     SignalBus.game_navigate_mainMenu.connect(_on_back_to_menu)
     SignalBus.game_navigate_postgame.connect(_on_to_post_game)
+    SignalBus.game_navigate_mainMenuWithAnimation.connect(_on_menu_with_animation)
 
     if !enable_debug:
         change_scenes(launch_scene)
@@ -96,6 +97,13 @@ func _on_back_to_menu():
     _on_clearGUI(ControlLayers.GUI)
     change_scenes(main_menu_scene)
     get_tree().paused = false
+
+
+
+func _on_menu_with_animation():
+    change_scenes(main_menu_scene)
+    var menu: MainMenu = NodeUtils.get_first_valid(running_node) as MainMenu
+    menu.play_open_sequence()
 
 
 

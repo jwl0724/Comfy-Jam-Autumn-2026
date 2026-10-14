@@ -15,6 +15,7 @@ launch_scene = ExtResource("2_vg6rv")
 main_menu_scene = ExtResource("3_iq1bj")
 ingame_scene = ExtResource("3_j6267")
 post_game_scene = ExtResource("4_vf6nk")
+enable_debug = true
 debug_scene = ExtResource("3_j6267")
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]
