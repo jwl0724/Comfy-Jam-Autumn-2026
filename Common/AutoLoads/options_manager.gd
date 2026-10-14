@@ -1,7 +1,7 @@
 extends Node
 
 const fov_min: float = 70
-const fov_max: float = 100
+const fov_max: float = 90
 
 var music_linear: float = 1
 var sfx_linear: float = 1

@@ -15,12 +15,17 @@ var interact_target: InteractHandler = null
 var do_camera_bob: bool = false
 
 var bob_theta: float = 0
+var current_fov: float = 75
 
 
 
 func _ready():
+    current_fov = Options.fov
     held_camera.held_to_eye.connect(_on_held_to_eye)
     held_camera.removed_from_eye.connect(_on_removed_from_eye)
+    SignalBus.options_changed_fov.connect(func(fov: float):
+        current_fov = fov
+        camera.fov = fov)
 
 
 
@@ -93,7 +98,7 @@ func _input(event: InputEvent):
 
 func _on_held_to_eye():
     SignalBus.hud_cameraFilter_visible.emit(true)
-    camera.fov = 55
+    camera.fov = current_fov - 20
     is_aiming = true
 
 
@@ -101,4 +106,4 @@ func _on_held_to_eye():
 func _on_removed_from_eye():
     SignalBus.hud_cameraFilter_visible.emit(false)
     is_aiming = false
-    camera.fov = 75
+    camera.fov = current_fov
