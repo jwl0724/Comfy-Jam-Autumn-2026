@@ -52,6 +52,9 @@ signal menu_scrapbook_sendData(photo_key: Dictionary[String, Texture2D])
 # Options Signals
 signal options_changed_musicDB(linear: float)
 signal options_changed_sfxDB(linear: float)
+signal options_changed_fov(new_value: float)
+signal options_changed_mouse_sensitivity(linear: float)
+signal options_changed_fullscreen(is_fullscreen: bool)
 
 # Audio Signals
 signal audio_play_sfx(clip: AudioStream, pitch_shift: bool)
