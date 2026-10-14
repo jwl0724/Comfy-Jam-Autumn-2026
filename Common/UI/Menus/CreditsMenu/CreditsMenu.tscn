@@ -100,7 +100,7 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_6pw1j")
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 8
 theme = ExtResource("1_3ogmq")
 text = "Back"
 
