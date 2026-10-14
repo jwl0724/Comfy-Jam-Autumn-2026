@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b1nk4lds785v8"]
+
+[ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="1_3ogmq"]
+[ext_resource type="Theme" uid="uid://ba10t1m7t0dj6" path="res://Common/UI/Themes/main.tres" id="1_rwd4r"]
+[ext_resource type="Script" uid="uid://3b6yg0i0amoi" path="res://Common/UI/Menus/CreditsMenu/credits_menu.gd" id="2_dc3y7"]
+[ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="2_x1ao6"]
+[ext_resource type="Script" uid="uid://ejlb35yi452e" path="res://Common/UI/Menus/MainMenu/background_effects.gd" id="3_nkcsq"]
+[ext_resource type="Texture2D" uid="uid://bt2m7lqbov02b" path="res://Common/UI/Menus/MainMenu/Imports/BG1.png" id="4_d2gn7"]
+[ext_resource type="Theme" uid="uid://bqqvaujxnxb1q" path="res://Common/UI/Themes/no_scrollbar.tres" id="4_fspk2"]
+[ext_resource type="Texture2D" uid="uid://dnrp03xtxiyn0" path="res://Common/UI/Menus/MainMenu/Imports/BG2.png" id="5_ehlue"]
+[ext_resource type="Texture2D" uid="uid://cudqy65mbodoo" path="res://Common/UI/Menus/MainMenu/Imports/BG3.png" id="6_h3eph"]
+[ext_resource type="Texture2D" uid="uid://nyawumd0jjn" path="res://Common/UI/Menus/MainMenu/Imports/BG4.png" id="7_ld423"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fspk2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b1qg6"]
+noise = SubResource("FastNoiseLite_fspk2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pw1j"]
+shader = ExtResource("2_x1ao6")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.215
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_b1qg6")
+
+[node name="CreditsMenu" type="Control" unique_id=584761489]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rwd4r")
+script = ExtResource("2_dc3y7")
+
+[node name="Background" type="Control" parent="." unique_id=1290839172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_nkcsq")
+image_collection = Array[Texture2D]([ExtResource("4_d2gn7"), ExtResource("5_ehlue"), ExtResource("6_h3eph"), ExtResource("7_ld423")])
+
+[node name="Background" type="TextureRect" parent="Background" unique_id=327179569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_d2gn7")
+
+[node name="Transition" type="TextureRect" parent="Background" unique_id=235595951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_d2gn7")
+
+[node name="Timer" type="Timer" parent="Background" unique_id=1346396278]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1787057349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09320182, 0.09320182, 0.09320182, 0.75900006)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=258498222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Back" type="Button" parent="MarginContainer" unique_id=1876201970]
+material = SubResource("ShaderMaterial_6pw1j")
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_3ogmq")
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1701898403]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer" unique_id=1749530360]
+layout_mode = 2
+
+[node name="CreditsText" type="RichTextLabel" parent="MarginContainer/MarginContainer/ScrollContainer" unique_id=1368390829]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_fspk2")
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+scroll_active = false
+horizontal_alignment = 1
