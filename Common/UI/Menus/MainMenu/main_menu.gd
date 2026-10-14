@@ -3,6 +3,8 @@ class_name MainMenu
 
 @export var camera_snap_sfx: AudioStream = null
 
+@onready var credits_menu: CreditsMenu = $SubMenus/CreditsMenu
+
 @onready var start_button: Button = $Container/Start
 @onready var options_button: Button = $Container/Options
 @onready var credits_button: Button = $Container/Credits
@@ -35,7 +37,16 @@ func _on_options_pressed():
 
 
 func _on_credits_pressed():
-    print("TODO Still have to make credits menu")
+    var transition_time: float = 0.1
+    var t = create_tween()
+    t.tween_callback(func(): SignalBus.game_transition_fadeHide.emit(Color.BLACK, transition_time))
+    t.tween_interval(transition_time)
+    t.tween_callback(func():
+        credits_menu.open_credits()
+        SignalBus.game_transition_fadeShow.emit(Color.BLACK, transition_time))
+    t.tween_interval(transition_time)
+    t.tween_callback(func(): credits_menu.activate_scroll())
+    t.play()
 
 
 

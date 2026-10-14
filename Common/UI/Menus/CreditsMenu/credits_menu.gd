@@ -9,6 +9,7 @@ signal closed_credits()
 @onready var back_button: Button = %Back
 
 var scroll_bar: VScrollBar = null
+var do_scroll: bool = false
 
 
 
@@ -20,7 +21,7 @@ func _ready():
 
 
 func _process(delta):
-    if !visible: return
+    if !visible || !do_scroll: return
     scroll_bar.value += scroll_speed * delta
 
 
@@ -30,7 +31,21 @@ func open_credits():
 
 
 
+func activate_scroll():
+    do_scroll = true
+
+
+
 func _close_credits():
-    visible = false
-    scroll_bar.value = 0
-    closed_credits.emit()
+    var transition_time: float = 0.1
+    var t = create_tween()
+    t.tween_callback(func(): SignalBus.game_transition_fadeHide.emit(Color.BLACK, transition_time))
+    t.tween_interval(transition_time)
+    t.tween_callback(func():
+        visible = false
+        do_scroll = false
+        scroll_bar.value = 0
+        closed_credits.emit()
+        SignalBus.game_transition_fadeShow.emit(Color.BLACK, transition_time))
+    t.tween_interval(transition_time)
+    t.play()

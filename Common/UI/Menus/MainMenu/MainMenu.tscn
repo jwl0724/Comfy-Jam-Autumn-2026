@@ -10,10 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://nyawumd0jjn" path="res://Common/UI/Menus/MainMenu/Imports/BG4.png" id="6_nh1ey"]
 [ext_resource type="Shader" uid="uid://cp3v4vpvno0os" path="res://Common/UI/Shared/Scrapbook/Components/squiggle.gdshader" id="8_nh1ey"]
 [ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="9_ilwvv"]
+[ext_resource type="PackedScene" uid="uid://b1nk4lds785v8" path="res://Common/UI/Menus/CreditsMenu/CreditsMenu.tscn" id="11_vlqeb"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ilwvv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j8jh4"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fd0l0"]
 noise = SubResource("FastNoiseLite_ilwvv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vlqeb"]
@@ -21,7 +22,7 @@ shader = ExtResource("8_nh1ey")
 shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.1
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_j8jh4")
+shader_parameter/noise = SubResource("NoiseTexture2D_fd0l0")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fd0l0"]
 
@@ -266,3 +267,15 @@ theme_override_colors/font_color = Color(0.32941177, 0.011764706, 0.050980393, 1
 text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SubMenus" type="Control" parent="." unique_id=1705433204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CreditsMenu" parent="SubMenus" unique_id=584761489 instance=ExtResource("11_vlqeb")]
+layout_mode = 1
