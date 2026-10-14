@@ -1,7 +1,22 @@
 extends CharacterBody3D
 class_name Dog
 
+const footstep_player_name: String = "Footstep"
+const misc_player_name: String = "Misc"
+
+signal play_sfx(player_name: String, stream: AudioStream)
+
 @export var player_node: Player = null
+
+@export_group("Sound Effects")
+@export var regular_bark_sound: AudioStream = null
+@export var happy_bark_sound: AudioStream = null
+@export var sniff_sound: AudioStream = null
+@export var murmur_sound: AudioStream = null
+@export var stone_shift: AudioStream = null
+@export var footstep_grass: AudioStream = null
+@export var footstep_stone: AudioStream = null
+@export var footstep_water: AudioStream = null
 
 @export_group("Stats")
 @export var move_speed: float = 8
@@ -12,12 +27,17 @@ class_name Dog
 @onready var follow_threshold: Area3D = $Components/FollowThreshold
 @onready var target_locator: TargetLocating = $Systems/TargetLocating
 @onready var pathing_handler: DogPathing = $Systems/Pathing
+@onready var sound_manager: EntitySoundManager = $Components/SoundManager
 
 var is_active: bool = false
 
 
 
 func _ready():
+    sound_manager.set_pitch_shift_range(footstep_player_name, 0.9, 1.3)
+    sound_manager.set_pitch_shift_range(misc_player_name)
+
+    play_sfx.connect(_on_sfx_request)
     target_locator.locating.connect(_on_locating_notify)
     interact_handler.interacted.connect(_on_interact)
     SignalBus.level_game_start.connect(func(): is_active = true)
@@ -33,3 +53,8 @@ func _on_interact(_player: Player):
 
 func _on_locating_notify(is_locating: bool):
     pathing_handler.enable_pathing(!is_locating)
+
+
+
+func _on_sfx_request(player_name: String, stream: AudioStream):
+    sound_manager.play_audio(player_name, stream)
