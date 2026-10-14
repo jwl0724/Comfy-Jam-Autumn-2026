@@ -60,9 +60,14 @@ func _on_quit_pressed():
 
 
 func _on_menu_button_pressed():
-    visible = false
     confirm_popup.visible = false
-    SignalBus.game_navigate_mainMenu.emit()
+    var t = create_tween()
+    t.tween_callback(func(): SignalBus.game_transition_fadeHide.emit(Color.BLACK, 1))
+    t.tween_interval(2)
+    t.tween_callback(func():
+        visible = false
+        SignalBus.game_navigate_mainMenu.emit())
+    t.play()
 
 
 

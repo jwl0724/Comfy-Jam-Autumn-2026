@@ -95,6 +95,7 @@ func _on_in_game():
 func _on_back_to_menu():
     _on_clearGUI(ControlLayers.GUI)
     change_scenes(main_menu_scene)
+    get_tree().paused = false
 
 
 
