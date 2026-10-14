@@ -24,7 +24,7 @@ func _ready():
     credits_button.pressed.connect(_on_credits_pressed)
     quit_button.pressed.connect(_on_quit_pressed)
     SignalBus.game_transition_fadeShow.emit(Color.BLACK, 2)
-# TODO: Probably need to create a load screen scene
+
 
 
 func play_open_sequence():

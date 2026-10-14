@@ -5,11 +5,13 @@ static var debug_mode: bool = false
 
 enum ControlLayers { GUI, PAUSE, TRANSITION, DEBUG }
 
+const ingame_uid: String = "uid://dkkjyj17iujcm"
+
 @export_group("Required Scenes")
-@export var launch_scene: PackedScene = null # TODO: Replace this with some splash screen later
+@export var launch_scene: PackedScene = null
 @export var main_menu_scene: PackedScene = null
-@export var ingame_scene: PackedScene = null
 @export var post_game_scene: PackedScene = null
+@export var loading_scene: PackedScene = null
 
 @export_group("Dev Tools")
 @export var enable_debug: bool = false
@@ -87,9 +89,12 @@ func _populate_post_menu_screen(data: Dictionary[String, Texture2D]):
 
 
 
-func _on_in_game():
+func _on_in_game(): # ingame is a big scene, so can't use change_scene to ingame directly
     _on_clearGUI(ControlLayers.GUI)
-    change_scenes(ingame_scene)
+    change_scenes(loading_scene)
+    var load_screen := NodeUtils.get_first_valid(running_node) as LoadingScreen
+    load_screen.thread_load_scene(ingame_uid)
+    load_screen.loading_finished.connect(func(scene: PackedScene): change_scenes(scene))
 
 
 

@@ -32,7 +32,7 @@ func play_start_sequence():
     SignalBus.level_game_start.emit() # This would need to be moved till after start sequence if scripted actions are wanted
     var t = create_tween()
 
-    t.tween_callback(func(): SignalBus.game_transition_fadeShow.emit(Color.BLACK, seconds_per_fade))
+    t.tween_callback(func(): SignalBus.game_transition_fadeShow.emit(Color.WHITE, seconds_per_fade))
     t.tween_interval(seconds_per_fade)
 
     t.tween_callback(func():
