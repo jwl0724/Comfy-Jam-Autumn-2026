@@ -351,14 +351,14 @@ bus = &"Default_SFX"
 [node name="Waterfall" type="AudioStreamPlayer3D" parent="Sounds" unique_id=708429668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.74902, 11.213398, 206.16925)
 stream = ExtResource("18_eg17w")
-volume_db = -8.0
+volume_db = -4.0
 autoplay = true
 bus = &"Default_SFX"
 
 [node name="Waterfall2" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1340667463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.10364, 14.842968, -193.76552)
 stream = ExtResource("18_eg17w")
-volume_db = -8.0
+volume_db = -4.0
 autoplay = true
 bus = &"Default_SFX"
 

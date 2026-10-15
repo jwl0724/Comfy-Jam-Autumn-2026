@@ -45,6 +45,9 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Sound Effects
+https://pixabay.com/sound-effects/horror-deer-grunt-472371/
+https://pixabay.com/sound-effects/film-special-effects-rat-squeaking-sound-effecthd-570216/
+
 https://pixabay.com/sound-effects/nature-nature-at-the-lake-17890/
 https://pixabay.com/sound-effects/nature-smooth-cold-wind-looped-135538/
 https://pixabay.com/sound-effects/river-ambience-420903/

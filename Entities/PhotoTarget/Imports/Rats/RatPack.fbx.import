@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/RatPack.fbx-ed1cab7fb15e99c1bbd13ba45ff62afd.
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/root_script=null
+nodes/root_script=Resource("uid://cjohtab662x8q", "res://Entities/PhotoTarget/Imports/Rats/rat_sounds.gd")
 nodes/apply_root_scale=true
 nodes/root_scale=0.5
 nodes/import_as_skeleton_bones=false
