@@ -16,7 +16,7 @@ func check_material(terrain: TerraBrush): # Expected to be called every phys fra
     if !is_colliding(): return MaterialType.NONE
 
     var collider := get_collider()
-    if collider is CollisionObject2D && (collider as CollisionObject2D).get_collision_layer_valuew(water_layer):
+    if collider is CollisionObject3D && (collider as CollisionObject3D).get_collision_layer_value(water_layer):
         return MaterialType.WATER
 
     # Handle TerraBrush Terrain
