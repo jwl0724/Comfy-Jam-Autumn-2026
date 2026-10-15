@@ -35,15 +35,11 @@ func _physics_process(delta):
     else: dog.velocity.y = 0
 
     # Handle if inactive
-    if !dog.is_active:
+    if !dog.is_active || !pathing_target || !pathing_enabled:
         dog.velocity.x = 0
         dog.velocity.z = 0
         dog.move_and_slide()
         return
-
-    # Handle disabled pathing behavior
-    if !pathing_target || !pathing_enabled:
-        dog.move_and_slide()
 
     # Handle idle behavior
     elif !do_pathing:
@@ -60,6 +56,7 @@ func _physics_process(delta):
         if (idle_tween && idle_tween.is_running()) || Engine.get_physics_frames() % frames_per_idle != 0: return
 
         var behavior = randi() % 4
+        behavior = 9
         if behavior == 0: # Turn to player
             idle_tween = create_tween()
             idle_tween.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, pathing_target.global_position), base_idle_turn * dog.turn_rate)
