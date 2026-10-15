@@ -18,7 +18,7 @@ var sky_material: ShaderMaterial = null
 
 func _ready():
     sky_material = world_environment.environment.sky.sky_material
-    directional_light.rotation.x = sun_start_angle
+    directional_light.rotation_degrees.x = sun_start_angle
     sky_material.set_shader_parameter("back_color_top", sky_top_gradient.gradient.sample(0))
     sky_material.set_shader_parameter("back_color_bottom", sky_bot_gradient.gradient.sample(0))
 
