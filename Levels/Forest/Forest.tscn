@@ -27,6 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://c6y1mgtchk401" path="res://Levels/Forest/Imports/AmbienceSFX/waterfall.mp3" id="18_eg17w"]
 [ext_resource type="AudioStream" uid="uid://dj1df1pauyjve" path="res://Levels/Forest/Imports/AmbienceSFX/lake.mp3" id="19_upugh"]
 [ext_resource type="AudioStream" uid="uid://c8udx1vxpvbye" path="res://Levels/Forest/Imports/AmbienceSFX/wind.mp3" id="20_dpdwj"]
+[ext_resource type="Script" uid="uid://bviqfny5w02kt" path="res://Levels/Forest/Systems/river_sounds.gd" id="21_65adc"]
+[ext_resource type="AudioStream" uid="uid://bm0cqb85b7mjd" path="res://Levels/Forest/Imports/AmbienceSFX/river.mp3" id="21_eg17w"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="28_il20w"]
@@ -60,6 +62,13 @@ colors = PackedColorArray(0.5882353, 0.7490196, 0.5176471, 1, 0.34117648, 0.7490
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_texq4"]
 gradient = SubResource("Gradient_irkax")
+
+[sub_resource type="Curve3D" id="Curve3D_dpdwj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.097299, 0, 182.56111, 0, 0, 0, 0, 0, 0, 1.7649288, 0, 151.01408, 0, 0, 0, 0, 0, 0, -20.920275, 0, 111.857796, 0, 0, 0, 0, 0, 0, -28.93803, 0, 52.601265, 0, 0, 0, 0, 0, 0, -73.99846, 0, -30.931576, 0, 0, 0, 0, 0, 0, -108.30955, 0, -118.58531, 0, 0, 0, 0, 0, 0, -144.993, 0, -177.41716),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_c751c"]
 exposure_multiplier = 0.75
@@ -394,6 +403,21 @@ bus = &"Default_SFX"
 [node name="Birds4" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1878863418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.88573, 41.975273, 150.96027)
 stream = ExtResource("16_upugh")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="RiverPath" type="Path3D" parent="Sounds" unique_id=701228217 node_paths=PackedStringArray("player", "sfx_follower")]
+curve = SubResource("Curve3D_dpdwj")
+script = ExtResource("21_65adc")
+player = NodePath("../../Player")
+sfx_follower = NodePath("PathFollow3D")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Sounds/RiverPath" unique_id=231705857]
+transform = Transform3D(0.9740363, 0, 0.22639202, 0, 1, 0, -0.22639202, 0, 0.9740363, 9.097299, 0, 182.56111)
+
+[node name="River" type="AudioStreamPlayer3D" parent="Sounds/RiverPath/PathFollow3D" unique_id=1424965310]
+stream = ExtResource("21_eg17w")
+volume_db = -10.0
 autoplay = true
 bus = &"Default_SFX"
 
