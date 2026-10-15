@@ -4,10 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://dwwv4lwvanvr1" path="res://Entities/Player/Imports/camera_flash.mp3" id="2_an6q6"]
 [ext_resource type="PackedScene" uid="uid://bky3hsdeg61tm" path="res://Entities/Player/Components/ViewPivot.tscn" id="3_1des2"]
 [ext_resource type="Script" uid="uid://d3038jbkvo8wj" path="res://Entities/Player/Systems/screenshot_handler.gd" id="3_an6q6"]
-[ext_resource type="AudioStream" uid="uid://v0vk25ancq3o" path="res://Entities/Player/Imports/grass1.mp3" id="3_gallu"]
 [ext_resource type="Script" uid="uid://dfdv7amsu6564" path="res://Entities/Player/Systems/movement_controller.gd" id="3_vweq0"]
 [ext_resource type="AudioStream" uid="uid://bvsx8pv2i5yn7" path="res://Entities/Player/Imports/grass2.mp3" id="4_samso"]
-[ext_resource type="AudioStream" uid="uid://c2x2c1mbfvskp" path="res://Entities/Dog/Imports/SFX/grass3.mp3" id="5_hl213"]
 [ext_resource type="AudioStream" uid="uid://c1vkds136bqvy" path="res://Entities/Dog/Imports/SFX/stone1.mp3" id="6_5m37j"]
 [ext_resource type="Script" uid="uid://cqx17p0y4y4bo" path="res://Entities/Shared/material_detector.gd" id="6_hj1c0"]
 [ext_resource type="AudioStream" uid="uid://dj4jemf65cfoi" path="res://Entities/Player/Imports/stone2.mp3" id="7_e34i1"]
@@ -26,7 +24,7 @@ floor_snap_length = 0.2
 script = ExtResource("1_e5kic")
 move_speed = 10.0
 camera_flash_sfx = ExtResource("2_an6q6")
-grass_collection = Array[AudioStream]([ExtResource("3_gallu"), ExtResource("4_samso"), ExtResource("5_hl213")])
+grass_collection = Array[AudioStream]([ExtResource("4_samso")])
 stone_collection = Array[AudioStream]([ExtResource("6_5m37j"), ExtResource("7_e34i1")])
 sand_collection = Array[AudioStream]([ExtResource("8_vcmon")])
 water_collection = Array[AudioStream]([ExtResource("10_l80rc")])
