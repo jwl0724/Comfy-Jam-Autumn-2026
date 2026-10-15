@@ -7,7 +7,7 @@ data = PackedVector3Array(0.0045, -0.009699999, 0.0117999995, 0.0074, -0.0106999
 
 [node name="Rock_Medium_2" unique_id=1274263223 instance=ExtResource("1_rv225")]
 
-[node name="Rock_Medium_2" parent="." index="0" unique_id=595591307]
+[node name="Rock_Medium_2" parent="." index="0" unique_id=927113092]
 transform = Transform3D(100, 0, 0, 0, -2.3841858e-05, 99.99999, 0, -99.99999, -2.3841858e-05, 0, -0.5789453, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1007872938]
@@ -15,3 +15,6 @@ transform = Transform3D(100, 0, 0, 0, -2.3841858e-05, 99.99999, 0, -99.99999, -2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2053768142]
 shape = SubResource("ConcavePolygonShape3D_umf4x")
+
+[node name="OccluderInstance3D" parent="." index="2" unique_id=1188542140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5789453, 0)
