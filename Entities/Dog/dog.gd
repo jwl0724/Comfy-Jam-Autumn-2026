@@ -35,10 +35,10 @@ var is_active: bool = false
 
 func _ready():
     sound_manager.set_pitch_shift_range(footstep_player_name, 0.9, 1.3)
-    sound_manager.set_pitch_shift_range(misc_player_name)
+    sound_manager.set_pitch_shift_range(misc_player_name, 0.9, 1.1)
 
+    play_turn.connect(_on_play_turn)
     play_bark.connect(func(): sound_manager.play_audio(misc_player_name, bark_collection.pick_random()))
-    play_turn.connect(func(): sound_manager.play_audio(misc_player_name, stone_shift))
     play_interact.connect(func(): sound_manager.play_audio(misc_player_name, interact_sound))
 
     target_locator.locating.connect(_on_locating_notify)
@@ -56,3 +56,10 @@ func _on_interact(_player: Player):
 
 func _on_locating_notify(is_locating: bool):
     pathing_handler.enable_pathing(!is_locating)
+
+
+
+func _on_play_turn():
+    sound_manager.set_pitch_shift_range(misc_player_name, 1, 1)
+    sound_manager.play_audio(misc_player_name, stone_shift)
+    sound_manager.set_pitch_shift_range(misc_player_name, 0.9, 1.1)

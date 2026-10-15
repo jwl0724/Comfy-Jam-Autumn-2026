@@ -10,8 +10,10 @@ class_name DogPathing
 var do_pathing: bool = true
 var pathing_enabled: bool = true
 
-const frames_per_idle: int = 210
+const frames_per_idle: int = 60 * 5
 const wander_offset_max: int = 4
+const base_idle_turn: float = 1
+
 var idle_tween: Tween = null
 
 
@@ -60,15 +62,19 @@ func _physics_process(delta):
         var behavior = randi() % 4
         if behavior == 0: # Turn to player
             idle_tween = create_tween()
-            idle_tween.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, pathing_target.global_position), 0.5)
+            idle_tween.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, pathing_target.global_position), base_idle_turn * dog.turn_rate)
+            idle_tween.tween_callback(_try_play_bark.bind(0.75))
             idle_tween.play()
 
         elif behavior == 1: # Turn to random
             idle_tween = create_tween()
-            idle_tween.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, _get_random_nearby_position()), 0.5)
+            idle_tween.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, _get_random_nearby_position()), base_idle_turn * dog.turn_rate)
+            idle_tween.tween_callback(_try_play_bark.bind(0.75))
             idle_tween.play()
 
-        else: nav_agent.target_position = _get_random_nearby_position() # Wander having higher chance
+        else:
+            _try_play_bark(0.5)
+            nav_agent.target_position = _get_random_nearby_position() # Wander having higher chance
 
     # Handle pathing logic
     else:
@@ -77,6 +83,7 @@ func _physics_process(delta):
         if Engine.get_physics_frames() % 20 == 0 && do_pathing: nav_agent.target_position = pathing_target.global_position
         _set_next_navigation_properties()
         dog.move_and_slide()
+        _try_play_bark(0.001)
 
 
 
@@ -90,6 +97,11 @@ func _set_next_navigation_properties():
     # Handle dog looking position
     if dog.global_position.distance_squared_to(next_pos) < 1: return
     dog.rotation = dog.rotation.lerp(NodeUtils.get_look_at_position_rotation(dog, next_pos), dog.turn_rate)
+
+
+
+func _try_play_bark(chance_to_play: float): # Between 0 and 1
+    if randf() < chance_to_play: dog.play_bark.emit()
 
 
 
