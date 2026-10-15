@@ -30,7 +30,6 @@
 [ext_resource type="Script" uid="uid://bviqfny5w02kt" path="res://Levels/Forest/Systems/river_sounds.gd" id="21_65adc"]
 [ext_resource type="AudioStream" uid="uid://bm0cqb85b7mjd" path="res://Levels/Forest/Imports/AmbienceSFX/river.mp3" id="21_eg17w"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
-[ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="28_il20w"]
 [ext_resource type="Image" uid="uid://dfql6ddq7lvye" path="res://Levels/Forest/Forest/Foliage_0_0_0.res" id="30_gbd7g"]
 [ext_resource type="ObjectResource" uid="uid://dtb4ymdodm8rt" path="res://Levels/Forest/Resources/Objects/common_trees.tres" id="30_rkdqx"]
@@ -426,10 +425,6 @@ bus = &"Default_SFX"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Map" unique_id=1841118192]
 environment = ExtResource("5_c751c")
 camera_attributes = SubResource("CameraAttributesPractical_c751c")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map" unique_id=2068120018]
-occluder = ExtResource("26_aisnn")
-bake_simplification_distance = 0.01
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map" unique_id=1560050936]
 navigation_mesh = ExtResource("8_5k7u4")
