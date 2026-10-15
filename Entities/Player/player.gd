@@ -1,20 +1,32 @@
 extends CharacterBody3D
 class_name Player
 
+const footstep_player_name: String = "Footstep"
 const default_sensitivity: float = 0.005 # The half-way point for linear
 
 @export var force_enable_controls: bool = false
 
 # Stats
+@export_group("Stats")
 @export var move_speed: float = 50
 @export var fall_speed: float = 10
-
 @export var camera_bob_strength: float = 0.5
 @export var max_up_view_angle: float = 89
 
 # Data references
+@export_group("Required References")
+@export var terrain_node: TerraBrush = null
+
+@export_group("Sound Effects")
 @export var camera_flash_sfx: AudioStream = null
 
+@export var grass_collection: Array[AudioStream] = []
+@export var stone_collection: Array[AudioStream] = []
+@export var sand_collection: Array[AudioStream] = []
+@export var water_collection: Array[AudioStream] = []
+
+@onready var material_detector: MaterialDetector = $Components/MaterialDetector
+@onready var sound_manager: EntitySoundManager = $Components/SoundManager
 @onready var view_controller: ViewPivot = $Components/Pivot
 @onready var move_controller: PlayerMovementController = $Systems/Movement
 @onready var screenshot_handler: ScreenshotHandler = $Systems/Screenshot
@@ -24,11 +36,21 @@ var controls_enabled: bool = false
 var can_pause: bool = true
 var is_active: bool = false
 
+var standing_material := MaterialDetector.MaterialType.GRASS
+var footstep_loop: Tween = null
+
 
 
 func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
     controls_enabled = GameController.debug_mode && force_enable_controls
+
+    sound_manager.set_pitch_shift_range(footstep_player_name, 0.8, 1.2)
+    footstep_loop = create_tween()
+    footstep_loop.set_loops(0)
+    footstep_loop.tween_interval(1 / move_speed * 4)
+    footstep_loop.tween_callback(_play_step)
+    footstep_loop.pause()
 
     move_controller.notify_move.connect(_on_move_notify)
     view_controller.notify_interact_look.connect(_on_look_notify)
@@ -40,6 +62,12 @@ func _ready():
     SignalBus.level_game_start.connect(func(): is_active = true)
     SignalBus.level_game_end.connect(func(): is_active = false)
     SignalBus.options_changed_mouse_sensitivity.connect(_on_mouse_sensitivity_changed)
+
+
+
+func _physics_process(_delta):
+    if terrain_node == null: return
+    standing_material = material_detector.check_material(terrain_node)
 
 
 
@@ -78,6 +106,8 @@ func _on_look_notify(is_looking: bool):
 
 func _on_move_notify(is_moving: bool):
     view_controller.toggle_camera_bob(is_moving)
+    if is_moving: footstep_loop.play()
+    else: footstep_loop.stop()
 
 
 
@@ -88,3 +118,16 @@ func _on_enable_controls(enable: bool):
 
 func _on_enable_pause(enable: bool):
     can_pause = enable
+
+
+
+func _play_step():
+    var footstep: AudioStream = null
+    match standing_material:
+        MaterialDetector.MaterialType.GRASS: footstep = grass_collection.pick_random()
+        MaterialDetector.MaterialType.LEAVES: footstep = grass_collection.pick_random()
+        MaterialDetector.MaterialType.SAND: footstep = sand_collection.pick_random()
+        MaterialDetector.MaterialType.STONE: footstep = stone_collection.pick_random()
+        MaterialDetector.MaterialType.SOIL: footstep = grass_collection.pick_random()
+        MaterialDetector.MaterialType.WATER: footstep = water_collection.pick_random()
+    sound_manager.play_audio(footstep_player_name, footstep)
