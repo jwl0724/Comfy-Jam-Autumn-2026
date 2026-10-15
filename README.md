@@ -45,6 +45,9 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Sound Effects
+https://pixabay.com/sound-effects/film-special-effects-walk-on-dirt-1-291981/
+https://pixabay.com/sound-effects/film-special-effects-dry-grass-rustling-478361/
+https://pixabay.com/sound-effects/film-special-effects-foot-step-snow-5-189870/
 https://pixabay.com/sound-effects/hard-footstep-453022/
 https://pixabay.com/sound-effects/film-special-effects-footstep-1-83098/
 https://pixabay.com/sound-effects/nature-rustling-grass-4-101281/

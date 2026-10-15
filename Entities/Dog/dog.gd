@@ -7,6 +7,7 @@ const misc_player_name: String = "Misc"
 signal play_bark()
 signal play_turn()
 signal play_interact()
+signal play_footstep(play: bool)
 
 @export var terrain_node: TerraBrush = null
 @export var player_node: Player = null
@@ -15,6 +16,9 @@ signal play_interact()
 @export var bark_collection: Array[AudioStream] = []
 @export var interact_sound: AudioStream = null
 @export var stone_shift: AudioStream = null
+
+@export var footstep_sand: AudioStream = null
+@export var footstep_soil: AudioStream = null
 @export var footstep_grass: AudioStream = null
 @export var footstep_stone: AudioStream = null
 @export var footstep_water: AudioStream = null
@@ -34,12 +38,21 @@ signal play_interact()
 var is_active: bool = false
 var standing_material := MaterialDetector.MaterialType.GRASS
 
+var footstep_loop: Tween = null
 
 
 func _ready():
     sound_manager.set_pitch_shift_range(footstep_player_name, 0.9, 1.3)
     sound_manager.set_pitch_shift_range(misc_player_name, 0.9, 1.1)
 
+    # Create loop for footsteps
+    footstep_loop = create_tween()
+    footstep_loop.set_loops(0)
+    footstep_loop.tween_interval(1 / move_speed * 4)
+    footstep_loop.tween_callback(_play_step)
+    footstep_loop.pause()
+
+    play_footstep.connect(_on_play_footstep)
     play_turn.connect(_on_play_turn)
     play_bark.connect(func(): sound_manager.play_audio(misc_player_name, bark_collection.pick_random()))
     play_interact.connect(func(): sound_manager.play_audio(misc_player_name, interact_sound))
@@ -54,7 +67,6 @@ func _ready():
 func _physics_process(_delta):
     if terrain_node == null: return # In case debugging scenes that don't use terrabrush
     standing_material = material_detector.check_material(terrain_node)
-    print(MaterialDetector.MaterialType.keys()[standing_material])
 
 
 
@@ -69,7 +81,26 @@ func _on_locating_notify(is_locating: bool):
 
 
 
+func _on_play_footstep(play: bool):
+    if play: footstep_loop.play()
+    else: footstep_loop.stop()
+
+
+
 func _on_play_turn():
     sound_manager.set_pitch_shift_range(misc_player_name, 1, 1)
     sound_manager.play_audio(misc_player_name, stone_shift)
     sound_manager.set_pitch_shift_range(misc_player_name, 0.9, 1.1)
+
+
+
+func _play_step():
+    var footstep: AudioStream = null
+    match standing_material:
+        MaterialDetector.MaterialType.GRASS: footstep = footstep_grass
+        MaterialDetector.MaterialType.LEAVES: footstep = footstep_grass # Share with grass
+        MaterialDetector.MaterialType.SAND: footstep = footstep_sand
+        MaterialDetector.MaterialType.STONE: footstep = footstep_stone
+        MaterialDetector.MaterialType.SOIL: footstep = footstep_soil
+        MaterialDetector.MaterialType.WATER: footstep = footstep_water
+    sound_manager.play_audio(footstep_player_name, footstep)

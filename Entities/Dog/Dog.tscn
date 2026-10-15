@@ -12,8 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://dk3bcchw1qbwi" path="res://Entities/Dog/Imports/SFX/bark3.mp3" id="4_4f1vy"]
 [ext_resource type="Script" uid="uid://psrwohycc4hf" path="res://Entities/Shared/entity_sound_manager.gd" id="5_pim2n"]
 [ext_resource type="AudioStream" uid="uid://c2x2c1mbfvskp" path="res://Entities/Dog/Imports/SFX/grass3.mp3" id="7_jqm78"]
+[ext_resource type="AudioStream" uid="uid://byer3hfrb14n7" path="res://Entities/Dog/Imports/SFX/sand1.mp3" id="7_s1dfo"]
 [ext_resource type="AudioStream" uid="uid://c1vkds136bqvy" path="res://Entities/Dog/Imports/SFX/stone1.mp3" id="8_uhyud"]
 [ext_resource type="AudioStream" uid="uid://5r5rhxv15m7h" path="res://Entities/Dog/Imports/SFX/water1.mp3" id="9_nwos8"]
+[ext_resource type="AudioStream" uid="uid://din7j0holmxtd" path="res://Entities/Dog/Imports/SFX/soil1.mp3" id="9_vgop0"]
 [ext_resource type="Script" uid="uid://cqx17p0y4y4bo" path="res://Entities/Shared/material_detector.gd" id="13_uhyud"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_235xh"]
@@ -32,6 +34,8 @@ script = ExtResource("1_477lp")
 bark_collection = Array[AudioStream]([ExtResource("2_7ofvf"), ExtResource("3_roe41"), ExtResource("4_4f1vy")])
 interact_sound = ExtResource("2_ag1lx")
 stone_shift = ExtResource("2_auu26")
+footstep_sand = ExtResource("7_s1dfo")
+footstep_soil = ExtResource("9_vgop0")
 footstep_grass = ExtResource("7_jqm78")
 footstep_stone = ExtResource("8_uhyud")
 footstep_water = ExtResource("9_nwos8")
@@ -74,10 +78,12 @@ script = ExtResource("13_uhyud")
 script = ExtResource("5_pim2n")
 
 [node name="Misc" type="AudioStreamPlayer3D" parent="Components/SoundManager" unique_id=1204822227]
+volume_db = -10.0
 
 [node name="Footstep" type="AudioStreamPlayer3D" parent="Components/SoundManager" unique_id=1329261469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24305367, 0)
-max_polyphony = 8
+volume_db = -7.0
+max_polyphony = 4
 
 [node name="DogModel" parent="." unique_id=1960028621 instance=ExtResource("2_235xh")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.2745753, 0)

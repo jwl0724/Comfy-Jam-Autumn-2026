@@ -10,6 +10,7 @@ func _ready():
     for audio: AudioStreamPlayer3D in get_children():
         audio_keys[audio.name] = audio
         pitch_keys[audio.name] = Vector2.ONE
+        audio.bus = Constants.AudioBusNames.DefaultSFX
 
 
 
