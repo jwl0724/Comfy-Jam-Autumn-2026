@@ -21,6 +21,12 @@
 [ext_resource type="Resource" uid="uid://7ksw5s0ql04y" path="res://Entities/PhotoTarget/Resource/rat.tres" id="12_jgk3e"]
 [ext_resource type="Resource" uid="uid://b7uspqvtrs6sh" path="res://Entities/PhotoTarget/Resource/salmon.tres" id="13_aspdx"]
 [ext_resource type="Resource" uid="uid://cchnbe283kq6o" path="res://Entities/PhotoTarget/Resource/red_toadstool.tres" id="14_04cxx"]
+[ext_resource type="AudioStream" uid="uid://bi0sqxhv5qhms" path="res://Levels/Forest/Imports/AmbienceSFX/forest.mp3" id="15_uw8yt"]
+[ext_resource type="AudioStream" uid="uid://cd5dkj2ff76l8" path="res://Levels/Forest/Imports/AmbienceSFX/birds.ogg" id="16_upugh"]
+[ext_resource type="AudioStream" uid="uid://qyolptq5mvbd" path="res://Levels/Forest/Imports/AmbienceSFX/cicada.mp3" id="17_dpdwj"]
+[ext_resource type="AudioStream" uid="uid://c6y1mgtchk401" path="res://Levels/Forest/Imports/AmbienceSFX/waterfall.mp3" id="18_eg17w"]
+[ext_resource type="AudioStream" uid="uid://dj1df1pauyjve" path="res://Levels/Forest/Imports/AmbienceSFX/lake.mp3" id="19_upugh"]
+[ext_resource type="AudioStream" uid="uid://c8udx1vxpvbye" path="res://Levels/Forest/Imports/AmbienceSFX/wind.mp3" id="20_dpdwj"]
 [ext_resource type="Image" uid="uid://dob84qw3qdsa7" path="res://Levels/Forest/Forest/Splatmap_0_0_1.res" id="22_qrtwu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ndu4kr0hodqk" path="res://Levels/Forest/Resources/Forest.occ" id="26_aisnn"]
 [ext_resource type="PackedScene" uid="uid://bf43lbuhvu8xa" path="res://Entities/Dog/Dog.tscn" id="28_il20w"]
@@ -300,6 +306,96 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.29004, -0.08233398, 113.4
 
 [node name="P5" type="Node3D" parent="TeleportPoints/ToadstoolPoints" unique_id=561170583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.6224, -0.10342836, 94.113335)
+
+[node name="Sounds" type="Node" parent="." unique_id=73492131]
+
+[node name="Forest" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1494878367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.64917, 36.290287, 51.39412)
+stream = ExtResource("15_uw8yt")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Birds" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1645398522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -167.31686, 11.032265, -140.79535)
+stream = ExtResource("16_upugh")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Cicada" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1757061746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.23581, 9.962369, 172.97029)
+stream = ExtResource("17_dpdwj")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Cicada2" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1483613715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.877174, 14.353999, -128.36732)
+stream = ExtResource("17_dpdwj")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Birds2" type="AudioStreamPlayer3D" parent="Sounds" unique_id=676285361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.178642, 17.626753, -66.36024)
+stream = ExtResource("16_upugh")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Waterfall" type="AudioStreamPlayer3D" parent="Sounds" unique_id=708429668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.74902, 11.213398, 206.16925)
+stream = ExtResource("18_eg17w")
+volume_db = -8.0
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Waterfall2" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1340667463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.10364, 14.842968, -193.76552)
+stream = ExtResource("18_eg17w")
+volume_db = -8.0
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Cicada3" type="AudioStreamPlayer3D" parent="Sounds" unique_id=967127757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.43986, 23.767508, 62.107567)
+stream = ExtResource("17_dpdwj")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Forest2" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1388929506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.31836, 57.256306, -122.26863)
+stream = ExtResource("15_uw8yt")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Lake" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1205593577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.36043, -13.33682, 178.83989)
+stream = ExtResource("19_upugh")
+volume_db = -3.0
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Lake2" type="AudioStreamPlayer3D" parent="Sounds" unique_id=379021186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.683731, -18.397198, 163.35788)
+stream = ExtResource("19_upugh")
+volume_db = -3.0
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Wind" type="AudioStreamPlayer3D" parent="Sounds" unique_id=723386057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.43986, 64.19281, 49.49836)
+stream = ExtResource("20_dpdwj")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Birds3" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1012765311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.38602, 29.763393, 126.46265)
+stream = ExtResource("16_upugh")
+autoplay = true
+bus = &"Default_SFX"
+
+[node name="Birds4" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1878863418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.88573, 41.975273, 150.96027)
+stream = ExtResource("16_upugh")
+autoplay = true
+bus = &"Default_SFX"
 
 [node name="Map" type="Node3D" parent="." unique_id=947647417]
 

@@ -78,7 +78,7 @@ script = ExtResource("13_uhyud")
 script = ExtResource("5_pim2n")
 
 [node name="Misc" type="AudioStreamPlayer3D" parent="Components/SoundManager" unique_id=1204822227]
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="Footstep" type="AudioStreamPlayer3D" parent="Components/SoundManager" unique_id=1329261469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24305367, 0)

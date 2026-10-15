@@ -45,6 +45,14 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Sound Effects
+https://pixabay.com/sound-effects/nature-nature-at-the-lake-17890/
+https://pixabay.com/sound-effects/nature-smooth-cold-wind-looped-135538/
+https://pixabay.com/sound-effects/river-ambience-420903/
+https://pixabay.com/sound-effects/nature-waterfall-in-jungle-305000/
+https://opengameart.org/content/ambient-bird-sounds
+https://pixabay.com/sound-effects/nature-cicada-buzzing-331499/
+https://pixabay.com/sound-effects/film-special-effects-nature-forest-sound-537925/
+
 https://pixabay.com/sound-effects/film-special-effects-walk-on-dirt-1-291981/
 https://pixabay.com/sound-effects/film-special-effects-dry-grass-rustling-478361/
 https://pixabay.com/sound-effects/film-special-effects-foot-step-snow-5-189870/
