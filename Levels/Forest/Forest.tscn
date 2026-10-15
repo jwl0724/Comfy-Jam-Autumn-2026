@@ -101,6 +101,9 @@ shader_parameter/_DepthFactor = 1.0
 material = SubResource("ShaderMaterial_dneal")
 size = Vector2(500, 500)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_aspdx"]
+size = Vector3(500, 0.001, 500)
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_elyv4"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aisnn"]
@@ -328,6 +331,13 @@ metadata/_edit_lock_ = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0676098, 0)
 mesh = SubResource("PlaneMesh_nctp4")
 
+[node name="Collider" type="StaticBody3D" parent="Map/NavigationRegion3D/Water" unique_id=896827186]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Water/Collider" unique_id=1162022363]
+shape = SubResource("BoxShape3D_aspdx")
+
 [node name="Waterfall" type="MeshInstance3D" parent="Map/NavigationRegion3D" unique_id=1456171745]
 transform = Transform3D(0.9936034, 0.10198273, -0.048494752, 0, 0.42943946, 0.9030958, 0.1129257, -0.897319, 0.42669252, 166.38995, 30.236183, 222.03967)
 mesh = SubResource("PlaneMesh_aisnn")
@@ -355,10 +365,10 @@ light_energy = 3.0
 shadow_enabled = true
 shadow_opacity = 0.92
 
-[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("player_node") instance=ExtResource("28_il20w")]
+[node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("terrain_node", "player_node") instance=ExtResource("28_il20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.96999, 0.55350685, -5.2152233)
+terrain_node = NodePath("../Map/NavigationRegion3D/Map")
 player_node = NodePath("../Player")
-move_speed = 9.5
 
 [node name="Player" parent="." unique_id=893108555 instance=ExtResource("7_dontm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.14279, 1.2499962, 0)

@@ -8,6 +8,7 @@ class PhysLayers:
     const Objective: int = 8 # Layer for objects that are photo requirements
     const DogPhys: int = 16 # Layer for specifically the dog
     const Ground: int = 32 # Layer for terrain ground
+    const Water: int = 64 # Layer for water plane for footstep determination
 
 # Input Map Names
 class InputNames:
@@ -20,6 +21,15 @@ class InputNames:
     const Aim: String = "Aim"
     const Book: String = "Book"
     const Pause: String = "Pause"
+
+# Terrabrush Texture Names
+class TerraBrushTexturesNames:
+    const Grass: String = "Grass"
+    const Soil: String = "Soil"
+    const Stone: String = "Stone"
+    const Leaves: String = "Leaves"
+    const Sand: String = "Sand"
+    const Roots: String = "Roots"
 
 # Audio Bus Names
 class AudioBusNames:

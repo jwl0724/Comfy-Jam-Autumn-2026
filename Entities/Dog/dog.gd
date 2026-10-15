@@ -8,6 +8,7 @@ signal play_bark()
 signal play_turn()
 signal play_interact()
 
+@export var terrain_node: TerraBrush = null
 @export var player_node: Player = null
 
 @export_group("Sound Effects")
@@ -23,6 +24,7 @@ signal play_interact()
 @export var fall_speed: float = 10
 @export var turn_rate: float = 0.25
 
+@onready var material_detector: MaterialDetector = $Components/MaterialDetector
 @onready var interact_handler: InteractHandler = $Components/InteractHandler
 @onready var follow_threshold: Area3D = $Components/FollowThreshold
 @onready var target_locator: TargetLocating = $Systems/TargetLocating
@@ -30,6 +32,7 @@ signal play_interact()
 @onready var sound_manager: EntitySoundManager = $Components/SoundManager
 
 var is_active: bool = false
+var standing_material := MaterialDetector.MaterialType.GRASS
 
 
 
@@ -45,6 +48,13 @@ func _ready():
     interact_handler.interacted.connect(_on_interact)
     SignalBus.level_game_start.connect(func(): is_active = true)
     SignalBus.level_game_end.connect(func(): is_active = false)
+
+
+
+func _physics_process(_delta):
+    if terrain_node == null: return # In case debugging scenes that don't use terrabrush
+    standing_material = material_detector.check_material(terrain_node)
+    print(MaterialDetector.MaterialType.keys()[standing_material])
 
 
 

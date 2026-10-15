@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://c2x2c1mbfvskp" path="res://Entities/Dog/Imports/SFX/grass3.mp3" id="7_jqm78"]
 [ext_resource type="AudioStream" uid="uid://c1vkds136bqvy" path="res://Entities/Dog/Imports/SFX/stone1.mp3" id="8_uhyud"]
 [ext_resource type="AudioStream" uid="uid://5r5rhxv15m7h" path="res://Entities/Dog/Imports/SFX/water1.mp3" id="9_nwos8"]
+[ext_resource type="Script" uid="uid://cqx17p0y4y4bo" path="res://Entities/Shared/material_detector.gd" id="13_uhyud"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_235xh"]
 radius = 6.0
@@ -62,6 +63,11 @@ shape = SubResource("SphereShape3D_235xh")
 interact_hitbox_shape = SubResource("SphereShape3D_cy0vn")
 interact_limit = -1
 interact_time_gap = 2.0
+
+[node name="MaterialDetector" type="RayCast3D" parent="Components" unique_id=462318303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8600756, 0)
+target_position = Vector3(0, -1.5, 0)
+script = ExtResource("13_uhyud")
 
 [node name="SoundManager" type="Node3D" parent="Components" unique_id=1629851902]
 script = ExtResource("5_pim2n")
