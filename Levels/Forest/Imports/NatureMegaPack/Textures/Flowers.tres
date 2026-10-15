@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dktjijoc4jyg2"]
+
+[ext_resource type="Texture2D" uid="uid://21f32b8jy5vy" path="res://Levels/Forest/Imports/NatureMegaPack/Textures/Flowers.png" id="1_l1yj4"]
+
+[resource]
+resource_name = "Flowers"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_l1yj4")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
