@@ -17,9 +17,11 @@ func _ready():
 
 
 func hint_at_target():
+    dog.play_interact.emit()
+
     # Update target locations
     SignalBus.level_query_targetLocations.emit()
-    if location_key.size() == 0: return # TODO: Probably some bark sound effect or something here
+    if location_key.size() == 0: return
     locating.emit(true)
 
     # Find closest target
@@ -45,7 +47,9 @@ func _on_notify_target_location(target: PhotoTarget):
 
 func _turn_dog_to_position(position: Vector3):
     var t = create_tween()
-    t.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, position), 1) # TODO: Fix dog sometimes doing 360 instead of nearest rotation equivalent
+    t.tween_interval(0.5)
+    t.tween_callback(func(): dog.play_turn.emit())
+    t.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, position), 1.75) # TODO: Fix dog sometimes doing 360 instead of nearest rotation equivalent
     t.tween_interval(dog.interact_handler.interact_time_gap - 1)
     t.tween_callback(func(): locating.emit(false))
     t.play()

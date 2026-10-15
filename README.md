@@ -45,6 +45,18 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Sound Effects
+https://pixabay.com/sound-effects/hard-footstep-453022/
+https://pixabay.com/sound-effects/film-special-effects-footstep-1-83098/
+https://pixabay.com/sound-effects/nature-rustling-grass-4-101281/
+https://pixabay.com/sound-effects/nature-rustling-grass-1-101282/
+https://pixabay.com/sound-effects/nature-rustling-grass-2-101283/
+
+https://pixabay.com/sound-effects/nature-barking-dog-cute-sound-463192/
+https://pixabay.com/sound-effects/nature-dog-angry-1-352617/
+https://pixabay.com/sound-effects/nature-dog-panting-6862/
+https://pixabay.com/sound-effects/nature-dog-bark-382732/
+https://pixabay.com/sound-effects/nature-dog-bark-effect-382711/
+
 https://pixabay.com/sound-effects/film-special-effects-camera-appareil-photo-prise-shot-346097/
 https://pixabay.com/sound-effects/film-special-effects-page-turn-100277/
 https://pixabay.com/sound-effects/technology-camera-13695/
