@@ -11,7 +11,6 @@ const max_tp_register_distance_squared: float = 70 ** 2
 
 var model: Node3D = null
 var target_name: String = ""
-var behavior_script: GDScript = null # TODO: Might not need this? Assume this is for when implementing moving animals maybe
 
 var was_viewed: bool = false # If target has been seen before
 var has_moved: bool = false # Has teleported already
@@ -23,7 +22,6 @@ var in_view: bool = false # If target is still within view
 func load_data(target_data: PhotoTargetData):
     visible_notifier.aabb = target_data.bounding_box
     target_name = target_data.target_name
-    behavior_script = target_data.behavior_script
     model = target_data.model.instantiate()
     add_child(model)
 
