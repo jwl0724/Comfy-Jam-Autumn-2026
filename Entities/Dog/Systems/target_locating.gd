@@ -46,10 +46,14 @@ func _on_notify_target_location(target: PhotoTarget):
 
 
 func _turn_dog_to_position(position: Vector3):
+    var target_rotation = NodeUtils.get_look_at_position_rotation(dog, position)
+    var target_y = dog.rotation.y + angle_difference(dog.rotation.y, target_rotation.y)
+    target_rotation.y = target_y
+
     var t = create_tween()
     t.tween_interval(0.5)
     t.tween_callback(func(): dog.play_turn.emit())
-    t.tween_property(dog, "rotation", NodeUtils.get_look_at_position_rotation(dog, position), 1.75) # TODO: Fix dog sometimes doing 360 instead of nearest rotation equivalent
-    t.tween_interval(dog.interact_handler.interact_time_gap - 1)
+    t.tween_property(dog, "rotation", target_rotation, 1.75)
+    t.tween_interval(dog.interact_handler.interact_time_gap - (0.5 + 1.75))
     t.tween_callback(func(): locating.emit(false))
     t.play()
