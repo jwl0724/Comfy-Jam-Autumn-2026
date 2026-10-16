@@ -11,7 +11,7 @@ signal interacted(player: Player)
 @onready var timer: Timer = $Timer
 
 var interacted_amount: int = 0
-
+var interact_disabled: bool = false
 
 
 func _ready():
@@ -35,5 +35,11 @@ func interact(player: Player):
 
 
 
+func disable_interact(do_disable: bool):
+    interact_disabled = do_disable
+    collision_layer = 0 if do_disable else Constants.PhysLayers.InteractablePhys
+
+
+
 func _on_timeout():
-    collision_layer = Constants.PhysLayers.InteractablePhys
+    collision_layer = Constants.PhysLayers.InteractablePhys if !interact_disabled else 0

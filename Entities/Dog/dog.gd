@@ -57,10 +57,16 @@ func _ready():
     play_bark.connect(func(): sound_manager.play_audio(misc_player_name, bark_collection.pick_random()))
     play_interact.connect(func(): sound_manager.play_audio(misc_player_name, interact_sound))
 
+    interact_handler.disable_interact(true)
+
     target_locator.locating.connect(_on_locating_notify)
     interact_handler.interacted.connect(_on_interact)
-    SignalBus.level_game_start.connect(func(): is_active = true)
-    SignalBus.level_game_end.connect(func(): is_active = false)
+    SignalBus.level_game_start.connect(func():
+        is_active = true
+        interact_handler.disable_interact(false))
+    SignalBus.level_game_end.connect(func():
+        is_active = false
+        interact_handler.disable_interact(true))
 
 
 
