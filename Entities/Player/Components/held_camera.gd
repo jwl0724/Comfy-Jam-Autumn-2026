@@ -23,6 +23,7 @@ var current_sway_speed: float = 0
 var theta: float = 0
 
 var aim_tween: Tween = null
+var hide_tween: Tween = null
 
 
 
@@ -36,7 +37,7 @@ func _ready():
 
 
 func _physics_process(delta):
-    if aim_tween && aim_tween.is_running() || !visible:
+    if (aim_tween && aim_tween.is_running()) || (hide_tween && hide_tween.is_running()) || !visible:
         # Reset default camera rotations for smooth effect of moving camera to eye
         rotation.z = lerp_angle(rotation.z, base_rotation.z, turn_speed * delta)
         rotation.y = lerp_angle(rotation.y, base_rotation.y, turn_speed * delta)
@@ -82,13 +83,13 @@ func remove_from_eye():
 
 func _on_hide_request(do_hide: bool):
     if do_hide:
-        var t = create_tween()
-        t.tween_property(self, "position", Vector3.DOWN, 0.2)
-        t.tween_callback(func(): visible = false)
-        t.play()
+        hide_tween = create_tween()
+        hide_tween.tween_property(self, "position", Vector3.DOWN, 0.2).set_trans(Tween.TRANS_CUBIC)
+        hide_tween.tween_callback(func(): visible = false)
+        hide_tween.play()
     else:
         position = Vector3.DOWN
         visible = true
-        var t = create_tween()
-        t.tween_property(self, "position", baseline_pos, 0.2)
-        t.play()
+        hide_tween = create_tween()
+        hide_tween.tween_property(self, "position", baseline_pos, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+        hide_tween.play()

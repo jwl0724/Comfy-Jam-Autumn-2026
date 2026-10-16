@@ -48,13 +48,13 @@ func play_start_sequence():
     t.tween_interval(seconds_per_line)
 
     # Look forwards
-    t.tween_property(player, "rotation", Vector3(0, PI / 2, 0), 1)
-    t.parallel().tween_property(player.view_controller, "rotation", Vector3.ZERO, 1)
+    t.tween_property(player, "rotation", Vector3(0, PI / 2, 0), 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+    t.parallel().tween_property(player.view_controller, "rotation", Vector3.ZERO, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
     t.tween_interval(seconds_per_line - 1)
 
     # Look back at dog
-    t.tween_property(player, "rotation", Vector3(0, deg_to_rad(16.7), 0), 1)
-    t.parallel().tween_property(player.view_controller, "rotation", Vector3(deg_to_rad(-20), 0, 0), 1)
+    t.tween_property(player, "rotation", Vector3(0, deg_to_rad(16.7), 0), 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+    t.parallel().tween_property(player.view_controller, "rotation", Vector3(deg_to_rad(-20), 0, 0), 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
     t.tween_interval(seconds_per_line - 1)
 
     # Dog barks and turns forward
