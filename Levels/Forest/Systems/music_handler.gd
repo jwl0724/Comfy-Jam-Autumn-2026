@@ -41,7 +41,7 @@ func _process(_delta):
 func _signal_to_play():
     ready_to_play = false
     can_play_timer.start()
-    SignalBus.audio_setDB_music.emit(-17.5)
+    SignalBus.audio_setDB_music.emit(-12.5)
     SignalBus.audio_play_music.emit(bgm_collection[current_music_index], 7.5)
     current_threshold = percent_used_for_music2
     current_music_index = current_music_index + 1 if current_music_index + 1 < bgm_collection.size() else 0
