@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta):
     if !visible || !do_scroll: return
-    scroll_bar.value += scroll_speed * delta
+    scroll_bar.value += ceili(scroll_speed * delta)
 
 
 
