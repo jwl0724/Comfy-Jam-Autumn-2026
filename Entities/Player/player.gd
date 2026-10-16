@@ -75,7 +75,9 @@ func _physics_process(_delta):
 
 
 func _input(event: InputEvent):
-    if event.is_action_pressed(Constants.InputNames.Pause) && can_pause: # Allows pausing when other UI elements are over it
+    if event.is_action_pressed(Constants.InputNames.Pause) && can_pause && !OS.has_feature("web"): # Allows pausing when other UI elements are over it
+        SignalBus.game_pause.emit(true)
+    elif event.is_action_pressed(Constants.InputNames.WebPause) && can_pause && OS.has_feature("web"): # Handle web pausing
         SignalBus.game_pause.emit(true)
 
     if event is InputEventMouseMotion || !controls_enabled: return

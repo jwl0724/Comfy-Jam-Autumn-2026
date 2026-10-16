@@ -21,6 +21,7 @@ class InputNames:
     const Aim: String = "Aim"
     const Book: String = "Book"
     const Pause: String = "Pause"
+    const WebPause: String = "WebPause"
 
 # Terrabrush Texture Names
 class TerraBrushTexturesNames:

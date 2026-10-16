@@ -42,8 +42,11 @@ func _ready():
 
 func _input(event: InputEvent):
     if event is InputEventMouseMotion: return
-    if event.is_action_pressed(Constants.InputNames.Pause) && visible:
+    if event.is_action_pressed(Constants.InputNames.Pause) && visible && !OS.has_feature("web"):
         get_viewport().set_input_as_handled() # Prevents immediate un-pausing
+        _on_resume_pressed()
+    elif event.is_action_pressed(Constants.InputNames.WebPause) && visible && OS.has_feature("web"): # Handle web unpause shortcut
+        get_viewport().set_input_as_handled()
         _on_resume_pressed()
 
 
