@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brbx5kn6ijhnm"
-path="res://.godot/imported/button_hover.png-6ae38b080a4d9524144e075173870f14.ctex"
+path="res://.godot/imported/button_hover.png-2b895b2bf789f31e36b2bf5ed5841586.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AddOns/terrabrush/Assets/button_hover.png"
-dest_files=["res://.godot/imported/button_hover.png-6ae38b080a4d9524144e075173870f14.ctex"]
+source_file="res://addons/terrabrush/Assets/button_hover.png"
+dest_files=["res://.godot/imported/button_hover.png-2b895b2bf789f31e36b2bf5ed5841586.ctex"]
 
 [params]
 

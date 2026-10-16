@@ -43,7 +43,8 @@ folder_colors={
 "res://Common/": "blue",
 "res://Entities/": "red",
 "res://Levels/": "green",
-"res://Systems/": "purple"
+"res://Systems/": "purple",
+"res://addons/": "yellow"
 }
 
 [input]

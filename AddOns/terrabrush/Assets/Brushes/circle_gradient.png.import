@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s7yw4loc7iwu"
-path="res://.godot/imported/circle_gradient.png-a3e5883d91dc55be7f4f4ebfdcbc6e48.ctex"
+path="res://.godot/imported/circle_gradient.png-d78d458721f1ad369c2a03624003523e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AddOns/terrabrush/Assets/Brushes/circle_gradient.png"
-dest_files=["res://.godot/imported/circle_gradient.png-a3e5883d91dc55be7f4f4ebfdcbc6e48.ctex"]
+source_file="res://addons/terrabrush/Assets/Brushes/circle_gradient.png"
+dest_files=["res://.godot/imported/circle_gradient.png-d78d458721f1ad369c2a03624003523e.ctex"]
 
 [params]
 

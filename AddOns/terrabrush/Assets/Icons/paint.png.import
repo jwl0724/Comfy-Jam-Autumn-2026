@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b853gh8gcmhg2"
-path="res://.godot/imported/paint.png-37903a39f518843fcbbcbbb60bd44a5f.ctex"
+path="res://.godot/imported/paint.png-f2ff3ad209046ba184d0afc46b2f9ee6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AddOns/terrabrush/Assets/Icons/paint.png"
-dest_files=["res://.godot/imported/paint.png-37903a39f518843fcbbcbbb60bd44a5f.ctex"]
+source_file="res://addons/terrabrush/Assets/Icons/paint.png"
+dest_files=["res://.godot/imported/paint.png-f2ff3ad209046ba184d0afc46b2f9ee6.ctex"]
 
 [params]
 
