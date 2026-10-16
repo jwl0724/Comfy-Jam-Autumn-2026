@@ -16,6 +16,10 @@ func _on_transition_show_request(new_color: Color, time: float):
     color = new_color
     modulate = Color.WHITE
 
+    if time == 0: # Skip tweening if time = 0
+        modulate = Color.TRANSPARENT
+        return
+
     # Setup transitioning tween
     var t = create_tween()
     t.tween_property(self, "modulate", Color.TRANSPARENT, time)
@@ -29,6 +33,10 @@ func _on_transition_hide_request(new_color: Color, time: float):
     visible = true
     color = new_color
     modulate = Color.TRANSPARENT
+
+    if time == 0: # Skip tweening if time = 0
+        modulate = Color.WHITE
+        return
 
     # Setup transitioning tween
     var t = create_tween()

@@ -11,14 +11,16 @@ var loading_uid: String = ""
 var scene_ready: bool = false
 var loaded_scene: PackedScene = null
 
+var load_tween: Tween = null
+
 
 
 func _ready():
     container.modulate = Color.TRANSPARENT
     SignalBus.game_transition_fadeShow.emit(Color.WHITE, 0)
-    var t = create_tween()
-    t.tween_property(container, "modulate", Color.WHITE, fade_time)
-    t.play()
+    load_tween = create_tween()
+    load_tween.tween_property(container, "modulate", Color.WHITE, fade_time)
+    load_tween.play()
 
 
 
@@ -40,10 +42,10 @@ func thread_load_scene(scene_uid: String):
 
 
 func _close_loading_screen():
-    SignalBus.game_transition_fadeHide.emit(Color.WHITE, fade_time)
     SignalBus.audio_stop_music.emit(3)
-
-    var t = create_tween()
-    t.tween_interval(fade_time)
-    t.tween_callback(func(): loading_finished.emit(loaded_scene))
-    t.play()
+    if load_tween && load_tween.is_running(): load_tween.kill()
+    load_tween = create_tween()
+    load_tween.tween_property(container, "modulate", Color.TRANSPARENT, fade_time)
+    load_tween.tween_callback(func():
+        SignalBus.game_transition_fadeHide.emit(Color.WHITE, 0)
+        loading_finished.emit(loaded_scene))
