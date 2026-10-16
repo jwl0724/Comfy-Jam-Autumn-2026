@@ -29,7 +29,7 @@ func _ready():
     fov_slider.min_value = Options.fov_min
     mouse_sensitivity_slider.max_value = 1
     mouse_sensitivity_slider.min_value = 0
-    fullscreen_check.button_pressed = Options.is_fullscreen
+    fullscreen_check.set_pressed_no_signal(Options.is_fullscreen)
     _set_values()
 
     # Connect sliders to update labels
@@ -57,13 +57,13 @@ func _set_values():
     fov_label.text = "%d" % roundi(fov_slider.value)
     mouse_sensitivity_slider.value = Options.mouse_sensitivity_linear
     mouse_label.text = _get_linear_display(mouse_sensitivity_slider.value)
-    fullscreen_check.button_pressed = Options.is_fullscreen
+    fullscreen_check.set_pressed_no_signal(Options.is_fullscreen)
 
 
 
 func _on_fullscreen_toggle(on: bool):
     SignalBus.options_changed_fullscreen.emit(on)
-    fullscreen_check.button_pressed = Options.is_fullscreen # Need check in case fullscreen isn't enabled
+    fullscreen_check.set_pressed_no_signal(Options.is_fullscreen) # Need check in case fullscreen isn't enabled
 
 
 

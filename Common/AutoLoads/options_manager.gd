@@ -22,8 +22,8 @@ func _ready():
 
 func _on_fullscreen(to_fullscreen: bool):
     var mode = DisplayServer.WINDOW_MODE_FULLSCREEN if to_fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
-    is_fullscreen = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
     DisplayServer.window_set_mode(mode)
+    is_fullscreen = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 
 
 
