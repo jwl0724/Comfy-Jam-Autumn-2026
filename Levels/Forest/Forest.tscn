@@ -221,7 +221,7 @@ data = ExtResource("12_jgk3e")
 teleport_points = [NodePath("../../TeleportPoints/RatPoints/P1"), NodePath("../../TeleportPoints/RatPoints/P2"), NodePath("../../TeleportPoints/RatPoints/P3")]
 
 [node name="Salmon" parent="PhotoTargets" unique_id=67987590 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
-transform = Transform3D(0.7596801, 0, 0.65029705, 0, 1, 0, -0.65029705, 0, 0.7596801, -153.62086, -1.1974521, -181.95096)
+transform = Transform3D(-0.8896556, 0, -0.4566322, 0, 1, 0, 0.4566322, 0, -0.8896556, -153.62086, -1.1974521, -181.95096)
 data = ExtResource("13_aspdx")
 teleport_points = [NodePath("../../TeleportPoints/SalmonPoints/P1"), NodePath("../../TeleportPoints/SalmonPoints/P2")]
 
