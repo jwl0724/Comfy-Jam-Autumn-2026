@@ -44,6 +44,9 @@ func _ready() -> void:
     SignalBus.options_changed_musicDB.connect(_on_options_music_db_changed)
     SignalBus.options_changed_sfxDB.connect(_on_options_sfx_db_changed)
     SignalBus.audio_play_sfx.connect(_on_sfx_play)
+    SignalBus.audio_play_music.connect(play_music)
+    SignalBus.audio_stop_music.connect(stop_music)
+    SignalBus.audio_crossfade_music.connect(crossfade_music)
 
 
 
@@ -99,9 +102,10 @@ func play_music(stream: AudioStream, fade_time: float = 0) -> void:
     elif fade_time > 0:
         var current_player: AudioStreamPlayer = in_use_player
         current_player.volume_linear = 0
+        current_player.stream = stream
+        current_player.play()
         var fade: Tween = create_tween()
         fade.tween_property(current_player, "volume_linear", 1, fade_time)
-        fade.tween_callback(func(): current_player.play())
         fade.play()
 
 
