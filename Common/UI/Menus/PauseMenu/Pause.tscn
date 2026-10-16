@@ -15,7 +15,7 @@ noise = SubResource("FastNoiseLite_6dtlo")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8su83"]
 shader = ExtResource("4_8svk6")
 shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.1
+shader_parameter/strength = 0.2
 shader_parameter/fps = 6.0
 shader_parameter/noise = SubResource("NoiseTexture2D_j8jh4")
 
@@ -357,4 +357,5 @@ text = "Back to Menu"
 vertical_alignment = 1
 
 [node name="OptionsMenu" parent="." unique_id=348363992 instance=ExtResource("6_8su83")]
+visible = false
 layout_mode = 1

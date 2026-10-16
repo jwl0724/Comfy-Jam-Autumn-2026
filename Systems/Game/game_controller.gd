@@ -12,6 +12,7 @@ const ingame_uid: String = "uid://dkkjyj17iujcm"
 @export var main_menu_scene: PackedScene = null
 @export var post_game_scene: PackedScene = null
 @export var loading_scene: PackedScene = null
+@export var pause_scene: PackedScene = null
 
 @export_group("Dev Tools")
 @export var enable_debug: bool = false
@@ -24,11 +25,15 @@ const ingame_uid: String = "uid://dkkjyj17iujcm"
 @onready var debug_layer: Control = $Debug/Root
 
 @onready var running_node: Node3D = $Running
-@onready var pause_menu: PauseMenu = $Pause/Root/Pause
+
+var pause_menu: PauseMenu = null
 
 
 
 func _ready():
+    pause_menu = pause_scene.instantiate()
+    pause_layer.add_child(pause_menu)
+
     SignalBus.game_layers_visible.connect(_on_canvas_layer_visible_request)
     SignalBus.game_layers_clearAll.connect(_on_clear_layers)
     SignalBus.game_layers_addGUI.connect(_on_addGUI)

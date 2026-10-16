@@ -18,12 +18,14 @@ launch_scene = ExtResource("2_vg6rv")
 main_menu_scene = ExtResource("3_iq1bj")
 post_game_scene = ExtResource("4_vf6nk")
 loading_scene = ExtResource("5_vg6rv")
+pause_scene = ExtResource("4_j0ier")
 enable_debug = true
 debug_scene = ExtResource("3_iq1bj")
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]
 
 [node name="ButtonSFX" type="Node" parent="Systems" unique_id=1477297055]
+process_mode = 3
 script = ExtResource("7_827mu")
 associated_theme = ExtResource("7_wjrdb")
 click_sfx = ExtResource("8_66k43")
@@ -54,9 +56,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Pause" parent="Pause/Root" unique_id=1291881355 instance=ExtResource("4_j0ier")]
-layout_mode = 1
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=561777814]
 process_mode = 3
