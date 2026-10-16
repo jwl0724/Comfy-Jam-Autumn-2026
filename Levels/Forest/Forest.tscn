@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://dek12rt3cg2f1" path="res://Entities/PhotoTarget/Resource/beetroot.tres" id="8_3vpcb"]
 [ext_resource type="NavigationMesh" uid="uid://ikf6j7nk7luq" path="res://Levels/Forest/Resources/nav_mesh.tres" id="8_5k7u4"]
 [ext_resource type="Resource" uid="uid://bbdsifkrdpnt8" path="res://Entities/PhotoTarget/Resource/corn.tres" id="8_br85p"]
+[ext_resource type="Script" uid="uid://do1ekuorl4t88" path="res://Levels/Forest/Systems/music_handler.gd" id="8_uxwyx"]
 [ext_resource type="Resource" uid="uid://wgxjk3syqfc2" path="res://Entities/PhotoTarget/Resource/melon.tres" id="10_gbd7g"]
 [ext_resource type="Resource" uid="uid://dcltjtl27oq8g" path="res://Entities/PhotoTarget/Resource/pumpkin.tres" id="11_gbd7g"]
 [ext_resource type="Resource" uid="uid://7ksw5s0ql04y" path="res://Entities/PhotoTarget/Resource/rat.tres" id="12_jgk3e"]
@@ -162,7 +163,6 @@ size = Vector3(15, 40, 10)
 
 [node name="Forest" type="Node3D" unique_id=1823147826]
 script = ExtResource("1_cmbib")
-bgm_collection = Array[AudioStream]([ExtResource("2_rkdqx"), ExtResource("3_uxwyx")])
 gui_layer = Array[PackedScene]([ExtResource("2_scdmf")])
 
 [node name="Systems" type="Node" parent="." unique_id=1585029600]
@@ -182,6 +182,11 @@ sun_end_angle = -160.0
 directional_light = NodePath("../../Map/Sun")
 world_environment = NodePath("../../Map/WorldEnvironment")
 level_state_handler = NodePath("../LevelState")
+
+[node name="MusicHandler" type="Node" parent="Systems" unique_id=269445746 node_paths=PackedStringArray("level_state_handler")]
+script = ExtResource("8_uxwyx")
+level_state_handler = NodePath("../LevelState")
+bgm_collection = Array[AudioStream]([ExtResource("2_rkdqx"), ExtResource("3_uxwyx")])
 
 [node name="PhotoTargets" type="Node" parent="." unique_id=1653841262]
 
