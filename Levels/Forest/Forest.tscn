@@ -424,7 +424,8 @@ transform = Transform3D(0.9740363, 0, 0.22639202, 0, 1, 0, -0.22639202, 0, 0.974
 
 [node name="River" type="AudioStreamPlayer3D" parent="Sounds/RiverPath/PathFollow3D" unique_id=1424965310]
 stream = ExtResource("21_eg17w")
-volume_db = -10.0
+volume_db = -15.0
+max_db = 0.0
 autoplay = true
 bus = &"Default_SFX"
 

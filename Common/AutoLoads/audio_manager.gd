@@ -16,6 +16,8 @@ var playlist_fade_time: float = 0
 var loop_track: bool = false
 var loop_playlist: bool = false
 
+var base_musicDB: float = 0
+
 
 
 func _ready() -> void:
@@ -47,6 +49,7 @@ func _ready() -> void:
     SignalBus.audio_play_music.connect(play_music)
     SignalBus.audio_stop_music.connect(stop_music)
     SignalBus.audio_crossfade_music.connect(crossfade_music)
+    SignalBus.audio_setDB_music.connect(func(newDB: float): base_musicDB = newDB)
 
 
 
@@ -95,7 +98,7 @@ func play_music(stream: AudioStream, fade_time: float = 0) -> void:
     if in_use_player.stream == stream && in_use_player.playing: return
 
     if fade_time == 0:
-        in_use_player.volume_linear = 1
+        in_use_player.volume_linear = db_to_linear(base_musicDB)
         in_use_player.stream = stream
         in_use_player.play()
 
@@ -105,19 +108,19 @@ func play_music(stream: AudioStream, fade_time: float = 0) -> void:
         current_player.stream = stream
         current_player.play()
         var fade: Tween = create_tween()
-        fade.tween_property(current_player, "volume_linear", 1, fade_time)
+        fade.tween_property(current_player, "volume_linear", db_to_linear(base_musicDB), fade_time)
         fade.play()
 
 
 
 func stop_music(fade_time: float = 0) -> void:
     if fade_time == 0:
-        in_use_player.volume_linear = 1
+        in_use_player.volume_linear = db_to_linear(base_musicDB)
         in_use_player.stop()
 
     elif fade_time > 0:
         var current_player: AudioStreamPlayer = in_use_player
-        current_player.volume_linear = 1
+        current_player.volume_linear = db_to_linear(base_musicDB)
         var fade: Tween = create_tween()
         fade.tween_property(current_player, "volume_linear", 0, fade_time)
         fade.tween_callback(func(): current_player.stop())

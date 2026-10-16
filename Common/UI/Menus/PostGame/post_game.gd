@@ -30,6 +30,7 @@ func _ready():
     menu_button.pressed.connect(_on_menu_pressed)
 
     SignalBus.game_transition_fadeShow.emit(Color.BLACK, 2)
+    SignalBus.audio_setDB_music.emit(-5)
     SignalBus.audio_crossfade_music.emit(bgm, 4)
 
 
