@@ -7,7 +7,7 @@ class_name PhotoTarget
 @onready var visible_notifier = $VisibleNotifier
 
 const max_detect_distance_squared: float = 20 ** 2
-const max_tp_register_distance_squared: float = 90 ** 2
+const max_tp_register_distance_squared: float = 80 ** 2
 
 var model: Node3D = null
 var target_name: String = ""
@@ -56,9 +56,8 @@ func _physics_process(_delta):
 	if !collision:
 		was_viewed = true
 		in_view = true
-	else:
-		in_view = false
-		if was_viewed: queued_for_tp = true
+		queued_for_tp = true
+	else: in_view = false
 
 
 
