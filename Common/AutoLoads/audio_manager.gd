@@ -107,8 +107,11 @@ func play_music(stream: AudioStream, fade_time: float = 0) -> void:
         current_player.volume_linear = 0
         current_player.stream = stream
         current_player.play()
+
         var fade: Tween = create_tween()
         fade.tween_property(current_player, "volume_linear", db_to_linear(base_musicDB), fade_time)
+        fade.tween_interval(stream.get_length() - fade_time * 2) # Account for both fade in and out times
+        fade.tween_callback(_try_fadeout_music.bind(current_player, stream, fade_time))
         fade.play()
 
 
@@ -123,7 +126,7 @@ func stop_music(fade_time: float = 0) -> void:
         current_player.volume_linear = db_to_linear(base_musicDB)
         var fade: Tween = create_tween()
         fade.tween_property(current_player, "volume_linear", 0, fade_time)
-        fade.tween_callback(func(): current_player.stop())
+        fade.tween_callback(current_player.stop)
         fade.play()
 
 
@@ -145,6 +148,11 @@ func set_music_loop(do_loop: bool) -> void:
         printerr("Cannot loop track if no audio stream is provided")
         loop_track = false
     else: loop_track = do_loop
+
+
+
+func _try_fadeout_music(player: AudioStreamPlayer, stream: AudioStream, fade_time: float):
+    if in_use_player == player && player.stream == stream: stop_music(fade_time)
 
 
 
