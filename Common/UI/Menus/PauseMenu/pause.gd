@@ -7,6 +7,7 @@ const transition_time: float = 0.25
 @onready var button_container: Control = %ButtonContainer
 @onready var game_title: Control = %Title
 @onready var pause_label: Control = %PauseTitle
+@onready var options_menu: OptionsMenu = $OptionsMenu
 
 @onready var confirm_popup: Control = $Popup
 
@@ -90,6 +91,7 @@ func enable_menu(enable: bool):
 
 
 func _on_resume_pressed():
+    if options_menu.visible: return
     visible = false
     confirm_popup.visible = false
     SignalBus.game_pause.emit(false) # Tells the game controller to unpause the actual game
@@ -97,7 +99,7 @@ func _on_resume_pressed():
 
 
 func _on_options_pressed():
-    SignalBus.options_visible.emit(true)
+    SignalBus.options_visible.emit(true) # In case anything requires this signal to be fired
 
 
 
