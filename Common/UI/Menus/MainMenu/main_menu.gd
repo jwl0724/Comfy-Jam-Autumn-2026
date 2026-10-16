@@ -31,6 +31,9 @@ func _ready():
     SignalBus.audio_setDB_music.emit(-5)
     SignalBus.audio_crossfade_music.emit(bgm, music_fade_time)
 
+    # Remove quit button if on web
+    quit_button.visible = !OS.has_feature("web")
+
 
 
 func play_open_sequence():
