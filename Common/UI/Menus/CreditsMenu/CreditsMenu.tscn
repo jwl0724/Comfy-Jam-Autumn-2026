@@ -123,14 +123,48 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme = ExtResource("4_fspk2")
-text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+theme_override_constants/line_separation = 5
+text = "Game Created By golden_rice on itch.io
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+Terrain created with TerraBrush by spimort
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+2D Art and Textures
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+Book Cover by yd on OpenGameArt.org
+Foliage Sprites by KenneyNL
+Terrain Textures from FreeStylized.com
+Sophiecomic Font by sophieeeee on 1001 Fonts
+Messy Handwritten Font by Aisyah on 1001 Fonts
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+3D Models
+4 Trees 3 CLouds and 2 Bushes by Quaternius on OpenGameArt.org
+DSLR Camera [Blender] by Light Game Studio on OpenGameArt.org
+Stylized Nature MegaKit by Quaternius on OpenGameArt.org
+Animated Fish by Quaternius on OpenGameArt.org
+Lowpoly Animated Farm Animal Pack by Quaternius on OpenGameArt.org
+Lowpoly Crops Pack by Quaternius on OpenGameArt.org
+Rat Pack by OverActionGameStudio on OpenGameArt.org
+Deer Low Poly by CrownJoshua on OpenGameArt.org
+
+Shaders
+Simple Blur by shellrider on Godot Shaders
+Circular Progress Bar by Miisannn on Godot Shaders
+First Person View Model Shader by blvkknd on Godot Shaders
+Toon Water Shader by hgouveia on Godot Shaders
+Anime Style Sky Shader by ProfesorShader on Godot Shaders
+Squigglevision by tentabrobpy on Godot Shaders
+Kuwahara Shader by FrankTheApe on Godot Shaders
+Squiggle Pen - Canvas Post-process by Br0skinator on Godot Shaders
+Wiggle2D by Tanders on Godot Shaders
+
+Music
+Calm Ambient 1 (Synthwave 4K) by cynicmusic on OpenGameArt.org
+Autumn Forest by VocalMix on OpenGameArt.org
+Calm BGM by syncopika on OpenGameArt.org
+Nature Theme Sketch by remaxim on OpenGameArt.org
+
+Sound Effects
+Ambient Bird Sounds by isaiah658 on OpenGameArt.org
+Other sound effects from Pixabay.com"
 scroll_active = false
 horizontal_alignment = 1
