@@ -17,6 +17,7 @@ func _on_transition_show_request(new_color: Color, time: float):
     modulate = Color.WHITE
 
     if time == 0: # Skip tweening if time = 0
+        visible = false
         modulate = Color.TRANSPARENT
         return
 
