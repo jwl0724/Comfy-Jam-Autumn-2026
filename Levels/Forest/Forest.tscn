@@ -44,6 +44,7 @@
 [ext_resource type="ObjectResource" uid="uid://bonoqv25n2g1w" path="res://Levels/Forest/Resources/Objects/pine_trees.tres" id="34_gte7o"]
 [ext_resource type="ObjectResource" uid="uid://bjdt4s85wchgw" path="res://Levels/Forest/Resources/Objects/rocks.tres" id="35_5rjx4"]
 [ext_resource type="ObjectResource" uid="uid://cxbnkjmo13aog" path="res://Levels/Forest/Resources/Objects/twisted_trees.tres" id="36_jfa63"]
+[ext_resource type="ArrayMesh" uid="uid://cpgkt75gb7bir" path="res://Levels/Forest/Imports/Particles/Cloud2.obj" id="50_x2gkl"]
 [ext_resource type="Image" uid="uid://dosntfa54lt7q" path="res://Levels/Forest/Forest/Object_0_0_1.res" id="69_i0exd"]
 [ext_resource type="Image" uid="uid://b8p3svfceqego" path="res://Levels/Forest/Forest/Object_0_0_2.res" id="70_wfney"]
 [ext_resource type="Image" uid="uid://c084htvceeg6d" path="res://Levels/Forest/Forest/Object_0_0_3.res" id="71_0kgp7"]
@@ -159,6 +160,26 @@ size = Vector2(50, 80)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bq2g6"]
 size = Vector3(40, 10, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gte7o"]
+shading_mode = 2
+diffuse_mode = 2
+disable_receive_shadows = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5rjx4"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(6, 1, 1)
+angle_min = -242.0
+angle_max = 163.40001
+direction = Vector3(0, 5, 2)
+spread = 64.459
+flatness = 1.0
+initial_velocity_min = 10.0
+initial_velocity_max = 24.609999
+gravity = Vector3(0, -90, 0)
+scale_min = 1.1
+scale_max = 1.8
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_il20w"]
 size = Vector3(15, 40, 10)
 
@@ -222,7 +243,7 @@ data = ExtResource("12_jgk3e")
 teleport_points = [NodePath("../../TeleportPoints/RatPoints/P1"), NodePath("../../TeleportPoints/RatPoints/P2"), NodePath("../../TeleportPoints/RatPoints/P3")]
 
 [node name="Salmon" parent="PhotoTargets" unique_id=67987590 node_paths=PackedStringArray("teleport_points") instance=ExtResource("6_irkax")]
-transform = Transform3D(-0.8896556, 0, -0.4566322, 0, 1, 0, 0.4566322, 0, -0.8896556, -153.62086, -1.1974521, -181.95096)
+transform = Transform3D(-0.71702003, 0, -0.6970525, 0, 1, 0, 0.6970525, 0, -0.71702003, -147.97154, -1.1974521, -178.20335)
 data = ExtResource("13_aspdx")
 teleport_points = [NodePath("../../TeleportPoints/SalmonPoints/P1"), NodePath("../../TeleportPoints/SalmonPoints/P2")]
 
@@ -473,6 +494,16 @@ transform = Transform3D(0.9936034, 7.4029227e-09, 0.112925746, 0.101982705, 0.42
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Waterfall/StaticBody3D" unique_id=62831322]
 shape = SubResource("BoxShape3D_bq2g6")
 
+[node name="Foam" type="GPUParticles3D" parent="Map/NavigationRegion3D/Waterfall" unique_id=1550388723]
+transform = Transform3D(0.99730206, -0.066298254, 0.0315264, 0.06629838, 0.99779904, 0.0010454655, -0.03152612, 0.0010455847, 0.9995022, -9.682571, -0.8009949, -33.812622)
+material_override = SubResource("StandardMaterial3D_gte7o")
+cast_shadow = 0
+amount = 60
+lifetime = 0.4
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_5rjx4")
+draw_pass_1 = ExtResource("50_x2gkl")
+
 [node name="Waterfall2" type="MeshInstance3D" parent="Map/NavigationRegion3D" unique_id=1908301371]
 transform = Transform3D(-0.825153, 0.51016706, -0.24259436, 0.010539237, 0.44326752, 0.8963276, 0.56481105, 0.7370506, -0.37114024, -163.67914, 29.850231, -199.13403)
 mesh = SubResource("PlaneMesh_aisnn")
@@ -482,6 +513,16 @@ transform = Transform3D(-0.9996659, 0.010539209, -0.023535341, -0.016426563, 0.4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Waterfall2/StaticBody3D2" unique_id=2062377777]
 shape = SubResource("BoxShape3D_il20w")
+
+[node name="Foam" type="GPUParticles3D" parent="Map/NavigationRegion3D/Waterfall2" unique_id=208495033]
+transform = Transform3D(0.9997997, 0.017262429, -0.009745434, -0.01725319, 0.99984825, 0.0011177659, 0.009763315, -0.0009518564, 0.99994874, 1.2130585, -1.6785431, -33.914444)
+material_override = SubResource("StandardMaterial3D_gte7o")
+cast_shadow = 0
+amount = 60
+lifetime = 0.4
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_5rjx4")
+draw_pass_1 = ExtResource("50_x2gkl")
 
 [node name="Sun" type="DirectionalLight3D" parent="Map" unique_id=598443714]
 transform = Transform3D(1, 0, 0, 0, 0.8480482, 0.52991927, 0, -0.5299193, 0.8480481, 0, 5.8375373, 0)
