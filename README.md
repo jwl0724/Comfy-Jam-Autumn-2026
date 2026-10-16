@@ -45,8 +45,8 @@ https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
 ### Music
+https://opengameart.org/content/calm-ambient-1-synthwave-4k
 https://opengameart.org/content/autumn-forest
-https://opengameart.org/content/autumn-lullaby
 https://opengameart.org/content/calm-bgm
 https://opengameart.org/content/nature-theme-sketch
 

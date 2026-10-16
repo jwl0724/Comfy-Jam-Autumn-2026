@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="1_bd0nb"]
 [ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_cmbib"]
-[ext_resource type="AudioStream" uid="uid://dlccnjk3k0g5o" path="res://Levels/Forest/Imports/Music/ingame1.mp3" id="2_rkdqx"]
+[ext_resource type="AudioStream" uid="uid://b1a2246auea0g" path="res://Levels/Forest/Imports/Music/ingame1.mp3" id="2_rkdqx"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_scdmf"]
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_scdmf"]
 [ext_resource type="AudioStream" uid="uid://dibhon4rgd3xk" path="res://Levels/Forest/Imports/Music/ingame2.mp3" id="3_uxwyx"]
@@ -19,6 +19,7 @@
 [ext_resource type="NavigationMesh" uid="uid://ikf6j7nk7luq" path="res://Levels/Forest/Resources/nav_mesh.tres" id="8_5k7u4"]
 [ext_resource type="Resource" uid="uid://bbdsifkrdpnt8" path="res://Entities/PhotoTarget/Resource/corn.tres" id="8_br85p"]
 [ext_resource type="Script" uid="uid://do1ekuorl4t88" path="res://Levels/Forest/Systems/music_handler.gd" id="8_uxwyx"]
+[ext_resource type="AudioStream" uid="uid://dsbmjr6qmdakg" path="res://Levels/Forest/Imports/Music/ingame3.ogg" id="9_jeli1"]
 [ext_resource type="Resource" uid="uid://wgxjk3syqfc2" path="res://Entities/PhotoTarget/Resource/melon.tres" id="10_gbd7g"]
 [ext_resource type="Resource" uid="uid://dcltjtl27oq8g" path="res://Entities/PhotoTarget/Resource/pumpkin.tres" id="11_gbd7g"]
 [ext_resource type="Resource" uid="uid://7ksw5s0ql04y" path="res://Entities/PhotoTarget/Resource/rat.tres" id="12_jgk3e"]
@@ -186,7 +187,7 @@ level_state_handler = NodePath("../LevelState")
 [node name="MusicHandler" type="Node" parent="Systems" unique_id=269445746 node_paths=PackedStringArray("level_state_handler")]
 script = ExtResource("8_uxwyx")
 level_state_handler = NodePath("../LevelState")
-bgm_collection = Array[AudioStream]([ExtResource("2_rkdqx"), ExtResource("3_uxwyx")])
+bgm_collection = Array[AudioStream]([ExtResource("2_rkdqx"), ExtResource("3_uxwyx"), ExtResource("9_jeli1")])
 
 [node name="PhotoTargets" type="Node" parent="." unique_id=1653841262]
 
