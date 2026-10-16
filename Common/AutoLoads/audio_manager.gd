@@ -152,7 +152,13 @@ func set_music_loop(do_loop: bool) -> void:
 
 
 func _try_fadeout_music(player: AudioStreamPlayer, stream: AudioStream, fade_time: float):
-    if in_use_player == player && player.stream == stream: stop_music(fade_time)
+    if in_use_player != player || player.stream != stream: return
+    # Check if stream is set to loop
+    var is_set_looping: bool = false
+    if stream is AudioStreamMP3: is_set_looping = (stream as AudioStreamMP3).loop
+    elif stream is AudioStreamOggVorbis: is_set_looping = (stream as AudioStreamOggVorbis).loop
+    elif stream is AudioStreamWAV: is_set_looping = (stream as AudioStreamWAV).loop_mode != AudioStreamWAV.LOOP_DISABLED
+    if !is_set_looping: stop_music(fade_time)
 
 
 
