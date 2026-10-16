@@ -42,7 +42,7 @@ var footstep_loop: Tween = null
 
 
 func _ready():
-    Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+    Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # Doesn't do anything on mobile
     controls_enabled = GameController.debug_mode && force_enable_controls
 
     sound_manager.set_pitch_shift_range(footstep_player_name, 0.8, 1.2)
@@ -63,6 +63,9 @@ func _ready():
     SignalBus.level_game_end.connect(func(): is_active = false)
     SignalBus.options_changed_mouse_sensitivity.connect(_on_mouse_sensitivity_changed)
 
+    if !OS.has_feature("web"): return
+    SignalBus.hud_notify_uiOpened.connect(func(ui_opened: bool): Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if ui_opened else Input.MOUSE_MODE_CAPTURED)
+
 
 
 func _physics_process(_delta):
@@ -78,6 +81,13 @@ func _input(event: InputEvent):
     if event is InputEventMouseMotion || !controls_enabled: return
     if event.is_action_pressed(Constants.InputNames.Book):
         SignalBus.menu_scrapbook_visible.emit(true)
+
+
+
+func _unhandled_input(event): # Handle to capture the mouse in web build when clicking on screen
+    if !OS.has_feature("web"): return
+    if event is InputEventMouseButton && event.is_pressed():
+        SignalBus.hud_query_uiOpened.emit()
 
 
 
