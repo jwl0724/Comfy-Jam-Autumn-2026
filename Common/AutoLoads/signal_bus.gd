@@ -59,4 +59,7 @@ signal options_changed_mouse_sensitivity(linear: float)
 signal options_changed_fullscreen(is_fullscreen: bool)
 
 # Audio Signals
-signal audio_play_sfx(clip: AudioStream, pitch_shift: bool)
+signal audio_play_sfx(clip: AudioStream, pitch_shift: bool) # For non-positional reliant SFX (like UI clicks)
+signal audio_crossfade_music(new_clip: AudioStream, fade_time: float)
+signal audio_play_music(clip: AudioStream, fade_in_time: float)
+signal audio_stop_music(fade_out_time: float)

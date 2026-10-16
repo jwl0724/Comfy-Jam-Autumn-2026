@@ -4,6 +4,8 @@ class_name MainMenu
 const title_default_position: Vector2 = Vector2(0,0)
 const title_intro_position: Vector2 = Vector2(0, 80)
 
+const music_fade_time: float = 4
+
 @export var bgm: AudioStream = null
 @export var camera_snap_sfx: AudioStream = null
 
@@ -24,7 +26,9 @@ func _ready():
     options_button.pressed.connect(_on_options_pressed)
     credits_button.pressed.connect(_on_credits_pressed)
     quit_button.pressed.connect(_on_quit_pressed)
+
     SignalBus.game_transition_fadeShow.emit(Color.BLACK, 2)
+    SignalBus.audio_crossfade_music.emit(bgm, music_fade_time)
 
 
 
@@ -86,6 +90,7 @@ func _on_credits_pressed():
 func _on_quit_pressed():
     if intro_tween && intro_tween.is_running(): return
     SignalBus.game_transition_fadeHide.emit(Color.BLACK, 1)
+    SignalBus.audio_stop_music.emit(1)
     var t = create_tween()
     t.tween_interval(1.2)
     t.tween_callback(func(): SignalBus.game_quit.emit())
