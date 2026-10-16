@@ -19,7 +19,6 @@ main_menu_scene = ExtResource("3_iq1bj")
 post_game_scene = ExtResource("4_vf6nk")
 loading_scene = ExtResource("5_vg6rv")
 pause_scene = ExtResource("4_j0ier")
-enable_debug = true
 debug_scene = ExtResource("3_iq1bj")
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]
