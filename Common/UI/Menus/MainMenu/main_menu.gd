@@ -57,6 +57,7 @@ func play_open_sequence():
 func _on_start_pressed():
     if intro_tween && intro_tween.is_running(): return
 
+    start_button.disabled = true # Prevent double click
     SignalBus.audio_play_sfx.emit(camera_snap_sfx, false)
     var t = create_tween()
     t.tween_interval(0.15)
@@ -90,6 +91,8 @@ func _on_credits_pressed():
 
 func _on_quit_pressed():
     if intro_tween && intro_tween.is_running(): return
+
+    quit_button.disabled = true
     SignalBus.game_transition_fadeHide.emit(Color.BLACK, 1)
     SignalBus.audio_stop_music.emit(1)
     var t = create_tween()
