@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://r7gtxx7j3bah" path="res://Common/UI/Menus/PostGame/PostGame.tscn" id="4_vf6nk"]
 [ext_resource type="PackedScene" uid="uid://bylnirxgwoeag" path="res://Common/UI/Transitions/Fade.tscn" id="5_j6267"]
 [ext_resource type="PackedScene" uid="uid://dhp1s2cexgggt" path="res://Common/UI/Menus/Loading/LoadingScreen.tscn" id="5_vg6rv"]
+[ext_resource type="PackedScene" uid="uid://dkkjyj17iujcm" path="res://Levels/Forest/Forest.tscn" id="7_66k43"]
 [ext_resource type="Script" uid="uid://bc1b101up4om4" path="res://Systems/Utils/button_sfx.gd" id="7_827mu"]
 [ext_resource type="PackedScene" uid="uid://ehncdoxv8lja" path="res://Common/UI/Transitions/Snap.tscn" id="7_vf6nk"]
 [ext_resource type="Theme" uid="uid://b86se6c58yq8b" path="res://Common/UI/Themes/menu.tres" id="7_wjrdb"]
@@ -20,7 +21,7 @@ post_game_scene = ExtResource("4_vf6nk")
 loading_scene = ExtResource("5_vg6rv")
 pause_scene = ExtResource("4_j0ier")
 enable_debug = true
-debug_scene = ExtResource("3_iq1bj")
+debug_scene = ExtResource("7_66k43")
 
 [node name="Systems" type="Node" parent="." unique_id=76997881]
 

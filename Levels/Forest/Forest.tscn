@@ -193,8 +193,10 @@ gui_layer = Array[PackedScene]([ExtResource("2_scdmf")])
 script = ExtResource("1_bd0nb")
 photo_target_node = NodePath("../../PhotoTargets")
 
-[node name="SequenceHandler" type="Node" parent="Systems" unique_id=1367272529]
+[node name="SequenceHandler" type="Node" parent="Systems" unique_id=1367272529 node_paths=PackedStringArray("player", "dog")]
 script = ExtResource("3_scdmf")
+player = NodePath("../../Player")
+dog = NodePath("../../Dog")
 
 [node name="TimeTransition" type="Node" parent="Systems" unique_id=316086817 node_paths=PackedStringArray("directional_light", "world_environment", "level_state_handler")]
 script = ExtResource("5_bq2g6")
@@ -532,10 +534,10 @@ shadow_enabled = true
 shadow_opacity = 0.92
 
 [node name="Dog" parent="." unique_id=795914483 node_paths=PackedStringArray("terrain_node", "player_node") instance=ExtResource("28_il20w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.96999, 0.55350685, -5.2152233)
+transform = Transform3D(-0.9128769, 0, -0.40823495, 0, 1, 0, 0.40823495, 0, -0.9128769, 208.96999, 0.55350685, -5.2152233)
 terrain_node = NodePath("../Map/NavigationRegion3D/Map")
 player_node = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=893108555 node_paths=PackedStringArray("terrain_node") instance=ExtResource("7_dontm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.14279, 1.2499962, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 210.14279, 1.2499962, -2.0554032)
 terrain_node = NodePath("../Map/NavigationRegion3D/Map")

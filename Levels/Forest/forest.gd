@@ -25,8 +25,12 @@ func _on_level_end(win: bool):
     else: sequence_handler.play_lose_sequence()
 
 
-# TODO: Below depends on if wanted scripted sequence, determine if scripted sequence is wanted
+
 func _on_start_sequence_finished():
+    SignalBus.level_game_start.emit()
+    SignalBus.level_player_enableControls.emit(true)
+    SignalBus.level_player_enablePause.emit(true)
+    SignalBus.level_player_hideHeld.emit(false)
     level_state_handler.start_level_timer()
 
 
