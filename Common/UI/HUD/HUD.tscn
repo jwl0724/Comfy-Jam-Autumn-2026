@@ -80,17 +80,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -16.5
-offset_right = 12.0
-offset_bottom = 16.5
+offset_left = -5.0
+offset_top = -9.5
+offset_right = 5.0
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_ydfnv")
 theme_override_colors/font_color = Color(1, 1, 1, 0.837)
 theme_override_colors/font_outline_color = Color(0.06100855, 0.06100855, 0.06100855, 0.416)
 theme_override_constants/outline_size = 10
-text = "[E]"
+text = "E"
 
 [node name="Tutorial" parent="." unique_id=1880504937 instance=ExtResource("4_37ke4")]
 layout_mode = 1

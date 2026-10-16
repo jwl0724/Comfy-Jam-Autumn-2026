@@ -470,6 +470,7 @@ collisionMask = 0
 textureSets = ExtResource("5_elyv4")
 textureDetail = 50
 foliages = Array[FoliageResource]([ExtResource("6_aisnn")])
+objectLoadingStrategy = 2
 objects = Array[ObjectResource]([ExtResource("30_rkdqx"), ExtResource("31_uxwyx"), ExtResource("32_jeli1"), ExtResource("33_x2gkl"), ExtResource("34_gte7o"), ExtResource("35_5rjx4"), ExtResource("36_jfa63")])
 terrainZones = SubResource("ZonesResource_niy7m")
 physics_interpolation_mode = 2
