@@ -81,6 +81,7 @@ https://pixabay.com/sound-effects/film-special-effects-page-turn-100277/
 https://pixabay.com/sound-effects/technology-camera-13695/
 https://pixabay.com/sound-effects/film-special-effects-pageturn-102978/
 https://pixabay.com/sound-effects/book-closing-466850/
+https://pixabay.com/sound-effects/technology-shutter-click-2-494026/
 
 ### Shaders
 https://godotshaders.com/shader/simple-blur/
