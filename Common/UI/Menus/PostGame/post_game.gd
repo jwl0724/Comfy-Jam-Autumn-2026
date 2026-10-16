@@ -1,6 +1,7 @@
 extends Control
 class_name PostGame
 
+@export var bgm: AudioStream = null
 @export var no_data_texture: Texture2D = null
 
 @onready var title: Label = $Title

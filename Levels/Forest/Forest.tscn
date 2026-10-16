@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c68dtv2b2jecb" path="res://Levels/Forest/Systems/level_state_handler.gd" id="1_bd0nb"]
 [ext_resource type="Script" uid="uid://xbnkus1lws4e" path="res://Levels/Forest/forest.gd" id="1_cmbib"]
+[ext_resource type="AudioStream" uid="uid://dlccnjk3k0g5o" path="res://Levels/Forest/Imports/Music/ingame1.mp3" id="2_rkdqx"]
 [ext_resource type="PackedScene" uid="uid://cxes41vpkkplv" path="res://Common/UI/HUD/HUD.tscn" id="2_scdmf"]
 [ext_resource type="Script" uid="uid://cq1cs06i0i52j" path="res://Levels/Forest/Systems/sequence_handler.gd" id="3_scdmf"]
+[ext_resource type="AudioStream" uid="uid://dibhon4rgd3xk" path="res://Levels/Forest/Imports/Music/ingame2.mp3" id="3_uxwyx"]
 [ext_resource type="Script" uid="uid://b2pvs8me1gtmb" path="res://Levels/Forest/Systems/time_transition.gd" id="5_bq2g6"]
 [ext_resource type="Environment" uid="uid://jua48wp7jelw" path="res://Levels/Forest/Resources/environment.tres" id="5_c751c"]
 [ext_resource type="TextureSetsResource" uid="uid://beqje6372pi61" path="res://Levels/Forest/Resources/TextureSet/map_textures.tres" id="5_elyv4"]
@@ -160,6 +162,7 @@ size = Vector3(15, 40, 10)
 
 [node name="Forest" type="Node3D" unique_id=1823147826]
 script = ExtResource("1_cmbib")
+bgm_collection = Array[AudioStream]([ExtResource("2_rkdqx"), ExtResource("3_uxwyx")])
 gui_layer = Array[PackedScene]([ExtResource("2_scdmf")])
 
 [node name="Systems" type="Node" parent="." unique_id=1585029600]

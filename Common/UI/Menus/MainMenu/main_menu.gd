@@ -4,6 +4,7 @@ class_name MainMenu
 const title_default_position: Vector2 = Vector2(0,0)
 const title_intro_position: Vector2 = Vector2(0, 80)
 
+@export var bgm: AudioStream = null
 @export var camera_snap_sfx: AudioStream = null
 
 @onready var credits_menu: CreditsMenu = $SubMenus/CreditsMenu

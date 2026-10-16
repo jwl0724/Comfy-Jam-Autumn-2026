@@ -3,6 +3,8 @@ extends Node
 @onready var level_state_handler: LevelStateHandler = $Systems/LevelState
 @onready var sequence_handler: SequenceHandler = $Systems/SequenceHandler
 
+@export var bgm_collection: Array[AudioStream] = []
+
 @export_group("Required UI")
 @export var gui_layer: Array[PackedScene] = []
 

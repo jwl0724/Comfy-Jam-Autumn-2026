@@ -44,6 +44,12 @@
 https://www.1001fonts.com/sophiecomic-font.html
 https://www.1001fonts.com/messy-handwritten-font.html
 
+### Music
+https://opengameart.org/content/autumn-forest
+https://opengameart.org/content/autumn-lullaby
+https://opengameart.org/content/calm-bgm
+https://opengameart.org/content/nature-theme-sketch
+
 ### Sound Effects
 https://pixabay.com/sound-effects/horror-deer-grunt-472371/
 https://pixabay.com/sound-effects/film-special-effects-rat-squeaking-sound-effecthd-570216/

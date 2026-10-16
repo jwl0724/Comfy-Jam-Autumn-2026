@@ -19,6 +19,8 @@ var loop_playlist: bool = false
 
 
 func _ready() -> void:
+    process_mode = Node.PROCESS_MODE_ALWAYS
+
     _player1 = AudioStreamPlayer.new()
     _player1.bus = Constants.AudioBusNames.DefaultMusic
     in_use_player = _player1
