@@ -29,7 +29,8 @@ func _ready():
     previous_button.pressed.connect(_on_previous_pressed)
     menu_button.pressed.connect(_on_menu_pressed)
 
-    SignalBus.game_transition_fadeShow.emit(Color.BLACK, 1)
+    SignalBus.game_transition_fadeShow.emit(Color.BLACK, 2)
+    SignalBus.audio_crossfade_music.emit(bgm, 4)
 
 
 

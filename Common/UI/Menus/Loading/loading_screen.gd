@@ -41,6 +41,8 @@ func thread_load_scene(scene_uid: String):
 
 func _close_loading_screen():
     SignalBus.game_transition_fadeHide.emit(Color.WHITE, fade_time)
+    SignalBus.audio_stop_music.emit(3)
+
     var t = create_tween()
     t.tween_interval(fade_time)
     t.tween_callback(func(): loading_finished.emit(loaded_scene))
