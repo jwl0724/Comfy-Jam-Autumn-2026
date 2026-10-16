@@ -39,6 +39,10 @@ func _ready():
     mouse_sensitivity_slider.value_changed.connect(func(f: float): _update_slider(f, mouse_label, SignalBus.options_changed_mouse_sensitivity))
     fullscreen_check.toggled.connect(_on_fullscreen_toggle)
 
+    # Connect for web specifics
+    if !OS.has_feature("web"): return
+    get_window().size_changed.connect(func(): fullscreen_check.set_pressed_no_signal(DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN))
+
 
 
 func _on_visible_request(to_visible: bool):
@@ -63,7 +67,7 @@ func _set_values():
 
 func _on_fullscreen_toggle(on: bool):
     SignalBus.options_changed_fullscreen.emit(on)
-    fullscreen_check.set_pressed_no_signal(Options.is_fullscreen) # Need check in case fullscreen isn't enabled
+    if !OS.has_feature("web"): fullscreen_check.set_pressed_no_signal(Options.is_fullscreen) # Need check in case fullscreen isn't enabled
 
 
 
