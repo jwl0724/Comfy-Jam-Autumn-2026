@@ -99,7 +99,14 @@ func _on_in_game(): # ingame is a big scene, so can't use change_scene to ingame
     change_scenes(loading_scene)
     var load_screen := NodeUtils.get_first_valid(running_node) as LoadingScreen
     load_screen.thread_load_scene(ingame_uid)
-    load_screen.loading_finished.connect(func(scene: PackedScene): change_scenes(scene))
+    load_screen.loading_finished.connect(_on_finished_loading, CONNECT_ONE_SHOT)
+
+
+
+func _on_finished_loading(map: Node3D):
+    var load_screen := NodeUtils.get_first_valid(running_node) as LoadingScreen
+    running_node.add_child(map)
+    load_screen.queue_free()
 
 
 
