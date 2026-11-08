@@ -1,4 +1,12 @@
-# Comfy Jam: Autumn 2026 Game
+# <a href="https://golden-rice.itch.io/oh-snap-whered-it-go">Oh Snap! Where'd It Go? - Comfy Jam: Autumn 2026 Game</a>
+
+## Preview
+<img src="https://img.itch.zone/aW1hZ2UvNTE3MTA5Ni8zMDk2NTg2Ni5wbmc=/original/tiWEiS.png" width="800">
+<img src="https://img.itch.zone/aW1hZ2UvNTE3MTA5Ni8zMDk2NTg3MC5wbmc=/original/0RWWKo.png" width="800">
+<img src="https://img.itch.zone/aW1hZ2UvNTE3MTA5Ni8zMDk2NzQxMi5wbmc=/original/CWiLMs.png" width="800">
+<img src="https://img.itch.zone/aW1hZ2UvNTE3MTA5Ni8zMDk2NzQxNi5wbmc=/original/3tAU14.png" width="800">
+<img src="https://img.itch.zone/aW1hZ2UvNTE3MTA5Ni8zMDk3MTg4MC5wbmc=/original/C9ROFj.png" width="800">
+<img src="https://img.itch.zone/aW1hZ2UvNTE3MTA5Ni8zMDk2NzQyMC5wbmc=/original/I2Z3pe.png" width="800">
 
 ## Requirements
 - Comfy/Cozy type game
